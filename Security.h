@@ -1,7 +1,11 @@
 #ifndef __SECURITY__H__
 #define __SECURITY__H__
-
+#include <iostream>
+using namespace std;
+#include <fstream>
 #include "Maintaineance.h"
+#include <string>
+
 class Security : public Maintaineance
 {
 protected:
@@ -87,8 +91,7 @@ public:
         // string newline;
         string name; // EMPLOYEE NAME
         int time;    // time employee did work
-        cout
-            << "ENTER NAME OF EMPLOYEE: ";
+        cout << "ENTER NAME OF EMPLOYEE: ";
         cin >> name;
         cout << "HOW MUCH WORK EMPLOYEE DID IN MINUTES: ";
         cin >> time;
@@ -100,12 +103,15 @@ public:
         {
             cout << "Error: Failed to open file for writing!" << endl;
         }
-        outfile << "NAME IS: ";
-        outfile << name;
-        outfile << " ";
-        outfile << "SALARY IS: ";
-        outfile << k;
-        outfile << "\n";
+        else
+        {
+            outfile << "NAME IS: ";
+            outfile << name;
+            outfile << " ";
+            outfile << "SALARY IS: ";
+            outfile << k;
+            outfile << "\n";
+        }
 
         outfile.close();
     }
@@ -117,29 +123,30 @@ public:
         cout << "ENTER NAME OF EMPLOYEE: ";
         cin >> name_of;
 
-        ifstream infile("names.txt", ios::app);
+        ifstream infile("names.txt");
         if (!infile.is_open())
         {
             cout << "Failed to open file!" << endl;
             // return 1;
         }
-
-        string line;
-        bool found = false;
-        while (getline(infile, line))
+        else
         {
-            if (line.find(name_of) != string::npos)
+            string line;
+            bool found = false;
+            while (getline(infile, line))
             {
-                found = true;
-                cout << line << endl;
+                if (line.find(name_of) != string::npos)
+                {
+                    found = true;
+                    cout << line << endl;
+                }
+            }
+
+            if (!found)
+            {
+                cout << "Name not found in file." << endl;
             }
         }
-
-        if (!found)
-        {
-            cout << "Name not found in file." << endl;
-        }
-
         infile.close();
     }
 };

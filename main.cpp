@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Detail.h"
 #include"Menu.h"
-
 #include "Electricity.h"
 #include "water.h"
 #include "Security.h"

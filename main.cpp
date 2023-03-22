@@ -8,7 +8,10 @@
 using namespace std;
 int main()
 {
+    //Detail a;
+   //a.Info();
     Menus body;
+
     body.Menu();
     return 0;
 }

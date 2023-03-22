@@ -54,14 +54,17 @@ void Menus::Menu()
                         {
                         case 1:
                         {
+                            // write adding manager code here
                             break;
                         }
                         case 2:
                         {
+                            // write remove manager code here
                             break;
                         }
                         case 3:
                         {
+                            // write replace manager code here
                             break;
                         }
                         case 0:
@@ -95,6 +98,44 @@ void Menus::Menu()
                         {
                         case 1:
                         {
+                            while (ch == 0)
+                            {
+                                cout << "\n.......Welcome To Employee Details Repository.......\n\n"
+                                        "1)Getting Data By ID No \n"
+                                        "2)Getting Data As A Whole\n"
+                                        "3)Getting Data With Department Name\n"
+                                        "0)Exit\n"
+                                        "Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+                                    //wirte a code for getting data with ID No
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    //write a code for getting data as a whole
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    //write a code for getting data with Department name
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch = 0;
                             break;
                         }
                         case 2:

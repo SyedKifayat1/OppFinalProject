@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Detail.h"
-#include"Menu.h"
+#include "Menu.h"
 #include "Electricity.h"
 #include "water.h"
 #include "Security.h"
@@ -10,5 +10,7 @@ int main()
 {
     Menus body;
     body.Menu();
+    Detail p;
+
     return 0;
 }

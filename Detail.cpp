@@ -1,7 +1,22 @@
 #include <iostream>
 #include "Detail.h"
 using namespace std;
-istream &operator>>(istream &in, Detail &x) {           //non-membber function for entering data
+
+// Detail::Detail()
+// {
+//     fname = "null";
+//     lname = "null";
+//     EmailADdress = "null";
+//     Status = "null";
+//     gender = "null";
+//     PhoneNum = 0;
+//     salary = 0;
+//     hiringDate = 0;
+// }
+istream &operator>>(istream &in, Detail &x)
+{ // non-membber function for entering data
+    cout << "\nENTER USE ID: ";
+    in >> x.user_id;
     cout << "\nENTER YOUR FIRST NAME  :";
     in >> x.fname;
     cout << "\nENTER YOUR LAST NAME   :";
@@ -10,6 +25,8 @@ istream &operator>>(istream &in, Detail &x) {           //non-membber function f
     in >> x.EmailADdress;
     cout << "\nENTER YOUR STATUS      :";
     in >> x.Status;
+    cout << "\nENTER YOUR JOB TITLE      :";
+    in >> x.JobTitle;
     cout << "\nENTER YOUR GENDER      :";
     in >> x.gender;
     cout << "\nENTER YOUR PHONE NUMBER  :";
@@ -20,7 +37,8 @@ istream &operator>>(istream &in, Detail &x) {           //non-membber function f
     in >> x.hiringDate;
     return in;
 }
-ostream &operator<<(ostream &out,const Detail &y) {             //non-member function for displaying
+ostream &operator<<(ostream &out, const Detail &y)
+{ // non-member function for displaying
     out << "FIRST NAME :" << y.fname << endl;
     out << "LAST NAME  :" << y.lname << endl;
     out << "EMAIL ID   :" << y.EmailADdress << endl;
@@ -31,4 +49,3 @@ ostream &operator<<(ostream &out,const Detail &y) {             //non-member fun
     out << "HIRING DATE:" << y.hiringDate << endl;
     return out;
 }
-

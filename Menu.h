@@ -140,10 +140,98 @@ void Menus::Menu()
                         }
                         case 2:
                         {
+                             while (ch == 0)
+                            {
+                                cout << "\n.......Welcome To Shop Details Repository.......\n\n"
+                                        "1)Getting Details With Shop ID No \n"
+                                        "2)Getting Details Of Whole Shops\n"
+                                        "3)Getting Details With Shop Owner ID \n"
+                                        "0)Exit\n"
+                                        "Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+                                    //wirte a code for getting details with shop ID No
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    //write a code for getting details of whole shops
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    //write a code for getting details with shop owner id 
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch = 0;
                             break;
                         }
                         case 3:
                         {
+                             while (ch == 0)
+                            {
+                                cout << "\n.......Welcome To Accounts Details Repository.......\n\n"
+                                        "1)Getting Details of Employees Salary \n"
+                                        "2)Getting Details of Total Income Sources\n"
+                                        "3)Getting Details of Departments Budget\n"
+                                        "4)Getting Details of Total Profit\n"
+                                        "5)Getting Details of Current Amount\n"
+                                        "0)Exit\n"
+                                        "Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+                                    
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    
+                                    break;
+                                }
+                                case 4:
+                                {
+                                    
+                                    break;
+                                }
+                                case 5:
+                                {
+                                    
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch = 0;
                             break;
                         }
                         case 4:

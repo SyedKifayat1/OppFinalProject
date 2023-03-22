@@ -1,5 +1,5 @@
-#include<string>
-#include<iostream>
+#include <string>
+#include <iostream>
 #include <fstream>
 using namespace std;
 class Accounts
@@ -13,9 +13,7 @@ class Accounts
         cin >> name;
         cout << "HOW MUCH WORK EMPLOYEE DID IN MINUTES: ";
         cin >> time;
-
         int k = 100 * time;
-
         ofstream outfile("names.txt", ios::app);
         if (!outfile.is_open())
         {

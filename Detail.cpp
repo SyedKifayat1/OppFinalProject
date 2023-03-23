@@ -12,7 +12,7 @@ using namespace std;
 //     PhoneNum = 0;
 //     salary = 0;
 //     hiringDate = 0;
-// }
+//
 istream &operator>>(istream &in, Detail &x)
 { // non-membber function for entering data
     cout << "\nENTER USE ID: ";

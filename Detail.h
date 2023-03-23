@@ -6,7 +6,7 @@
 #include <fstream>
 using namespace std;
 class Detail
-{ // detail class
+{
 public:
     string fname, lname, EmailADdress, JobTitle, Status, gender, user_id; // attributes
     int PhoneNum, salary, hiringDate;

@@ -42,12 +42,12 @@ void Menus::Menu()
                 {
                     while (ch == 0)
                     {
-                        cout << "\n.......Welcome To Head Sub Repository Manage Sub-Managers.......\n\n"
-                                "1)Add Manager\n"
-                                "2)Remove Manager\n"
-                                "3)Replace Manager\n"
+                        cout << "\n..........Welcome To Sub-Mananger Repository...........\n\n";
+                        cout << "1)Account Manager\n"
+                                "2)Maintenance Manager\n"
+                                "3)Parking Manager\n"
                                 "0)Exit\n"
-                                "Your Choice :";
+                                "Enter Your Choice :";
                         cin >> choice;
                         switch (choice)
                         {
@@ -55,12 +55,13 @@ void Menus::Menu()
                         {
                             while (ch == 0)
                             {
-                                cout << "\n..........Welcome To Adding Mananger Repository...........\n\n";
-                                cout << "1)Account Manager\n"
-                                        "2)Maintenance Manager\n"
-                                        "3)Parking Manager\n"
+
+                                cout << "\n.......Welcome To Account Manager Repository.......\n\n"
+                                        "1)Add Manager\n"
+                                        "2)Remove Manager\n"
+                                        "3)Replace Manager\n"
                                         "0)Exit\n"
-                                        "Enter Your Choice :";
+                                        "Your Choice :";
                                 cin >> choice;
                                 switch (choice)
                                 {
@@ -97,12 +98,12 @@ void Menus::Menu()
                         {
                             while (ch == 0)
                             {
-                                cout << "\n..........Welcome To Removing Mananger Repository...........\n\n";
-                                cout << "1)Account Manager\n"
-                                        "2)Maintenance Manager\n"
-                                        "3)Parking Manager\n"
+                                cout << "\n.......Welcome To Maintenance Manager Repository......\n\n"
+                                        "1)Add Manager\n"
+                                        "2)Remove Manager\n"
+                                        "3)Replace Manager\n"
                                         "0)Exit\n"
-                                        "Enter Your Choice :";
+                                        "Your Choice :";
                                 cin >> choice;
                                 switch (choice)
                                 {
@@ -139,12 +140,12 @@ void Menus::Menu()
                         {
                             while (ch == 0)
                             {
-                                cout << "\n..........Welcome To Replaceing Mananger Repository...........\n\n";
-                                cout << "1)Account Manager\n"
-                                        "2)Maintenance Manager\n"
-                                        "3)Parking Manager\n"
+                                cout << "\n.......Welcome To Parking Manager Repository.......\n\n"
+                                        "1)Add Manager\n"
+                                        "2)Remove Manager\n"
+                                        "3)Replace Manager\n"
                                         "0)Exit\n"
-                                        "Enter Your Choice :";
+                                        "Your Choice :";
                                 cin >> choice;
                                 switch (choice)
                                 {

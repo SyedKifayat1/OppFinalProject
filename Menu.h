@@ -31,7 +31,7 @@ void Menus::Menu()
             while (ch == 0)
             {
                 cout << "\n.......Welcome To Head Repository.......\n\n"
-                        "1)Manage Manager\n"
+                        "1)Manage Sub-Managers\n"
                         "2)Mall Details\n"
                         "0)Exit\n"
                         "Your Choice :";
@@ -53,17 +53,128 @@ void Menus::Menu()
                         {
                         case 1:
                         {
-                            // write adding manager code here
+                            while (ch == 0)
+                            {
+                                cout << "\n..........Welcome To Adding Mananger Repository...........\n\n";
+                                cout << "1)Account Manager\n"
+                                        "2)Maintenance Manager\n"
+                                        "3)Parking Manager\n"
+                                        "0)Exit\n"
+                                        "Enter Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+                                    //write a code for adding Account manager
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    // write a code for adding Maintenance manager
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    // write a code for adding Parking manager
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch=0;
                             break;
                         }
                         case 2:
                         {
-                            // write remove manager code here
+                            while (ch == 0)
+                            {
+                                cout << "\n..........Welcome To Removing Mananger Repository...........\n\n";
+                                cout << "1)Account Manager\n"
+                                        "2)Maintenance Manager\n"
+                                        "3)Parking Manager\n"
+                                        "0)Exit\n"
+                                        "Enter Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+                                    //write a code for Removing Account manager
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    // write a code for Removing Maintenance manager
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    // write a code for Removing Parking manager
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch=0;
                             break;
                         }
                         case 3:
                         {
-                            // write replace manager code here
+                            while (ch == 0)
+                            {
+                                cout << "\n..........Welcome To Replaceing Mananger Repository...........\n\n";
+                                cout << "1)Account Manager\n"
+                                        "2)Maintenance Manager\n"
+                                        "3)Parking Manager\n"
+                                        "0)Exit\n"
+                                        "Enter Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+                                    //write a code for Replaceing Account manager
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    // write a code for Replaceing Maintenance manager
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    // write a code for Replaceing Parking manager
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch=0;
                             break;
                         }
                         case 0:

@@ -46,6 +46,7 @@ void Menus::Menu()
                         cout << "1)Account Manager\n"
                                 "2)Maintenance Manager\n"
                                 "3)Parking Manager\n"
+                                "4)Shops Manager\n"
                                 "0)Exit\n"
                                 "Enter Your Choice :";
                         cin >> choice;
@@ -72,12 +73,12 @@ void Menus::Menu()
                                 }
                                 case 2:
                                 {
-                                    // write a code for adding Maintenance manager
+                                    // write a code for Removing account manager
                                     break;
                                 }
                                 case 3:
                                 {
-                                    // write a code for adding Parking manager
+                                    // write a code for replace account manager
                                     break;
                                 }
                                 case 0:
@@ -109,7 +110,7 @@ void Menus::Menu()
                                 {
                                 case 1:
                                 {
-                                    // write a code for Removing Account manager
+                                    // write a code for adding Maintenance manager
                                     break;
                                 }
                                 case 2:
@@ -119,7 +120,7 @@ void Menus::Menu()
                                 }
                                 case 3:
                                 {
-                                    // write a code for Removing Parking manager
+                                    // write a code for replace Maintenance manager
                                     break;
                                 }
                                 case 0:
@@ -151,17 +152,60 @@ void Menus::Menu()
                                 {
                                 case 1:
                                 {
-                                    // write a code for Replaceing Account manager
+                                    // write a code for add Parking  manager
                                     break;
                                 }
                                 case 2:
                                 {
-                                    // write a code for Replaceing Maintenance manager
+                                    // write a code for remove Parking  manager
                                     break;
                                 }
                                 case 3:
                                 {
                                     // write a code for Replaceing Parking manager
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch = 0;
+                            break;
+                        }
+                        case 4:
+                        {
+                            while (ch == 0)
+                            {
+
+                                cout << "\n.......Welcome To Shop Manager Repository.......\n\n"
+                                        "1)Add Manager\n"
+                                        "2)Remove Manager\n"
+                                        "3)Replace Manager\n"
+                                        "0)Exit\n"
+                                        "Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+                                    // write a code for adding  shop manager
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    // write a code for remove shop manager
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    // write a code for replace shop manager
                                     break;
                                 }
                                 case 0:

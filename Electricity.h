@@ -12,33 +12,33 @@ protected:
     bool is_working;
 
 public:
-    void check_equipment()
+    void checkEquipment()
     {
         cout << "CHECKING CURRENT STATE OF EQUIPMENT\n";
     }
 
-    void fix_equipment()
+    void fixEquipment()
     {
     }
 
-    void set_voltage(int voltage)
+    void setVoltage(int voltage)
     {
         this->voltage = voltage;
     }
 
-    void circuit_breaker(bool circuit_breaker)
+    void setCircuitBreaker(bool circuit)
     {
-        this->circuit_breaker = circuit_breaker;
+        this->circuit_breaker = circuit;
     }
 
-    void set_current(float current)
+    void setCurrent(float current)
     {
         this->current = current;
     }
 
-    bool is_working(bool is_working)
+    void setIsWorking(bool isWorking)
     {
-        this->is_working = is_working;
+        this->is_working = isWorking;
     }
 
     int getvoltage()
@@ -56,7 +56,7 @@ public:
         return current;
     }
 
-    bool is_working()
+    bool getIsWorking()
     {
         return is_working;
     }

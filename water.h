@@ -1,6 +1,7 @@
 #ifndef __WATER__H__
 #define __WATER__H__
 #include <iostream>
+#include<string>
 using namespace std;
 class water
 {
@@ -33,15 +34,15 @@ public:
     {
         return water_usage;
     }
-    bool water_supply() // return water supply
+    bool getWater_supply() // return water supply
     {
-        return water_supply;
+        return water_Supply;
     }
-    string water_quality() // return water quality
+    string getWater_quality() // return water quality
     {
         return water_quality;
     }
-    float water_pressure() // return water pressure
+    float getWater_pressure() // return water pressure
     {
         return water_pressure;
     }

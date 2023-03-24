@@ -537,6 +537,44 @@ void Menus::Menu()
                         }
                         case 3:
                         {
+                            while (ch == 0)
+                            {
+                                cout << "\n.......Welcome To Account Employee Repository.......\n\n"
+                                        "1)Add Employee\n"
+                                        "2)Remove Employee\n"
+                                        "3)Replace Employee\n"
+                                        "0)Exit\n"
+                                        "Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+
+                                    break;
+                                }
+                                case 2:
+                                {
+
+                                    break;
+                                }
+                                case 3:
+                                {
+
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch = 0;
                             break;
                         }
                         case 0:
@@ -550,7 +588,6 @@ void Menus::Menu()
                             break;
                         }
                         }
-                        
                     }
                     ch = 0;
                     break;
@@ -578,6 +615,44 @@ void Menus::Menu()
                         }
                         case 3:
                         {
+                            while (ch == 0)
+                            {
+                                cout << "\n.......Welcome To Maintenance Employee Repository.......\n\n"
+                                        "1)Add Employee\n"
+                                        "2)Remove Employee\n"
+                                        "3)Replace Employee\n"
+                                        "0)Exit\n"
+                                        "Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+
+                                    break;
+                                }
+                                case 2:
+                                {
+
+                                    break;
+                                }
+                                case 3:
+                                {
+
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch = 0;
                             break;
                         }
                         case 0:
@@ -591,7 +666,6 @@ void Menus::Menu()
                             break;
                         }
                         }
-                        
                     }
                     ch = 0;
                     break;
@@ -619,6 +693,44 @@ void Menus::Menu()
                         }
                         case 3:
                         {
+                            while (ch == 0)
+                            {
+                                cout << "\n.......Welcome To Parking Employee Repository.......\n\n"
+                                        "1)Add Employee\n"
+                                        "2)Remove Employee\n"
+                                        "3)Replace Employee\n"
+                                        "0)Exit\n"
+                                        "Your Choice :";
+                                cin >> choice;
+                                switch (choice)
+                                {
+                                case 1:
+                                {
+
+                                    break;
+                                }
+                                case 2:
+                                {
+
+                                    break;
+                                }
+                                case 3:
+                                {
+
+                                    break;
+                                }
+                                case 0:
+                                {
+                                    ch = 1;
+                                }
+                                default:
+                                {
+                                    cout << "\nInvalid Choice!\n";
+                                    break;
+                                }
+                                }
+                            }
+                            ch = 0;
                             break;
                         }
                         case 0:
@@ -632,7 +744,6 @@ void Menus::Menu()
                             break;
                         }
                         }
-                        
                     }
                     ch = 0;
                     break;

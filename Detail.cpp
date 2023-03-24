@@ -2,19 +2,9 @@
 #include "Detail.h"
 using namespace std;
 
-// Detail::Detail()
-// {
-//     fname = "null";
-//     lname = "null";
-//     EmailADdress = "null";
-//     Status = "null";
-//     gender = "null";
-//     PhoneNum = 0;
-//     salary = 0;
-//     hiringDate = 0;
-//
+
 istream &operator>>(istream &in, Detail &x)
-{ // non-membber function for entering data
+{ 
     cout << "\nENTER USE ID: ";
     in >> x.user_id;
     cout << "\nENTER YOUR FIRST NAME  :";

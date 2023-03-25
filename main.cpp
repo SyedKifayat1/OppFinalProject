@@ -11,8 +11,5 @@ int main()
     
     Menus body;
     body.Menu();
-    
-    Detail p;
-
     return 0;
 }

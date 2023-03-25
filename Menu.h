@@ -47,7 +47,7 @@ public:
     void AccountEmployees();
     void SubManagersReports();
 };
- //................,,,,,,,,,,,,,,,......... //write a code for check maintenance data,    576,,,,,,,,,,,,..................
+ 
 void Menus::Menu()
 {
 

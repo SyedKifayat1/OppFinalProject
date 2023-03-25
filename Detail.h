@@ -73,6 +73,7 @@ public:
                     printlines = true;
                     cout << storing << endl;
                     for (int i = 0; i < 7; i++)
+       
                     {
                         if (getline(infile, storing))
                         {

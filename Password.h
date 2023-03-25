@@ -4,5 +4,6 @@ class Password
 {
     private:
     string UserName;
+
     string password;
 };

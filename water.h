@@ -17,6 +17,7 @@ public:
         this->water_usage = water_usage;
     }
 
+
     void setWaterSupply(bool water_supply) // checking water supply
     {
         this->water_Supply = water_supply;

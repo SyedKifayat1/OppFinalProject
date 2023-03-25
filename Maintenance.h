@@ -4,7 +4,9 @@
 using namespace std;
 class Maintaineance
 {
+
 public:
+   
    
     virtual void calculate_employee_salary() = 0;
     virtual void display_employee_salary() = 0;

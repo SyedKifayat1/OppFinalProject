@@ -12,3 +12,4 @@ run: clean compRun; ./r.out; rm -f *.out
 
 clean:
 	rm -f *.out
+

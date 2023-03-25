@@ -37,6 +37,7 @@ istream &operator>>(istream &in, Detail &x)
     in >> x.hiringDate;
     return in;
 }
+
 ostream &operator<<(ostream &out, const Detail &y)
 { // non-member function for displaying
     out << "FIRST NAME :" << y.fname << endl;

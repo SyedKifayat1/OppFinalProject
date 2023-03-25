@@ -41,6 +41,7 @@ public:
         this->is_working = isWorking;
     }
 
+
     int getvoltage()
     {
         return voltage;

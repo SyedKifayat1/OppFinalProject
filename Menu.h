@@ -47,7 +47,7 @@ public:
     void AccountEmployees();
     void SubManagersReports();
 };
- 
+
 void Menus::Menu()
 {
 
@@ -573,7 +573,7 @@ void Menus::MaintenanceManager()
 }
 void Menus::CheckMaintenanceData()
 {
-       //write a code for check maintenance data
+    // write a code for check maintenance data
 }
 void Menus::MaintenanceEmployee()
 {
@@ -647,7 +647,7 @@ void Menus::SecurityManager()
         case 3:
         {
             SecurityEmployees();
-            
+
             break;
         }
 
@@ -667,51 +667,51 @@ void Menus::SecurityManager()
 }
 void Menus::SecurityEmployees()
 {
-while (ch == 0)
-            {
-                cout << "\n.......Welcome To Security Employee Repository.......\n\n"
-                        "1)Add Employee\n"
-                        "2)Remove Employee\n"
-                        "3)Replace Employee\n"
-                        "4)Total Employee Details\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for adding employee
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for removing employee
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for replacing employee
-                    break;
-                }
-                case 4:
-                {
-                    // write a code for total employee details
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+    while (ch == 0)
+    {
+        cout << "\n.......Welcome To Security Employee Repository.......\n\n"
+                "1)Add Employee\n"
+                "2)Remove Employee\n"
+                "3)Replace Employee\n"
+                "4)Total Employee Details\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            // write a code for adding employee
+            break;
+        }
+        case 2:
+        {
+            // write a code for removing employee
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing employee
+            break;
+        }
+        case 4:
+        {
+            // write a code for total employee details
+            break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
 }
 void Menus::ParkingManager()
 {

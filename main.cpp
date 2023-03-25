@@ -8,9 +8,11 @@
 using namespace std;
 int main()
 {
-    
+
     Menus body;
-    body.Menu();
+    // body.Menu();
+    Security s;
+    s.add_personnel("murtaza", "mp4");
 
     return 0;
 }

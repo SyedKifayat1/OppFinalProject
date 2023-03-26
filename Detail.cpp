@@ -1,10 +1,9 @@
 #include <iostream>
 #include "Detail.h"
 using namespace std;
-
-
 istream &operator>>(istream &in, Detail &x)
 { 
+
     cout << "\nENTER USE ID: ";
     in >> x.user_id;
     cout << "\nENTER YOUR FIRST NAME :";

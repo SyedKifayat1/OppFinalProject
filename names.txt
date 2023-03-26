@@ -1,2 +1,0 @@
-NAME IS: khan SALARY IS: 200
-khanNAME IS: khalid SALARY IS: 2300

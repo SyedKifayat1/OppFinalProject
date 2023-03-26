@@ -1,7 +1,7 @@
 #include<iostream>
 #include"Detail.h"
 using namespace std;
-class Parking:public Detail
+class Parking:public Detail,public Report
 {
     
 };

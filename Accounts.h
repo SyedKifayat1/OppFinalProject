@@ -2,8 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include"Detail.h"
+
+class Report;
 using namespace std;
-class Accounts:public Detail
+class Accounts:public Detail,public Report
 {
    public:
     

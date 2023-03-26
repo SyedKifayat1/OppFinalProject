@@ -4,11 +4,10 @@
 #include <vector>
 using namespace std;
 #include <fstream>
-#include "Maintenance.h"
 #include "security_personnel.h"
 #include <string>
 
-class Security :public Detail
+class Security :public Detail,public Report
 {
 protected:
     int security_cameras;

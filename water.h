@@ -5,7 +5,7 @@
 #include"Detail.h"
 using namespace std;
 
-class water:public Detail
+class water:public Detail,public Report
 {
 private:
     int water_usage;

@@ -8,8 +8,15 @@
 using namespace std;
 int main()
 {
-    
+
     Menus body;
-    body.Menu();
+    // body.Menu();
+    Detail D;
+    // cin >> D;
+    // D.input_Date("Detail");
+    // D.Display_Data();
+    // D.Remove_Employee();
+    D.Replace_employ();
+
     return 0;
 }

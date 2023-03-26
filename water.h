@@ -1,7 +1,7 @@
 #ifndef __WATER__H__
 #define __WATER__H__
 #include <iostream>
-#include<string>
+#include <string>
 using namespace std;
 class water
 {
@@ -46,10 +46,6 @@ public:
     float getWater_pressure() // return water pressure
     {
         return water_pressure;
-    }
-
-    ~water()
-    {
     }
 };
 #endif //!__WATER__H__

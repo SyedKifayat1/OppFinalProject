@@ -13,16 +13,18 @@ public:
 
     Detail() {}
 
-    void input_Date()
+    void input_Date(string in)
     {
-        ofstream outfile("Detail.txt", ios::app);
+        ofstream outfile(in + ".txt", ios::app);
         if (!outfile.is_open())
         {
             cout << "ERROR FAILED TO OPEN FILE FOR WRITE";
         }
         else
         {
-
+            outfile << endl;
+            outfile << "EMPLOYEE ID IS : ";
+            outfile << user_id;
             outfile << endl;
             outfile << "NAME IS: "; // name for emply entering to file
             outfile << fname;       // first name of employ
@@ -51,12 +53,12 @@ public:
             outfile << endl;
         }
     }
-    void Display_Data() // display particular employee details
+    void Display_Data(string file) // display particular employee details
     {
-        string name; // name of employee variable
-        cout << "ENTER NAME OF EMPLOYEE: ";
-        cin >> name;
-        ifstream infile("Detail.txt");
+        string ID; // name of employee variable
+        cout << "ENTER ID OF EMPLOYEE: ";
+        cin >> ID;
+        ifstream infile(file + ".txt");
         if (!infile.is_open())
         {
             cout << "FAILED TO OPEN THE FILE!" << endl;
@@ -68,12 +70,12 @@ public:
             int linestoprint = 3;
             while (getline(infile, storing))
             {
-                if (storing.find(name) != string::npos)
+                if (storing.find(ID) != string::npos)
                 {
                     printlines = true;
                     cout << storing << endl;
-                    for (int i = 0; i < 7; i++)
-       
+                    for (int i = 0; i < 8; i++)
+
                     {
                         if (getline(infile, storing))
                         {
@@ -83,6 +85,79 @@ public:
                 }
             }
         }
+    }
+
+    void Remove_Employee()
+    {
+        string ID; // name of employee variable
+        cout << "ENTER ID OF EMPLOYEE: ";
+        cin >> ID;
+        ifstream infile("Detail.txt");
+        ofstream outfile("temporary.txt");
+        if (!infile.is_open())
+        {
+            cout << "FAILED TO OPEN THE FILE!" << endl;
+        }
+        else
+        {
+            string storing; // storing data in this string
+            bool printlines = false;
+            int linestoprint = 3;
+            while (getline(infile, storing))
+            {
+                if (storing.find(ID) != string::npos)
+                {
+                    cout << "founded\n";
+                }
+                else
+                {
+                    outfile << storing;
+                    outfile << endl;
+                }
+            }
+        }
+        infile.close();
+        outfile.close();
+        remove("Detail.txt");
+        rename("temporary.txt", "Detail.txt");
+    }
+
+    void Replace_employ()
+    {
+        Detail d;
+        string ID; // name of employee variable
+        cout << "ENTER ID OF EMPLOYEE: ";
+        cin >> ID;
+        ifstream infile("Detail.txt");
+        ofstream outfile("temporary.txt");
+        if (!infile.is_open())
+        {
+            cout << "FAILED TO OPEN THE FILE!" << endl;
+        }
+        else
+        {
+            string storing; // storing data in this string
+            bool printlines = false;
+            int linestoprint = 3;
+            while (getline(infile, storing))
+            {
+                if (storing.find(ID) != string::npos)
+                {
+
+                    cout << "founded\n";
+                    cin >> d;
+                }
+                else
+                {
+                    outfile << storing;
+                    outfile << endl;
+                }
+            }
+        }
+        infile.close();
+        outfile.close();
+        remove("Detail.txt");
+        rename("temporary.txt", "Detail.txt");
     }
 
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype

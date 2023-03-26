@@ -11,6 +11,7 @@ protected:
     float current;
     bool is_working;
 
+
 public:
     void checkEquipment()
     {
@@ -42,20 +43,6 @@ public:
     }
 
 
-    int getvoltage()
-    {
-        return voltage;
-    }
-
-    bool getcircuit_breaker()
-    {
-        return circuit_breaker;
-    }
-
-    float getCurrent()
-    {
-        return current;
-    }
 
     bool getIsWorking()
     {

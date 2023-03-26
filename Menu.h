@@ -2028,17 +2028,22 @@ void Menus::CalculateDepartmentsBudget()
         case 1:
         {
 
-            MaintenanceBudget();
+            //write a code for budget
             break;
         }
         case 2:
         {
-            WaterBudget();
+            //write a code for budget
             break;
         }
         case 3:
         {
-            SecurityBudget();
+           //write a code for budget
+            break;
+        }
+        case 4:
+        {
+            ////write a code for budget total sum
             break;
         }
         case 0:

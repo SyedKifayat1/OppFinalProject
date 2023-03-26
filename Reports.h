@@ -30,7 +30,6 @@ public:
         cout << "WRITE A NEW REPORT\n";
         getline(cin, new_content);
         outfile << new_content;
-
         cout << "REPORT SUCCESSFULLY UPDATED\n";
     }
 };

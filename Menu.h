@@ -1623,7 +1623,6 @@ void Menus::EmployeeDetails()
                 cout << "\n.......Welcome To Accounts Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
-                        "3)Getting Data With Department Name\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -1639,11 +1638,7 @@ void Menus::EmployeeDetails()
                     // write a code for getting data as a whole
                     break;
                 }
-                case 3:
-                {
-                    // write a code for getting data with Department name
-                    break;
-                }
+                
                 case 0:
                 {
                     ch = 1;
@@ -1667,7 +1662,6 @@ void Menus::EmployeeDetails()
                 cout << "\n.......Welcome To Shop Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
-                        "3)Getting Data With Department Name\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -1683,11 +1677,7 @@ void Menus::EmployeeDetails()
                     // write a code for getting data as a whole
                     break;
                 }
-                case 3:
-                {
-                    // write a code for getting data with Department name
-                    break;
-                }
+               
                 case 0:
                 {
                     ch = 1;
@@ -1710,7 +1700,6 @@ void Menus::EmployeeDetails()
                 cout << "\n.......Welcome To Maintenance Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
-                        "3)Getting Data With Department Name\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -1724,11 +1713,6 @@ void Menus::EmployeeDetails()
                 case 2:
                 {
                     // write a code for getting data as a whole
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for getting data with Department name
                     break;
                 }
                 case 0:
@@ -1753,7 +1737,6 @@ void Menus::EmployeeDetails()
                 cout << "\n.......Welcome To Parking Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
-                        "3)Getting Data With Department Name\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -1769,11 +1752,7 @@ void Menus::EmployeeDetails()
                     // write a code for getting data as a whole
                     break;
                 }
-                case 3:
-                {
-                    // write a code for getting data with Department name
-                    break;
-                }
+
                 case 0:
                 {
                     ch = 1;
@@ -1796,7 +1775,6 @@ void Menus::EmployeeDetails()
                 cout << "\n.......Welcome To Water Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
-                        "3)Getting Data With Department Name\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -1812,11 +1790,7 @@ void Menus::EmployeeDetails()
                     // write a code for getting data as a whole
                     break;
                 }
-                case 3:
-                {
-                    // write a code for getting data with Department name
-                    break;
-                }
+                
                 case 0:
                 {
                     ch = 1;
@@ -1839,7 +1813,6 @@ void Menus::EmployeeDetails()
                 cout << "\n.......Welcome To Security Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
-                        "3)Getting Data With Department Name\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -1855,11 +1828,7 @@ void Menus::EmployeeDetails()
                     // write a code for getting data as a whole
                     break;
                 }
-                case 3:
-                {
-                    // write a code for getting data with Department name
-                    break;
-                }
+               
                 case 0:
                 {
                     ch = 1;

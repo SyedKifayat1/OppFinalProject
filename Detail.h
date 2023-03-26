@@ -122,6 +122,44 @@ public:
         rename("temporary.txt", "Detail.txt");
     }
 
+    void Replace_employ()
+    {
+        Detail d;
+        string ID; // name of employee variable
+        cout << "ENTER ID OF EMPLOYEE: ";
+        cin >> ID;
+        ifstream infile("Detail.txt");
+        ofstream outfile("temporary.txt");
+        if (!infile.is_open())
+        {
+            cout << "FAILED TO OPEN THE FILE!" << endl;
+        }
+        else
+        {
+            string storing; // storing data in this string
+            bool printlines = false;
+            int linestoprint = 3;
+            while (getline(infile, storing))
+            {
+                if (storing.find(ID) != string::npos)
+                {
+
+                    cout << "founded\n";
+                    cin >> d;
+                }
+                else
+                {
+                    outfile << storing;
+                    outfile << endl;
+                }
+            }
+        }
+        infile.close();
+        outfile.close();
+        remove("Detail.txt");
+        rename("temporary.txt", "Detail.txt");
+    }
+
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype
     friend ostream &operator<<(ostream &out, const Detail &y); // friend function prototype
 };

@@ -15,7 +15,8 @@ int main()
     // cin >> D;
     // D.input_Date("Detail");
     // D.Display_Data();
-    D.Remove_Employee();
+    // D.Remove_Employee();
+    D.Replace_employ();
 
     return 0;
 }

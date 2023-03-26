@@ -125,6 +125,9 @@ public:
     void Replace_employ()
     {
         Detail d;
+        string temporary;
+        temporary = "temporary";
+
         string ID; // name of employee variable
         cout << "ENTER ID OF EMPLOYEE: ";
         cin >> ID;
@@ -145,7 +148,8 @@ public:
                 {
 
                     cout << "founded\n";
-                    cin >> d;
+                    // cin >> d;
+                    // d.input_Date(temporary);
                 }
                 else
                 {
@@ -157,6 +161,8 @@ public:
         infile.close();
         outfile.close();
         remove("Detail.txt");
+        cin >> d;
+        d.input_Date(temporary);
         rename("temporary.txt", "Detail.txt");
     }
 

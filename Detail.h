@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <filesystem>
 using namespace std;
 class Detail
 {
@@ -15,7 +16,7 @@ public:
 
     void input_Date(string fileName)
     {
-        ofstream outfile(fileName+".txt", ios::app);
+        ofstream outfile(fileName + ".txt", ios::app);
         if (!outfile.is_open())
         {
             cout << "ERROR FAILED TO OPEN FILE FOR WRITE";
@@ -58,7 +59,7 @@ public:
         string ID; // name of employee variable
         cout << "ENTER NAME OF EMPLOYEE: ";
         cin >> ID;
-        ifstream infile(fileName+".txt");
+        ifstream infile(fileName + ".txt");
         if (!infile.is_open())
         {
             cout << "FAILED TO OPEN THE FILE!" << endl;
@@ -87,48 +88,78 @@ public:
         }
     }
 
-    void Remove_Employee()
+#include <filesystem>
+
+    void Remove_Employee(string fileName)
     {
         string ID; // name of employee variable
         cout << "ENTER ID OF EMPLOYEE: ";
         cin >> ID;
-        ifstream infile("Detail.txt");
-        ofstream outfile("temporary.txt");
+
+        // Open input file for reading
+        ifstream infile(fileName + ".txt");
         if (!infile.is_open())
         {
             cout << "FAILED TO OPEN THE FILE!" << endl;
+            return;
         }
-        else
+
+        // Open output file for writing
+        ofstream outfile("temporary.txt");
+        if (!outfile.is_open())
         {
-            string storing; // storing data in this string
-            bool printlines = false;
-            int linestoprint = 3;
-            while (getline(infile, storing))
+            cout << "FAILED TO CREATE TEMPORARY FILE!" << endl;
+            infile.close();
+            return;
+        }
+
+        // Copy data from input file to output file
+        string storing;
+        while (getline(infile, storing))
+        {
+            if (storing.find(ID) == string::npos)
             {
-                if (storing.find(ID) != string::npos)
-                {
-                    cout << "founded\n";
-                }
-                else
-                {
-                    outfile << storing;
-                    outfile << endl;
-                }
+                outfile << storing << endl;
+            }
+            else
+            {
+                cout << "Employee found and removed.\n";
             }
         }
+
+        // Close files
         infile.close();
         outfile.close();
-        remove("Detail.txt");
-        rename("temporary.txt", "Detail.txt");
+        int k=0;
+        // Delete original file
+        if (filesystem::remove(fileName + ".txt"))
+        {
+            k=1;
+            cout << "Failed to remove the original file.\n";
+            return;
+        }
+
+        // Rename temporary file to original name
+         std::filesystem::rename("temporary.txt", fileName + ".txt");
+         if(k==0)
+         {
+            cout<<"\nFile Is Removed Successfully.......\n";
+         }
+         else
+         {
+            cout<<"\nSorry your File is not Removed\n";
+
+         }
+        
     }
 
-    void Replace_employ(string fileName)
+    /**/ void Replace_employ(string fileName)
     {
         Detail d;
         string ID; // name of employee variable
         cout << "ENTER ID OF EMPLOYEE: ";
         cin >> ID;
-        ifstream infile(fileName+".txt");
+        ifstream infile(fileName + ".txt");
         ofstream outfile("temporary.txt");
         if (!infile.is_open())
         {
@@ -156,8 +187,19 @@ public:
         }
         infile.close();
         outfile.close();
-        remove(fileName+".txt");
-        rename("temporary.txt", fileName+".txt");
+        if (std::filesystem::remove(fileName + ".txt"))
+        {
+            cout << "Failed to remove the original file.\n";
+            return;
+        }
+
+        // Rename temporary file to original name
+        std::filesystem::rename("temporary.txt", fileName + ".txt");
+
+        // cout << "Failed to rename the temporary file.\n";
+        // return;
+
+       // cout << "Operation completed successfully.\n";
     }
 
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype

@@ -1259,7 +1259,7 @@ void Menus::ControlAccountManager()
         }
         case 3:
         {
-            // write a code for replace account manager
+            obj.AccountManager.Replace_employ("Manager");
             break;
         }
         case 4:

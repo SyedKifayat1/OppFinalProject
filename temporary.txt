@@ -1,0 +1,9 @@
+
+NAME IS: kifayatkhan
+EMAIL ADDRESS IS: kifayatkhanofficial
+JOB TITLE: Mnager
+STATUS: AccountManager
+GENDER: male
+PHONENUM IS: 23454
+SALARY IS: 34566
+HIRING DATE IS: 3424

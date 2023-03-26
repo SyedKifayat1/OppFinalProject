@@ -13,9 +13,9 @@ public:
 
     Detail() {}
 
-    void input_Date(string in)
+    void input_Date(string fileName)
     {
-        ofstream outfile(in + ".txt", ios::app);
+        ofstream outfile(fileName+".txt", ios::app);
         if (!outfile.is_open())
         {
             cout << "ERROR FAILED TO OPEN FILE FOR WRITE";
@@ -53,12 +53,12 @@ public:
             outfile << endl;
         }
     }
-    void Display_Data(string file) // display particular employee details
+    void Display_Data(string fileName) // display particular employee details
     {
         string ID; // name of employee variable
-        cout << "ENTER ID OF EMPLOYEE: ";
+        cout << "ENTER NAME OF EMPLOYEE: ";
         cin >> ID;
-        ifstream infile(file + ".txt");
+        ifstream infile(fileName+".txt");
         if (!infile.is_open())
         {
             cout << "FAILED TO OPEN THE FILE!" << endl;

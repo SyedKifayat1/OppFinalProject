@@ -7,8 +7,12 @@ class Maintaineance
 {
 
 public:
-    // virtual void calculate_employee_salary() = 0;
-    // virtual void display_employee_salary() = 0;
-    // virtual void perfor_maintaineance() = 0;
+   int k;
+   Maintaineance()
+   {
+        k=0;
+   }
+    
+    
 };
 #endif //!__MAINTENANCE__H__

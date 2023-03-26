@@ -4,7 +4,26 @@
 using namespace std;
 class Accounts
 {
+   public:
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     void calculate_employee_salary()
     {
         // string newline;

@@ -1,8 +1,9 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include"Detail.h"
 using namespace std;
-class Accounts
+class Accounts:public Detail
 {
    public:
     

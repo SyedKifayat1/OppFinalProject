@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "Manager.h"
 using namespace std;
 class Menus
 {
@@ -10,6 +10,7 @@ public:
     {
         ch = 0;
     }
+    Manager obj;
     void Menu();
     void HeadMenu();
     void SubManagerMenu();
@@ -60,7 +61,7 @@ public:
 
 void Menus::Menu()
 {
-
+    
     while (ch == 0)
     {
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
@@ -112,6 +113,7 @@ void Menus::HeadMenu()
         {
         case 1:
         {
+            
             ManageSubManager();
             break;
         }
@@ -1246,12 +1248,13 @@ void Menus::ControlAccountManager()
         {
         case 1:
         {
-            // write a code for adding Account manager
+            cin>>obj.AccountManager;
+            obj.AccountManager.input_Date("Manager");
             break;
         }
         case 2:
         {
-            // write a code for Removing account manager
+            obj.AccountManager.Remove_Employee("Manager");
             break;
         }
         case 3:
@@ -1261,7 +1264,7 @@ void Menus::ControlAccountManager()
         }
         case 4:
         {
-            // write a code for showing details
+            obj.AccountManager.Display_Data("Manager");
             break;
         }
         case 5:

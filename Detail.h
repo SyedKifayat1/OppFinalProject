@@ -122,13 +122,13 @@ public:
         rename("temporary.txt", "Detail.txt");
     }
 
-    void Replace_employ()
+    void Replace_employ(string fileName)
     {
         Detail d;
         string ID; // name of employee variable
         cout << "ENTER ID OF EMPLOYEE: ";
         cin >> ID;
-        ifstream infile("Detail.txt");
+        ifstream infile(fileName+".txt");
         ofstream outfile("temporary.txt");
         if (!infile.is_open())
         {
@@ -156,8 +156,8 @@ public:
         }
         infile.close();
         outfile.close();
-        remove("Detail.txt");
-        rename("temporary.txt", "Detail.txt");
+        remove(fileName+".txt");
+        rename("temporary.txt", fileName+".txt");
     }
 
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype

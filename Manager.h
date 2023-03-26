@@ -9,6 +9,7 @@
 using namespace std;
 class Manager
 {
+    public:
     int i;
     Manager()
     {

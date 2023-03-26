@@ -16,10 +16,12 @@ public:
     void MallDetails();
     void AccountManager();
     void MaintenanceManager();
+    void AddMaintenanceData();
     void ParkingManager();
     void ShopsManager();
     void WaterManager();
     void SecurityManager();
+    void AddSecurityData();
     void ControlAccountManager();
     void ControlMaintenanceManager();
     void ControlParkingManager();
@@ -31,10 +33,11 @@ public:
     void ShopDetails();
     void AccountDetails();
     void ParkingDetails();
+    void SecurityDetails();
     void ParkingIncome();
     void ShopsRent();
+    void ShopEmployee();
     void MaintenanceDetails();
-    void CheckMaintenanceData();
     void MaintenanceEmployee();
     void WaterDetails();
     void IssuingEmployeePayments();
@@ -46,6 +49,12 @@ public:
     void AddAccountsData();
     void AccountEmployees();
     void SubManagersReports();
+    void MaintenanceManagerReport();
+    void SecurityManagerReport();
+    void WaterManagerReport();
+    void ParkingManagerReport();
+    void ShopManagerReport();
+    void AccountManagerReport();
 };
 
 void Menus::Menu()
@@ -110,6 +119,7 @@ void Menus::HeadMenu()
             MallDetails();
             break;
         }
+
         case 0:
         {
             ch = 1;
@@ -257,6 +267,7 @@ void Menus::MallDetails()
                 "4)Parking Details\n"
                 "5)Maintenance Details\n"
                 "6)Water Details\n"
+                "7)Security Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -292,6 +303,11 @@ void Menus::MallDetails()
             WaterDetails();
             break;
         }
+        case 7:
+        {
+            SecurityDetails();
+            break;
+        }
         case 0:
         {
             ch = 1;
@@ -315,6 +331,7 @@ void Menus::AccountManager()
                 "2)Add Accounts Data\n"
                 "3)Account Employees\n"
                 "4)Sub-Managers Reports\n"
+                "5)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -338,6 +355,11 @@ void Menus::AccountManager()
         case 4:
         {
             SubManagersReports();
+            break;
+        }
+        case 5:
+        {
+            AccountManagerReport();
             break;
         }
         case 0:
@@ -529,10 +551,11 @@ void Menus::MaintenanceManager()
     while (ch == 0)
     {
         cout << "\n..........Welcome To Maintenance Manager Repository..........\n\n";
-        cout << "1)Check Maintenance Data\n"
+        cout << "1)Maintenance Data\n"
                 "2)Add Maintenance Data\n"
                 "3)Maintenance Employees\n"
                 "4)Budget\n"
+                "5)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -540,11 +563,12 @@ void Menus::MaintenanceManager()
         {
         case 1:
         {
-            CheckMaintenanceData();
+            MaintenanceDetails();
             break;
         }
         case 2:
         {
+            AddMaintenanceData();
             break;
         }
         case 3:
@@ -556,6 +580,10 @@ void Menus::MaintenanceManager()
         {
             MaintenanceBudget();
             break;
+        }
+        case 5:
+        {
+            MaintenanceManagerReport();
         }
         case 0:
         {
@@ -571,9 +599,41 @@ void Menus::MaintenanceManager()
     }
     ch = 0;
 }
-void Menus::CheckMaintenanceData()
+
+void Menus::AddMaintenanceData() // write a code for this repository just reminder for you kifayat Don't for get this
 {
-    // write a code for check maintenance data
+    while (ch == 0)
+    {
+        cout << "\n.......Welcome To Add Maintenance Data Repository.......\n\n"
+                "Enter Details :\n"
+                "1)Electricity Resources\n"
+                "2)Building Repears\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
 }
 void Menus::MaintenanceEmployee()
 {
@@ -627,30 +687,104 @@ void Menus::SecurityManager()
 {
     while (ch == 0)
     {
-        cout << "\n..........Welcome To Security Manager Repository..........\n\n";
-        cout << "1)Check Security Data\n"
-                "2)Add Security Data\n"
-                "3)Security Employees\n"
+        cout << "\n.......Welcome To Security Manager Repository.......\n\n"
+                "Enter Details:\n"
+                "1)Security Guards\n"
+                "2)Security Cameras\n"
+                "3)Emergency Escap Room Location\n"
+                "4)Control Room Location\n"
+                "5)Security Weapons\n"
+                "6)Report\n"
                 "0)Exit\n"
-                "Enter Your Choice :";
+                "Your Choice :";
         cin >> choice;
         switch (choice)
         {
         case 1:
         {
+            // write a code of details of security guards
             break;
         }
         case 2:
         {
+            // write a code of details of security cameras
             break;
         }
         case 3:
         {
-            SecurityEmployees();
-
+            // write a code for emergency escap room location
             break;
         }
+        case 4:
+        {
+            // write a code for control room location
+            break;
+        }
+        case 5:
+        {
+            // write a code for the details of security weapons
+            break;
+        }
+        case 6:
+        {
+            SecurityManagerReport();
+            break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::AddSecurityData()
+{
 
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Security Manager Repository..........\n\n";
+        cout << "1)Add Details Of Security Guards"
+                "2)Add Details Of Security Cameras"
+                "3)Add Details Of Emergency Escap Room Location"
+                "4)Add Details Of Control Room Location"
+                "5)Add Details Of Security Weapons"
+                "0)Exit"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            // write a code for adding details of security guards
+            break;
+        }
+        case 2:
+        {
+            // write a code for adding details of security cameras
+            break;
+        }
+        case 3:
+        {
+            // write a code for adding the escap room location
+            break;
+        }
+        case 4:
+        {
+            // write a code for adding details of control room location
+            break;
+        }
+        case 5:
+        {
+            // write a code for adding Details Of Security Weapons
+            break;
+        }
         case 0:
         {
             ch = 1;
@@ -721,7 +855,8 @@ void Menus::ParkingManager()
         cout << "1)Check Parking Data\n"
                 "2)Add Parking Data\n"
                 "3)Parking Employees\n"
-
+                "4)Report\n"
+                // hopefully here will be one more option for the report of the parking manager
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -734,6 +869,47 @@ void Menus::ParkingManager()
         }
         case 2:
         {
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Add Parking Data Repository.......\n\n"
+                        "1)Vehicle Entry \n"
+                        "2)Vehicle Disentry\n"
+                        "3)Enter Available Parking Space\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // write a code for car entry
+
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for car disentry
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for available space
+                    break;
+                }
+
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 3:
@@ -785,7 +961,11 @@ void Menus::ParkingManager()
             ch = 0;
             break;
         }
-
+        case 4:
+        {
+            ParkingManagerReport();
+            break;
+        }
         case 0:
         {
             ch = 1;
@@ -806,8 +986,12 @@ void Menus::ShopsManager()
     {
         cout << "\n..........Welcome To Shop Manager Repository..........\n\n";
         cout << "1)Check Shops Data\n"
-                "2)Add Shops Data\n"
-                "3)Shops Employees\n"
+                "2)Check Honour Data\n"
+                "3)Add Shops Data\n"
+                "4)Add Shop Honour\n"
+                "5)Repalce Shop Honour\n"
+                "6)Shops Employees\n"
+                "7)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -815,59 +999,86 @@ void Menus::ShopsManager()
         {
         case 1:
         {
+            ShopDetails();
             break;
         }
         case 2:
         {
+            // write a code for checking a shop honour
             break;
         }
         case 3:
         {
-            while (ch == 0)
-            {
-                cout << "\n.......Welcome To Shops Employee Repository.......\n\n"
-                        "1)Add Employee\n"
-                        "2)Remove Employee\n"
-                        "3)Replace Employee\n"
-                        "4)Total Employee Details\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for adding employee
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for removing employee
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for replacing employee
-                    break;
-                }
-                case 4:
-                {
-                    // write a code for total employee details
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+            // write a code for regestring shop
+            break;
+        }
+        case 4:
+        {
+            // write a code for adding a chop honour
+            break;
+        }
+        case 5:
+        {
+            // write a code for replacing shop honour
+            break;
+        }
+
+        case 6:
+        {
+            ShopEmployee();
+            break;
+        }
+        case 7:
+        {
+            ShopManagerReport();
+            break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::ShopEmployee()
+{
+    while (ch == 0)
+    {
+        cout << "\n.......Welcome To Shops Employee Repository.......\n\n"
+                "1)Add Employee\n"
+                "2)Remove Employee\n"
+                "3)Replace Employee\n"
+                "4)Total Employee Details\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            // write a code for adding employee
+            break;
+        }
+        case 2:
+        {
+            // write a code for removing employee
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing employee
+            break;
+        }
+        case 4:
+        {
+            // write a code for total employee details
             break;
         }
         case 0:
@@ -893,6 +1104,7 @@ void Menus::WaterManager()
                 "2)Add Water Details\n"
                 "3)Water Employees\n"
                 "4)Budget\n"
+                "5)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -900,10 +1112,44 @@ void Menus::WaterManager()
         {
         case 1:
         {
+            WaterDetails();
             break;
         }
         case 2:
         {
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Add Water Details Repository.......\n\n";
+                cout << "Enter the Details :\n"
+                        "1)Pluming Issues\n"
+                        "2)Water Resources\n"
+                        "3)Water Providing authority\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // write a code for writting the plumbing issues details
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for writting water resources details
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for writting water providing authority details
+                    break;
+                }
+
+                default:
+                    break;
+                }
+            }
+            ch = 0;
             break;
         }
         case 3:
@@ -956,6 +1202,11 @@ void Menus::WaterManager()
         case 4:
         {
             WaterBudget();
+            break;
+        }
+        case 5:
+        {
+            WaterManagerReport();
             break;
         }
             ch = 0;
@@ -1483,6 +1734,7 @@ void Menus::ParkingDetails()
         cout << "\n.......Welcome To Checking Parking Details Repository.......\n\n"
                 "1)Reviewing Overall Earnings \n"
                 "2)Exploring Available Parking\n"
+                "3)Vehicle Details \n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1497,6 +1749,10 @@ void Menus::ParkingDetails()
         {
             // write a code for parking cars and other details
             break;
+        }
+        case 3:
+        {
+            // write a code for vehicle details by number plate number
         }
         case 0:
         {
@@ -1518,7 +1774,8 @@ void Menus::WaterDetails()
     while (ch == 0)
     {
         cout << "\n.......Welcome To Checking Water Details Repository.......\n\n"
-                "1)Checking Pluming Issues\n"
+                "Checking Details :\n"
+                "1)Pluming Issues\n"
                 "2)Water Resources\n"
                 "3)Water Providing authority Details\n"
 
@@ -1529,16 +1786,17 @@ void Menus::WaterDetails()
         {
         case 1:
         {
-
+            // write a code here
             break;
         }
         case 2:
         {
-
+            // write a code here
             break;
         }
         case 3:
         {
+            // write a code here
             break;
         }
         case 0:
@@ -1556,13 +1814,13 @@ void Menus::WaterDetails()
     ch = 0;
 }
 void Menus::MaintenanceDetails()
-{
+{ // if any other details is required then we will write at that time
     while (ch == 0)
     {
         cout << "\n.......Welcome To Checking Maintenance Details Repository.......\n\n"
-                "1)Getting Details Of Security\n"
-                "2)Getting Details Of Water Resorces\n"
-                "3)Getting Details of Electricity Resources\n"
+                "1)Details of Electricity Resources\n"
+                "2)Details of Building Repears\n"
+                "3)Maintenance Report\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1570,67 +1828,73 @@ void Menus::MaintenanceDetails()
         {
         case 1:
         {
-            while (ch == 0)
-            {
-                cout << "\n.......Welcome To Security Details Repository.......\n\n"
-                        "1)Getting Details Of Security Guards\n"
-                        "2)Getting Details Of Security Cameras\n"
-                        "3)Getting Details Of Emergency Escap Room Location\n"
-                        "4)Getting Details Of Control Room Location\n"
-                        "5)Getting Details Of Security Weapons\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code of details of security guards
-                    break;
-                }
-                case 2:
-                {
-                    // write a code of details of security cameras
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for emergency escap room location
-                    break;
-                }
-                case 4:
-                {
-                    // write a code for control room location
-                    break;
-                }
-                case 5:
-                {
-                    // write a code for the details of security weapons
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+
+            // write a electricity class code for the head whom can only read the details
             break;
         }
         case 2:
         {
-            // making a  cases for the implementation of water class
+            // write a code for details of the building
             break;
         }
         case 3:
         {
-            // write a electricity class code for the head whom can only read the details
+            // write a code sfor the report of the maintenance
+
+            break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::SecurityDetails()
+{
+    while (ch == 0)
+    {
+        cout << "\n.......Welcome To Security Details Repository.......\n\n"
+                "1)Getting Details Of Security Guards\n"
+                "2)Getting Details Of Security Cameras\n"
+                "3)Getting Details Of Emergency Escap Room Location\n"
+                "4)Getting Details Of Control Room Location\n"
+                "5)Getting Details Of Security Weapons\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            // write a code of details of security guards
+            break;
+        }
+        case 2:
+        {
+            // write a code of details of security cameras
+            break;
+        }
+        case 3:
+        {
+            // write a code for emergency escap room location
+            break;
+        }
+        case 4:
+        {
+            // write a code for control room location
+            break;
+        }
+        case 5:
+        {
+            // write a code for the details of security weapons
             break;
         }
         case 0:
@@ -1843,6 +2107,10 @@ void Menus::MaintenanceBudget()
                 }
                 case 5:
                 {
+                    // write code for reading reports
+                }
+                case 6:
+                {
                     // write a code for approval status from accounts manager
                 }
                 case 0:
@@ -1862,6 +2130,7 @@ void Menus::MaintenanceBudget()
         }
         case 2:
         {
+            // write a code for required budget
             break;
         }
         case 0:
@@ -1948,6 +2217,7 @@ void Menus::WaterBudget()
         }
         case 2:
         {
+            // write a code for  required budget
             break;
         }
         case 0:
@@ -2034,6 +2304,7 @@ void Menus::SecurityBudget()
         }
         case 2:
         {
+            // write a code for required budget
             break;
         }
         case 0:
@@ -2258,6 +2529,336 @@ void Menus::AccountEmployees()
         {
             // write a code for total employee details
             break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::MaintenanceManagerReport()
+{
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Maintenance Manager Reports Repository.........\n\n";
+        cout << "1)Write Or Edit Report\n"
+                "2)Read Report Or Message\n"
+                "3)Replace Report\n"
+                "4)Report Approval Status\n"
+                "5)Check Response\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+            // hopfully we will write this code for both, head and accountant ,these are included in further choices
+        case 1:
+        {
+            // write a code for writing a report or message which send from the side of maintenance manager to head
+            break;
+        }
+        case 2:
+        {
+            // write a code for reading report  which has written by himself
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing the report
+            break;
+        }
+        case 4:
+        {
+            // write a code for giving approval or rejection to the report
+
+            break;
+        }
+        case 5:
+        {
+            // write a code for reading the head or account manager response
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::SecurityManagerReport()
+{
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Security Manager Reports Repository.........\n\n";
+        cout << "1)Write Or Edit Report\n"
+                "2)Read Report Or Message\n"
+                "3)Replace Report\n"
+                "4)Report Approval Status\n"
+                "5)Check Response\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+            // hopfully we will write this code for both, head and accountant ,these are included in further choices
+        case 1:
+        {
+            // write a code for writing a report or message which send from the side of maintenance manager to head
+            break;
+        }
+        case 2:
+        {
+            // write a code for reading report  which has written by himself
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing the report
+            break;
+        }
+        case 4:
+        {
+            // write a code for giving approval or rejection to the report
+
+            break;
+        }
+        case 5:
+        {
+            // write a code for reading the head or account manager response
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::WaterManagerReport()
+{
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
+        cout << "1)Write Or Edit Report\n"
+                "2)Read Report Or Message\n"
+                "3)Replace Report\n"
+                "4)Report Approval Status\n"
+                "5)Check Response\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+            // hopfully we will write this code for both, head and accountant ,these are included in further choices
+        case 1:
+        {
+            // write a code for writing a report or message which send from the side of maintenance manager to head
+            break;
+        }
+        case 2:
+        {
+            // write a code for reading report  which has written by himself
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing the report
+            break;
+        }
+        case 4:
+        {
+            // write a code for giving approval or rejection to the report
+
+            break;
+        }
+        case 5:
+        {
+            // write a code for reading the head or account manager response
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::ParkingManagerReport()
+{
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Parking Manager Reports Repository.........\n\n";
+        cout << "1)Write Or Edit Report\n"
+                "2)Read Report Or Message\n"
+                "3)Replace Report\n"
+                "4)Report Approval Status\n"
+                "5)Check Response\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+            // hopfully we will write this code for both, head and accountant ,these are included in further choices
+        case 1:
+        {
+            // write a code for writing a report or message which send from the side of maintenance manager to head
+            break;
+        }
+        case 2:
+        {
+            // write a code for reading report  which has written by himself
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing the report
+            break;
+        }
+        case 4:
+        {
+            // write a code for giving approval or rejection to the report
+
+            break;
+        }
+        case 5:
+        {
+            // write a code for reading the head or account manager response
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::ShopManagerReport()
+{
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Shop Manager Reports Repository.........\n\n";
+        cout << "1)Write Or Edit Report\n"
+                "2)Read Report Or Message\n"
+                "3)Replace Report\n"
+                "4)Report Approval Status\n"
+                "5)Check Response\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+            // hopfully we will write this code for both, head and accountant ,these are included in further choices
+        case 1:
+        {
+            // write a code for writing a report or message which send from the side of maintenance manager to head
+            break;
+        }
+        case 2:
+        {
+            // write a code for reading report  which has written by himself
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing the report
+            break;
+        }
+        case 4:
+        {
+            // write a code for giving approval or rejection to the report
+
+            break;
+        }
+        case 5:
+        {
+            // write a code for reading the head or account manager response
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+void Menus::AccountManagerReport()
+{
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Account Manager Reports Repository.........\n\n";
+        cout << "1)Write Or Edit Report\n"
+                "2)Read Report Or Message\n"
+                "3)Replace Report\n"
+                "4)Report Approval Status\n"
+                "5)Check Response\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+            // hopfully we will write this code for both, head and accountant ,these are included in further choices
+        case 1:
+        {
+            // write a code for writing a report or message which send from the side of maintenance manager to head
+            break;
+        }
+        case 2:
+        {
+            // write a code for reading report  which has written by himself
+            break;
+        }
+        case 3:
+        {
+            // write a code for replacing the report
+            break;
+        }
+        case 4:
+        {
+            // write a code for giving approval or rejection to the report
+
+            break;
+        }
+        case 5:
+        {
+            // write a code for reading the head or account manager response
         }
         case 0:
         {

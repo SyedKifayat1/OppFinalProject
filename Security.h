@@ -8,7 +8,7 @@ using namespace std;
 #include "security_personnel.h"
 #include <string>
 
-class Security : public Maintaineance
+class Security :public Detail
 {
 protected:
     int security_cameras;

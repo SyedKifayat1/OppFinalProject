@@ -1310,22 +1310,23 @@ void Menus::ControlSecurityManager()
         {
         case 1:
         {
-            // write a code for adding Account manager
+            cin>>obj.SecurityManager;
+            obj.SecurityManager.input_Date("Manager");
             break;
         }
         case 2:
         {
-            // write a code for Removing account manager
+            obj.SecurityManager.Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            // write a code for replace account manager
+            obj.SecurityManager.Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            // write a code for showing details
+            obj.SecurityManager.Display_Data("Manager");
             break;
         }
         case 5:
@@ -1371,22 +1372,23 @@ void Menus::ControlWaterManager()
         {
         case 1:
         {
-            // write a code for adding Account manager
+            cin>>obj.WaterManager;
+            obj.WaterManager.input_Date("Manager");
             break;
         }
         case 2:
         {
-            // write a code for Removing account manager
+            obj.WaterManager.Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            // write a code for replace account manager
+            obj.WaterManager.Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            // write a code for showing details
+            obj.WaterManager.Display_Data("Manager");
             break;
         }
         case 5:
@@ -1431,22 +1433,23 @@ void Menus::ControlMaintenanceManager()
         {
         case 1:
         {
-            // write a code for adding Maintenance manager
+            cin>>obj.MaintenanceManager;
+            obj.MaintenanceManager.input_Date("Manager");
             break;
         }
         case 2:
         {
-            // write a code for Removing Maintenance manager
+            obj.MaintenanceManager.Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            // write a code for replace Maintenance manager
+            obj.MaintenanceManager.Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            // write a code for showing details
+            obj.MaintenanceManager.Display_Data("Manager");
             break;
         }
         case 5:
@@ -1491,22 +1494,23 @@ void Menus::ControlParkingManager()
         {
         case 1:
         {
-            // write a code for add Parking  manager
+            cin>>obj.ParkingManager;
+            obj.ParkingManager.input_Date("Manager");
             break;
         }
         case 2:
         {
-            // write a code for remove Parking  manager
+            obj.ParkingManager.Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            // write a code for Replaceing Parking manager
+            obj.ParkingManager.Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            // write a code for showing details
+            obj.ParkingManager.Display_Data("Manager");
             break;
         }
         case 5:
@@ -1552,22 +1556,23 @@ void Menus::ControlShopsManager()
         {
         case 1:
         {
-            // write a code for adding  shop manager
+            cin>>obj.ShopsManager;
+            obj.ShopsManager.input_Date("Manager");
             break;
         }
         case 2:
         {
-            // write a code for remove shop manager
+            obj.ShopsManager.Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            // write a code for replace shop manager
+            obj.ShopsManager.Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            // write a code for showing details
+            obj.ShopsManager.Display_Data("Manager");
             break;
         }
         case 5:

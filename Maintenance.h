@@ -1,9 +1,10 @@
 #ifndef __MAINTENANCE__H__
 #define __MAINTENANCE__H__
+#include"Detail.h"
 
 #include <iostream>
 using namespace std;
-class Maintaineance
+class Maintaineance:public Detail
 {
 
 public:

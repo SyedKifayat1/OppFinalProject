@@ -1,6 +1,7 @@
 #include<iostream>
+#include"Detail.h"
 using namespace std;
-class Shops
+class Shops:public Detail
 {
     
 };

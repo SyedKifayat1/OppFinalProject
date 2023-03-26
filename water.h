@@ -2,8 +2,10 @@
 #define __WATER__H__
 #include <iostream>
 #include <string>
+#include"Detail.h"
 using namespace std;
-class water
+
+class water:public Detail
 {
 private:
     int water_usage;

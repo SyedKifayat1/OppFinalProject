@@ -24,32 +24,32 @@ public:
         else
         {
             outfile << endl;
-            outfile << "EMPLOYEE ID IS : ";
+            outfile << "EMPLOYEE ID IS :";
             outfile << user_id;
             outfile << endl;
-            outfile << "NAME IS: "; // name for emply entering to file
+            outfile << "NAME IS :"; // name for emply entering to file
             outfile << fname;       // first name of employ
             outfile << lname;       // last name of employ
             outfile << endl;
-            outfile << "EMAIL ADDRESS IS: "; // email address of employ
+            outfile << "EMAIL ADDRESS IS :"; // email address of employ
             outfile << EmailADdress;
             outfile << endl;
-            outfile << "JOB TITLE: "; // job title
+            outfile << "JOB TITLE :"; // job title
             outfile << JobTitle;      // getting job title into file
             outfile << endl;
-            outfile << "STATUS: ";
+            outfile << "STATUS :";
             outfile << Status; // status of person
             outfile << endl;
-            outfile << "GENDER: "; // gender of person
+            outfile << "GENDER :"; // gender of person
             outfile << gender;
             outfile << endl;
-            outfile << "PHONENUM IS: "; // phone number of person
+            outfile << "PHONENUM IS :"; // phone number of person
             outfile << PhoneNum;
             outfile << endl;
-            outfile << "SALARY IS: "; // salary of person
+            outfile << "SALARY IS :"; // salary of person
             outfile << salary;
             outfile << endl;
-            outfile << "HIRING DATE IS: "; // hiring date of person
+            outfile << "HIRING DATE IS :"; // hiring date of person
             outfile << hiringDate;
             outfile << endl;
         }

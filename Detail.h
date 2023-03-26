@@ -88,8 +88,6 @@ public:
         }
     }
 
-#include <filesystem>
-
     void Remove_Employee(string fileName)
     {
         string ID; // name of employee variable
@@ -115,48 +113,65 @@ public:
 
         // Copy data from input file to output file
         string storing;
+        bool employeeFound = false;
         while (getline(infile, storing))
         {
-            if (storing.find(ID) == string::npos)
+            if (storing.find(ID) != string::npos)
             {
-                outfile << storing << endl;
+                employeeFound = true;
+                cout << "Employee found and removed.\n";
+                cout << storing << endl;
+                for (int i = 0; i < 8; i++)
+                {
+                    if (getline(infile, storing)){}
+                }
             }
             else
             {
-                cout << "Employee found and removed.\n";
+                outfile << storing << endl;
             }
         }
-
         // Close files
         infile.close();
         outfile.close();
-        int k=0;
-        // Delete original file
-        if (filesystem::remove(fileName + ".txt"))
+
+        if (!employeeFound)
         {
-            k=1;
-            cout << "Failed to remove the original file.\n";
+            cout << "Employee with ID " << ID << " not found.\n";
+            filesystem::remove("temporary.txt");
+            return;
+        }
+
+        // Remove original file
+        try
+        {
+            filesystem::remove(fileName + ".txt");
+        }
+        catch (const filesystem::filesystem_error &e)
+        {
+            cerr << "Error removing file: " << e.what() << endl;
+            filesystem::remove("temporary.txt");
             return;
         }
 
         // Rename temporary file to original name
-         std::filesystem::rename("temporary.txt", fileName + ".txt");
-         if(k==0)
-         {
-            cout<<"\nFile Is Removed Successfully.......\n";
-         }
-         else
-         {
-            cout<<"\nSorry your File is not Removed\n";
+        try
+        {
+            filesystem::rename("temporary.txt", fileName + ".txt");
+        }
+        catch (const filesystem::filesystem_error &e)
+        {
+            cerr << "Error renaming file: " << e.what() << endl;
+            return;
+        }
 
-         }
-        
+        cout << "Employee with ID " << ID << " removed successfully.\n";
     }
 
-    /**/ void Replace_employ(string fileName)
+    void Replace_employ(string fileName)
     {
         Detail d;
-        string ID; // name of employee variable
+        string ID;
         cout << "ENTER ID OF EMPLOYEE: ";
         cin >> ID;
         ifstream infile(fileName + ".txt");
@@ -164,42 +179,48 @@ public:
         if (!infile.is_open())
         {
             cout << "FAILED TO OPEN THE FILE!" << endl;
-        }
-        else
-        {
-            string storing; // storing data in this string
-            bool printlines = false;
-            int linestoprint = 3;
-            while (getline(infile, storing))
-            {
-                if (storing.find(ID) != string::npos)
-                {
-
-                    cout << "founded\n";
-                    cin >> d;
-                }
-                else
-                {
-                    outfile << storing;
-                    outfile << endl;
-                }
-            }
-        }
-        infile.close();
-        outfile.close();
-        if (std::filesystem::remove(fileName + ".txt"))
-        {
-            cout << "Failed to remove the original file.\n";
             return;
         }
 
+        int i = 0;
+        string line;
+        while (getline(infile, line))
+        {
+            if (line.find(ID) != string::npos)
+            {
+                i = 8;
+                cout << "FOUND\n";
+                cin >> d;
+                d.input_Date(fileName);
+            }
+            else
+            {
+                if (i == 0)
+                {
+                    outfile << line << endl;
+                }
+                else
+                {
+                    i--;
+                }
+            }
+        }
+
+        infile.close();
+        outfile.close();
+
+        // Remove the original file
+        filesystem::remove(fileName + ".txt");
+
         // Rename temporary file to original name
-        std::filesystem::rename("temporary.txt", fileName + ".txt");
-
-        // cout << "Failed to rename the temporary file.\n";
-        // return;
-
-       // cout << "Operation completed successfully.\n";
+        try
+        {
+            filesystem::rename("temporary.txt", fileName + ".txt");
+        }
+        catch (const filesystem::filesystem_error &e)
+        {
+            cerr << "Error renaming file: " << e.what() << endl;
+        }
     }
 
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype

@@ -12,8 +12,9 @@ class Manager
     public:
     Manager()
     {
-    
+     ptr=new Report[6];
     }
+    Report *ptr;
     Accounts AccountManager;
     Shops ShopsManager;
     Maintaineance MaintenanceManager;

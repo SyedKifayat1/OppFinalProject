@@ -61,7 +61,7 @@ public:
 
 void Menus::Menu()
 {
-    
+
     while (ch == 0)
     {
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
@@ -113,7 +113,7 @@ void Menus::HeadMenu()
         {
         case 1:
         {
-            
+
             ManageSubManager();
             break;
         }
@@ -259,6 +259,7 @@ void Menus::ManageSubManager()
     }
     ch = 0;
 }
+
 void Menus::MallDetails()
 {
     while (ch == 0)
@@ -1248,7 +1249,7 @@ void Menus::ControlAccountManager()
         {
         case 1:
         {
-            cin>>obj.AccountManager;
+            cin >> obj.AccountManager;
             obj.AccountManager.input_Date("Manager");
             break;
         }
@@ -1269,7 +1270,7 @@ void Menus::ControlAccountManager()
         }
         case 5:
         {
-            // writing a code for head reading the report of the manager
+
             break;
         }
         case 6:
@@ -1310,7 +1311,7 @@ void Menus::ControlSecurityManager()
         {
         case 1:
         {
-            cin>>obj.SecurityManager;
+            cin >> obj.SecurityManager;
             obj.SecurityManager.input_Date("Manager");
             break;
         }
@@ -1372,7 +1373,7 @@ void Menus::ControlWaterManager()
         {
         case 1:
         {
-            cin>>obj.WaterManager;
+            cin >> obj.WaterManager;
             obj.WaterManager.input_Date("Manager");
             break;
         }
@@ -1433,7 +1434,7 @@ void Menus::ControlMaintenanceManager()
         {
         case 1:
         {
-            cin>>obj.MaintenanceManager;
+            cin >> obj.MaintenanceManager;
             obj.MaintenanceManager.input_Date("Manager");
             break;
         }
@@ -1494,7 +1495,7 @@ void Menus::ControlParkingManager()
         {
         case 1:
         {
-            cin>>obj.ParkingManager;
+            cin >> obj.ParkingManager;
             obj.ParkingManager.input_Date("Manager");
             break;
         }
@@ -1556,7 +1557,7 @@ void Menus::ControlShopsManager()
         {
         case 1:
         {
-            cin>>obj.ShopsManager;
+            cin >> obj.ShopsManager;
             obj.ShopsManager.input_Date("Manager");
             break;
         }
@@ -1603,10 +1604,13 @@ void Menus::EmployeeDetails()
 {
     while (ch == 0)
     {
-        cout << "\n.......Welcome To Checking Employee Details Repository.......\n\n"
-                "1)Getting Data By ID No \n"
-                "2)Getting Data As A Whole\n"
-                "3)Getting Data With Department Name\n"
+        cout << "\n.......Welcome To Employee Details Repository.......\n\n"
+                "1)Account Employee Details\n"
+                "2)Shop Employee Details\n"
+                "3)Maintenance Employee Details\n"
+                "4)Parking Employee Details\n"
+                "5)Water Employee Details\n"
+                "6)Security Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1614,19 +1618,264 @@ void Menus::EmployeeDetails()
         {
         case 1:
         {
-            // wirte a code for getting data with ID No
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Accounts Employee Details Repository.......\n\n"
+                        "1)Getting Data By ID No \n"
+                        "2)Getting Data As A Whole\n"
+                        "3)Getting Data With Department Name\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // wirte a code for getting data with ID No
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for getting data as a whole
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for getting data with Department name
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
             break;
         }
         case 2:
         {
-            // write a code for getting data as a whole
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Shop Employee Details Repository.......\n\n"
+                        "1)Getting Data By ID No \n"
+                        "2)Getting Data As A Whole\n"
+                        "3)Getting Data With Department Name\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // wirte a code for getting data with ID No
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for getting data as a whole
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for getting data with Department name
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 3:
         {
-            // write a code for getting data with Department name
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Maintenance Employee Details Repository.......\n\n"
+                        "1)Getting Data By ID No \n"
+                        "2)Getting Data As A Whole\n"
+                        "3)Getting Data With Department Name\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // wirte a code for getting data with ID No
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for getting data as a whole
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for getting data with Department name
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
+        case 4:
+        {
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Parking Employee Details Repository.......\n\n"
+                        "1)Getting Data By ID No \n"
+                        "2)Getting Data As A Whole\n"
+                        "3)Getting Data With Department Name\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // wirte a code for getting data with ID No
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for getting data as a whole
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for getting data with Department name
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 5:
+        {
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Water Employee Details Repository.......\n\n"
+                        "1)Getting Data By ID No \n"
+                        "2)Getting Data As A Whole\n"
+                        "3)Getting Data With Department Name\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // wirte a code for getting data with ID No
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for getting data as a whole
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for getting data with Department name
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 6:
+        {
+            while (ch == 0)
+            {
+                cout << "\n.......Welcome To Security Employee Details Repository.......\n\n"
+                        "1)Getting Data By ID No \n"
+                        "2)Getting Data As A Whole\n"
+                        "3)Getting Data With Department Name\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    // wirte a code for getting data with ID No
+                    break;
+                }
+                case 2:
+                {
+                    // write a code for getting data as a whole
+                    break;
+                }
+                case 3:
+                {
+                    // write a code for getting data with Department name
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+
         case 0:
         {
             ch = 1;
@@ -2037,17 +2286,17 @@ void Menus::CalculateDepartmentsBudget()
         case 1:
         {
 
-            //write a code for budget
+            // write a code for budget
             break;
         }
         case 2:
         {
-            //write a code for budget
+            // write a code for budget
             break;
         }
         case 3:
         {
-           //write a code for budget
+            // write a code for budget
             break;
         }
         case 4:
@@ -2577,6 +2826,7 @@ void Menus::MaintenanceManagerReport()
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
+            obj.MaintenanceManager.Add_report("MaintenanceManagerReport") ;
             break;
         }
         case 2:
@@ -2783,11 +3033,12 @@ void Menus::ShopManagerReport()
     while (ch == 0)
     {
         cout << "\n..........Welcome To Shop Manager Reports Repository.........\n\n";
-        cout << "1)Write Or Edit Report\n"
-                "2)Read Report Or Message\n"
-                "3)Replace Report\n"
-                "4)Report Approval Status\n"
-                "5)Check Response\n"
+        cout << "1)Write Report\n"
+                "2)Edit Report\n"
+                "3)Read Report Or Message\n"
+                "4)Replace Report\n"
+                "5)Report Approval Status\n"
+                "6)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -2797,27 +3048,38 @@ void Menus::ShopManagerReport()
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
+            obj.ShopsManager.Add_report("ShopsReport");
             break;
         }
         case 2:
         {
-            // write a code for reading report  which has written by himself
+            obj.ShopsManager.Edit_report("ShopsReport");
             break;
         }
         case 3:
         {
-            // write a code for replacing the report
+            // write a code for reading report  which has written by himself
+            obj.ShopsManager.ReadReport("ShopsReport");
             break;
         }
         case 4:
         {
-            // write a code for giving approval or rejection to the report
+            // write a code for replacing the report
+            obj.ShopsManager.Add_report("ShopsReport");
 
             break;
         }
         case 5:
         {
+            // write a code for giving approval or rejection to the report
+            obj.ShopsManager.ReportsStatus();
+        }
+        case 6:
+        {
             // write a code for reading the head or account manager response
+            obj.ShopsManager.ReadResponse("ResponseToShopReport");
+
+            break;
         }
         case 0:
         {
@@ -2838,11 +3100,12 @@ void Menus::AccountManagerReport()
     while (ch == 0)
     {
         cout << "\n..........Welcome To Account Manager Reports Repository.........\n\n";
-        cout << "1)Write Or Edit Report\n"
-                "2)Read Report Or Message\n"
-                "3)Replace Report\n"
-                "4)Report Approval Status\n"
-                "5)Check Response\n"
+        cout << "1)Write Report\n"
+                "2)Edit Report\n"
+                "3)Read Report Or Message\n"
+                "4)Replace Report\n"
+                "5)Report Approval Status\n"
+                "6)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -2852,27 +3115,35 @@ void Menus::AccountManagerReport()
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
+            obj.AccountManager.Add_report("AccountReport");
             break;
         }
         case 2:
         {
-            // write a code for reading report  which has written by himself
-            break;
+            obj.AccountManager.Edit_report("AccountReport");
         }
         case 3:
         {
-            // write a code for replacing the report
-            break;
+            // write a code for reading report  which has written by himself
+            obj.AccountManager.ReadReport("AccountReport");
         }
         case 4:
         {
-            // write a code for giving approval or rejection to the report
-
+            // write a code for replacing the report
+            obj.AccountManager.Add_report("AccountReport");
             break;
         }
         case 5:
         {
+            obj.AccountManager.ReportsStatus();
+            // write a code for giving approval or rejection to the report
+
+            break;
+        }
+        case 6:
+        {
             // write a code for reading the head or account manager response
+            obj.AccountManager.ReadResponse("ResponseToAccountReport");
         }
         case 0:
         {

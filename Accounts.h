@@ -1,31 +1,18 @@
+#ifndef __ACCOUNTS__H__
+#define __ACCOUNTS__H__
+
 #include <string>
 #include <iostream>
 #include <fstream>
-#include"Detail.h"
+// #include"Detail.h"
+#include "Employee.h"
 
 class Report;
 using namespace std;
-class Accounts:public Detail,public Report
+class Accounts : public Detail, public Report
 {
-   public:
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public:
+    Employ E;
 
     void calculate_employee_salary()
     {
@@ -54,7 +41,7 @@ class Accounts:public Detail,public Report
 
         outfile.close();
     }
-
+   
     void display_employee_salary()
     {
         string name_of;
@@ -89,3 +76,4 @@ class Accounts:public Detail,public Report
         infile.close();
     }
 };
+#endif //!__ACCOUNTS__H__

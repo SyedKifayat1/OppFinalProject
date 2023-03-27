@@ -1,5 +1,11 @@
 #include <iostream>
 #include "Manager.h"
+#include "Accounts.h"
+#include "Maintenance.h"
+#include "Parking.h"
+#include "Shops.h"
+#include "Security.h"
+#include "water.h"
 using namespace std;
 class Menus
 {
@@ -11,6 +17,13 @@ public:
         ch = 0;
     }
     Manager obj;
+    Accounts A;
+    Maintaineance M;
+    Parking p;
+    Shops S;
+    Security SE;
+    water w;
+
     void Menu();
     void HeadMenu();
     void SubManagerMenu();
@@ -655,21 +668,25 @@ void Menus::MaintenanceEmployee()
         {
         case 1:
         {
-            // write a code for adding employee
+            M.E1.input_Data("Maintenance");
+
             break;
         }
         case 2:
         {
+            M.Remove_Employee("Maintenance");
             // write a code for removing employee
             break;
         }
         case 3:
         {
+            M.Replace_employ("Maintenance");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
+            M.E1.Total_employee_Details("Maintenance");
             // write a code for total employee details
             break;
         }
@@ -932,21 +949,25 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
+                    p.E2.input_Data("Parking");
                     // write a code for adding employee
                     break;
                 }
                 case 2:
                 {
+                    p.Remove_Employee("Parking");
                     // write a code for removing employee
                     break;
                 }
                 case 3:
                 {
+                    p.Replace_employ("Parking");
                     // write a code for replacing employee
                     break;
                 }
                 case 4:
                 {
+                    p.E2.Total_employee_Details("Parking");
                     // write a code for total employee details
                     break;
                 }
@@ -1067,21 +1088,25 @@ void Menus::ShopEmployee()
         {
         case 1:
         {
+            S.E3.input_Data("Shops");
             // write a code for adding employee
             break;
         }
         case 2:
         {
+            S.Remove_Employee("Shops");
             // write a code for removing employee
             break;
         }
         case 3:
         {
+            S.Replace_employ("Shops");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
+            S.E3.Total_employee_Details("Shops");
             // write a code for total employee details
             break;
         }
@@ -1172,21 +1197,25 @@ void Menus::WaterManager()
                 {
                 case 1:
                 {
+                    w.E5.input_Data("water");
                     // write a code for adding employee
                     break;
                 }
                 case 2:
                 {
+                    w.Remove_Employee("water");
                     // write a code for removing employee
                     break;
                 }
                 case 3:
                 {
+                    w.Replace_employ("water");
                     // write a code for replacing employee
                     break;
                 }
                 case 4:
                 {
+                    w.E5.Total_employee_Details("water");
                     // write a code for total employee details
                     break;
                 }
@@ -1630,15 +1659,16 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    // wirte a code for getting data with ID No
+                    A.Display_Data("Account");
                     break;
                 }
                 case 2:
                 {
+                    A.E.Total_employee_Details("Account");
                     // write a code for getting data as a whole
                     break;
                 }
-                
+
                 case 0:
                 {
                     ch = 1;
@@ -1669,15 +1699,17 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
+                    S.Display_Data("Shops");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
+                    S.E3.Total_employee_Details("Shops");
                     // write a code for getting data as a whole
                     break;
                 }
-               
+
                 case 0:
                 {
                     ch = 1;
@@ -1707,11 +1739,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
+                    M.Display_Data("Maintenance");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
+                    M.E1.Total_employee_Details("Maintenance");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1744,11 +1778,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
+                    p.Display_Data("Parking");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
+                    p.E2.Total_employee_Details("Parking");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1782,15 +1818,17 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
+                    w.Display_Data("water");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
+                    w.E5.Total_employee_Details("water");
                     // write a code for getting data as a whole
                     break;
                 }
-                
+
                 case 0:
                 {
                     ch = 1;
@@ -1828,7 +1866,7 @@ void Menus::EmployeeDetails()
                     // write a code for getting data as a whole
                     break;
                 }
-               
+
                 case 0:
                 {
                     ch = 1;
@@ -2744,21 +2782,24 @@ void Menus::AccountEmployees()
         {
         case 1:
         {
-            // write a code for adding employee
+            A.E.input_Data("Account");
             break;
         }
         case 2:
         {
+            A.Remove_Employee("Account");
             // write a code for removing employee
             break;
         }
         case 3:
         {
+            A.Replace_employ("Account");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
+            A.E.Total_employee_Details("Account");
             // write a code for total employee details
             break;
         }
@@ -2795,7 +2836,7 @@ void Menus::MaintenanceManagerReport()
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
-            obj.MaintenanceManager.Add_report("MaintenanceManagerReport") ;
+            obj.MaintenanceManager.Add_report("MaintenanceManagerReport");
             break;
         }
         case 2:

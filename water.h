@@ -2,10 +2,10 @@
 #define __WATER__H__
 #include <iostream>
 #include <string>
-#include"Detail.h"
+#include "Detail.h"
 using namespace std;
 
-class water:public Detail,public Report
+class water : public Detail, public Report
 {
 private:
     int water_usage;
@@ -14,11 +14,11 @@ private:
     float water_pressure;
 
 public:
+    Employ E5;
     void setWaterUsage(int water_usage) // set water usage
     {
         this->water_usage = water_usage;
     }
-
 
     void setWaterSupply(bool water_supply) // checking water supply
     {

@@ -14,6 +14,7 @@ private:
     float water_pressure;
 
 public:
+    Report ForAccount;
     Employ E5;
     void setWaterUsage(int water_usage) // set water usage
     {

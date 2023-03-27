@@ -20,6 +20,7 @@ protected:
     // int number_of_security_guards;
 
 public:
+    Report ForAccount;
     Employ E4;
     Security(int security_cameras = 20, int number_of_security_personel = 100, string control_room_location = "D Block", string escape_room_location = "B block")
     {

@@ -9,6 +9,7 @@ class Shops : public Detail, public Report
 {
 
 public:
+    Report ForAccount;
     Employ E3;
 };
 

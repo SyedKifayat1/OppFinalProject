@@ -1271,6 +1271,8 @@ void Menus::ControlAccountManager()
                 "4)Show Manager\n"
                 "5)Report\n"
                 "6)Responce\n"
+                "7)Report Approval\n"
+                "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1299,12 +1301,53 @@ void Menus::ControlAccountManager()
         }
         case 5:
         {
-
+            obj.AccountManager.ReadReport("AccountReport");
             break;
         }
         case 6:
+
         {
-            // write a code for head responsing to the manager
+            obj.AccountManager.WriteResponse("ResponseToAccountReport"); break;
+        }
+        case 7:
+        {
+            cout << "\nGive Your Responce :\n";
+            obj.AccountManager.ReadReport("AccountReport");
+            cout << endl;
+            cout << "Select Your Choice :\n"
+                    "1)Approved\n"
+                    "2)Reject\n"
+                    "Your Option :";
+            cin >> choice;
+            switch (choice)
+            {
+            case 1:
+            {
+                obj.AccountManager.ReportStatus = true;
+                if (obj.AccountManager.ReportStatus == true)
+                {
+                    cout << "\nYou Can Approved The Report.....\n";
+                }
+                break;
+            }
+            case 2:
+            {
+                obj.AccountManager.ReportStatus = false;
+                if (obj.AccountManager.ReportStatus == false)
+                {
+                    cout << "\nYou Can Reject The Report!\n";
+                }
+                break;
+            }
+            default:
+                cout << "\nInvalid Choice!\n";
+                break;
+            }
+            break;
+        }
+        case 8:
+        {
+            obj.AccountManager.ReportsStatus();
             break;
         }
         case 0:
@@ -1333,6 +1376,8 @@ void Menus::ControlSecurityManager()
                 "4)Show Manager\n"
                 "5)Report\n"
                 "6)Responce\n"
+                "7)Report Approval\n"
+                "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1361,12 +1406,54 @@ void Menus::ControlSecurityManager()
         }
         case 5:
         {
-            // writing a code for head reading the report of the manager
+            obj.SecurityManager.ReadReport("SecurityReportForHead");
             break;
         }
         case 6:
+
         {
-            // write a code for head responsing to the manager
+            obj.SecurityManager.WriteResponse("HeadResponceToSecurityReport");
+             break;
+        }
+        case 7:
+        {
+            cout << "\nGive Your Responce :\n";
+            obj.SecurityManager.ReadReport("SecurityReportForHead");
+            cout << endl;
+            cout << "Select Your Choice :\n"
+                    "1)Approved\n"
+                    "2)Reject\n"
+                    "Your Option :";
+            cin >> choice;
+            switch (choice)
+            {
+            case 1:
+            {
+                obj.SecurityManager.ReportStatus = true;
+                if (obj.SecurityManager.ReportStatus == true)
+                {
+                    cout << "\nYou Can Approved The Report.....\n";
+                }
+                break;
+            }
+            case 2:
+            {
+                obj.SecurityManager.ReportStatus = false;
+                if (obj.SecurityManager.ReportStatus == false)
+                {
+                    cout << "\nYou Can Reject The Report!\n";
+                }
+                break;
+            }
+            default:
+                cout << "\nInvalid Choice!\n";
+                break;
+            }
+            break;
+        }
+        case 8:
+        {
+            obj.SecurityManager.ReportsStatus();
             break;
         }
         case 0:
@@ -1395,6 +1482,8 @@ void Menus::ControlWaterManager()
                 "4)Show Manager\n"
                 "5)Report\n"
                 "6)Responce\n"
+                "7)Report Approval\n"
+                "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1423,12 +1512,53 @@ void Menus::ControlWaterManager()
         }
         case 5:
         {
-            // writing a code for head reading the report of the manager
+            obj.WaterManager.ReadReport("WaterReportForHead");
             break;
         }
         case 6:
+
         {
-            // write a code for head responsing to the manager
+            obj.WaterManager.WriteResponse("HeadResponceToWaterReport"); break;
+        }
+        case 7:
+        {
+            cout << "\nGive Your Responce :\n";
+            obj.WaterManager.ReadReport("WaterReportForHead");
+            cout << endl;
+            cout << "Select Your Choice :\n"
+                    "1)Approved\n"
+                    "2)Reject\n"
+                    "Your Option :";
+            cin >> choice;
+            switch (choice)
+            {
+            case 1:
+            {
+                obj.WaterManager.ReportStatus = true;
+                if (obj.WaterManager.ReportStatus == true)
+                {
+                    cout << "\nYou Can Approved The Report.....\n";
+                }
+                break;
+            }
+            case 2:
+            {
+                obj.WaterManager.ReportStatus = false;
+                if (obj.WaterManager.ReportStatus == false)
+                {
+                    cout << "\nYou Can Reject The Report!\n";
+                }
+                break;
+            }
+            default:
+                cout << "\nInvalid Choice!\n";
+                break;
+            }
+            break;
+        }
+        case 8:
+        {
+            obj.WaterManager.ReportsStatus();
             break;
         }
         case 0:
@@ -1456,6 +1586,8 @@ void Menus::ControlMaintenanceManager()
                 "4)Show Manager\n"
                 "5)Report\n"
                 "6)Responce\n"
+                "7)Report Approval\n"
+                "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1484,12 +1616,53 @@ void Menus::ControlMaintenanceManager()
         }
         case 5:
         {
-            // writing a code for head reading the report of the manager
+            obj.MaintenanceManager.ReadReport("MaintenanceReportForHead");
             break;
         }
         case 6:
+
         {
-            // write a code for head responsing to the manager
+            obj.MaintenanceManager.WriteResponse("HeadResponceToMaintenanceReport"); break;
+        }
+        case 7:
+        {
+            cout << "\nGive Your Responce :\n";
+            obj.MaintenanceManager.ReadReport("MaintenanceReportForHead");
+            cout << endl;
+            cout << "Select Your Choice :\n"
+                    "1)Approved\n"
+                    "2)Reject\n"
+                    "Your Option :";
+            cin >> choice;
+            switch (choice)
+            {
+            case 1:
+            {
+                obj.MaintenanceManager.ReportStatus = true;
+                if (obj.MaintenanceManager.ReportStatus == true)
+                {
+                    cout << "\nYou Can Approved The Report.....\n";
+                }
+                break;
+            }
+            case 2:
+            {
+                obj.MaintenanceManager.ReportStatus = false;
+                if (obj.MaintenanceManager.ReportStatus == false)
+                {
+                    cout << "\nYou Can Reject The Report!\n";
+                }
+                break;
+            }
+            default:
+                cout << "\nInvalid Choice!\n";
+                break;
+            }
+            break;
+        }
+        case 8:
+        {
+            obj.MaintenanceManager.ReportsStatus();
             break;
         }
         case 0:
@@ -1517,6 +1690,8 @@ void Menus::ControlParkingManager()
                 "4)Show Manager\n"
                 "5)Report\n"
                 "6)Responce\n"
+                "7)Report Approval\n"
+                "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1545,12 +1720,54 @@ void Menus::ControlParkingManager()
         }
         case 5:
         {
-            // writing a code for head reading the report of the manager
+            obj.ParkingManager.ReadReport("ParkingReportForHead");
             break;
         }
         case 6:
+
         {
-            // write a code for head responsing to the manager
+            obj.ParkingManager.WriteResponse("HeadResponceToParkingReport");
+             break;
+        }
+        case 7:
+        {
+            cout << "\nGive Your Responce :\n";
+            obj.ParkingManager.ReadReport("ParkingReportForHead");
+            cout << endl;
+            cout << "Select Your Choice :\n"
+                    "1)Approved\n"
+                    "2)Reject\n"
+                    "Your Option :";
+            cin >> choice;
+            switch (choice)
+            {
+            case 1:
+            {
+                obj.ParkingManager.ReportStatus = true;
+                if (obj.ParkingManager.ReportStatus == true)
+                {
+                    cout << "\nYou Can Approved The Report.....\n";
+                }
+                break;
+            }
+            case 2:
+            {
+                obj.ParkingManager.ReportStatus = false;
+                if (obj.ParkingManager.ReportStatus == false)
+                {
+                    cout << "\nYou Can Reject The Report!\n";
+                }
+                break;
+            }
+            default:
+                cout << "\nInvalid Choice!\n";
+                break;
+            }
+            break;
+        }
+        case 8:
+        {
+            obj.ParkingManager.ReportsStatus();
             break;
         }
         case 0:
@@ -1579,6 +1796,8 @@ void Menus::ControlShopsManager()
                 "4)Show Manager\n"
                 "5)Report\n"
                 "6)Responce\n"
+                "7)Report Approval\n"
+                "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -1607,12 +1826,53 @@ void Menus::ControlShopsManager()
         }
         case 5:
         {
-            // writing a code for head reading the report of the manager
+            obj.ShopsManager.ReadReport("WaterReportForHead");
             break;
         }
         case 6:
+
         {
-            // write a code for head responsing to the manager
+            obj.ShopsManager.WriteResponse("HeadResponceToWaterReport"); break;
+        }
+        case 7:
+        {
+            cout << "\nGive Your Responce :\n";
+            obj.ShopsManager.ReadReport("WaterReportForHead");
+            cout << endl;
+            cout << "Select Your Choice :\n"
+                    "1)Approved\n"
+                    "2)Reject\n"
+                    "Your Option :";
+            cin >> choice;
+            switch (choice)
+            {
+            case 1:
+            {
+                obj.ShopsManager.ReportStatus = true;
+                if (obj.ShopsManager.ReportStatus == true)
+                {
+                    cout << "\nYou Can Approved The Report.....\n";
+                }
+                break;
+            }
+            case 2:
+            {
+                obj.ShopsManager.ReportStatus = false;
+                if (obj.ShopsManager.ReportStatus == false)
+                {
+                    cout << "\nYou Can Reject The Report!\n";
+                }
+                break;
+            }
+            default:
+                cout << "\nInvalid Choice!\n";
+                break;
+            }
+            break;
+        }
+        case 8:
+        {
+            obj.ShopsManager.ReportsStatus();
             break;
         }
         case 0:
@@ -2122,60 +2382,7 @@ void Menus::MaintenanceDetails()
     }
     ch = 0;
 }
-void Menus::SecurityDetails()
-{
-    while (ch == 0)
-    {
-        cout << "\n.......Welcome To Security Details Repository.......\n\n"
-                "1)Getting Details Of Security Guards\n"
-                "2)Getting Details Of Security Cameras\n"
-                "3)Getting Details Of Emergency Escap Room Location\n"
-                "4)Getting Details Of Control Room Location\n"
-                "5)Getting Details Of Security Weapons\n"
-                "0)Exit\n"
-                "Your Choice :";
-        cin >> choice;
-        switch (choice)
-        {
-        case 1:
-        {
-            // write a code of details of security guards
-            break;
-        }
-        case 2:
-        {
-            // write a code of details of security cameras
-            break;
-        }
-        case 3:
-        {
-            // write a code for emergency escap room location
-            break;
-        }
-        case 4:
-        {
-            // write a code for control room location
-            break;
-        }
-        case 5:
-        {
-            // write a code for the details of security weapons
-            break;
-        }
-        case 0:
-        {
-            ch = 1;
-            break;
-        }
-        default:
-        {
-            cout << "\nInvalid Choice!\n";
-            break;
-        }
-        }
-    }
-    ch = 0;
-}
+
 void Menus::IssuingEmployeePayments()
 {
     while (ch == 0)
@@ -2340,62 +2547,7 @@ void Menus::MaintenanceBudget()
 
         case 1:
         {
-            while (ch == 0)
-            {
-                cout << "\n..........Welcome To Generate Maintenance Budget Reports Repository.........\n\n";
-                // this report is send to the head and account manager for aproval
-                cout << "1)Add Report\n"
-                        "2)Remove Report\n"
-                        "3)Edit Report\n"
-                        "4)Replace Report\n"
-                        "5)Read Report\n"
-                        "6)Approval Status\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for adding report of the budget
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for removing the already written report
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for edit the already written report
-                    break;
-                }
-                case 4:
-                {
-                    // write a code for replacing the report
-                    break;
-                }
-                case 5:
-                {
-                    // write code for reading reports
-                }
-                case 6:
-                {
-                    // write a code for approval status from accounts manager
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+            MaintenanceManagerReport();
             break;
         }
         case 2:
@@ -2432,57 +2584,7 @@ void Menus::WaterBudget()
 
         case 1:
         {
-            while (ch == 0)
-            {
-                cout << "\n..........Welcome To Generate Water Budget Reports Repository.........\n\n";
-                // this report is send to the head and account manager for aproval
-                cout << "1)Add Report\n"
-                        "2)Remove Report\n"
-                        "3)Edit Report\n"
-                        "4)Replace Report\n"
-                        "5)Approval Status\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for adding report of the budget
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for removing the already written report
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for edit the already written report
-                    break;
-                }
-                case 4:
-                {
-                    // write a code for replacing the report
-                    break;
-                }
-                case 5:
-                {
-                    // write a code for approval status from accounts manager
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+            WaterManagerReport();
             break;
         }
         case 2:
@@ -2519,57 +2621,8 @@ void Menus::SecurityBudget()
 
         case 1:
         {
-            while (ch == 0)
-            {
-                cout << "\n..........Welcome To Generate Security Budget Reports Repository.........\n\n";
-                // this report is send to the head and account manager for aproval
-                cout << "1)Add Report\n"
-                        "2)Remove Report\n"
-                        "3)Edit Report\n"
-                        "4)Replace Report\n"
-                        "5)Approval Status\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for adding report of the budget
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for removing the already written report
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for edit the already written report
-                    break;
-                }
-                case 4:
-                {
-                    // write a code for replacing the report
-                    break;
-                }
-                case 5:
-                {
-                    // write a code for approval status from accounts manager
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+            SecurityManagerReport();
+
             break;
         }
         case 2:
@@ -2599,6 +2652,8 @@ void Menus::SubManagersReports()
         cout << "1)Maintenance Manager\n"
                 "2)Secutity Manager \n"
                 "3)Water Manager\n"
+                "4)Parking Manager\n"
+                "5)Shops Manager\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -2620,22 +2675,53 @@ void Menus::SubManagersReports()
                 {
                 case 1:
                 {
-                    // write a code for reading a report or message which send from the side of maintenance manager from head
+                    obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
+
                     break;
                 }
                 case 2:
                 {
-                    // write a code for giving a response or send any message to the maintenace manager from head
+                    obj.MaintenanceManager.ForAccount.WriteResponse("AccountResponceToMaintenanceReport");
                     break;
                 }
                 case 3:
                 {
-                    // write a code for giving approval or rejection to the report
+                    cout << "\nGive Your Responce :\n";
+                    obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
+                    cout << endl;
+                    cout << "Select Your Choice :\n"
+                            "1)Approved\n"
+                            "2)Reject\n"
+                            "Your Option :";
+                    cin >> choice;
+                    switch (choice)
+                    {
+                    case 1:
+                    {
+                        obj.MaintenanceManager.ForAccount.ReportStatus = true;
+                        if (obj.MaintenanceManager.ForAccount.ReportStatus == true)
+                        {
+                            cout << "\nYou Can Approved The Report.....\n";
+                        }
+                        break;
+                    }
+                    case 2:
+                    {
+                        obj.MaintenanceManager.ForAccount.ReportStatus = false;
+                        if (obj.MaintenanceManager.ForAccount.ReportStatus == false)
+                        {
+                            cout << "\nYou Can Reject The Report!\n";
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                    }
                     break;
                 }
                 case 4:
                 {
-                    // write a code for checking the approval status of report and and checking the name of aproval person also
+                    obj.MaintenanceManager.ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -2669,71 +2755,53 @@ void Menus::SubManagersReports()
                 {
                 case 1:
                 {
-                    // write a code for reading a report or message which send from the side of Security manager from account manager
+                    obj.SecurityManager.ForAccount.ReadReport("SecurityReportForAccount");
+
                     break;
                 }
                 case 2:
                 {
-                    // write a code for giving a response or send any message to the Security manager from account manager
+                    obj.SecurityManager.ForAccount.WriteResponse("AccountResponceToSecurityReport");
                     break;
                 }
                 case 3:
                 {
-                    // write a code for giving approval or rejection to the report
+                    cout << "\nGive Your Responce :\n";
+                    obj.SecurityManager.ForAccount.ReadReport("SecurityReportForAccount");
+                    cout << endl;
+                    cout << "Select Your Choice :\n"
+                            "1)Approved\n"
+                            "2)Reject\n"
+                            "Your Option :";
+                    cin >> choice;
+                    switch (choice)
+                    {
+                    case 1:
+                    {
+                        obj.SecurityManager.ForAccount.ReportStatus = true;
+                        if (obj.SecurityManager.ForAccount.ReportStatus == true)
+                        {
+                            cout << "\nYou Can Approved The Report.....\n";
+                        }
+                        break;
+                    }
+                    case 2:
+                    {
+                        obj.SecurityManager.ForAccount.ReportStatus = false;
+                        if (obj.SecurityManager.ForAccount.ReportStatus == false)
+                        {
+                            cout << "\nYou Can Reject The Report!\n";
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                    }
                     break;
                 }
                 case 4:
                 {
-                    // write a code for checking the approval status of report and and checking the name of aproval person also
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 3:
-        {
-            while (ch == 0)
-            {
-                cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
-                cout << "1)Read Report Or Message\n"
-                        "2)Giving Response Or Message\n"
-                        "3)Report Approval\n"
-                        "4)Check Approval\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for reading a report or message which send from the side of Water manager from head
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for giving a response or send any message to the Water manager from head
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for giving approval or rejection to the report
-                    break;
-                }
-                case 4:
-                {
-                    // write a code for checking the approval status of report and and checking the name of aproval person also
+                    obj.SecurityManager.ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -2752,6 +2820,246 @@ void Menus::SubManagersReports()
             break;
         }
 
+        case 3:
+        {
+            while (ch == 0)
+            {
+                cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
+                cout << "1)Read Report Or Message\n"
+                        "2)Giving Response Or Message\n"
+                        "3)Report Approval\n"
+                        "4)Check Approval\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.ForAccount.ReadReport("WaterReportForAccount");
+
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.WriteResponse("AccountResponceToWaterReport");
+                    break;
+                }
+                case 3:
+                {
+                    cout << "\nGive Your Responce :\n";
+                    obj.WaterManager.ForAccount.ReadReport("WaterReportForAccount");
+                    cout << endl;
+                    cout << "Select Your Choice :\n"
+                            "1)Approved\n"
+                            "2)Reject\n"
+                            "Your Option :";
+                    cin >> choice;
+                    switch (choice)
+                    {
+                    case 1:
+                    {
+                        obj.WaterManager.ForAccount.ReportStatus = true;
+                        if (obj.WaterManager.ForAccount.ReportStatus == true)
+                        {
+                            cout << "\nYou Can Approved The Report.....\n";
+                        }
+                        break;
+                    }
+                    case 2:
+                    {
+                        obj.WaterManager.ForAccount.ReportStatus = false;
+                        if (obj.WaterManager.ForAccount.ReportStatus == false)
+                        {
+                            cout << "\nYou Can Reject The Report!\n";
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                    }
+                    break;
+                }
+                case 4:
+                {
+                    obj.WaterManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 4:
+        {
+            while (ch == 0)
+            {
+                cout << "\n..........Welcome To Parking Manager Reports Repository.........\n\n";
+                cout << "1)Read Report Or Message\n"
+                        "2)Giving Response Or Message\n"
+                        "3)Report Approval\n"
+                        "4)Check Approval\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.ForAccount.ReadReport("ParkingReportForAccount");
+
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.WriteResponse("AccountResponceToParkingReport");
+                    break;
+                }
+                case 3:
+                {
+                    cout << "\nGive Your Responce :\n";
+                    obj.ParkingManager.ForAccount.ReadReport("ParkingReportForAccount");
+                    cout << endl;
+                    cout << "Select Your Choice :\n"
+                            "1)Approved\n"
+                            "2)Reject\n"
+                            "Your Option :";
+                    cin >> choice;
+                    switch (choice)
+                    {
+                    case 1:
+                    {
+                        obj.ParkingManager.ForAccount.ReportStatus = true;
+                        if (obj.ParkingManager.ForAccount.ReportStatus == true)
+                        {
+                            cout << "\nYou Can Approved The Report.....\n";
+                        }
+                        break;
+                    }
+                    case 2:
+                    {
+                        obj.ParkingManager.ForAccount.ReportStatus = false;
+                        if (obj.ParkingManager.ForAccount.ReportStatus == false)
+                        {
+                            cout << "\nYou Can Reject The Report!\n";
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                    }
+                    break;
+                }
+                case 4:
+                {
+                    obj.ParkingManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 5:
+        {
+            while (ch == 0)
+            {
+                cout << "\n..........Welcome To Shops Manager Reports Repository.........\n\n";
+                cout << "1)Read Report Or Message\n"
+                        "2)Giving Response Or Message\n"
+                        "3)Report Approval\n"
+                        "4)Check Approval\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.ForAccount.ReadReport("ShopReportForAccount");
+
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.WriteResponse("AccountResponceToShopReport");
+                    break;
+                }
+                case 3:
+                {
+                    cout << "\nGive Your Responce :\n";
+                    obj.ShopsManager.ForAccount.ReadReport("ShopReportForAccount");
+                    cout << endl;
+                    cout << "Select Your Choice :\n"
+                            "1)Approved\n"
+                            "2)Reject\n"
+                            "Your Option :";
+                    cin >> choice;
+                    switch (choice)
+                    {
+                    case 1:
+                    {
+                        obj.ShopsManager.ForAccount.ReportStatus = true;
+                        if (obj.ShopsManager.ForAccount.ReportStatus == true)
+                        {
+                            cout << "\nYou Can Approved The Report.....\n";
+                        }
+                        break;
+                    }
+                    case 2:
+                    {
+                        obj.ShopsManager.ForAccount.ReportStatus = false;
+                        if (obj.ShopsManager.ForAccount.ReportStatus == false)
+                        {
+                            cout << "\nYou Can Reject The Report!\n";
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                    }
+                    break;
+                }
+                case 4:
+                {
+                    obj.ShopsManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
         case 0:
         {
             ch = 1;
@@ -2782,25 +3090,22 @@ void Menus::AccountEmployees()
         {
         case 1:
         {
-            A.E.input_Data("Account");
+            A.E.input_Data("AccountEmployee");
             break;
         }
         case 2:
         {
-            A.Remove_Employee("Account");
-            // write a code for removing employee
+            A.Remove_Employee("AccountEmployee");
             break;
         }
         case 3:
         {
-            A.Replace_employ("Account");
-            // write a code for replacing employee
+            A.Replace_employ("AccountEmployee");
             break;
         }
         case 4:
         {
-            A.E.Total_employee_Details("Account");
-            // write a code for total employee details
+            A.E.Total_employee_Details("AccountEmployee");
             break;
         }
         case 0:
@@ -2817,46 +3122,302 @@ void Menus::AccountEmployees()
     }
     ch = 0;
 }
+
 void Menus::MaintenanceManagerReport()
 {
     while (ch == 0)
     {
         cout << "\n..........Welcome To Maintenance Manager Reports Repository.........\n\n";
-        cout << "1)Write Or Edit Report\n"
-                "2)Read Report Or Message\n"
-                "3)Replace Report\n"
-                "4)Report Approval Status\n"
-                "5)Check Response\n"
+        cout << "1)Write Report\n"
+                "2)Edit Report\n"
+                "3)Read Report Or Message\n"
+                "4)Replace Report\n"
+                "5)Delete Report\n"
+                "6)Report Approval Status\n"
+                "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
         switch (choice)
         {
-            // hopfully we will write this code for both, head and accountant ,these are included in further choices
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
-            obj.MaintenanceManager.Add_report("MaintenanceManagerReport");
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
+                cout << "Write Report :\n"
+                        "1)To Head\n"
+                        "2)To Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.MaintenanceManager.Add_report("MaintenanceReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.MaintenanceManager.ForAccount.Add_report("MaintenanceReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
             break;
         }
         case 2:
         {
-            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
+                cout << "Edit Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.MaintenanceManager.Edit_report("MaintenanceReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.MaintenanceManager.ForAccount.Edit_report("MaintenanceReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 3:
         {
-            // write a code for replacing the report
+            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
+                cout << "Read Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.MaintenanceManager.ReadReport("MaintenanceReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 4:
         {
-            // write a code for giving approval or rejection to the report
 
+            // write a code for replacing the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
+                cout << "Add Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.MaintenanceManager.Add_report("MaintenanceReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.MaintenanceManager.ForAccount.Add_report("MaintenanceReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 5:
         {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
+                cout << "Delete Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.MaintenanceManager.Delete_report("MaintenanceReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.MaintenanceManager.ForAccount.Delete_report("MaintenanceReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 6:
+        {
+
+            // write a code for giving approval or rejection to the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Resport Status Repository..........\n\n";
+                cout << "Check Report Status :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.MaintenanceManager.ReportsStatus();
+                    break;
+                }
+                case 2:
+                {
+                    obj.MaintenanceManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
+            break;
+        }
+        case 7:
+        {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Read Response Repository..........\n\n";
+                cout << "Read Responce :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.MaintenanceManager.ReadResponse("HeadResponceToMaintenanceReport");
+                    break;
+                }
+                case 2:
+                {
+                    obj.MaintenanceManager.ForAccount.ReadResponse("AccountResponceToMaintenanceReport");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
             // write a code for reading the head or account manager response
         }
         case 0:
@@ -2878,40 +3439,295 @@ void Menus::SecurityManagerReport()
     while (ch == 0)
     {
         cout << "\n..........Welcome To Security Manager Reports Repository.........\n\n";
-        cout << "1)Write Or Edit Report\n"
-                "2)Read Report Or Message\n"
-                "3)Replace Report\n"
-                "4)Report Approval Status\n"
-                "5)Check Response\n"
+        cout << "1)Write Report\n"
+                "2)Edit Report\n"
+                "3)Read Report Or Message\n"
+                "4)Replace Report\n"
+                "5)Delete Report\n"
+                "6)Report Approval Status\n"
+                "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
         switch (choice)
         {
-            // hopfully we will write this code for both, head and accountant ,these are included in further choices
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
+                cout << "Write Report :\n"
+                        "1)To Head\n"
+                        "2)To Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.SecurityManager.Add_report("SecurityReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.SecurityManager.ForAccount.Add_report("SecurityReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
             break;
         }
         case 2:
         {
-            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
+                cout << "Edit Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.SecurityManager.Edit_report("SecurityReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.SecurityManager.ForAccount.Edit_report("SecurityReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 3:
         {
-            // write a code for replacing the report
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
+                cout << "Read Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.SecurityManager.ReadReport("SecurityReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.SecurityManager.ForAccount.ReadReport("SecurityReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 4:
         {
-            // write a code for giving approval or rejection to the report
 
+            // write a code for replacing the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
+                cout << "Add Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.SecurityManager.Add_report("SecurityReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.SecurityManager.ForAccount.Add_report("SecurityReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 5:
         {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
+                cout << "Delete Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.SecurityManager.Delete_report("SecurityReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.SecurityManager.ForAccount.Delete_report("SecurityReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 6:
+        {
+
+            // write a code for giving approval or rejection to the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Resport Status Repository..........\n\n";
+                cout << "Check Report Status :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.SecurityManager.ReportsStatus();
+                    break;
+                }
+                case 2:
+                {
+                    obj.SecurityManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
+            break;
+        }
+        case 7:
+        {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Read Response Repository..........\n\n";
+                cout << "Read Responce :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.SecurityManager.ReadResponse("HeadResponceToSecurityReport");
+                    break;
+                }
+                case 2:
+                {
+                    obj.SecurityManager.ForAccount.ReadResponse("AccountResponceToSecurityReport");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
             // write a code for reading the head or account manager response
         }
         case 0:
@@ -2933,40 +3749,296 @@ void Menus::WaterManagerReport()
     while (ch == 0)
     {
         cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
-        cout << "1)Write Or Edit Report\n"
-                "2)Read Report Or Message\n"
-                "3)Replace Report\n"
-                "4)Report Approval Status\n"
-                "5)Check Response\n"
+        cout << "1)Write Report\n"
+                "2)Edit Report\n"
+                "3)Read Report Or Message\n"
+                "4)Replace Report\n"
+                "5)Delete Report\n"
+                "6)Report Approval Status\n"
+                "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
         switch (choice)
         {
-            // hopfully we will write this code for both, head and accountant ,these are included in further choices
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
+                cout << "Write Report :\n"
+                        "1)To Head\n"
+                        "2)To Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.Add_report("WaterReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.Add_report("WaterReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
             break;
         }
         case 2:
         {
-            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
+                cout << "Edit Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.Edit_report("WaterReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.Edit_report("WaterReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 3:
         {
-            // write a code for replacing the report
+            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
+                cout << "Read Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.ReadReport("WaterReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.ReadReport("WaterReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 4:
         {
-            // write a code for giving approval or rejection to the report
 
+            // write a code for replacing the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
+                cout << "Add Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.Add_report("WaterReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.Add_report("WaterReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 5:
         {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
+                cout << "Delete Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.Delete_report("WaterReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.Delete_report("WaterReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 6:
+        {
+
+            // write a code for giving approval or rejection to the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Resport Status Repository..........\n\n";
+                cout << "Check Report Status :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.ReportsStatus();
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
+            break;
+        }
+        case 7:
+        {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Read Response Repository..........\n\n";
+                cout << "Read Responce :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.WaterManager.ReadResponse("HeadResponceToWaterReport");
+                    break;
+                }
+                case 2:
+                {
+                    obj.WaterManager.ForAccount.ReadResponse("AccountResponceToWaterReport");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
             // write a code for reading the head or account manager response
         }
         case 0:
@@ -2988,11 +4060,13 @@ void Menus::ParkingManagerReport()
     while (ch == 0)
     {
         cout << "\n..........Welcome To Parking Manager Reports Repository.........\n\n";
-        cout << "1)Write Or Edit Report\n"
-                "2)Read Report Or Message\n"
-                "3)Replace Report\n"
-                "4)Report Approval Status\n"
-                "5)Check Response\n"
+        cout << "1)Write Report\n"
+                "2)Edit Report\n"
+                "3)Read Report Or Message\n"
+                "4)Replace Report\n"
+                "5)Delete Report\n"
+                "6)Report Approval Status\n"
+                "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -3002,26 +4076,281 @@ void Menus::ParkingManagerReport()
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
+                cout << "Write Report :\n"
+                        "1)To Head\n"
+                        "2)To Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.Add_report("ParkingReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.Add_report("ParkingReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
             break;
         }
         case 2:
         {
-            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
+                cout << "Edit Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.Edit_report("ParkingReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.Edit_report("ParkingReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 3:
         {
-            // write a code for replacing the report
+            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
+                cout << "Read Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.ReadReport("ParkingReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.ReadReport("ParkingReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 4:
         {
-            // write a code for giving approval or rejection to the report
 
+            // write a code for replacing the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
+                cout << "Add Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.Add_report("ParkingReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.Add_report("ParkingReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
             break;
         }
         case 5:
         {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
+                cout << "Delete Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.Delete_report("ParkingReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.Delete_report("ParkingReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 6:
+        {
+
+            // write a code for giving approval or rejection to the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Resport Status Repository..........\n\n";
+                cout << "Check Report Status :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.ReportsStatus();
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
+            break;
+        }
+        case 7:
+        {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Read Response Repository..........\n\n";
+                cout << "Read Responce :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ParkingManager.ReadResponse("HeadResponceToParkingReport");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ParkingManager.ForAccount.ReadResponse("AccountResponceToParkingReport");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
             // write a code for reading the head or account manager response
         }
         case 0:
@@ -3047,8 +4376,321 @@ void Menus::ShopManagerReport()
                 "2)Edit Report\n"
                 "3)Read Report Or Message\n"
                 "4)Replace Report\n"
-                "5)Report Approval Status\n"
-                "6)Check Response\n"
+                "5)Delete Report\n"
+                "6)Report Approval Status\n"
+                "7)Check Response\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            // write a code for writing a report or message which send from the side of maintenance manager to head
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
+                cout << "Write Report :\n"
+                        "1)To Head\n"
+                        "2)To Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.Add_report("ShopReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.Add_report("ShopReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
+            break;
+        }
+        case 2:
+        {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
+                cout << "Edit Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.Edit_report("ShopReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.Edit_report("ShopReportForAccount");
+                     break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 3:
+        {
+            // write a code for reading report  which has written by himself
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
+                cout << "Read Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.ReadReport("ShopReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.ReadReport("ShopReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 4:
+        {
+
+            // write a code for replacing the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
+                cout << "Add Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.Add_report("ShopReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.Add_report("ShopReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 5:
+        {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
+                cout << "Delete Report :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.Delete_report("ShopReportForHead");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.Delete_report("ShopReportForAccount");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+        }
+        case 6:
+        {
+
+            // write a code for giving approval or rejection to the report
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Resport Status Repository..........\n\n";
+                cout << "Check Report Status :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.ReportsStatus();
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.ReportsStatus();
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+
+            break;
+        }
+        case 7:
+        {
+
+            while (ch == 0)
+            {
+                cout << "\n.........Welcome To Read Response Repository..........\n\n";
+                cout << "Read Responce :\n"
+                        "1)Head\n"
+                        "2)Account Manager\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    obj.ShopsManager.ReadResponse("HeadResponceToShopReport");
+                    break;
+                }
+                case 2:
+                {
+                    obj.ShopsManager.ForAccount.ReadResponse("AccountResponceToShopReport");
+                    break;
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    cout << "\nInvalid Choice!\n";
+                    break;
+                }
+                }
+            }
+            ch = 0;
+            break;
+            // write a code for reading the head or account manager response
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+    }
+    ch = 0;
+}
+
+void Menus::AccountManagerReport()
+{
+    while (ch == 0)
+    {
+        cout << "\n..........Welcome To Account Manager Reports Repository.........\n\n";
+        cout << "1)Write Report\n"
+                "2)Edit Report\n"
+                "3)Read Report Or Message\n"
+                "4)Replace Report\n"
+                "5)Delete Report\n"
+                "6)Report Approval Status\n"
+                "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -3058,37 +4700,42 @@ void Menus::ShopManagerReport()
         case 1:
         {
             // write a code for writing a report or message which send from the side of maintenance manager to head
-            obj.ShopsManager.Add_report("ShopsReport");
+            obj.AccountManager.Add_report("AccountReport");
             break;
         }
         case 2:
         {
-            obj.ShopsManager.Edit_report("ShopsReport");
+            obj.AccountManager.Edit_report("AccountReport");
             break;
         }
         case 3:
         {
             // write a code for reading report  which has written by himself
-            obj.ShopsManager.ReadReport("ShopsReport");
+            obj.AccountManager.ReadReport("AccountReport");
             break;
         }
         case 4:
         {
             // write a code for replacing the report
-            obj.ShopsManager.Add_report("ShopsReport");
-
+            obj.AccountManager.Add_report("AccountReport");
             break;
         }
         case 5:
         {
-            // write a code for giving approval or rejection to the report
-            obj.ShopsManager.ReportsStatus();
+            obj.AccountManager.Delete_report("AccountReport");
+            break;
         }
         case 6:
         {
-            // write a code for reading the head or account manager response
-            obj.ShopsManager.ReadResponse("ResponseToShopReport");
+            obj.AccountManager.ReportsStatus();
+            // write a code for giving approval or rejection to the report
 
+            break;
+        }
+        case 7:
+        {
+            // write a code for reading the head or account manager response
+            obj.AccountManager.ReadResponse("ResponseToAccountReport");
             break;
         }
         case 0:
@@ -3105,55 +4752,45 @@ void Menus::ShopManagerReport()
     }
     ch = 0;
 }
-void Menus::AccountManagerReport()
+void Menus::SecurityDetails()
 {
     while (ch == 0)
     {
-        cout << "\n..........Welcome To Account Manager Reports Repository.........\n\n";
-        cout << "1)Write Report\n"
-                "2)Edit Report\n"
-                "3)Read Report Or Message\n"
-                "4)Replace Report\n"
-                "5)Report Approval Status\n"
-                "6)Check Response\n"
+        cout << "\n.......Welcome To Security Details Repository.......\n\n"
+                "1)Getting Details Of Security Guards\n"
+                "2)Getting Details Of Security Cameras\n"
+                "3)Getting Details Of Emergency Escap Room Location\n"
+                "4)Getting Details Of Control Room Location\n"
+                "5)Getting Details Of Security Weapons\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
         switch (choice)
         {
-            // hopfully we will write this code for both, head and accountant ,these are included in further choices
         case 1:
         {
-            // write a code for writing a report or message which send from the side of maintenance manager to head
-            obj.AccountManager.Add_report("AccountReport");
+            // write a code of details of security guards
             break;
         }
         case 2:
         {
-            obj.AccountManager.Edit_report("AccountReport");
+            // write a code of details of security cameras
+            break;
         }
         case 3:
         {
-            // write a code for reading report  which has written by himself
-            obj.AccountManager.ReadReport("AccountReport");
+            // write a code for emergency escap room location
+            break;
         }
         case 4:
         {
-            // write a code for replacing the report
-            obj.AccountManager.Add_report("AccountReport");
+            // write a code for control room location
             break;
         }
         case 5:
         {
-            obj.AccountManager.ReportsStatus();
-            // write a code for giving approval or rejection to the report
-
+            // write a code for the details of security weapons
             break;
-        }
-        case 6:
-        {
-            // write a code for reading the head or account manager response
-            obj.AccountManager.ReadResponse("ResponseToAccountReport");
         }
         case 0:
         {

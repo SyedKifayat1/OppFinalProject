@@ -7,7 +7,9 @@ using namespace std;
 class Maintaineance : public Detail, public Report
 {
 
+
 public:
+Report ForAccount;
    int k;
    Maintaineance()
    {

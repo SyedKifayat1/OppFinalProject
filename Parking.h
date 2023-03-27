@@ -8,6 +8,7 @@ using namespace std;
 class Parking : public Detail, public Report
 {
 public:
+    Report ForAccount;
     Employ E2;
 };
 #endif //!__PARKING__H__

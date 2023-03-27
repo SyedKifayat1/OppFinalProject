@@ -1,7 +1,10 @@
+#ifndef __EMPLOYEE__H__
+#define __EMPLOYEE__H__
+
 #include <iostream>
 #include <string>
 using namespace std;
-#include "fstream"
+#include <fstream>
 #include "Detail.h"
 
 class Employ : public Detail
@@ -11,7 +14,7 @@ public:
     Employ *ptr;
     // Employ() : Detail()
     // {
-    void input_Data()
+    void input_Data(string filename)
     {
 
         int p;
@@ -22,23 +25,13 @@ public:
         for (int i = 0; i < p; i++)
         {
             cin >> ptr[i];
-            ptr[i].input_Date("security");
+            ptr[i].input_Date(filename);
         }
-    };
-
-    void Remove_employ()
-    {
-        ptr->Remove_Employee("security");
     }
 
-    void Replace_Employ()
+    void Total_employee_Details(string filename)
     {
-        ptr->Replace_employ("security");
-    }
-
-    void Total_employee_Details()
-    {
-        ifstream file("security.txt");
+        ifstream file(filename + ".txt");
         if (file.is_open())
         {
             string line;
@@ -54,6 +47,5 @@ public:
             // return 1;
         }
     }
-}
-
-;
+};
+#endif //!__EMPLOYEE__H__

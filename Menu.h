@@ -893,9 +893,9 @@ void Menus::ParkingManager()
             while (ch == 0)
             {
                 cout << "\n.......Welcome To Add Parking Data Repository.......\n\n"
-                        "1)Vehicle Entry \n"
-                        "2)Vehicle Disentry\n"
-                        "3)Enter Available Parking Space\n"
+                        "1)Enter Available Parking Space \n"
+                        "2)Vehicle entry\n"
+                        "3)Vehicle Disentry\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -903,18 +903,19 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    // write a code for car entry
-
+                    p.set_available_parking(); // vehicle entry
                     break;
                 }
                 case 2:
                 {
+                    p.Vehicle_entry(); // vehicle disentry
                     // write a code for car disentry
                     break;
                 }
                 case 3:
                 {
-                    // write a code for available space
+                    p.Vehicle_Disentry();
+                    // write a code )for available space
                     break;
                 }
 
@@ -1307,7 +1308,8 @@ void Menus::ControlAccountManager()
         case 6:
 
         {
-            obj.AccountManager.WriteResponse("ResponseToAccountReport"); break;
+            obj.AccountManager.WriteResponse("ResponseToAccountReport");
+            break;
         }
         case 7:
         {
@@ -1413,7 +1415,7 @@ void Menus::ControlSecurityManager()
 
         {
             obj.SecurityManager.WriteResponse("HeadResponceToSecurityReport");
-             break;
+            break;
         }
         case 7:
         {
@@ -1518,7 +1520,8 @@ void Menus::ControlWaterManager()
         case 6:
 
         {
-            obj.WaterManager.WriteResponse("HeadResponceToWaterReport"); break;
+            obj.WaterManager.WriteResponse("HeadResponceToWaterReport");
+            break;
         }
         case 7:
         {
@@ -1622,7 +1625,8 @@ void Menus::ControlMaintenanceManager()
         case 6:
 
         {
-            obj.MaintenanceManager.WriteResponse("HeadResponceToMaintenanceReport"); break;
+            obj.MaintenanceManager.WriteResponse("HeadResponceToMaintenanceReport");
+            break;
         }
         case 7:
         {
@@ -1727,7 +1731,7 @@ void Menus::ControlParkingManager()
 
         {
             obj.ParkingManager.WriteResponse("HeadResponceToParkingReport");
-             break;
+            break;
         }
         case 7:
         {
@@ -1832,7 +1836,8 @@ void Menus::ControlShopsManager()
         case 6:
 
         {
-            obj.ShopsManager.WriteResponse("HeadResponceToWaterReport"); break;
+            obj.ShopsManager.WriteResponse("HeadResponceToWaterReport");
+            break;
         }
         case 7:
         {
@@ -2267,16 +2272,18 @@ void Menus::ParkingDetails()
         {
         case 1:
         {
-            // write a code for parking income
+            cout << p.get_Earnings();
             break;
         }
         case 2:
         {
+            cout << p.getavailable_parking_space();
             // write a code for parking cars and other details
             break;
         }
         case 3:
         {
+            p.vehicle_details();
             // write a code for vehicle details by number plate number
         }
         case 0:
@@ -3163,7 +3170,7 @@ void Menus::MaintenanceManagerReport()
                 case 2:
                 {
                     obj.MaintenanceManager.ForAccount.Add_report("MaintenanceReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3203,7 +3210,7 @@ void Menus::MaintenanceManagerReport()
                 case 2:
                 {
                     obj.MaintenanceManager.ForAccount.Edit_report("MaintenanceReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3474,7 +3481,7 @@ void Menus::SecurityManagerReport()
                 case 2:
                 {
                     obj.SecurityManager.ForAccount.Add_report("SecurityReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3514,7 +3521,7 @@ void Menus::SecurityManagerReport()
                 case 2:
                 {
                     obj.SecurityManager.ForAccount.Edit_report("SecurityReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3784,7 +3791,7 @@ void Menus::WaterManagerReport()
                 case 2:
                 {
                     obj.WaterManager.ForAccount.Add_report("WaterReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3824,7 +3831,7 @@ void Menus::WaterManagerReport()
                 case 2:
                 {
                     obj.WaterManager.ForAccount.Edit_report("WaterReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4096,7 +4103,7 @@ void Menus::ParkingManagerReport()
                 case 2:
                 {
                     obj.ParkingManager.ForAccount.Add_report("ParkingReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4136,7 +4143,7 @@ void Menus::ParkingManagerReport()
                 case 2:
                 {
                     obj.ParkingManager.ForAccount.Edit_report("ParkingReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4407,7 +4414,7 @@ void Menus::ShopManagerReport()
                 case 2:
                 {
                     obj.ShopsManager.ForAccount.Add_report("ShopReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4447,7 +4454,7 @@ void Menus::ShopManagerReport()
                 case 2:
                 {
                     obj.ShopsManager.ForAccount.Edit_report("ShopReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {

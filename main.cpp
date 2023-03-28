@@ -6,8 +6,11 @@ int main()
 
     Menus body;
     body.Menu();
-    // Parking p;
+    Parking p;
+    // p.set_available_parking();
     // p.Vehicle_entry();
-    // p.Vehicle_Disentry();
+
+    cout << p.get_Earnings();
+    cout << endl;
     return 0;
 }

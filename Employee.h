@@ -28,7 +28,10 @@ public:
             ptr[i].input_Date(filename);
         }
     }
-
+    void calculate_employee_salary()
+    {
+        
+    }
     void Total_employee_Details(string filename)
     {
         ifstream file(filename + ".txt");

@@ -15,7 +15,7 @@ class Manager
      ptr=new Report[6];
     }
     Report *ptr;
-    Accounts AccountManager;
+    Accounts<int> AccountManager;
     Shops ShopsManager;
     Maintaineance MaintenanceManager;
     Parking ParkingManager;

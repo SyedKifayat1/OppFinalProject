@@ -51,7 +51,10 @@ public:
             outfile << endl;
         }
     }
+    // void calculate_employee_salary()
+    // {
 
+    // }
     void Vehicle_Disentry()
     {
         cout << "ENTER CAR OWNER NAME";
@@ -74,7 +77,6 @@ public:
                     }
                 }
             }
-            // /
         }
     }
     friend istream &operator>>(istream &inp, Parking &par)

@@ -6,6 +6,7 @@
 #include "Shops.h"
 #include "Security.h"
 #include "water.h"
+#include "calculator.h"
 using namespace std;
 class Menus
 {
@@ -17,7 +18,7 @@ public:
         ch = 0;
     }
     Manager obj;
-    Accounts A;
+    Accounts<int> A;
     Maintaineance M;
     Parking p;
     Shops S;
@@ -70,6 +71,7 @@ public:
     void ParkingManagerReport();
     void ShopManagerReport();
     void AccountManagerReport();
+    void calculator();
 };
 
 void Menus::Menu()
@@ -1307,7 +1309,8 @@ void Menus::ControlAccountManager()
         case 6:
 
         {
-            obj.AccountManager.WriteResponse("ResponseToAccountReport"); break;
+            obj.AccountManager.WriteResponse("ResponseToAccountReport");
+            break;
         }
         case 7:
         {
@@ -1413,7 +1416,7 @@ void Menus::ControlSecurityManager()
 
         {
             obj.SecurityManager.WriteResponse("HeadResponceToSecurityReport");
-             break;
+            break;
         }
         case 7:
         {
@@ -1518,7 +1521,8 @@ void Menus::ControlWaterManager()
         case 6:
 
         {
-            obj.WaterManager.WriteResponse("HeadResponceToWaterReport"); break;
+            obj.WaterManager.WriteResponse("HeadResponceToWaterReport");
+            break;
         }
         case 7:
         {
@@ -1622,7 +1626,8 @@ void Menus::ControlMaintenanceManager()
         case 6:
 
         {
-            obj.MaintenanceManager.WriteResponse("HeadResponceToMaintenanceReport"); break;
+            obj.MaintenanceManager.WriteResponse("HeadResponceToMaintenanceReport");
+            break;
         }
         case 7:
         {
@@ -1727,7 +1732,7 @@ void Menus::ControlParkingManager()
 
         {
             obj.ParkingManager.WriteResponse("HeadResponceToParkingReport");
-             break;
+            break;
         }
         case 7:
         {
@@ -1832,7 +1837,8 @@ void Menus::ControlShopsManager()
         case 6:
 
         {
-            obj.ShopsManager.WriteResponse("HeadResponceToWaterReport"); break;
+            obj.ShopsManager.WriteResponse("HeadResponceToWaterReport");
+            break;
         }
         case 7:
         {
@@ -3163,7 +3169,7 @@ void Menus::MaintenanceManagerReport()
                 case 2:
                 {
                     obj.MaintenanceManager.ForAccount.Add_report("MaintenanceReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3203,7 +3209,7 @@ void Menus::MaintenanceManagerReport()
                 case 2:
                 {
                     obj.MaintenanceManager.ForAccount.Edit_report("MaintenanceReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3474,7 +3480,7 @@ void Menus::SecurityManagerReport()
                 case 2:
                 {
                     obj.SecurityManager.ForAccount.Add_report("SecurityReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3514,7 +3520,7 @@ void Menus::SecurityManagerReport()
                 case 2:
                 {
                     obj.SecurityManager.ForAccount.Edit_report("SecurityReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3784,7 +3790,7 @@ void Menus::WaterManagerReport()
                 case 2:
                 {
                     obj.WaterManager.ForAccount.Add_report("WaterReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -3824,7 +3830,7 @@ void Menus::WaterManagerReport()
                 case 2:
                 {
                     obj.WaterManager.ForAccount.Edit_report("WaterReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4096,7 +4102,7 @@ void Menus::ParkingManagerReport()
                 case 2:
                 {
                     obj.ParkingManager.ForAccount.Add_report("ParkingReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4136,7 +4142,7 @@ void Menus::ParkingManagerReport()
                 case 2:
                 {
                     obj.ParkingManager.ForAccount.Edit_report("ParkingReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4407,7 +4413,7 @@ void Menus::ShopManagerReport()
                 case 2:
                 {
                     obj.ShopsManager.ForAccount.Add_report("ShopReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4447,7 +4453,7 @@ void Menus::ShopManagerReport()
                 case 2:
                 {
                     obj.ShopsManager.ForAccount.Edit_report("ShopReportForAccount");
-                     break;
+                    break;
                 }
                 case 0:
                 {
@@ -4805,4 +4811,68 @@ void Menus::SecurityDetails()
         }
     }
     ch = 0;
+}
+void Menus::calculator()
+{
+    Calculator *ptr;
+    while (ch == 0)
+    {
+        cout << "\n.........Welcome To Calculator........\n\n";
+        cout << "Select Your Choice :\n"
+                "1)Addition\n"
+                "2)Subtracton\n"
+                "3)Multiplication\n"
+                "4)Divition\n"
+                "5)Percentage\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            ptr=new addition;
+            ptr->calculation();
+            
+            break;
+        }
+        case 2:
+        {
+            ptr=new subtraction;
+            ptr->calculation();
+            break;
+        }
+        case 3:
+        {
+            ptr=new multiplication;
+            ptr->calculation();
+            break;
+        }
+        case 4:
+        {
+            ptr=new divition;
+            ptr->calculation();
+            break;
+        }
+        case 5:
+        {
+            ptr=new percentage;
+            ptr->calculation();
+            break;
+        }
+        case 0:
+        {
+            ch=1;
+            break;
+        }
+
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+        delete ptr;
+    }
+    ch=0;
 }

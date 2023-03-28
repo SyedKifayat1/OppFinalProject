@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Detail.h"
 using namespace std;
+
 istream &operator>>(istream &in, Detail &x)
 { 
 
@@ -19,7 +20,7 @@ istream &operator>>(istream &in, Detail &x)
     cout << "\nENTER YOUR GENDER :";
     in >> x.gender;
     cout << "\nENTER YOUR PHONE NUMBER :";
-    in >> x.PhoneNum;
+    in>>x.PhoneNum;
     cout << "\nENTER YOUR SALARY :";
     in >> x.salary;
     cout << "\nENTER YOUR HIRING DATE :";

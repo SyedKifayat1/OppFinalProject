@@ -17,8 +17,8 @@ public:
     int ch;
     int check;
     Menus()
-    { 
-        check=0;
+    {
+        check = 0;
         ch = 0;
     }
     Manager obj;
@@ -29,7 +29,6 @@ public:
     Shops *S = new Shops(E1);
     Security SE;
     water w;
-
     void Menu();
     void HeadMenu();
     void SubManagerMenu();
@@ -81,7 +80,7 @@ public:
 };
 int Menus::InvaidChoice()
 {
-    if (choice1 == 0 || choice1 == 1 ||choice1 == 2 ||choice1 == 3 ||choice1 == 4 ||choice1 == 5 ||choice1 == 6 ||choice1 == 7 ||choice1 == 8 ||choice1 == 9)
+    if (choice1 == 0 || choice1 == 1 || choice1 == 2 || choice1 == 3 || choice1 == 4 || choice1 == 5 || choice1 == 6 || choice1 == 7 || choice1 == 8 || choice1 == 9)
     {
         return 1;
     }
@@ -96,7 +95,7 @@ void Menus::Menu()
 
     while (ch == 0)
     {
-        
+
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
         cout << "Select Your Status :\n"
                 "1)Head\n"
@@ -106,7 +105,8 @@ void Menus::Menu()
         cin >> choice1;
         check = InvaidChoice();
         if (check == 1)
-        {   choice=choice1;
+        {
+            choice = choice1;
             switch (choice)
             {
             case 1:
@@ -136,7 +136,7 @@ void Menus::Menu()
         }
         else
         {
-            cout<<"\nInvalid Choice Is Enter!\n";
+            cout << "\nInvalid Choice Is Enter!\n";
         }
         cin.ignore();
     }
@@ -1070,6 +1070,7 @@ void Menus::ShopsManager()
         }
         case 3:
         {
+            S->add_shop_Data();
             // write a code for regestring shop
             break;
         }

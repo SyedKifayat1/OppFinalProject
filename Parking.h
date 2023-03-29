@@ -105,7 +105,10 @@ public:
             cout << "SORRY PARKING SPACE HAS REACHED IT'S LIMIT!\n";
         }
     }
+    // void calculate_employee_salary()
+    // {
 
+    // }
     void Vehicle_Disentry()
     {
         string ID; // name of employee variable

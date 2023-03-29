@@ -10,8 +10,8 @@ using namespace std;
 class Detail
 {
 public:
-    string fname, lname, EmailADdress, JobTitle, Status, gender, user_id; // attributes
-    int PhoneNum, salary, hiringDate;
+    string fname, lname, EmailADdress, JobTitle, Status, gender, user_id,hiringDate; // attributes
+    unsigned long int  salary , PhoneNum;
     Detail() {}
     void input_Date(string fileName)
     {
@@ -252,7 +252,9 @@ public:
         cin.ignore();
         cin.ignore();
     }
-
+       
+        
+    
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype
     friend ostream &operator<<(ostream &out, const Detail &y); // friend function prototype
 };

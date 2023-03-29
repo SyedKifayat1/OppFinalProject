@@ -6,6 +6,7 @@
 #include "Shops.h"
 #include "Security.h"
 #include "water.h"
+#include "calculator.h"
 using namespace std;
 class Menus
 {
@@ -17,7 +18,7 @@ public:
         ch = 0;
     }
     Manager obj;
-    Accounts A;
+    Accounts<int> A;
     Maintaineance M;
     Parking p;
     Shops S;
@@ -70,6 +71,7 @@ public:
     void ParkingManagerReport();
     void ShopManagerReport();
     void AccountManagerReport();
+    void calculator();
 };
 
 void Menus::Menu()
@@ -4812,4 +4814,68 @@ void Menus::SecurityDetails()
         }
     }
     ch = 0;
+}
+void Menus::calculator()
+{
+    Calculator *ptr;
+    while (ch == 0)
+    {
+        cout << "\n.........Welcome To Calculator........\n\n";
+        cout << "Select Your Choice :\n"
+                "1)Addition\n"
+                "2)Subtracton\n"
+                "3)Multiplication\n"
+                "4)Divition\n"
+                "5)Percentage\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            ptr=new addition;
+            ptr->calculation();
+            
+            break;
+        }
+        case 2:
+        {
+            ptr=new subtraction;
+            ptr->calculation();
+            break;
+        }
+        case 3:
+        {
+            ptr=new multiplication;
+            ptr->calculation();
+            break;
+        }
+        case 4:
+        {
+            ptr=new divition;
+            ptr->calculation();
+            break;
+        }
+        case 5:
+        {
+            ptr=new percentage;
+            ptr->calculation();
+            break;
+        }
+        case 0:
+        {
+            ch=1;
+            break;
+        }
+
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+        delete ptr;
+    }
+    ch=0;
 }

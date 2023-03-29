@@ -26,7 +26,7 @@ public:
     {
         this->security_cameras = security_cameras;
         // this->number_of_security_personel = number_of_security_personel;
-        this->control_room_location = control_room_location;
+        this->control_room_location= control_room_location;
         this->Escape_room_location = escape_room_location;
     }
 

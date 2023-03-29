@@ -18,12 +18,7 @@ protected:
     int *ptr;
 
 public:
-    Parking()
-    {
-        Earnings = 0;
-        available_parking_Space = 0;
-    }
-    Report ForAccount;
+        Report ForAccount;
     Employ *E2;
     Parking(Employ *E2)
     {
@@ -37,6 +32,8 @@ public:
         carNumber = "1444";
         carType = "Vehicle";
         carColor = "black";
+        Earnings = 0;
+        available_parking_Space = 0;
     }
 
     int getavailable_parking_space()

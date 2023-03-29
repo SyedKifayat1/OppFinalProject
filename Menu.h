@@ -23,7 +23,8 @@ public:
     Employ *E1 = new Employ();
     Maintaineance *M = new Maintaineance(E1);
     Parking *p = new Parking(E1);
-    Shops S;
+
+    Shops *S = new Shops(E1);
     Security SE;
     water w;
 
@@ -907,18 +908,18 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    p.set_available_parking(); // vehicle entry
+                    p->set_available_parking(); // vehicle entry
                     break;
                 }
                 case 2:
                 {
-                    p.Vehicle_entry(); // vehicle disentry
+                    p->Vehicle_entry(); // vehicle disentry
                     // write a code for car disentry
                     break;
                 }
                 case 3:
                 {
-                    p.Vehicle_Disentry();
+                    p->Vehicle_Disentry();
                     // write a code )for available space
                     break;
                 }
@@ -1093,25 +1094,25 @@ void Menus::ShopEmployee()
         {
         case 1:
         {
-            S.E3.input_Data("Shops");
+            S->E3->input_Data("Shops");
             // write a code for adding employee
             break;
         }
         case 2:
         {
-            S.Remove_Employee("Shops");
+            S->Remove_Employee("Shops");
             // write a code for removing employee
             break;
         }
         case 3:
         {
-            S.Replace_employ("Shops");
+            S->Replace_employ("Shops");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
-            S.E3.Total_employee_Details("Shops");
+            S->E3->Total_employee_Details("Shops");
             // write a code for total employee details
             break;
         }
@@ -1968,13 +1969,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    S.Display_Data("Shops");
+                    S->Display_Data("Shops");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    S.E3.Total_employee_Details("Shops");
+                    S->E3->Total_employee_Details("Shops");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2276,18 +2277,18 @@ void Menus::ParkingDetails()
         {
         case 1:
         {
-            cout << p.get_Earnings();
+            cout << p->get_Earnings();
             break;
         }
         case 2:
         {
-            cout << p.getavailable_parking_space();
+            cout << p->getavailable_parking_space();
             // write a code for parking cars and other details
             break;
         }
         case 3:
         {
-            p.vehicle_details();
+            p->vehicle_details();
             // write a code for vehicle details by number plate number
         }
         case 0:

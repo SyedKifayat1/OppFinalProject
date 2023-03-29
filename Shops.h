@@ -10,7 +10,14 @@ class Shops : public Detail, public Report
 
 public:
     Report ForAccount;
-    Employ E3;
+    Employ *E3;
+    Shops(Employ *E3)
+    {
+        this->E3 = E3;
+    }
+    Shops()
+    {
+    }
 };
 
 #endif //!__SHOPS__H__s

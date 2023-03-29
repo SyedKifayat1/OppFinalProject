@@ -39,7 +39,7 @@ public:
         ofstream outfile("SHOPS_DETAILS.txt", ios::app);
         for (int i = 0; i < a; i++)
         {
-
+            outfile << endl;
             Shops_number[i].function_Taking_shops();
             outfile << "SHOP ID NO: ";
             outfile << Shops_number[i].Shop_Id_No;
@@ -55,6 +55,7 @@ public:
             outfile << endl;
             outfile << "SHOP LOCATION: ";
             outfile << Shops_number[i].Shop_Location;
+            outfile << endl;
             outfile << endl;
         }
     }
@@ -84,7 +85,7 @@ public:
             for (int i = 0; i < t; i++)
             {
                 /* code */
-
+                outfile << endl;
                 cout << "ENTER SHOP OWNER FIRST NAME: ";
                 cin >> Shop_owner[i].Shop_Owner_First_name;
                 outfile << "SHOP OWNER FIRST NAME IS: " << Shop_owner[i].Shop_Owner_First_name << endl;
@@ -100,8 +101,136 @@ public:
                 cout << "ENTER SHOP LOCATION: ";
                 cin >> Shop_owner->Shop_Location;
                 outfile << "SHOP LOCATION: " << Shop_owner[i].Shop_Location << endl;
+                outfile << endl;
             }
         }
+    }
+
+    void getting_shop_details()
+    {
+        cout << "ENTER SHOP ID: ";
+        string shop_id;
+        cin >> shop_id;
+        ifstream infile("SHOPS_DETAILS.txt");
+        string detail;
+        bool printlines = false;
+        if (!infile.is_open())
+        {
+            cout << "FAILED TO OPEN THE FILE!" << endl;
+        }
+        while (getline(infile, detail))
+        {
+            if (detail.find(shop_id) != string::npos)
+            {
+                printlines = true;
+                cout << detail << endl;
+                for (int i = 0; i < 5; i++)
+                {
+                    if (getline(infile, detail))
+                    {
+                        cout << detail << endl;
+                    }
+                }
+            }
+        }
+        cout << "\nPress Enter To Continue........\n";
+        cin.ignore();
+        cin.ignore();
+    }
+
+    void getting_whole_shops_details()
+    {
+        ifstream infile("SHOPS_DETAILS.txt");
+        string stor;
+        while (getline(infile, stor))
+        {
+            cout << stor << endl;
+        }
+    }
+
+    void check_owner_Date()
+    {
+        cout << "ENTER OWNER NAME: ";
+        string owner_name;
+        cin >> owner_name;
+        ifstream infile("Shop_Owner_Data.txt");
+        string own;
+        if (!infile.is_open())
+        {
+            cout << "FILE CAN'T BE OPENED";
+        }
+        while (getline(infile, owner_name))
+        {
+            if (own.find(owner_name) != string::npos)
+            {
+                cout << own << endl;
+                for (int i = 0; i < 5; i++)
+                {
+                    if (getline(infile, own))
+                    {
+                        cout << own << endl;
+                    }
+                }
+            }
+        }
+    }
+
+    void replace_shop_owner()
+    {
+        Shops s;
+        string ID;
+        cout << "ENTER SHOP OWNER NAME: ";
+        cin >> ID;
+        ifstream infile("Shop_Owner_Data.txt");
+        ofstream outfile("temporary.txt");
+        if (!infile.is_open())
+        {
+            cout << "FAILED TO OPEN THE FILE!" << endl;
+            return;
+        }
+        int i = 0;
+        string line;
+        while (getline(infile, line))
+        {
+            if (line.find(ID) != string::npos)
+            {
+                i = 5;
+                cout << "FOUND\n";
+                // cin >> d;
+                s.add_shop_owner_data();
+                // d.input_Date(fileName)
+            }
+            else
+            {
+                if (i == 0)
+                {
+                    outfile << line << endl;
+                }
+                else
+                {
+                    i--;
+                }
+            }
+        }
+
+        infile.close();
+        outfile.close();
+
+        // Remove the original file
+        filesystem::remove("Shop_Owner_Data.txt");
+
+        // Rename temporary file to original name
+        try
+        {
+            filesystem::rename("temporary.txt", "Shop_Owner_Data.txt");
+        }
+        catch (const filesystem::filesystem_error &e)
+        {
+            cerr << "Error renaming file: " << e.what() << endl;
+        }
+        cout << "\nPress Enter To Continue........\n";
+        cin.ignore();
+        cin.ignore();
     }
 };
 

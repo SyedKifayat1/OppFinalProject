@@ -1066,7 +1066,7 @@ void Menus::ShopsManager()
         }
         case 2:
         {
-
+            shop->check_owner_Date();
             break;
         }
         case 3:
@@ -1084,6 +1084,7 @@ void Menus::ShopsManager()
         }
         case 5:
         {
+            shop->replace_shop_owner();
             // write a code for replacing shop honour
             break;
         }
@@ -2216,15 +2217,17 @@ void Menus::ShopDetails()
         {
         case 1:
         {
+            shop->getting_shop_details();
             // wirte a code for getting details with shop ID No
             break;
         }
         case 2:
         {
+            shop->getting_whole_shops_details();
             // write a code for getting details of whole shops
             break;
         }
-        
+
         case 0:
         {
             ch = 1;

@@ -13,10 +13,10 @@ protected:
     string Shop_Rent;
     string Shop_Type;
     string Shop_Location;
-    string Owner_First_name; // shop owner function implementation do need owner name
-    string Owner_Last_name;
-    string Owner_CNIC;
-    string Owner_Address;
+    string Shop_Owner_First_name; // shop owner function implementation do need owner name
+    string Shop_Owner_Last_name;
+    string Shop_Owner_CNIC;
+    string Shop_Owner_Address;
 
 public:
     Report ForAccount;
@@ -79,8 +79,30 @@ public:
         int t;
         cin >> t;
         Shops *Shop_owner = new Shops[t];
-        ofstream outfile("Shop_Owner_Data.txt"); // openeing file for shop owner data
+        ofstream outfile("Shop_Owner_Data.txt", ios::app); // openeing file for shop owner data
+        {
+            for (int i = 0; i < t; i++)
+            {
+                /* code */
+
+                cout << "ENTER SHOP OWNER FIRST NAME: ";
+                cin >> Shop_owner[i].Shop_Owner_First_name;
+                outfile << "SHOP OWNER FIRST NAME IS: " << Shop_owner[i].Shop_Owner_First_name << endl;
+                cout << "ENTER SHOP OWNER SECOND NAME: ";
+                cin >> Shop_owner[i].Shop_Owner_Last_name;
+                outfile << "SHOP OWNER LAST NAME IS: " << Shop_owner[i].Shop_Owner_Last_name << endl;
+                cout << "ENTER SHOP OWNER CNIC: ";
+                cin >> Shop_owner[i].Shop_Owner_CNIC;
+                outfile << "SHOP OWNER CNIC: " << Shop_owner[i].Shop_Owner_CNIC << endl;
+                cout << "ENTER SHOP TYPE: ";
+                cin >> Shop_owner[i].Shop_Type;
+                outfile << "SHOP TYPE IS: " << Shop_owner[i].Shop_Type << endl;
+                cout << "ENTER SHOP LOCATION: ";
+                cin >> Shop_owner->Shop_Location;
+                outfile << "SHOP LOCATION: " << Shop_owner[i].Shop_Location << endl;
+            }
         }
+    }
 };
 
 #endif //!__SHOPS__H__s

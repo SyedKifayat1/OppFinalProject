@@ -1071,7 +1071,8 @@ void Menus::ShopsManager()
         }
         case 3:
         {
-            S->add_shop_Data();
+            // shop->function_Taking_shops();
+            shop->add_shop_Data();
             // write a code for regestring shop
             break;
         }

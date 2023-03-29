@@ -7,6 +7,16 @@
 using namespace std;
 class Shops : public Detail, public Report
 {
+protected:
+    string Shop_Id_No;
+    string Shop_Owner_Name;
+    string Shop_Rent;
+    string Shop_Type;
+    string Shop_Location;
+    string Owner_First_name; // shop owner function implementation do need owner name
+    string Owner_Last_name;
+    string Owner_CNIC;
+    string Owner_Address;
 
 public:
     Report ForAccount;
@@ -15,11 +25,7 @@ public:
     {
         this->shopsEmployee = shopsEmployee;
     }
-    string Shop_Id_No;
-    string Shop_Owner_Name;
-    string Shop_Rent;
-    string Shop_Type;
-    string Shop_Location;
+
     Shops()
     {
     }
@@ -29,42 +35,52 @@ public:
         cout << "ENTER NUMBER OF SHOPS: ";
         int a;
         cin >> a;
-        Employ *Employs_number = new Employ[a];
-        ofstream outfile("SHOPS_DETAILS.txt");
+        Shops *Shops_number = new Shops[a];
+        ofstream outfile("SHOPS_DETAILS.txt", ios::app);
         for (int i = 0; i < a; i++)
         {
 
-            outfile << " SHOP ID NO: ";
-            outfile << Shop_Id_No;
+            Shops_number[i].function_Taking_shops();
+            outfile << "SHOP ID NO: ";
+            outfile << Shops_number[i].Shop_Id_No;
             outfile << endl;
             outfile << "SHOP OWNER NAME: ";
-            outfile << Shop_Owner_Name;
+            outfile << Shops_number[i].Shop_Owner_Name;
             outfile << endl;
             outfile << "ENTER RENT OF SHOPE: ";
-            outfile << Shop_Rent;
+            outfile << Shops_number[i].Shop_Rent;
             outfile << endl;
             outfile << "SHOP TYPE: ";
-            outfile << Shop_Type;
+            outfile << Shops_number[i].Shop_Type;
             outfile << endl;
             outfile << "SHOP LOCATION: ";
-            outfile << Shop_Location;
+            outfile << Shops_number[i].Shop_Location;
             outfile << endl;
         }
     }
 
-    friend istream &operator>>(istream &inp, Shops &shp)
+    void function_Taking_shops()
     {
         cout << "ENTER SHOP ID NO: ";
-        inp >> shp.Shop_Id_No;
+        cin >> Shop_Id_No;
         cout << "ENTER SHOP OWNER NAME: ";
-        inp >> shp.Shop_Owner_Name;
+        cin >> Shop_Owner_Name;
         cout << "ENTER RENT OF SHAPE: ";
-        inp >> shp.Shop_Rent;
+        cin >> Shop_Rent;
         cout << "ENTER SHOP TYPE: ";
-        inp >> shp.Shop_Type;
+        cin >> Shop_Type;
         cout << "ENTER SHOP LOCATION: ";
-        inp >> shp.Shop_Location;
+        cin >> Shop_Location;
     }
+
+    void add_shop_owner_data()
+    {
+        cout << "HOW MANY SHOP OWNERS DATA ARE YOU ENTERING: ";
+        int t;
+        cin >> t;
+        Shops *Shop_owner = new Shops[t];
+        ofstream outfile("Shop_Owner_Data.txt"); // openeing file for shop owner data
+        }
 };
 
 #endif //!__SHOPS__H__s

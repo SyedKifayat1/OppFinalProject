@@ -22,13 +22,13 @@ public:
         ch = 0;
     }
     Manager obj;
-    Accounts<long double> A;
-    Employ *E1 = new Employ();
-    Maintaineance *M = new Maintaineance(E1);
-    Parking *p = new Parking(E1);
-    Shops *S = new Shops(E1);
-    Security SE;
-    water w;
+    Accounts<long double> account;
+    Employ *employee = new Employ();
+    Maintaineance *maintaineance = new Maintaineance(employee);
+    Parking *parking = new Parking(employee);
+    Shops *shop = new Shops(employee);
+    Security security;
+    water Water;
 
     void Menu();
     void HeadMenu();
@@ -703,25 +703,25 @@ void Menus::MaintenanceEmployee()
         {
         case 1:
         {
-            M->E1->input_Data("Maintenance");
+            maintaineance->maintaineanceEmployee->input_Data("MaintenanceEmployee");
 
             break;
         }
         case 2:
         {
-            M->Remove_Employee("Maintenance");
+            maintaineance->Remove_Employee("MaintenanceEmployee");
             // write a code for removing employee
             break;
         }
         case 3:
         {
-            M->Replace_employ("Maintenance");
+            maintaineance->Replace_employ("MaintenanceEmployee");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
-            M->E1->Total_employee_Details("Maintenance");
+            maintaineance->maintaineanceEmployee->Total_employee_Details("MaintenanceEmployee");
             // write a code for total employee details
             break;
         }
@@ -938,18 +938,18 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    p->set_available_parking(); // vehicle entry
+                    parking->set_available_parking(); // vehicle entry
                     break;
                 }
                 case 2:
                 {
-                    p->Vehicle_entry(); // vehicle disentry
+                    parking->Vehicle_entry(); // vehicle disentry
                     // write a code for car disentry
                     break;
                 }
                 case 3:
                 {
-                    p->Vehicle_Disentry();
+                    parking->Vehicle_Disentry();
                     // write a code )for available space
                     break;
                 }
@@ -985,25 +985,25 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    p->E2->input_Data("Parking");
+                    parking->parkingEmployee->input_Data("ParkingEmployee");
                     // write a code for adding employee
                     break;
                 }
                 case 2:
                 {
-                    p->Remove_Employee("Parking");
+                    parking->Remove_Employee("ParkingEmployee");
                     // write a code for removing employee
                     break;
                 }
                 case 3:
                 {
-                    p->Replace_employ("Parking");
+                    parking->Replace_employ("ParkingEmployee");
                     // write a code for replacing employee
                     break;
                 }
                 case 4:
                 {
-                    p->E2->Total_employee_Details("Parking");
+                    parking->parkingEmployee->Total_employee_Details("ParkingEmployee");
                     // write a code for total employee details
                     break;
                 }
@@ -1124,25 +1124,25 @@ void Menus::ShopEmployee()
         {
         case 1:
         {
-            S->E3->input_Data("Shops");
+            shop->shopsEmployee->input_Data("ShopsEmployee");
             // write a code for adding employee
             break;
         }
         case 2:
         {
-            S->Remove_Employee("Shops");
+            shop->Remove_Employee("ShopsEmployee");
             // write a code for removing employee
             break;
         }
         case 3:
         {
-            S->Replace_employ("Shops");
+            shop->Replace_employ("ShopsEmployee");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
-            S->E3->Total_employee_Details("Shops");
+            shop->shopsEmployee->Total_employee_Details("ShopsEmployee");
             // write a code for total employee details
             break;
         }
@@ -1233,25 +1233,25 @@ void Menus::WaterManager()
                 {
                 case 1:
                 {
-                    w.E5.input_Data("water");
+                    Water.waterEmployee.input_Data("waterEmployee");
                     // write a code for adding employee
                     break;
                 }
                 case 2:
                 {
-                    w.Remove_Employee("water");
+                    Water.Remove_Employee("waterEmployee");
                     // write a code for removing employee
                     break;
                 }
                 case 3:
                 {
-                    w.Replace_employ("water");
+                    Water.Replace_employ("waterEmployee");
                     // write a code for replacing employee
                     break;
                 }
                 case 4:
                 {
-                    w.E5.Total_employee_Details("water");
+                    Water.waterEmployee.Total_employee_Details("waterEmployee");
                     // write a code for total employee details
                     break;
                 }
@@ -1959,12 +1959,12 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    A.Display_Data("AccountEmployee");
+                    account.Display_Data("AccountEmployee");
                     break;
                 }
                 case 2:
                 {
-                    A.E.Total_employee_Details("AccountEmployee");
+                    account.accountEmployee.Total_employee_Details("AccountEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1999,13 +1999,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    S->Display_Data("ShopsEmployee");
+                    shop->Display_Data("ShopsEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    S->E3->Total_employee_Details("ShopsEmployee");
+                    shop->shopsEmployee->Total_employee_Details("ShopsEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2039,13 +2039,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    M->Display_Data("MaintenanceEmployee");
+                    maintaineance->Display_Data("MaintenanceEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    M->E1->Total_employee_Details("MaintenanceEmployee");
+                    maintaineance->maintaineanceEmployee->Total_employee_Details("MaintenanceEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2078,13 +2078,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    p->Display_Data("ParkingEmployee");
+                    parking->Display_Data("ParkingEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    p->E2->Total_employee_Details("ParkingEmployee");
+                    parking->parkingEmployee->Total_employee_Details("ParkingEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2118,13 +2118,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    w.Display_Data("waterEmployee");
+                    Water.Display_Data("waterEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    w.E5.Total_employee_Details("waterEmployee");
+                    Water.waterEmployee.Total_employee_Details("waterEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2159,6 +2159,7 @@ void Menus::EmployeeDetails()
                 case 1:
                 {
                     // wirte a code for getting data with ID No
+
                     break;
                 }
                 case 2:
@@ -2246,7 +2247,7 @@ void Menus::AccountDetails()
         cout << "\n.......Welcome To Checking Accounts Details Repository.......\n\n"
                 "1)Checking Employee Payment Information \n"
                 "2)Reviewing your total earnings\n"
-                "3)Examining the department's Financial Plan\n"
+                "3)Examining the department'shop Financial Plan\n"
                 "4)Reviewing your Complete Income Details\n"
                 "0)Exit\n"
                 "Your Choice :";
@@ -2307,18 +2308,18 @@ void Menus::ParkingDetails()
         {
         case 1:
         {
-            cout << p->get_Earnings();
+            cout << parking->get_Earnings();
             break;
         }
         case 2:
         {
-            cout << p->getavailable_parking_space();
+            cout << parking->getavailable_parking_space();
             // write a code for parking cars and other details
             break;
         }
         case 3:
         {
-            p->vehicle_details();
+            parking->vehicle_details();
             // write a code for vehicle details by number plate number
         }
         case 0:
@@ -3132,22 +3133,22 @@ void Menus::AccountEmployees()
         {
         case 1:
         {
-            A.E.input_Data("AccountEmployee");
+            account.accountEmployee.input_Data("AccountEmployee");
             break;
         }
         case 2:
         {
-            A.Remove_Employee("AccountEmployee");
+            account.Remove_Employee("AccountEmployee");
             break;
         }
         case 3:
         {
-            A.Replace_employ("AccountEmployee");
+            account.Replace_employ("AccountEmployee");
             break;
         }
         case 4:
         {
-            A.E.Total_employee_Details("AccountEmployee");
+            account.accountEmployee.Total_employee_Details("AccountEmployee");
             break;
         }
         case 0:
@@ -4850,7 +4851,7 @@ void Menus::SecurityDetails()
 }
 void Menus::calculator()
 {
-    Calculator<long double> *ptr;
+    Calculator<long double> *calculator;
     while (ch == 0)
     {
         cout << "\n.........Welcome To Calculator........\n\n";
@@ -4867,33 +4868,33 @@ void Menus::calculator()
         {
         case 1:
         {
-            ptr = new addition;
-            ptr->calculation();
+            calculator = new addition;
+            calculator->calculation();
 
             break;
         }
         case 2:
         {
-            ptr = new subtraction;
-            ptr->calculation();
+            calculator = new subtraction;
+            calculator->calculation();
             break;
         }
         case 3:
         {
-            ptr = new multiplication;
-            ptr->calculation();
+            calculator = new multiplication;
+            calculator->calculation();
             break;
         }
         case 4:
         {
-            ptr = new divition;
-            ptr->calculation();
+            calculator = new divition;
+            calculator->calculation();
             break;
         }
         case 5:
         {
-            ptr = new percentage;
-            ptr->calculation();
+            calculator = new percentage;
+            calculator->calculation();
             break;
         }
         case 0:
@@ -4908,7 +4909,7 @@ void Menus::calculator()
             break;
         }
         }
-        delete ptr;
+        delete calculator;
     }
     ch = 0;
 }

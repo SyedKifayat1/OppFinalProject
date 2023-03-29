@@ -9,15 +9,15 @@ class Maintaineance : public Detail, public Report
 
 public:
    Report ForAccount;
-   Employ *E1;
+   Employ *maintaineanceEmployee;
    int k;
    Maintaineance()
    {
       k = 0;
    }
-   Maintaineance(Employ *E1)
+   Maintaineance(Employ *maintaineanceEmployee)
    {
-      this->E1 = E1;
+      this->maintaineanceEmployee = maintaineanceEmployee;
    }
 };
 #endif //!__MAINTENANCE__H__

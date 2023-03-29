@@ -21,7 +21,7 @@ protected:
 
 public:
     Report ForAccount;
-    Employ E4;
+    Employ securityEmployee;
     Security(int security_cameras = 20, int number_of_security_personel = 100, string control_room_location = "D Block", string escape_room_location = "B block")
     {
         this->security_cameras = security_cameras;

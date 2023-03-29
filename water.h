@@ -15,7 +15,7 @@ private:
 
 public:
     Report ForAccount;
-    Employ E5;
+    Employ waterEmployee;
     void setWaterUsage(int water_usage) // set water usage
     {
         this->water_usage = water_usage;

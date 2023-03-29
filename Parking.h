@@ -19,10 +19,10 @@ protected:
 
 public:
         Report ForAccount;
-    Employ *E2;
-    Parking(Employ *E2)
+    Employ *parkingEmployee;
+    Parking(Employ *parkingEmployee)
     {
-        this->E2 = E2;
+        this->parkingEmployee = parkingEmployee;
     }
 
     Parking()

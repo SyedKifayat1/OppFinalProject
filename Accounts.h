@@ -14,7 +14,7 @@ class Accounts : public Detail, public Report
 private:
 T TotalIncome;
 public:
-    Employ E;
+    Employ accountEmployee;
 
     // virtual void calculate_employee_salary();
     // virtual void display_employee_salary();

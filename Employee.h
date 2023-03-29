@@ -11,7 +11,7 @@ class Employ : public Detail
 {
 
 public:
-    Employ *ptr;
+    Employ *Employee;
     // Employ() : Detail()
     // {
     void input_Data(string filename)
@@ -21,11 +21,11 @@ public:
         cout << "ENTER SIZE OF EMPLOY: ";
         cin >> p;
 
-        Employ *ptr = new Employ[p];
+        Employ *Employee = new Employ[p];
         for (int i = 0; i < p; i++)
         {
-            cin >> ptr[i];
-            ptr[i].input_Date(filename);
+            cin >> Employee[i];
+            Employee[i].input_Date(filename);
         }
     }
     void calculate_employee_salary()

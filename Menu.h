@@ -897,9 +897,9 @@ void Menus::ParkingManager()
             while (ch == 0)
             {
                 cout << "\n.......Welcome To Add Parking Data Repository.......\n\n"
-                        "1)Vehicle Entry \n"
-                        "2)Vehicle Disentry\n"
-                        "3)Enter Available Parking Space\n"
+                        "1)Enter Available Parking Space \n"
+                        "2)Vehicle entry\n"
+                        "3)Vehicle Disentry\n"
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice;
@@ -907,18 +907,19 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    // write a code for car entry
-
+                    p.set_available_parking(); // vehicle entry
                     break;
                 }
                 case 2:
                 {
+                    p.Vehicle_entry(); // vehicle disentry
                     // write a code for car disentry
                     break;
                 }
                 case 3:
                 {
-                    // write a code for available space
+                    p.Vehicle_Disentry();
+                    // write a code )for available space
                     break;
                 }
 
@@ -2275,16 +2276,18 @@ void Menus::ParkingDetails()
         {
         case 1:
         {
-            // write a code for parking income
+            cout << p.get_Earnings();
             break;
         }
         case 2:
         {
+            cout << p.getavailable_parking_space();
             // write a code for parking cars and other details
             break;
         }
         case 3:
         {
+            p.vehicle_details();
             // write a code for vehicle details by number plate number
         }
         case 0:

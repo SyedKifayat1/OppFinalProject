@@ -46,7 +46,7 @@ public:
         }
         else
         {
-            cerr << "Failed to open file." << endl;
+            cout << "Failed to open file." << endl;
             // return 1;
         }
     }

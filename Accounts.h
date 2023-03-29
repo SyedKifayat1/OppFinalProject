@@ -11,12 +11,14 @@ using namespace std;
 template <class T>
 class Accounts : public Detail, public Report
 {
+
 private:
 T TotalIncome;
 public:
+Accounts(){}
     Employ accountEmployee;
+    T parkingIncome;
+    T shopsIncome;
 
-    // virtual void calculate_employee_salary();
-    // virtual void display_employee_salary();
 };
 #endif //!__ACCOUNTS__H__

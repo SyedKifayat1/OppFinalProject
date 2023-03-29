@@ -2209,7 +2209,6 @@ void Menus::ShopDetails()
         cout << "\n.......Welcome To Checking Shop Details Repository.......\n\n"
                 "1)Getting Details With Shop ID No \n"
                 "2)Getting Details Of Whole Shops\n"
-                "3)Getting Details With Shop Owner ID \n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -2225,11 +2224,7 @@ void Menus::ShopDetails()
             // write a code for getting details of whole shops
             break;
         }
-        case 3:
-        {
-            // write a code for getting details with shop owner id
-            break;
-        }
+        
         case 0:
         {
             ch = 1;

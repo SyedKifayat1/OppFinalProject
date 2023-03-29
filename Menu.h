@@ -7,6 +7,7 @@
 #include "Security.h"
 #include "water.h"
 #include "calculator.h"
+#include "Employee.h"
 using namespace std;
 class Menus
 {
@@ -19,8 +20,9 @@ public:
     }
     Manager obj;
     Accounts<int> A;
-    Maintaineance M;
-    Parking p;
+    Employ *E1 = new Employ();
+    Maintaineance *M = new Maintaineance(E1);
+    Parking *p = new Parking(E1);
     Shops S;
     Security SE;
     water w;
@@ -670,25 +672,25 @@ void Menus::MaintenanceEmployee()
         {
         case 1:
         {
-            M.E1.input_Data("Maintenance");
+            M->E1->input_Data("Maintenance");
 
             break;
         }
         case 2:
         {
-            M.Remove_Employee("Maintenance");
+            M->Remove_Employee("Maintenance");
             // write a code for removing employee
             break;
         }
         case 3:
         {
-            M.Replace_employ("Maintenance");
+            M->Replace_employ("Maintenance");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
-            M.E1.Total_employee_Details("Maintenance");
+            M->E1->Total_employee_Details("Maintenance");
             // write a code for total employee details
             break;
         }
@@ -951,25 +953,25 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    p.E2.input_Data("Parking");
+                    p->E2->input_Data("Parking");
                     // write a code for adding employee
                     break;
                 }
                 case 2:
                 {
-                    p.Remove_Employee("Parking");
+                    p->Remove_Employee("Parking");
                     // write a code for removing employee
                     break;
                 }
                 case 3:
                 {
-                    p.Replace_employ("Parking");
+                    p->Replace_employ("Parking");
                     // write a code for replacing employee
                     break;
                 }
                 case 4:
                 {
-                    p.E2.Total_employee_Details("Parking");
+                    p->E2->Total_employee_Details("Parking");
                     // write a code for total employee details
                     break;
                 }
@@ -2005,13 +2007,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    M.Display_Data("Maintenance");
+                    M->Display_Data("Maintenance");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    M.E1.Total_employee_Details("Maintenance");
+                    M->E1->Total_employee_Details("Maintenance");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2044,13 +2046,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    p.Display_Data("Parking");
+                    p->Display_Data("Parking");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    p.E2.Total_employee_Details("Parking");
+                    p->E2->Total_employee_Details("Parking");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -4831,38 +4833,38 @@ void Menus::calculator()
         {
         case 1:
         {
-            ptr=new addition;
+            ptr = new addition;
             ptr->calculation();
-            
+
             break;
         }
         case 2:
         {
-            ptr=new subtraction;
+            ptr = new subtraction;
             ptr->calculation();
             break;
         }
         case 3:
         {
-            ptr=new multiplication;
+            ptr = new multiplication;
             ptr->calculation();
             break;
         }
         case 4:
         {
-            ptr=new divition;
+            ptr = new divition;
             ptr->calculation();
             break;
         }
         case 5:
         {
-            ptr=new percentage;
+            ptr = new percentage;
             ptr->calculation();
             break;
         }
         case 0:
         {
-            ch=1;
+            ch = 1;
             break;
         }
 
@@ -4874,5 +4876,5 @@ void Menus::calculator()
         }
         delete ptr;
     }
-    ch=0;
+    ch = 0;
 }

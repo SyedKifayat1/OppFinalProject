@@ -17,7 +17,20 @@ protected:
 
 public:
     Report ForAccount;
-    Employ E2;
+    Employ *E2;
+    Parking(Employ *E2)
+    {
+        this->E2 = E2;
+    }
+
+    Parking()
+    {
+        carOwner = "Murtaza khalid";
+        carOwnerCnic = "1550119";
+        carNumber = "1444";
+        carType = "Vehicle";
+        carColor = "black";
+    }
 
     void Vehicle_entry()
     {

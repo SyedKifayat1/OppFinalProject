@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
+template<class T>
 class Calculator
 {
     private:
-    long double first,second;
+    T first,second;
     
     public:
     virtual void calculation()=0;
@@ -12,7 +13,7 @@ class Calculator
         cout<<"\nEnter First Number :";
         cin>>first;
     }
-    long double firstGet()
+    T firstGet()
     {
         return first;
     }
@@ -21,12 +22,12 @@ class Calculator
         cout<<"\nEnter Second Number :";
         cin>>second;
     }
-    long double secondGet()
+    T secondGet()
     {
         return second;
     }
 };
-class addition:public Calculator
+class addition:public Calculator<long double>
 {
     public:
     void calculation() override
@@ -37,7 +38,7 @@ class addition:public Calculator
     }
 
 };
-class subtraction:public Calculator
+class subtraction:public Calculator<long double>
 {
     public:
     void calculation() override
@@ -48,7 +49,7 @@ class subtraction:public Calculator
     }
 
 };
-class multiplication:public Calculator
+class multiplication:public Calculator<long double>
 {
     public:
     void calculation() override
@@ -59,7 +60,7 @@ class multiplication:public Calculator
     }
 
 };
-class divition:public Calculator
+class divition:public Calculator<long double>
 {
     public:
     void calculation() override
@@ -70,7 +71,7 @@ class divition:public Calculator
     }
 
 };
-class percentage:public Calculator
+class percentage:public Calculator<long double>
 {
     public:
     void calculation() override

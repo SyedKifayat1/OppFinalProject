@@ -4814,7 +4814,7 @@ void Menus::SecurityDetails()
 }
 void Menus::calculator()
 {
-    Calculator *ptr;
+    Calculator<long double> *ptr;
     while (ch == 0)
     {
         cout << "\n.........Welcome To Calculator........\n\n";

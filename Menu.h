@@ -1066,7 +1066,7 @@ void Menus::ShopsManager()
         }
         case 2:
         {
-            // write a code for checking a shop honour
+
             break;
         }
         case 3:
@@ -1078,6 +1078,7 @@ void Menus::ShopsManager()
         }
         case 4:
         {
+            shop->add_shop_owner_data();
             // write a code for adding a chop honour
             break;
         }

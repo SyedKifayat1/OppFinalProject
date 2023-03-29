@@ -1,17 +1,17 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-template<class T>
+template <class T>
 class Calculator
 {
-    private:
-    T first,second;
-    
-    public:
-    virtual void calculation()=0;
+private:
+    T first, second;
+
+public:
+    virtual void calculation() = 0;
     void firstSet()
     {
-        cout<<"\nEnter First Number :";
-        cin>>first;
+        cout << "\nEnter First Number :";
+        cin >> first;
     }
     T firstGet()
     {
@@ -19,66 +19,75 @@ class Calculator
     }
     void secondSet()
     {
-        cout<<"\nEnter Second Number :";
-        cin>>second;
+        cout << "\nEnter Second Number :";
+        cin >> second;
     }
     T secondGet()
     {
         return second;
     }
 };
-class addition:public Calculator<long double>
+class addition : public Calculator<long double>
 {
-    public:
+public:
     void calculation() override
     {
         firstSet();
         secondSet();
-        cout<<"\nResult Of Addition Is :"<<firstGet()+secondGet()<<endl;
+        cout << "\nResult Of Addition Is :" << firstGet() + secondGet() << endl;
     }
-
 };
-class subtraction:public Calculator<long double>
+class subtraction : public Calculator<long double>
 {
-    public:
+public:
     void calculation() override
     {
         firstSet();
         secondSet();
-        cout<<"\nResult Of Subtraction Is :"<<firstGet()-secondGet()<<endl;
+        cout << "\nResult Of Subtraction Is :" << firstGet() - secondGet() << endl;
     }
-
 };
-class multiplication:public Calculator<long double>
+class multiplication : public Calculator<long double>
 {
-    public:
+public:
     void calculation() override
     {
         firstSet();
         secondSet();
-        cout<<"\nResult Of Multiplication Is :"<<firstGet()*secondGet()<<endl;
+        cout << "\nResult Of Multiplication Is :" << firstGet() * secondGet() << endl;
     }
-
 };
-class divition:public Calculator<long double>
+class divition : public Calculator<long double>
 {
-    public:
+public:
     void calculation() override
     {
         firstSet();
         secondSet();
-        cout<<"\nResult Of Divition Is :"<<firstGet()/secondGet()<<endl;
+        if (secondGet() == 0)
+        {
+            cout << "\nSorry Math Error!\n";
+        }
+        else
+        {
+            cout << "\nResult Of Divition Is :" << firstGet() / secondGet() << endl;
+        }
     }
-
 };
-class percentage:public Calculator<long double>
+class percentage : public Calculator<long double>
 {
-    public:
+public:
     void calculation() override
     {
         firstSet();
         secondSet();
-        cout<<"\nResult Of Percentage Is :"<<(firstGet()/secondGet())*100<<"%"<<endl;
+        if (secondGet() < firstGet())
+        {
+            cout << "\nSorry Math Error!\n";
+        }
+        else
+        {
+            cout << "\nResult Of Percentage Is :" << (firstGet() / secondGet()) * 100 << "%" << endl;
+        }
     }
-
 };

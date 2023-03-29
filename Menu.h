@@ -13,17 +13,19 @@ class Menus
 {
 public:
     int choice;
+    float choice1;
     int ch;
+    int check;
     Menus()
-    {
+    { 
+        check=0;
         ch = 0;
     }
     Manager obj;
-    Accounts<int> A;
+    Accounts<long double> A;
     Employ *E1 = new Employ();
     Maintaineance *M = new Maintaineance(E1);
     Parking *p = new Parking(E1);
-
     Shops *S = new Shops(E1);
     Security SE;
     water w;
@@ -75,46 +77,68 @@ public:
     void ShopManagerReport();
     void AccountManagerReport();
     void calculator();
+    int InvaidChoice();
 };
+int Menus::InvaidChoice()
+{
+    if (choice1 == 0 || choice1 == 1 ||choice1 == 2 ||choice1 == 3 ||choice1 == 4 ||choice1 == 5 ||choice1 == 6 ||choice1 == 7 ||choice1 == 8 ||choice1 == 9)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 
 void Menus::Menu()
 {
 
     while (ch == 0)
     {
+        
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
         cout << "Select Your Status :\n"
                 "1)Head\n"
                 "2)Sub-Manager\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
-        switch (choice)
-        {
-        case 1:
-        {
+        cin >> choice1;
+        check = InvaidChoice();
+        if (check == 1)
+        {   choice=choice1;
+            switch (choice)
+            {
+            case 1:
+            {
 
-            HeadMenu();
-            break;
-        }
+                HeadMenu();
+                break;
+            }
 
-        case 2:
-        {
-            SubManagerMenu();
-            break;
-        }
-        case 0:
-        {
-            ch = 1;
-            break;
-        }
+            case 2:
+            {
+                SubManagerMenu();
+                break;
+            }
+            case 0:
+            {
+                ch = 1;
+                break;
+            }
 
-        default:
+            default:
+            {
+                cout << "\nInvalid Choice!\n";
+                break;
+            }
+            }
+        }
+        else
         {
-            cout << "\nInvalid Choice!\n";
-            break;
+            cout<<"\nInvalid Choice Is Enter!\n";
         }
-        }
+        cin.ignore();
     }
 }
 void Menus::HeadMenu()
@@ -450,6 +474,7 @@ void Menus::CalculateTotalIncome()
         cout << "1)Shops Rent\n"
                 "2)Parking Income\n"
                 "3)Total Income\n" // this is a calculation after calculating total in come
+                "4)Calculator\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -468,6 +493,11 @@ void Menus::CalculateTotalIncome()
         case 3:
         {
             // write a code for showing the main account details
+            break;
+        }
+        case 4:
+        {
+            calculator();
             break;
         }
         case 0:
@@ -1929,12 +1959,12 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    A.Display_Data("Account");
+                    A.Display_Data("AccountEmployee");
                     break;
                 }
                 case 2:
                 {
-                    A.E.Total_employee_Details("Account");
+                    A.E.Total_employee_Details("AccountEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1969,13 +1999,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    S->Display_Data("Shops");
+                    S->Display_Data("ShopsEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    S->E3->Total_employee_Details("Shops");
+                    S->E3->Total_employee_Details("ShopsEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2009,13 +2039,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    M->Display_Data("Maintenance");
+                    M->Display_Data("MaintenanceEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    M->E1->Total_employee_Details("Maintenance");
+                    M->E1->Total_employee_Details("MaintenanceEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2048,13 +2078,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    p->Display_Data("Parking");
+                    p->Display_Data("ParkingEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    p->E2->Total_employee_Details("Parking");
+                    p->E2->Total_employee_Details("ParkingEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2088,13 +2118,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    w.Display_Data("water");
+                    w.Display_Data("waterEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    w.E5.Total_employee_Details("water");
+                    w.E5.Total_employee_Details("waterEmployee");
                     // write a code for getting data as a whole
                     break;
                 }

@@ -196,9 +196,9 @@ public:
             {
                 i = 5;
                 cout << "FOUND\n";
-                // cin >> d;
+            
                 s.add_shop_owner_data();
-                // d.input_Date(fileName)
+            
             }
             else
             {
@@ -216,10 +216,10 @@ public:
         infile.close();
         outfile.close();
 
-        // Remove the original file
+        // Removing the original file
         filesystem::remove("Shop_Owner_Data.txt");
 
-        // Rename temporary file to original name
+        // Renaming temporary file to original name
         try
         {
             filesystem::rename("temporary.txt", "Shop_Owner_Data.txt");

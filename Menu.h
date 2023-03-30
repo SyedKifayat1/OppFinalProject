@@ -96,6 +96,8 @@ void Menus::Menu()
 
     while (ch == 0)
     {
+        system("clear");
+        system("clear");
 
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
         cout << "Select Your Status :\n"
@@ -146,6 +148,7 @@ void Menus::HeadMenu()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Head Repository.......\n\n"
                 "1)Manage Sub-Managers\n"
                 "2)Mall Details\n"
@@ -184,6 +187,7 @@ void Menus::SubManagerMenu()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n........Welcome To Sub-Manager Repository........\n\n"
                 "Select Your Status :\n"
                 "1)Account Manager\n"
@@ -246,6 +250,7 @@ void Menus::ManageSubManager()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Sub-Mananger Repository...........\n\n";
         cout << "1)Control Account Manager\n"
                 "2)Control Maintenance Manager\n"
@@ -307,6 +312,7 @@ void Menus::MallDetails()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Head Sub Repository.......\n\n"
                 "1)Employee Details\n"
                 "2)Shop Details\n"
@@ -373,6 +379,7 @@ void Menus::AccountManager()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Account Manager Repository..........\n\n";
         cout << "1)Check Accounts Data\n"
                 "2)Add Accounts Data\n"
@@ -428,6 +435,7 @@ void Menus::AddAccountsData()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Adding Account Data Manager Repositiry.........\n\n";
         cout << "1)Issuing Employee Payments \n"
                 "2)Calculate Departments Budget\n"
@@ -471,6 +479,7 @@ void Menus::CalculateTotalIncome()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Calculate Total Income Repositiry.........\n\n";
         cout << "1)Shops Rent\n"
                 "2)Parking Income\n"
@@ -519,6 +528,7 @@ void Menus::ParkingIncome()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Parking Income Repositiry.........\n\n";
         cout << "1)Check Daliy Parking Income\n"
                 "2)Total Month Income\n"
@@ -567,6 +577,7 @@ void Menus::ShopsRent()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Shops Rent Repositiry.........\n\n";
         cout << "1)Check Shop Rent By Id\n"
                 "2)All Shops Rent\n"
@@ -603,6 +614,7 @@ void Menus::MaintenanceManager()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Maintenance Manager Repository..........\n\n";
         cout << "1)Maintenance Data\n"
                 "2)Add Maintenance Data\n"
@@ -657,6 +669,7 @@ void Menus::AddMaintenanceData() // write a code for this repository just remind
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Add Maintenance Data Repository.......\n\n"
                 "Enter Details :\n"
                 "1)Electricity Resources\n"
@@ -692,6 +705,7 @@ void Menus::MaintenanceEmployee()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Maintenance Employee Repository.......\n\n"
                 "1)Add Employee\n"
                 "2)Remove Employee\n"
@@ -744,6 +758,7 @@ void Menus::SecurityManager()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Security Manager Repository.......\n\n"
                 "Enter Details:\n"
                 "1)Security Guards\n"
@@ -806,6 +821,7 @@ void Menus::AddSecurityData()
 
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Security Manager Repository..........\n\n";
         cout << "1)Add Details Of Security Guards"
                 "2)Add Details Of Security Cameras"
@@ -860,6 +876,7 @@ void Menus::SecurityEmployees()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Security Employee Repository.......\n\n"
                 "1)Add Employee\n"
                 "2)Remove Employee\n"
@@ -908,6 +925,8 @@ void Menus::ParkingManager()
 {
     while (ch == 0)
     {
+
+        system("clear");
         cout << "\n..........Welcome To Parking Manager Repository..........\n\n";
         cout << "1)Check Parking Data\n"
                 "2)Add Parking Data\n"
@@ -928,6 +947,8 @@ void Menus::ParkingManager()
         {
             while (ch == 0)
             {
+                system("clear");
+
                 cout << "\n.......Welcome To Add Parking Data Repository.......\n\n"
                         "1)Enter Available Parking Space \n"
                         "2)Vehicle entry\n"
@@ -974,6 +995,7 @@ void Menus::ParkingManager()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Parking Employee Repository.......\n\n"
                         "1)Add Employee\n"
                         "2)Remove Employee\n"
@@ -1046,6 +1068,7 @@ void Menus::ShopsManager()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Shop Manager Repository..........\n\n";
         cout << "1)Check Shops Data\n"
                 "2)Check Honour Data\n"
@@ -1117,6 +1140,7 @@ void Menus::ShopEmployee()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Shops Employee Repository.......\n\n"
                 "1)Add Employee\n"
                 "2)Remove Employee\n"
@@ -1169,6 +1193,8 @@ void Menus::WaterManager()
 {
     while (ch == 0)
     {
+
+        system("clear");
         cout << "\n..........Welcome To Water Manager Repository..........\n\n";
         cout << "1)Check Water Details\n"
                 "2)Add Water Details\n"
@@ -1189,6 +1215,8 @@ void Menus::WaterManager()
         {
             while (ch == 0)
             {
+                system("clear");
+
                 cout << "\n.......Welcome To Add Water Details Repository.......\n\n";
                 cout << "Enter the Details :\n"
                         "1)Pluming Issues\n"
@@ -1226,6 +1254,7 @@ void Menus::WaterManager()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Water Employee Repository.......\n\n"
                         "1)Add Employee\n"
                         "2)Remove Employee\n"
@@ -1304,6 +1333,7 @@ void Menus::ControlAccountManager()
 {
     while (ch == 0)
     {
+        system("clear");
 
         cout << "\n.......Welcome To Control Account Manager Repository.......\n\n"
                 "1)Add Manager\n"
@@ -1353,6 +1383,7 @@ void Menus::ControlAccountManager()
         }
         case 7:
         {
+
             cout << "\nGive Your Responce :\n";
             obj.AccountManager.ReadReport("AccountReport");
             cout << endl;
@@ -1410,7 +1441,7 @@ void Menus::ControlSecurityManager()
 {
     while (ch == 0)
     {
-
+        system("clear");
         cout << "\n.......Welcome To Control Security Manager Repository.......\n\n"
                 "1)Add Manager\n"
                 "2)Remove Manager\n"
@@ -1516,7 +1547,7 @@ void Menus::ControlWaterManager()
 {
     while (ch == 0)
     {
-
+        system("clear");
         cout << "\n.......Welcome To Control Water Manager Repository.......\n\n"
                 "1)Add Manager\n"
                 "2)Remove Manager\n"
@@ -1622,6 +1653,7 @@ void Menus::ControlMaintenanceManager()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Control Maintenance Manager Repository......\n\n"
                 "1)Add Manager\n"
                 "2)Remove Manager\n"
@@ -1727,6 +1759,7 @@ void Menus::ControlParkingManager()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Control Parking Manager Repository.......\n\n"
                 "1)Add Manager\n"
                 "2)Remove Manager\n"
@@ -1832,7 +1865,7 @@ void Menus::ControlShopsManager()
 {
     while (ch == 0)
     {
-
+        system("clear");
         cout << "\n.......Welcome To Control Shop Manager Repository.......\n\n"
                 "1)Add Manager\n"
                 "2)Remove Manager\n"
@@ -1938,6 +1971,7 @@ void Menus::EmployeeDetails()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Employee Details Repository.......\n\n"
                 "1)Account Employee Details\n"
                 "2)Shop Employee Details\n"
@@ -1954,6 +1988,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Accounts Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
@@ -1994,6 +2029,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Shop Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
@@ -2034,6 +2070,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Maintenance Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
@@ -2073,6 +2110,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Parking Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
@@ -2113,6 +2151,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Water Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
@@ -2153,6 +2192,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.......Welcome To Security Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
                         "2)Getting Data As A Whole\n"
@@ -2207,6 +2247,7 @@ void Menus::ShopDetails()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Checking Shop Details Repository.......\n\n"
                 "1)Getting Details With Shop ID No \n"
                 "2)Getting Details Of Whole Shops\n"
@@ -2246,6 +2287,7 @@ void Menus::AccountDetails()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Checking Accounts Details Repository.......\n\n"
                 "1)Checking Employee Payment Information \n"
                 "2)Reviewing your total earnings\n"
@@ -2299,6 +2341,7 @@ void Menus::ParkingDetails()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Checking Parking Details Repository.......\n\n"
                 "1)Reviewing Overall Earnings \n"
                 "2)Exploring Available Parking\n"
@@ -2343,6 +2386,7 @@ void Menus::WaterDetails()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Checking Water Details Repository.......\n\n"
                 "Checking Details :\n"
                 "1)Pluming Issues\n"
@@ -2387,6 +2431,7 @@ void Menus::MaintenanceDetails()
 { // if any other details is required then we will write at that time
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Checking Maintenance Details Repository.......\n\n"
                 "1)Details of Electricity Resources\n"
                 "2)Details of Building Repears\n"
@@ -2432,6 +2477,7 @@ void Menus::IssuingEmployeePayments()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Issuing Employee Payments Repository.........\n\n";
         cout << "1)Payment Processing\n"
                 "2)Payment History\n"
@@ -2444,6 +2490,7 @@ void Menus::IssuingEmployeePayments()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n..........Welcome To Payment Processing Repository.........\n\n";
                 cout << "1)Process Payments\n"
                         "2)Review Payment Details\n"
@@ -2481,6 +2528,7 @@ void Menus::IssuingEmployeePayments()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n..........Welcome To Payment History Repository.........\n\n";
                 cout << "1)View Payment History\n"
                         "2)Search Payment History\n"
@@ -2532,6 +2580,7 @@ void Menus::CalculateDepartmentsBudget()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Calculate Department Budget Repository.........\n\n";
         cout << "1)Check Maintenance Budget\n"
                 "2)Check Water Budget\n"
@@ -2581,6 +2630,7 @@ void Menus::MaintenanceBudget()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Maintenance Budget Repository.........\n\n";
         cout << "1)Generate Maintenance Budget Reports\n"
                 "2)Required Budget\n"
@@ -2618,6 +2668,7 @@ void Menus::WaterBudget()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Water Budget Repository.........\n\n";
         cout << "1)Generate Water Budget Reports\n"
                 "2)Required Budget\n"
@@ -2655,6 +2706,7 @@ void Menus::SecurityBudget()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Security Budget Repository.........\n\n";
         cout << "1)Generate Security Budget Reports\n"
                 "2)Required Budget\n"
@@ -2693,6 +2745,7 @@ void Menus::SubManagersReports()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Sub-Manager Reports Repository.........\n\n";
         cout << "1)Maintenance Manager\n"
                 "2)Secutity Manager \n"
@@ -2708,6 +2761,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n..........Welcome To Maintenance Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
                         "2)Giving Response Or Message\n"
@@ -2788,6 +2842,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n..........Welcome To Security Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
                         "2)Giving Response Or Message\n"
@@ -2869,6 +2924,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
                         "2)Giving Response Or Message\n"
@@ -2949,6 +3005,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n..........Welcome To Parking Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
                         "2)Giving Response Or Message\n"
@@ -3029,6 +3086,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n..........Welcome To Shops Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
                         "2)Giving Response Or Message\n"
@@ -3123,6 +3181,7 @@ void Menus::AccountEmployees()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Account Employees Repository.......\n\n"
                 "1)Add Employee\n"
                 "2)Remove Employee\n"
@@ -3172,6 +3231,7 @@ void Menus::MaintenanceManagerReport()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Maintenance Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
                 "2)Edit Report\n"
@@ -3191,6 +3251,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
                         "1)To Head\n"
@@ -3231,6 +3292,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
                         "1)Head\n"
@@ -3271,6 +3333,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
                         "1)Head\n"
@@ -3311,6 +3374,7 @@ void Menus::MaintenanceManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
                         "1)Head\n"
@@ -3350,6 +3414,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
                         "1)Head\n"
@@ -3390,6 +3455,7 @@ void Menus::MaintenanceManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
                         "1)Head\n"
@@ -3430,6 +3496,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
                         "1)Head\n"
@@ -3483,6 +3550,7 @@ void Menus::SecurityManagerReport()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Security Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
                 "2)Edit Report\n"
@@ -3502,6 +3570,7 @@ void Menus::SecurityManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
                         "1)To Head\n"
@@ -3542,6 +3611,7 @@ void Menus::SecurityManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
                         "1)Head\n"
@@ -3581,6 +3651,7 @@ void Menus::SecurityManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
                         "1)Head\n"
@@ -3621,6 +3692,7 @@ void Menus::SecurityManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
                         "1)Head\n"
@@ -3660,6 +3732,7 @@ void Menus::SecurityManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
                         "1)Head\n"
@@ -3700,6 +3773,7 @@ void Menus::SecurityManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
                         "1)Head\n"
@@ -3740,6 +3814,7 @@ void Menus::SecurityManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
                         "1)Head\n"
@@ -3793,6 +3868,7 @@ void Menus::WaterManagerReport()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
                 "2)Edit Report\n"
@@ -3812,6 +3888,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
                         "1)To Head\n"
@@ -3852,6 +3929,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
                         "1)Head\n"
@@ -3892,6 +3970,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
                         "1)Head\n"
@@ -3932,6 +4011,7 @@ void Menus::WaterManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
                         "1)Head\n"
@@ -3971,6 +4051,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
                         "1)Head\n"
@@ -4011,6 +4092,7 @@ void Menus::WaterManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
                         "1)Head\n"
@@ -4051,6 +4133,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
                         "1)Head\n"
@@ -4104,6 +4187,7 @@ void Menus::ParkingManagerReport()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Parking Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
                 "2)Edit Report\n"
@@ -4124,6 +4208,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
                         "1)To Head\n"
@@ -4164,6 +4249,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
                         "1)Head\n"
@@ -4204,6 +4290,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
                         "1)Head\n"
@@ -4244,6 +4331,7 @@ void Menus::ParkingManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
                         "1)Head\n"
@@ -4283,6 +4371,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
                         "1)Head\n"
@@ -4323,6 +4412,7 @@ void Menus::ParkingManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
                         "1)Head\n"
@@ -4363,6 +4453,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
                         "1)Head\n"
@@ -4416,6 +4507,7 @@ void Menus::ShopManagerReport()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Shop Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
                 "2)Edit Report\n"
@@ -4435,6 +4527,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
                         "1)To Head\n"
@@ -4475,6 +4568,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
                         "1)Head\n"
@@ -4515,6 +4609,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
                         "1)Head\n"
@@ -4555,6 +4650,7 @@ void Menus::ShopManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
                         "1)Head\n"
@@ -4594,6 +4690,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
                         "1)Head\n"
@@ -4634,6 +4731,7 @@ void Menus::ShopManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
                         "1)Head\n"
@@ -4674,6 +4772,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
                         "1)Head\n"
@@ -4728,6 +4827,7 @@ void Menus::AccountManagerReport()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n..........Welcome To Account Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
                 "2)Edit Report\n"
@@ -4801,6 +4901,7 @@ void Menus::SecurityDetails()
 {
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.......Welcome To Security Details Repository.......\n\n"
                 "1)Getting Details Of Security Guards\n"
                 "2)Getting Details Of Security Cameras\n"
@@ -4856,6 +4957,7 @@ void Menus::calculator()
     Calculator<long double> *calculator;
     while (ch == 0)
     {
+        system("clear");
         cout << "\n.........Welcome To Calculator........\n\n";
         cout << "Select Your Choice :\n"
                 "1)Addition\n"

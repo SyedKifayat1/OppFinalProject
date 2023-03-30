@@ -55,14 +55,14 @@ public:
     void AccountDetails();
     void ParkingDetails();
     void SecurityDetails();
-    void ParkingIncome();
+    // void ParkingIncome();
     void ShopsRent();
     void ShopEmployee();
     void MaintenanceDetails();
     void MaintenanceEmployee();
     void WaterDetails();
     void IssuingEmployeePayments();
-    void CalculateDepartmentsBudget();
+    // void CalculateDepartmentsBudget();
     void CalculateTotalIncome();
     void MaintenanceBudget();
     void WaterBudget();
@@ -436,10 +436,10 @@ void Menus::AddAccountsData()
     while (ch == 0)
     {
         system("clear");
-        cout << "\n..........Welcome To Adding Account Data Manager Repositiry.........\n\n";
+        cout << "\n..........Welcome To Adding Account Data Manager Repository.........\n\n";
         cout << "1)Issuing Employee Payments \n"
-                "2)Calculate Departments Budget\n"
-                "3)Calculate Total Income\n"
+                //"2)Calculate Departments Budget\n"
+                "2)Calculate Total Income\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -450,12 +450,12 @@ void Menus::AddAccountsData()
             IssuingEmployeePayments();
             break;
         }
+        // case 2:
+        // {
+        //     CalculateDepartmentsBudget();
+        //     break;
+        // }
         case 2:
-        {
-            CalculateDepartmentsBudget();
-            break;
-        }
-        case 3:
         {
             CalculateTotalIncome();
 
@@ -497,12 +497,14 @@ void Menus::CalculateTotalIncome()
         }
         case 2:
         {
-            ParkingIncome();
+            // ParkingIncome();
+            cout << "\nTotal Parking Income Is :" << obj.ParkingManager.getParkingIncome() << endl;
             break;
         }
         case 3:
         {
             // write a code for showing the main account details
+            cout << "\nMall Total Income Is :" << obj.AccountManager.totalIncome.getTotalIncome() << endl;
             break;
         }
         case 4:
@@ -524,16 +526,15 @@ void Menus::CalculateTotalIncome()
     }
     ch = 0;
 }
-void Menus::ParkingIncome()
+/*void Menus::ParkingIncome()
 {
     while (ch == 0)
     {
         system("clear");
         cout << "\n..........Welcome To Parking Income Repositiry.........\n\n";
-        cout << "1)Check Daliy Parking Income\n"
-                "2)Total Month Income\n"
-                "3)Add Income To Main Account\n"
-                "4)Accout Details\n"
+        cout << "1)Check Parking Income\n"
+                "2)Add Income To Main Account\n"
+                "3)Accout Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -544,17 +545,13 @@ void Menus::ParkingIncome()
             // write a code for showing the daliy income of the parking
             break;
         }
+
         case 2:
-        {
-            // write a code for total month income
-            break;
-        }
-        case 3:
         {
             // write a code for adding total income into the main account
             break;
         }
-        case 4:
+        case 3:
         {
             // write a code for checking the current amount in the account
             break;
@@ -572,7 +569,7 @@ void Menus::ParkingIncome()
         }
     }
     ch = 0;
-}
+}*/
 void Menus::ShopsRent()
 {
     while (ch == 0)
@@ -581,6 +578,7 @@ void Menus::ShopsRent()
         cout << "\n..........Welcome To Shops Rent Repositiry.........\n\n";
         cout << "1)Check Shop Rent By Id\n"
                 "2)All Shops Rent\n"
+                "3)Total Shops Income\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -589,12 +587,18 @@ void Menus::ShopsRent()
         case 1:
         {
             // write a code for checking the rent of shop by its id
+            obj.ShopsManager.gettingShopRentDetails();
             break;
         }
         case 2:
         {
             // write a code for showing the whole shops rent and also show those shop those dose not give the rent
+            obj.ShopsManager.gettingAllshopsRentsDetails();
             break;
+        }
+        case 3:
+        {
+            cout << "\nShops Total Income Is :" << obj.ShopsManager.getShopsIncome() << endl;
         }
         case 0:
         {
@@ -2291,8 +2295,7 @@ void Menus::AccountDetails()
         cout << "\n.......Welcome To Checking Accounts Details Repository.......\n\n"
                 "1)Checking Employee Payment Information \n"
                 "2)Reviewing your total earnings\n"
-                "3)Examining the department'shop Financial Plan\n"
-                "4)Reviewing your Complete Income Details\n"
+                "3)Reviewing your Complete Income Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -2301,24 +2304,21 @@ void Menus::AccountDetails()
         case 1:
         {
             // write a code for employee salary
+
             break;
         }
         case 2:
         {
             // write a code for total income sources
+            cout << "\nTotal Income Sources :\n";
+            cout << "\nShops Income :" << obj.ShopsManager.getShopsIncome();
+            cout << "\nParking Income :" << obj.ParkingManager.getParkingIncome();
+            cout << "\nTotal Income :" << obj.ShopsManager.getShopsIncome() + obj.ParkingManager.getParkingIncome();
+            cout << "\nCurrent Balance :" << obj.AccountManager.totalIncome.getTotalIncome();
+            cout << "\nProfit :" << (obj.AccountManager.totalIncome.getTotalIncome() / obj.ShopsManager.getShopsIncome() + obj.ParkingManager.getParkingIncome()) * 100 << "%" << endl;
             break;
         }
         case 3:
-        {
-            // write a code for department budget
-            break;
-        }
-        case 4:
-        {
-            // write a code for total profit
-            break;
-        }
-        case 5:
         {
             // write a code for current amount
             break;
@@ -2502,6 +2502,120 @@ void Menus::IssuingEmployeePayments()
                 case 1:
                 {
                     // write a code for processing payments of each employee by giving id first it gives his details then pay him
+                    while (ch == 0)
+                    {
+                        long double Salary;
+                        system("clear");
+                        cout << "\n...........Welcome To Payament Repository..........\n\n";
+                        cout << "1)Manager Salary\n"
+                                "2)Account Employee Salary\n"
+                                "3)Maintenance Employee Salary\n"
+                                "4)Parking Employee Salary\n"
+                                "5)Security Employee Salary\n"
+                                "6)Water Employee Salary\n"
+                                "Your Chocie :";
+                        cin >> choice;
+                        switch (choice)
+                        {
+                        case 1:
+                        {
+                            ofstream file("PaidManagersData.txt", ios::app);
+                            obj.AccountManager.Display_Data("Manager");
+                            if (obj.AccountManager.check == 1)
+                            {
+                                cout << "\nEnter Salary :";
+                                cin >> Salary;
+                                file << "Emloyee Id :" << obj.AccountManager.user_id << endl;
+                                file<<"Salary :"<<Salary<<endl;
+                                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+                            }
+                            file.close();
+                            break;
+                        }
+                        case 2:
+                        {
+                            ofstream file("PaidAccountEmployeeData.txt", ios::app);
+                            obj.AccountManager.accountEmployee.Display_Data("AccountEmployee");
+                            if (obj.AccountManager.accountEmployee.check == 1)
+                            {
+                                obj.AccountManager.accountEmployee.give_employee_salary();
+                                file << "Emloyee Id :" << obj.AccountManager.accountEmployee.user_id << endl;
+                                file<<"Salary :"<<obj.AccountManager.accountEmployee.EmployeeSalary<<endl;
+                                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+                            }
+                            file.close();
+                            break;
+                        }
+                        case 3:
+                        {
+                            ofstream file("PaidMaintenanceEmployeeData.txt", ios::app);
+                            obj.MaintenanceManager.maintaineanceEmployee->Display_Data("MaintenanceEmployee");
+                            if (obj.MaintenanceManager.maintaineanceEmployee->check == 1)
+                            {
+                                obj.MaintenanceManager.maintaineanceEmployee->give_employee_salary();
+                                file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->user_id << endl;
+                                file<<"Salary :"<<obj.MaintenanceManager.maintaineanceEmployee->EmployeeSalary<<endl;
+                                obj.MaintenanceManager.totalIncome.subtractEmployeeSalary(Salary);
+                            }
+                            file.close();
+                            break;
+                        }
+                        case 4:
+                        {
+                             ofstream file("PaidParkingEmployeeData.txt", ios::app);
+                            obj.ParkingManager.parkingEmployee->Display_Data("ParkingEmployee");
+                            if (obj.ParkingManager.parkingEmployee->check == 1)
+                            {
+                                obj.ParkingManager.parkingEmployee->give_employee_salary();
+                                file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->user_id << endl;
+                                file<<"Salary :"<<obj.ParkingManager.parkingEmployee->EmployeeSalary<<endl;
+                                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+                            }
+                            file.close();
+                            break;
+                        }
+                        case 5:
+                        {
+                             ofstream file("PaidSecurityEmployeeData.txt", ios::app);
+                            obj.SecurityManager.securityEmployee.Display_Data("SecurityEmployee");
+                            if (obj.SecurityManager.securityEmployee.check == 1)
+                            {
+                                obj.SecurityManager.securityEmployee.give_employee_salary();
+                                file << "Emloyee Id :" << obj.SecurityManager.securityEmployee.user_id << endl;
+                                file<<"Salary :"<<obj.SecurityManager.securityEmployee.EmployeeSalary<<endl;
+                                obj.SecurityManager.totalIncome.subtractEmployeeSalary(Salary);
+                            }
+                            file.close();
+                            break;
+                        }
+                        case 6:
+                        {
+                             ofstream file("PaidWaterEmployeeData.txt", ios::app);
+                            obj.WaterManager.waterEmployee.Display_Data("waterEmployee");
+                            if (obj.WaterManager.waterEmployee.check == 1)
+                            {
+                                obj.WaterManager.waterEmployee.give_employee_salary();
+                                file << "Emloyee Id :" << obj.WaterManager.waterEmployee.user_id << endl;
+                                file<<"Salary :"<<obj.WaterManager.waterEmployee.EmployeeSalary<<endl;
+                                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+                            }
+                            file.close();
+                            break;
+                        }
+                        case 0:
+                        {
+                            ch = 1;
+                            break;
+                        }
+                        default:
+                        {
+                            cout << "\nInvalid Choice!\n";
+                            break;
+                        }
+                        }
+                    }
+                    ch = 0;
+
                     break;
                 }
                 case 2:
@@ -2576,7 +2690,7 @@ void Menus::IssuingEmployeePayments()
     }
     ch = 0;
 }
-void Menus::CalculateDepartmentsBudget()
+/*void Menus::CalculateDepartmentsBudget()
 {
     while (ch == 0)
     {
@@ -2595,6 +2709,7 @@ void Menus::CalculateDepartmentsBudget()
         {
 
             // write a code for budget
+
             break;
         }
         case 2:
@@ -2625,7 +2740,7 @@ void Menus::CalculateDepartmentsBudget()
         }
     }
     ch = 0;
-}
+}*/
 void Menus::MaintenanceBudget()
 {
     while (ch == 0)
@@ -2685,7 +2800,8 @@ void Menus::WaterBudget()
         }
         case 2:
         {
-            // write a code for  required budget
+            cout << "Enter a Required Budget :";
+            cin >> obj.WaterManager.WaterBudget;
             break;
         }
         case 0:

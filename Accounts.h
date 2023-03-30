@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-// #include"Detail.h"
+
 #include "Employee.h"
 class Report;
 using namespace std;
@@ -13,12 +13,12 @@ class Accounts : public Detail, public Report
 {
 
 private:
-T TotalIncome;
-public:
-Accounts(){}
-    Employ accountEmployee;
     T parkingIncome;
     T shopsIncome;
 
+public:
+    TotalIncome &totalIncome = TotalIncome::getInstance();
+    Accounts() {}
+    Employ accountEmployee;
 };
 #endif //!__ACCOUNTS__H__

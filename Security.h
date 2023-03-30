@@ -20,13 +20,14 @@ protected:
     // int number_of_security_guards;
 
 public:
+    TotalIncome &totalIncome = TotalIncome::getInstance();
     Report ForAccount;
     Employ securityEmployee;
     Security(int security_cameras = 20, int number_of_security_personel = 100, string control_room_location = "D Block", string escape_room_location = "B block")
     {
         this->security_cameras = security_cameras;
         // this->number_of_security_personel = number_of_security_personel;
-        this->control_room_location= control_room_location;
+        this->control_room_location = control_room_location;
         this->Escape_room_location = escape_room_location;
     }
 

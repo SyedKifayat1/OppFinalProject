@@ -1,5 +1,6 @@
 #ifndef __SHOPS__H__
 #define __SHOPS__H__
+#include<string>
 
 #include <iostream>
 #include "Detail.h"
@@ -7,10 +8,13 @@
 using namespace std;
 class Shops : public Detail, public Report
 {
+private:
+    long double ShopstotalIncome;
+
 protected:
     string Shop_Id_No;
     string Shop_Owner_Name;
-    string Shop_Rent;
+    long double Shop_Rent;
     string Shop_Type;
     string Shop_Location;
     string Shop_Owner_First_name; // shop owner function implementation do need owner name
@@ -19,6 +23,16 @@ protected:
     string Shop_Owner_Address;
 
 public:
+    TotalIncome &totalIncome = TotalIncome::getInstance();
+    long double getShopsIncome()
+    {
+        return ShopstotalIncome;
+    }
+  
+    void addShopsIncome(long double income)
+    {
+        ShopstotalIncome += income;
+    }
     Report ForAccount;
     Employ *shopsEmployee;
     Shops(Employ *shopsEmployee)
@@ -62,16 +76,22 @@ public:
 
     void function_Taking_shops()
     {
+        ofstream file("ShopRentDetails.txt", ios::app);
         cout << "ENTER SHOP ID NO: ";
         cin >> Shop_Id_No;
+        file << "Shop With Id No:" << Shop_Id_No << endl;
         cout << "ENTER SHOP OWNER NAME: ";
         cin >> Shop_Owner_Name;
-        cout << "ENTER RENT OF SHAPE: ";
+        cout << "ENTER RENT OF SHOP: ";
         cin >> Shop_Rent;
+        file << "Rent Is :" << Shop_Rent << endl;
+        ShopstotalIncome += Shop_Rent;
+        totalIncome.addShopIncome(Shop_Rent);
         cout << "ENTER SHOP TYPE: ";
         cin >> Shop_Type;
         cout << "ENTER SHOP LOCATION: ";
         cin >> Shop_Location;
+        file.close();
     }
 
     void add_shop_owner_data()
@@ -196,9 +216,8 @@ public:
             {
                 i = 5;
                 cout << "FOUND\n";
-            
+
                 s.add_shop_owner_data();
-            
             }
             else
             {
@@ -231,6 +250,44 @@ public:
         cout << "\nPress Enter To Continue........\n";
         cin.ignore();
         cin.ignore();
+    }
+    void gettingShopRentDetails()
+    {
+        string shopId;
+        cout << "\nEnter A Shop Id :";
+        cin >> shopId;
+        ifstream file("ShopRentDetails.txt");
+        string storing;
+        while (getline(file, storing))
+        {
+            if (storing.find(shopId) != string::npos)
+            {
+                cout << storing << endl;
+                for (int i = 0; i < 1; i++)
+                {
+                    if (getline(file,storing))
+                    {
+                        cout << storing << endl;
+                    }
+                }
+            }
+        }
+    }
+    void gettingAllshopsRentsDetails()
+    {
+        ifstream file("ShopRentDetails.txt");
+        if (!file.is_open())
+        {
+            cout << "\nSorry File Does Not Exist!\n";
+        }
+        else
+        {
+            string storing;
+            while (getline(file, storing))
+            {
+                cout << storing << endl;
+            }
+        }
     }
 };
 

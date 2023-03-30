@@ -8,6 +8,7 @@ class Maintaineance : public Detail, public Report
 {
 
 public:
+   TotalIncome &totalIncome = TotalIncome::getInstance();
    Report ForAccount;
    Employ *maintaineanceEmployee;
    int k;

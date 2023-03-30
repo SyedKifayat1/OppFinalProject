@@ -7,6 +7,9 @@
 using namespace std;
 class Parking : public Detail, public Report
 {
+private:
+    long double ParkingtotalIncome;
+
 protected:
     string carOwner;
     string carOwnerCnic;
@@ -14,11 +17,16 @@ protected:
     string carType;
     string carColor;
     int available_parking_Space;
-    unsigned long Earnings;
+    long double Earnings;
     int *ptr;
 
 public:
-        Report ForAccount;
+    TotalIncome &totalIncome = TotalIncome::getInstance();
+    long double getParkingIncome()
+    {
+        return ParkingtotalIncome;
+    }
+    Report ForAccount;
     Employ *parkingEmployee;
     Parking(Employ *parkingEmployee)
     {
@@ -34,6 +42,7 @@ public:
         carColor = "black";
         Earnings = 0;
         available_parking_Space = 0;
+        ParkingtotalIncome=0;
     }
 
     int getavailable_parking_space()
@@ -81,10 +90,13 @@ public:
             for (int i = 0; i < p; i++)
             {
 
-                Earnings = Earnings + 100;
+                 Earnings+= 100;
             }
+            ParkingtotalIncome+=Earnings;
+            totalIncome.addParkingIncome(Earnings);
             ofstream out("Earnings.txt");
-            out << Earnings;
+            out << ParkingtotalIncome;
+            Earnings=0;
             Parking *ptr = new Parking[p];
             for (int i = 0; i < p; i++)
             {

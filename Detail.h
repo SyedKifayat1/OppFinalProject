@@ -12,6 +12,7 @@ class Detail
 public:
     string fname, lname, EmailADdress, JobTitle, Status, gender, user_id, hiringDate; // attributes
     unsigned long int salary, PhoneNum;
+    int check;
     Detail() {}
     void input_Date(string fileName)
     {
@@ -85,15 +86,18 @@ public:
     void Display_Data(string fileName) // display particular employee details
     {
         string ID; // name of employee variable
-        cout << "ENTER NAME OF EMPLOYEE: ";
+        cout << "Enter Id Of Employee :";
         cin >> ID;
+        user_id=ID;
         ifstream infile(fileName + ".txt");
         if (!infile.is_open())
         {
             cout << "FAILED TO OPEN THE FILE!" << endl;
+            check=0;
         }
         else
         {
+            check=0;
             string storing; // storing data in this string
             bool printlines = false;
             int linestoprint = 3;
@@ -101,6 +105,7 @@ public:
             {
                 if (storing.find(ID) != string::npos)
                 {
+                    check=1;
                     printlines = true;
                     cout << storing << endl;
                     for (int i = 0; i < 8; i++)

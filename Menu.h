@@ -99,8 +99,6 @@ void Menus::Menu()
     while (ch == 0)
     {
         system("clear");
-        system("clear");
-
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
         cout << "Select Your Status :\n"
                 "1)Head\n"
@@ -146,13 +144,16 @@ void Menus::Menu()
         cout << "\nPress Enter To Continue......";
         cin.ignore();
         cin.ignore();
+        
     }
 }
 void Menus::HeadMenu()
 {
     while (ch == 0)
     {
+        // cin.ignore();
         system("clear");
+       // cin.ignore();
         cout << "\n.......Welcome To Head Repository.......\n\n"
                 "1)Manage Sub-Managers\n"
                 "2)Mall Details\n"
@@ -186,7 +187,7 @@ void Menus::HeadMenu()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-       // cin.ignore();
+       // 
     }
     ch = 0;
 }
@@ -194,6 +195,7 @@ void Menus::SubManagerMenu()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n........Welcome To Sub-Manager Repository........\n\n"
                 "Select Your Status :\n"
@@ -252,7 +254,7 @@ void Menus::SubManagerMenu()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
+       
     }
     ch = 0;
 }
@@ -260,6 +262,7 @@ void Menus::ManageSubManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Sub-Mananger Repository...........\n\n";
         cout << "1)Control Account Manager\n"
@@ -316,7 +319,6 @@ void Menus::ManageSubManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -325,6 +327,7 @@ void Menus::MallDetails()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Head Sub Repository.......\n\n"
                 "1)Employee Details\n"
@@ -387,7 +390,6 @@ void Menus::MallDetails()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -395,6 +397,7 @@ void Menus::AccountManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Account Manager Repository..........\n\n";
         cout << "1)Check Accounts Data\n"
@@ -445,7 +448,6 @@ void Menus::AccountManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -454,6 +456,7 @@ void Menus::AddAccountsData()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Adding Account Data Manager Repository.........\n\n";
         cout << "1)Issuing Employee Payments \n"
@@ -493,7 +496,6 @@ void Menus::AddAccountsData()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -501,6 +503,7 @@ void Menus::CalculateTotalIncome()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Calculate Total Income Repositiry.........\n\n";
         cout << "1)Shops Rent\n"
@@ -546,7 +549,6 @@ void Menus::CalculateTotalIncome()
         }
         }
         cout << "\nPress Enter To Continue......";
-        cin.ignore();
         cin.ignore();
     }
     ch = 0;
@@ -599,6 +601,7 @@ void Menus::ShopsRent()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Shops Rent Repositiry.........\n\n";
         cout << "1)Check Shop Rent By Id\n"
@@ -637,7 +640,6 @@ void Menus::ShopsRent()
         }
         }
         cout << "\nPress Enter To Continue......";
-        cin.ignore();
         cin.ignore();
     }
     ch = 0;

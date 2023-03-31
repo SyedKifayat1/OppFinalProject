@@ -27,7 +27,8 @@ public:
     Maintaineance *maintaineance = new Maintaineance(employee);
     Parking *parking = new Parking(employee);
     Shops *shop = new Shops(employee);
-    Security security;
+    //Security *security=new Security(employee);
+
     water Water;
 
     void Menu();
@@ -204,7 +205,7 @@ void Menus::SubManagerMenu()
                 "3)Parking Manager\n"
                 "4)Shops Manager\n"
                 "5)Water Manager\n"
-                "6)Security Manager\n"
+               // "6)Security Manager\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -234,11 +235,11 @@ void Menus::SubManagerMenu()
         {
             WaterManager();
         }
-        case 6:
+       /* case 6:
         {
             SecurityManager();
             break;
-        }
+        }*/
 
         case 0:
         {
@@ -270,7 +271,7 @@ void Menus::ManageSubManager()
                 "3)Control Parking Manager\n"
                 "4)Control Shops Manager\n"
                 "5)Control Water Manager\n"
-                "6)Control Security Manager\n"
+               // "6)Control Security Manager\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -301,11 +302,11 @@ void Menus::ManageSubManager()
             ControlWaterManager();
             break;
         }
-        case 6:
+        /*case 6:
         {
             ControlSecurityManager();
             break;
-        }
+        }*/
         case 0:
         {
             ch = 1;
@@ -336,7 +337,7 @@ void Menus::MallDetails()
                 "4)Parking Details\n"
                 "5)Maintenance Details\n"
                 "6)Water Details\n"
-                "7)Security Details\n"
+              //  "7)Security Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -372,11 +373,11 @@ void Menus::MallDetails()
             WaterDetails();
             break;
         }
-        case 7:
+      /*  case 7:
         {
             SecurityDetails();
             break;
-        }
+        }*/
         case 0:
         {
             ch = 1;
@@ -797,7 +798,7 @@ void Menus::MaintenanceEmployee()
     }
     ch = 0;
 }
-void Menus::SecurityManager()
+/*void Menus::SecurityManager()
 {
     while (ch == 0)
     {
@@ -818,6 +819,7 @@ void Menus::SecurityManager()
         case 1:
         {
             // write a code of details of security guards
+
             break;
         }
         case 2:
@@ -972,7 +974,7 @@ void Menus::SecurityEmployees()
         cin.ignore();
     }
     ch = 0;
-}
+}*/
 void Menus::ParkingManager()
 {
     while (ch == 0)
@@ -1132,12 +1134,12 @@ void Menus::ShopsManager()
         system("clear");
         cout << "\n..........Welcome To Shop Manager Repository..........\n\n";
         cout << "1)Check Shops Data\n"
-                "2)Check Honour Data\n"
+                "2)Check Owner Data\n"
                 "3)Add Shops Data\n"
-                "4)Add Shop Honour\n"
-                "5)Repalce Shop Honour\n"
-                "6)Shops Employees\n"
-                "7)Report\n"
+                "4)Add Shop Owner\n"
+                "5)Repalce Shop Owner\n"
+                //"6)Shops Employees\n"
+                "6)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice;
@@ -1173,12 +1175,12 @@ void Menus::ShopsManager()
             break;
         }
 
-        case 6:
+       /* case 6:
         {
             ShopEmployee();
             break;
-        }
-        case 7:
+        }*/
+        case 6:
         {
             ShopManagerReport();
             break;
@@ -1200,7 +1202,7 @@ void Menus::ShopsManager()
     }
     ch = 0;
 }
-void Menus::ShopEmployee()
+/*void Menus::ShopEmployee()
 {
     while (ch == 0)
     {
@@ -1255,7 +1257,7 @@ void Menus::ShopEmployee()
         cin.ignore();
     }
     ch = 0;
-}
+}*/
 void Menus::WaterManager()
 {
     while (ch == 0)
@@ -1519,7 +1521,7 @@ void Menus::ControlAccountManager()
     }
     ch = 0;
 }
-void Menus::ControlSecurityManager()
+/*void Menus::ControlSecurityManager()
 {
     while (ch == 0)
     {
@@ -1627,7 +1629,7 @@ void Menus::ControlSecurityManager()
         cin.ignore();
     }
     ch = 0;
-}
+}*/
 void Menus::ControlWaterManager()
 {
     while (ch == 0)
@@ -2075,7 +2077,7 @@ void Menus::EmployeeDetails()
                 "3)Maintenance Employee Details\n"
                 "4)Parking Employee Details\n"
                 "5)Water Employee Details\n"
-                "6)Security Details\n"
+               // "6)Security Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -2300,7 +2302,7 @@ void Menus::EmployeeDetails()
             ch = 0;
             break;
         }
-        case 6:
+       /* case 6:
         {
             while (ch == 0)
             {
@@ -2342,7 +2344,7 @@ void Menus::EmployeeDetails()
             }
             ch = 0;
             break;
-        }
+        }*/
 
         case 0:
         {
@@ -2612,8 +2614,8 @@ void Menus::PaymentProcessing()
                 "2)Account Employee Salary\n"
                 "3)Maintenance Employee Salary\n"
                 "4)Parking Employee Salary\n"
-                "5)Security Employee Salary\n"
-                "6)Water Employee Salary\n"
+              //  "5)Security Employee Salary\n"
+                "5)Water Employee Salary\n"
                 "Your Chocie :";
         cin >> choice;
         switch (choice)
@@ -2675,7 +2677,7 @@ void Menus::PaymentProcessing()
             file.close();
             break;
         }
-        case 5:
+        /*case 5:
         {
             ofstream file("PaidSecurityEmployeeData.txt", ios::app);
             obj.SecurityManager.securityEmployee.Display_Data("SecurityEmployee");
@@ -2688,8 +2690,8 @@ void Menus::PaymentProcessing()
             }
             file.close();
             break;
-        }
-        case 6:
+        }*/
+        case 5:
         {
             ofstream file("PaidWaterEmployeeData.txt", ios::app);
             obj.WaterManager.waterEmployee.Display_Data("waterEmployee");
@@ -2731,7 +2733,7 @@ void Menus::PaymentHistory()
                 "2)Account Employee Salary\n"
                 "3)Maintenance Employee Salary\n"
                 "4)Parking Employee Salary\n"
-                "5)Security Employee Salary\n"
+              //  "5)Security Employee Salary\n"
                 "6)Water Employee Salary\n"
                 "Your Chocie :";
         cin >> choice;
@@ -2821,7 +2823,7 @@ void Menus::PaymentHistory()
             file.close();
             break;
         }
-        case 5:
+      /* case 5:
         {
             string id;
             ifstream file("PaidSecurityEmployeeData.txt");
@@ -2841,8 +2843,8 @@ void Menus::PaymentHistory()
             }
             file.close();
             break;
-        }
-        case 6:
+        }*/
+        case 5:
         {
             string id;
             ifstream file("PaidWaterEmployeeData.txt");
@@ -3060,7 +3062,7 @@ void Menus::WaterBudget()
     }
     ch = 0;
 }
-void Menus::SecurityBudget()
+/*void Menus::SecurityBudget()
 {
     while (ch == 0)
     {
@@ -3101,7 +3103,7 @@ void Menus::SecurityBudget()
         cin.ignore();
     }
     ch = 0;
-}
+}*/
 void Menus::SubManagersReports()
 {
     while (ch == 0)
@@ -3109,10 +3111,10 @@ void Menus::SubManagersReports()
         system("clear");
         cout << "\n..........Welcome To Sub-Manager Reports Repository.........\n\n";
         cout << "1)Maintenance Manager\n"
-                "2)Secutity Manager \n"
-                "3)Water Manager\n"
-                "4)Parking Manager\n"
-                "5)Shops Manager\n"
+               // "2)Secutity Manager \n"
+                "2)Water Manager\n"
+                "3)Parking Manager\n"
+                "4)Shops Manager\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice;
@@ -3202,7 +3204,7 @@ void Menus::SubManagersReports()
             ch = 0;
             break;
         }
-        case 2:
+       /* case 2:
         {
             while (ch == 0)
             {
@@ -3285,7 +3287,7 @@ void Menus::SubManagersReports()
             }
             ch = 0;
             break;
-        }
+        }*/
 
         case 3:
         {
@@ -3952,7 +3954,7 @@ void Menus::MaintenanceManagerReport()
     }
     ch = 0;
 }
-void Menus::SecurityManagerReport()
+/*void Menus::SecurityManagerReport()
 {
     while (ch == 0)
     {
@@ -4293,7 +4295,7 @@ void Menus::SecurityManagerReport()
         cin.ignore();
     }
     ch = 0;
-}
+}*/
 void Menus::WaterManagerReport()
 {
     while (ch == 0)
@@ -5403,7 +5405,7 @@ void Menus::AccountManagerReport()
     ch = 0;
 }
 
-void Menus::SecurityDetails()
+/*void Menus::SecurityDetails()
 {
     while (ch == 0)
     {
@@ -5460,7 +5462,7 @@ void Menus::SecurityDetails()
         cin.ignore();
     }
     ch = 0;
-}
+}*/
 
 void Menus::calculator()
 {

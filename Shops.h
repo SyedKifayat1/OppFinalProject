@@ -1,7 +1,6 @@
 #ifndef __SHOPS__H__
 #define __SHOPS__H__
 #include <string>
-
 #include <iostream>
 #include "Detail.h"
 #include "Employee.h"
@@ -14,7 +13,7 @@ private:
 protected:
     string Shop_Id_No;
     string Shop_Owner_Name;
-    long double Shop_Rent;
+    long long int Shop_Rent;
     string Shop_Type;
     string Shop_Location;
     string Shop_Owner_First_name; // shop owner function implementation do need owner name
@@ -43,7 +42,6 @@ public:
     Shops()
     {
     }
-
     void add_shop_Data()
     {
         cout << "ENTER NUMBER OF SHOPS: ";
@@ -53,7 +51,7 @@ public:
         ofstream outfile("SHOPS_DETAILS.txt", ios::app);
         for (int i = 0; i < a; i++)
         {
-            outfile << endl;
+
             Shops_number[i].function_Taking_shops();
             outfile << "SHOP ID NO: ";
             outfile << Shops_number[i].Shop_Id_No;
@@ -70,10 +68,9 @@ public:
             outfile << "SHOP LOCATION: ";
             outfile << Shops_number[i].Shop_Location;
             outfile << endl;
-            outfile << endl;
         }
+        outfile.close();
     }
-
     void function_Taking_shops()
     {
         ofstream file("ShopRentDetails.txt", ios::app);
@@ -93,7 +90,6 @@ public:
         cin >> Shop_Location;
         file.close();
     }
-
     void add_shop_owner_data()
     {
         cout << "HOW MANY SHOP OWNERS DATA ARE YOU ENTERING: ";

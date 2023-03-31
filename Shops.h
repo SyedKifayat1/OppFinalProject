@@ -1,6 +1,6 @@
 #ifndef __SHOPS__H__
 #define __SHOPS__H__
-#include<string>
+#include <string>
 
 #include <iostream>
 #include "Detail.h"
@@ -28,7 +28,7 @@ public:
     {
         return ShopstotalIncome;
     }
-  
+
     void addShopsIncome(long double income)
     {
         ShopstotalIncome += income;
@@ -263,12 +263,9 @@ public:
             if (storing.find(shopId) != string::npos)
             {
                 cout << storing << endl;
-                for (int i = 0; i < 1; i++)
+                if (getline(file, storing))
                 {
-                    if (getline(file,storing))
-                    {
-                        cout << storing << endl;
-                    }
+                    cout << storing << endl;
                 }
             }
         }

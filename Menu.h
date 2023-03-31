@@ -78,6 +78,8 @@ public:
     void AccountManagerReport();
     void calculator();
     int InvaidChoice();
+    void PaymentProcessing();
+    void PaymentHistory();
 };
 int Menus::InvaidChoice()
 {
@@ -141,6 +143,8 @@ void Menus::Menu()
         {
             cout << "\nInvalid Choice Is Enter!\n";
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
         cin.ignore();
     }
 }
@@ -180,6 +184,9 @@ void Menus::HeadMenu()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+       // cin.ignore();
     }
     ch = 0;
 }
@@ -243,6 +250,9 @@ void Menus::SubManagerMenu()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -304,6 +314,9 @@ void Menus::ManageSubManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -372,6 +385,9 @@ void Menus::MallDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -427,6 +443,9 @@ void Menus::AccountManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -472,6 +491,9 @@ void Menus::AddAccountsData()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -523,6 +545,9 @@ void Menus::CalculateTotalIncome()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -611,6 +636,9 @@ void Menus::ShopsRent()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -665,6 +693,9 @@ void Menus::MaintenanceManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -702,6 +733,9 @@ void Menus::AddMaintenanceData() // write a code for this repository just remind
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -755,6 +789,9 @@ void Menus::MaintenanceEmployee()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -817,6 +854,9 @@ void Menus::SecurityManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -873,6 +913,9 @@ void Menus::AddSecurityData()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -922,6 +965,9 @@ void Menus::SecurityEmployees()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -991,6 +1037,9 @@ void Menus::ParkingManager()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -1045,6 +1094,9 @@ void Menus::ParkingManager()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -1065,6 +1117,9 @@ void Menus::ParkingManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1137,6 +1192,9 @@ void Menus::ShopsManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1190,6 +1248,9 @@ void Menus::ShopEmployee()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1250,6 +1311,9 @@ void Menus::WaterManager()
                 default:
                     break;
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -1304,6 +1368,9 @@ void Menus::WaterManager()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
         case 4:
@@ -1315,6 +1382,9 @@ void Menus::WaterManager()
         {
             WaterManagerReport();
             break;
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+            cin.ignore();
         }
             ch = 0;
             break;
@@ -1330,6 +1400,9 @@ void Menus::WaterManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1438,6 +1511,9 @@ void Menus::ControlAccountManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1544,6 +1620,9 @@ void Menus::ControlSecurityManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1650,6 +1729,9 @@ void Menus::ControlWaterManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1756,6 +1838,9 @@ void Menus::ControlMaintenanceManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1862,6 +1947,9 @@ void Menus::ControlParkingManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -1968,6 +2056,9 @@ void Menus::ControlShopsManager()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2024,6 +2115,9 @@ void Menus::EmployeeDetails()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -2066,6 +2160,9 @@ void Menus::EmployeeDetails()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -2106,6 +2203,9 @@ void Menus::EmployeeDetails()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -2147,6 +2247,9 @@ void Menus::EmployeeDetails()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -2188,6 +2291,9 @@ void Menus::EmployeeDetails()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -2228,6 +2334,9 @@ void Menus::EmployeeDetails()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -2244,6 +2353,9 @@ void Menus::EmployeeDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2284,6 +2396,9 @@ void Menus::ShopDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2334,6 +2449,9 @@ void Menus::AccountDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2378,6 +2496,9 @@ void Menus::ParkingDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2424,6 +2545,9 @@ void Menus::WaterDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2469,6 +2593,288 @@ void Menus::MaintenanceDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
+    }
+    ch = 0;
+}
+void Menus::PaymentProcessing()
+{
+    while (ch == 0)
+    {
+        long double Salary;
+        system("clear");
+        cout << "\n...........Welcome To Payament Repository..........\n\n";
+        cout << "1)Manager Salary\n"
+                "2)Account Employee Salary\n"
+                "3)Maintenance Employee Salary\n"
+                "4)Parking Employee Salary\n"
+                "5)Security Employee Salary\n"
+                "6)Water Employee Salary\n"
+                "Your Chocie :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            ofstream file("PaidManagersData.txt", ios::app);
+            obj.AccountManager.Display_Data("Manager");
+            if (obj.AccountManager.check == 1)
+            {
+                cout << "\nEnter Salary :";
+                cin >> Salary;
+                file << "Emloyee Id :" << obj.AccountManager.user_id << endl;
+                file << "Salary :" << Salary << endl;
+                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+            }
+            file.close();
+            break;
+        }
+        case 2:
+        {
+            ofstream file("PaidAccountEmployeeData.txt", ios::app);
+            obj.AccountManager.accountEmployee.Display_Data("AccountEmployee");
+            if (obj.AccountManager.accountEmployee.check == 1)
+            {
+                obj.AccountManager.accountEmployee.give_employee_salary();
+                file << "Emloyee Id :" << obj.AccountManager.accountEmployee.user_id << endl;
+                file << "Salary :" << obj.AccountManager.accountEmployee.EmployeeSalary << endl;
+                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+            }
+            file.close();
+            break;
+        }
+        case 3:
+        {
+            ofstream file("PaidMaintenanceEmployeeData.txt", ios::app);
+            obj.MaintenanceManager.maintaineanceEmployee->Display_Data("MaintenanceEmployee");
+            if (obj.MaintenanceManager.maintaineanceEmployee->check == 1)
+            {
+                obj.MaintenanceManager.maintaineanceEmployee->give_employee_salary();
+                file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->user_id << endl;
+                file << "Salary :" << obj.MaintenanceManager.maintaineanceEmployee->EmployeeSalary << endl;
+                obj.MaintenanceManager.totalIncome.subtractEmployeeSalary(Salary);
+            }
+            file.close();
+            break;
+        }
+        case 4:
+        {
+            ofstream file("PaidParkingEmployeeData.txt", ios::app);
+            obj.ParkingManager.parkingEmployee->Display_Data("ParkingEmployee");
+            if (obj.ParkingManager.parkingEmployee->check == 1)
+            {
+                obj.ParkingManager.parkingEmployee->give_employee_salary();
+                file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->user_id << endl;
+                file << "Salary :" << obj.ParkingManager.parkingEmployee->EmployeeSalary << endl;
+                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+            }
+            file.close();
+            break;
+        }
+        case 5:
+        {
+            ofstream file("PaidSecurityEmployeeData.txt", ios::app);
+            obj.SecurityManager.securityEmployee.Display_Data("SecurityEmployee");
+            if (obj.SecurityManager.securityEmployee.check == 1)
+            {
+                obj.SecurityManager.securityEmployee.give_employee_salary();
+                file << "Emloyee Id :" << obj.SecurityManager.securityEmployee.user_id << endl;
+                file << "Salary :" << obj.SecurityManager.securityEmployee.EmployeeSalary << endl;
+                obj.SecurityManager.totalIncome.subtractEmployeeSalary(Salary);
+            }
+            file.close();
+            break;
+        }
+        case 6:
+        {
+            ofstream file("PaidWaterEmployeeData.txt", ios::app);
+            obj.WaterManager.waterEmployee.Display_Data("waterEmployee");
+            if (obj.WaterManager.waterEmployee.check == 1)
+            {
+                obj.WaterManager.waterEmployee.give_employee_salary();
+                file << "Emloyee Id :" << obj.WaterManager.waterEmployee.user_id << endl;
+                file << "Salary :" << obj.WaterManager.waterEmployee.EmployeeSalary << endl;
+                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+            }
+            file.close();
+            break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
+    }
+    ch = 0;
+}
+void Menus::PaymentHistory()
+{
+    while (ch == 0)
+    {
+        long double Salary;
+        system("clear");
+        cout << "\n...........Welcome To Payament History Repository..........\n\n";
+        cout << "1)Manager Salary\n"
+                "2)Account Employee Salary\n"
+                "3)Maintenance Employee Salary\n"
+                "4)Parking Employee Salary\n"
+                "5)Security Employee Salary\n"
+                "6)Water Employee Salary\n"
+                "Your Chocie :";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            string id;
+            ifstream file("PaidManagersData.txt");
+            cout << "Enter Manager Id :";
+            cin >> id;
+            string storing;
+            while (getline(file, storing))
+            {
+                if (storing.find(id) != string::npos)
+                {
+                    cout << storing << endl;
+                    if (getline(file, storing))
+                    {
+                        cout << storing << endl;
+                    }
+                }
+            }
+            file.close();
+            break;
+        }
+        case 2:
+        {
+            string id;
+            ifstream file("PaidAccountEmployeeData.txt");
+            cout << "Enter Manager Id :";
+            cin >> id;
+            string storing;
+            while (getline(file, storing))
+            {
+                if (storing.find(id) != string::npos)
+                {
+                    cout << storing << endl;
+                    if (getline(file, storing))
+                    {
+                        cout << storing << endl;
+                    }
+                }
+            }
+            file.close();
+            break;
+        }
+        case 3:
+        {
+            string id;
+            ifstream file("PaidMaintenanceEmployeeData.txt");
+            cout << "Enter Manager Id :";
+            cin >> id;
+            string storing;
+            while (getline(file, storing))
+            {
+                if (storing.find(id) != string::npos)
+                {
+                    cout << storing << endl;
+                    if (getline(file, storing))
+                    {
+                        cout << storing << endl;
+                    }
+                }
+            }
+            file.close();
+            break;
+        }
+        case 4:
+        {
+            string id;
+            ifstream file("PaidParkingEmployeeData.txt");
+            cout << "Enter Manager Id :";
+            cin >> id;
+            string storing;
+            while (getline(file, storing))
+            {
+                if (storing.find(id) != string::npos)
+                {
+                    cout << storing << endl;
+                    if (getline(file, storing))
+                    {
+                        cout << storing << endl;
+                    }
+                }
+            }
+            file.close();
+            break;
+        }
+        case 5:
+        {
+            string id;
+            ifstream file("PaidSecurityEmployeeData.txt");
+            cout << "Enter Manager Id :";
+            cin >> id;
+            string storing;
+            while (getline(file, storing))
+            {
+                if (storing.find(id) != string::npos)
+                {
+                    cout << storing << endl;
+                    if (getline(file, storing))
+                    {
+                        cout << storing << endl;
+                    }
+                }
+            }
+            file.close();
+            break;
+        }
+        case 6:
+        {
+            string id;
+            ifstream file("PaidWaterEmployeeData.txt");
+            cout << "Enter Manager Id :";
+            cin >> id;
+            string storing;
+            while (getline(file, storing))
+            {
+                if (storing.find(id) != string::npos)
+                {
+                    cout << storing << endl;
+                    if (getline(file, storing))
+                    {
+                        cout << storing << endl;
+                    }
+                }
+            }
+            file.close();
+            break;
+        }
+        case 0:
+        {
+            ch = 1;
+            break;
+        }
+        default:
+        {
+            cout << "\nInvalid Choice!\n";
+            break;
+        }
+        }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2488,194 +2894,18 @@ void Menus::IssuingEmployeePayments()
         {
         case 1:
         {
-            while (ch == 0)
-            {
-                system("clear");
-                cout << "\n..........Welcome To Payment Processing Repository.........\n\n";
-                cout << "1)Process Payments\n"
-                        "2)Review Payment Details\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for processing payments of each employee by giving id first it gives his details then pay him
-                    while (ch == 0)
-                    {
-                        long double Salary;
-                        system("clear");
-                        cout << "\n...........Welcome To Payament Repository..........\n\n";
-                        cout << "1)Manager Salary\n"
-                                "2)Account Employee Salary\n"
-                                "3)Maintenance Employee Salary\n"
-                                "4)Parking Employee Salary\n"
-                                "5)Security Employee Salary\n"
-                                "6)Water Employee Salary\n"
-                                "Your Chocie :";
-                        cin >> choice;
-                        switch (choice)
-                        {
-                        case 1:
-                        {
-                            ofstream file("PaidManagersData.txt", ios::app);
-                            obj.AccountManager.Display_Data("Manager");
-                            if (obj.AccountManager.check == 1)
-                            {
-                                cout << "\nEnter Salary :";
-                                cin >> Salary;
-                                file << "Emloyee Id :" << obj.AccountManager.user_id << endl;
-                                file<<"Salary :"<<Salary<<endl;
-                                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
-                            }
-                            file.close();
-                            break;
-                        }
-                        case 2:
-                        {
-                            ofstream file("PaidAccountEmployeeData.txt", ios::app);
-                            obj.AccountManager.accountEmployee.Display_Data("AccountEmployee");
-                            if (obj.AccountManager.accountEmployee.check == 1)
-                            {
-                                obj.AccountManager.accountEmployee.give_employee_salary();
-                                file << "Emloyee Id :" << obj.AccountManager.accountEmployee.user_id << endl;
-                                file<<"Salary :"<<obj.AccountManager.accountEmployee.EmployeeSalary<<endl;
-                                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
-                            }
-                            file.close();
-                            break;
-                        }
-                        case 3:
-                        {
-                            ofstream file("PaidMaintenanceEmployeeData.txt", ios::app);
-                            obj.MaintenanceManager.maintaineanceEmployee->Display_Data("MaintenanceEmployee");
-                            if (obj.MaintenanceManager.maintaineanceEmployee->check == 1)
-                            {
-                                obj.MaintenanceManager.maintaineanceEmployee->give_employee_salary();
-                                file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->user_id << endl;
-                                file<<"Salary :"<<obj.MaintenanceManager.maintaineanceEmployee->EmployeeSalary<<endl;
-                                obj.MaintenanceManager.totalIncome.subtractEmployeeSalary(Salary);
-                            }
-                            file.close();
-                            break;
-                        }
-                        case 4:
-                        {
-                             ofstream file("PaidParkingEmployeeData.txt", ios::app);
-                            obj.ParkingManager.parkingEmployee->Display_Data("ParkingEmployee");
-                            if (obj.ParkingManager.parkingEmployee->check == 1)
-                            {
-                                obj.ParkingManager.parkingEmployee->give_employee_salary();
-                                file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->user_id << endl;
-                                file<<"Salary :"<<obj.ParkingManager.parkingEmployee->EmployeeSalary<<endl;
-                                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
-                            }
-                            file.close();
-                            break;
-                        }
-                        case 5:
-                        {
-                             ofstream file("PaidSecurityEmployeeData.txt", ios::app);
-                            obj.SecurityManager.securityEmployee.Display_Data("SecurityEmployee");
-                            if (obj.SecurityManager.securityEmployee.check == 1)
-                            {
-                                obj.SecurityManager.securityEmployee.give_employee_salary();
-                                file << "Emloyee Id :" << obj.SecurityManager.securityEmployee.user_id << endl;
-                                file<<"Salary :"<<obj.SecurityManager.securityEmployee.EmployeeSalary<<endl;
-                                obj.SecurityManager.totalIncome.subtractEmployeeSalary(Salary);
-                            }
-                            file.close();
-                            break;
-                        }
-                        case 6:
-                        {
-                             ofstream file("PaidWaterEmployeeData.txt", ios::app);
-                            obj.WaterManager.waterEmployee.Display_Data("waterEmployee");
-                            if (obj.WaterManager.waterEmployee.check == 1)
-                            {
-                                obj.WaterManager.waterEmployee.give_employee_salary();
-                                file << "Emloyee Id :" << obj.WaterManager.waterEmployee.user_id << endl;
-                                file<<"Salary :"<<obj.WaterManager.waterEmployee.EmployeeSalary<<endl;
-                                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
-                            }
-                            file.close();
-                            break;
-                        }
-                        case 0:
-                        {
-                            ch = 1;
-                            break;
-                        }
-                        default:
-                        {
-                            cout << "\nInvalid Choice!\n";
-                            break;
-                        }
-                        }
-                    }
-                    ch = 0;
 
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for review the payment of the employee is done or not by his or her id code
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+            // write a code for processing payments of each employee by giving id first it gives his details then pay him
+            PaymentProcessing();
             break;
         }
         case 2:
         {
-            while (ch == 0)
-            {
-                system("clear");
-                cout << "\n..........Welcome To Payment History Repository.........\n\n";
-                cout << "1)View Payment History\n"
-                        "2)Search Payment History\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice;
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write code for viewing the payment history of the hole mall employee by his payment history
-                    break;
-                }
-                case 2:
-                {
-                    // checking the history of payment by id of a person
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-            }
-            ch = 0;
+            // write a code for processing payments of each employee by giving id first it gives his details then pay him
+            PaymentHistory();
             break;
         }
+
         case 0:
         {
             ch = 1;
@@ -2688,8 +2918,8 @@ void Menus::IssuingEmployeePayments()
         }
         }
     }
-    ch = 0;
 }
+
 /*void Menus::CalculateDepartmentsBudget()
 {
     while (ch == 0)
@@ -2738,9 +2968,13 @@ void Menus::IssuingEmployeePayments()
             break;
         }
         }
+    cout<<"\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }*/
+
 void Menus::MaintenanceBudget()
 {
     while (ch == 0)
@@ -2776,6 +3010,9 @@ void Menus::MaintenanceBudget()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2815,6 +3052,9 @@ void Menus::WaterBudget()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2854,6 +3094,9 @@ void Menus::SecurityBudget()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -2950,6 +3193,9 @@ void Menus::SubManagersReports()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3031,6 +3277,9 @@ void Menus::SubManagersReports()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3113,6 +3362,9 @@ void Menus::SubManagersReports()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3194,6 +3446,9 @@ void Menus::SubManagersReports()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3275,6 +3530,9 @@ void Menus::SubManagersReports()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3290,6 +3548,9 @@ void Menus::SubManagersReports()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -3339,6 +3600,9 @@ void Menus::AccountEmployees()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -3398,6 +3662,9 @@ void Menus::MaintenanceManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -3439,6 +3706,9 @@ void Menus::MaintenanceManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3480,6 +3750,9 @@ void Menus::MaintenanceManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3521,6 +3794,9 @@ void Menus::MaintenanceManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3561,6 +3837,9 @@ void Menus::MaintenanceManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3602,6 +3881,9 @@ void Menus::MaintenanceManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -3643,6 +3925,9 @@ void Menus::MaintenanceManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3659,6 +3944,9 @@ void Menus::MaintenanceManagerReport()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -3717,6 +4005,9 @@ void Menus::SecurityManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -3758,6 +4049,9 @@ void Menus::SecurityManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3798,6 +4092,9 @@ void Menus::SecurityManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3839,6 +4136,9 @@ void Menus::SecurityManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3879,6 +4179,9 @@ void Menus::SecurityManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3920,6 +4223,9 @@ void Menus::SecurityManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -3961,6 +4267,9 @@ void Menus::SecurityManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -3977,6 +4286,9 @@ void Menus::SecurityManagerReport()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -4035,6 +4347,9 @@ void Menus::WaterManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -4076,6 +4391,9 @@ void Menus::WaterManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4117,6 +4435,9 @@ void Menus::WaterManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4158,6 +4479,9 @@ void Menus::WaterManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4198,6 +4522,9 @@ void Menus::WaterManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4239,6 +4566,9 @@ void Menus::WaterManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -4280,6 +4610,9 @@ void Menus::WaterManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4296,6 +4629,9 @@ void Menus::WaterManagerReport()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -4355,6 +4691,9 @@ void Menus::ParkingManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -4396,6 +4735,9 @@ void Menus::ParkingManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4437,6 +4779,9 @@ void Menus::ParkingManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4478,6 +4823,9 @@ void Menus::ParkingManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4518,6 +4866,9 @@ void Menus::ParkingManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4559,6 +4910,9 @@ void Menus::ParkingManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -4600,6 +4954,9 @@ void Menus::ParkingManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4616,6 +4973,9 @@ void Menus::ParkingManagerReport()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -4674,6 +5034,9 @@ void Menus::ShopManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -4715,6 +5078,9 @@ void Menus::ShopManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4756,6 +5122,9 @@ void Menus::ShopManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4797,6 +5166,9 @@ void Menus::ShopManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4837,6 +5209,9 @@ void Menus::ShopManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4878,6 +5253,9 @@ void Menus::ShopManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
 
@@ -4919,6 +5297,9 @@ void Menus::ShopManagerReport()
                     break;
                 }
                 }
+                cout << "\nPress Enter To Continue......";
+                cin.ignore();
+                cin.ignore();
             }
             ch = 0;
             break;
@@ -4935,6 +5316,9 @@ void Menus::ShopManagerReport()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
@@ -5010,9 +5394,13 @@ void Menus::AccountManagerReport()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
+
 void Menus::SecurityDetails()
 {
     while (ch == 0)
@@ -5065,9 +5453,13 @@ void Menus::SecurityDetails()
             break;
         }
         }
+        cout << "\nPress Enter To Continue......";
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }
+
 void Menus::calculator()
 {
     Calculator<long double> *calculator;
@@ -5130,6 +5522,10 @@ void Menus::calculator()
         }
         }
         delete calculator;
+        cout << "\nPress Enter To Continue......";
+
+        cin.ignore();
+        cin.ignore();
     }
     ch = 0;
 }

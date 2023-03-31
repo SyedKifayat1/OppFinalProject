@@ -175,7 +175,6 @@ void Menus::HeadMenu()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        
     }
     ch = 0;
 }
@@ -567,6 +566,7 @@ void Menus::MaintenanceManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Maintenance Manager Repository..........\n\n";
         cout << "1)Maintenance Data\n"
@@ -616,7 +616,6 @@ void Menus::MaintenanceManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -625,6 +624,7 @@ void Menus::AddMaintenanceData() // write a code for this repository just remind
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Add Maintenance Data Repository.......\n\n"
                 "Enter Details :\n"
@@ -656,7 +656,6 @@ void Menus::AddMaintenanceData() // write a code for this repository just remind
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -664,6 +663,7 @@ void Menus::MaintenanceEmployee()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Maintenance Employee Repository.......\n\n"
                 "1)Add Employee\n"
@@ -712,7 +712,6 @@ void Menus::MaintenanceEmployee()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -720,7 +719,7 @@ void Menus::ParkingManager()
 {
     while (ch == 0)
     {
-
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Parking Manager Repository..........\n\n";
         cout << "1)Check Parking Data\n"
@@ -742,6 +741,7 @@ void Menus::ParkingManager()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
 
                 cout << "\n.......Welcome To Add Parking Data Repository.......\n\n"
@@ -784,7 +784,6 @@ void Menus::ParkingManager()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -793,6 +792,7 @@ void Menus::ParkingManager()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.......Welcome To Parking Employee Repository.......\n\n"
                         "1)Add Employee\n"
@@ -841,7 +841,6 @@ void Menus::ParkingManager()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -864,7 +863,6 @@ void Menus::ParkingManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -872,6 +870,7 @@ void Menus::ShopsManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Shop Manager Repository..........\n\n";
         cout << "1)Check Shops Data\n"
@@ -932,7 +931,6 @@ void Menus::ShopsManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -940,6 +938,7 @@ void Menus::WaterManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
 
         system("clear");
         cout << "\n..........Welcome To Water Manager Repository..........\n\n";
@@ -962,6 +961,7 @@ void Menus::WaterManager()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
 
                 cout << "\n.......Welcome To Add Water Details Repository.......\n\n";
@@ -995,7 +995,6 @@ void Menus::WaterManager()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -1004,6 +1003,7 @@ void Menus::WaterManager()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.......Welcome To Water Employee Repository.......\n\n"
                         "1)Add Employee\n"
@@ -1052,7 +1052,6 @@ void Menus::WaterManager()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
         case 4:
@@ -1064,12 +1063,7 @@ void Menus::WaterManager()
         {
             WaterManagerReport();
             break;
-            cout << "\nPress Enter To Continue......";
-            cin.ignore();
-            cin.ignore();
         }
-            ch = 0;
-            break;
         }
         case 0:
         {
@@ -1084,7 +1078,6 @@ void Menus::WaterManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1092,6 +1085,7 @@ void Menus::ControlAccountManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
 
         cout << "\n.......Welcome To Control Account Manager Repository.......\n\n"
@@ -1195,7 +1189,6 @@ void Menus::ControlAccountManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1203,6 +1196,8 @@ void Menus::ControlWaterManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
+
         system("clear");
         cout << "\n.......Welcome To Control Water Manager Repository.......\n\n"
                 "1)Add Manager\n"
@@ -1304,7 +1299,6 @@ void Menus::ControlWaterManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1312,6 +1306,7 @@ void Menus::ControlMaintenanceManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Control Maintenance Manager Repository......\n\n"
                 "1)Add Manager\n"
@@ -1413,7 +1408,6 @@ void Menus::ControlMaintenanceManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1421,6 +1415,7 @@ void Menus::ControlParkingManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Control Parking Manager Repository.......\n\n"
                 "1)Add Manager\n"
@@ -1522,7 +1517,6 @@ void Menus::ControlParkingManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1530,6 +1524,7 @@ void Menus::ControlShopsManager()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Control Shop Manager Repository.......\n\n"
                 "1)Add Manager\n"
@@ -1568,19 +1563,19 @@ void Menus::ControlShopsManager()
         }
         case 5:
         {
-            obj.ShopsManager.ReadReport("WaterReportForHead");
+            obj.ShopsManager.ReadReport("ShopReportForHead");
             break;
         }
         case 6:
 
         {
-            obj.ShopsManager.WriteResponse("HeadResponceToWaterReport");
+            obj.ShopsManager.WriteResponse("HeadResponceToShopReport");
             break;
         }
         case 7:
         {
             cout << "\nGive Your Responce :\n";
-            obj.ShopsManager.ReadReport("WaterReportForHead");
+            obj.ShopsManager.ReadReport("ShopReportForHead");
             cout << endl;
             cout << "Select Your Choice :\n"
                     "1)Approved\n"
@@ -1631,7 +1626,6 @@ void Menus::ControlShopsManager()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1639,6 +1633,7 @@ void Menus::EmployeeDetails()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Employee Details Repository.......\n\n"
                 "1)Account Employee Details\n"
@@ -1655,6 +1650,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.......Welcome To Accounts Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
@@ -1689,7 +1685,6 @@ void Menus::EmployeeDetails()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -1699,6 +1694,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.......Welcome To Shop Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
@@ -1734,7 +1730,6 @@ void Menus::EmployeeDetails()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -1743,6 +1738,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.......Welcome To Maintenance Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
@@ -1777,7 +1773,6 @@ void Menus::EmployeeDetails()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -1786,6 +1781,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.......Welcome To Parking Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
@@ -1821,7 +1817,6 @@ void Menus::EmployeeDetails()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -1830,6 +1825,7 @@ void Menus::EmployeeDetails()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.......Welcome To Water Employee Details Repository.......\n\n"
                         "1)Getting Data By ID No \n"
@@ -1865,7 +1861,6 @@ void Menus::EmployeeDetails()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -1883,7 +1878,6 @@ void Menus::EmployeeDetails()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1891,6 +1885,7 @@ void Menus::ShopDetails()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Checking Shop Details Repository.......\n\n"
                 "1)Getting Details With Shop ID No \n"
@@ -1926,7 +1921,6 @@ void Menus::ShopDetails()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1934,6 +1928,7 @@ void Menus::AccountDetails()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Checking Accounts Details Repository.......\n\n"
                 "1)Checking Employee Payment Information \n"
@@ -1979,7 +1974,6 @@ void Menus::AccountDetails()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -1987,6 +1981,7 @@ void Menus::ParkingDetails()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Checking Parking Details Repository.......\n\n"
                 "1)Reviewing Overall Earnings \n"
@@ -2026,7 +2021,6 @@ void Menus::ParkingDetails()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2035,6 +2029,7 @@ void Menus::WaterDetails()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Checking Water Details Repository.......\n\n"
                 "Checking Details :\n"
@@ -2075,7 +2070,6 @@ void Menus::WaterDetails()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2083,6 +2077,7 @@ void Menus::MaintenanceDetails()
 { // if any other details is required then we will write at that time
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Checking Maintenance Details Repository.......\n\n"
                 "1)Details of Electricity Resources\n"
@@ -2123,7 +2118,6 @@ void Menus::MaintenanceDetails()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2131,6 +2125,7 @@ void Menus::PaymentProcessing()
 {
     while (ch == 0)
     {
+        cin.ignore();
         long double Salary;
         system("clear");
         cout << "\n...........Welcome To Payament Repository..........\n\n";
@@ -2227,7 +2222,6 @@ void Menus::PaymentProcessing()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2235,6 +2229,7 @@ void Menus::PaymentHistory()
 {
     while (ch == 0)
     {
+        cin.ignore();
         long double Salary;
         system("clear");
         cout << "\n...........Welcome To Payament History Repository..........\n\n";
@@ -2331,7 +2326,7 @@ void Menus::PaymentHistory()
             file.close();
             break;
         }
-            
+
         case 5:
         {
             string id;
@@ -2366,7 +2361,6 @@ void Menus::PaymentHistory()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2375,6 +2369,7 @@ void Menus::IssuingEmployeePayments()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Issuing Employee Payments Repository.........\n\n";
         cout << "1)Payment Processing\n"
@@ -2409,6 +2404,8 @@ void Menus::IssuingEmployeePayments()
             break;
         }
         }
+        cout << "\nPress Enter To Continue.....\n";
+        cin.ignore();
     }
 }
 
@@ -2416,6 +2413,7 @@ void Menus::MaintenanceBudget()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Maintenance Budget Repository.........\n\n";
         cout << "1)Generate Maintenance Budget Reports\n"
@@ -2449,7 +2447,6 @@ void Menus::MaintenanceBudget()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2457,6 +2454,7 @@ void Menus::WaterBudget()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Water Budget Repository.........\n\n";
         cout << "1)Generate Water Budget Reports\n"
@@ -2491,7 +2489,6 @@ void Menus::WaterBudget()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2499,10 +2496,10 @@ void Menus::SubManagersReports()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Sub-Manager Reports Repository.........\n\n";
         cout << "1)Maintenance Manager\n"
-                // "2)Secutity Manager \n"
                 "2)Water Manager\n"
                 "3)Parking Manager\n"
                 "4)Shops Manager\n"
@@ -2515,6 +2512,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n..........Welcome To Maintenance Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
@@ -2599,6 +2597,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
@@ -2683,6 +2682,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n..........Welcome To Parking Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
@@ -2758,7 +2758,6 @@ void Menus::SubManagersReports()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -2767,6 +2766,7 @@ void Menus::SubManagersReports()
         {
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n..........Welcome To Shops Manager Reports Repository.........\n\n";
                 cout << "1)Read Report Or Message\n"
@@ -2791,6 +2791,7 @@ void Menus::SubManagersReports()
                 }
                 case 3:
                 {
+
                     cout << "\nGive Your Responce :\n";
                     obj.ShopsManager.ForAccount.ReadReport("ShopReportForAccount");
                     cout << endl;
@@ -2842,7 +2843,6 @@ void Menus::SubManagersReports()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -2860,7 +2860,6 @@ void Menus::SubManagersReports()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2868,6 +2867,7 @@ void Menus::AccountEmployees()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Account Employees Repository.......\n\n"
                 "1)Add Employee\n"
@@ -2912,7 +2912,6 @@ void Menus::AccountEmployees()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -2921,6 +2920,7 @@ void Menus::MaintenanceManagerReport()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Maintenance Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
@@ -2941,6 +2941,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
@@ -2974,7 +2975,6 @@ void Menus::MaintenanceManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -2985,6 +2985,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
@@ -3018,7 +3019,6 @@ void Menus::MaintenanceManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3029,6 +3029,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
@@ -3062,7 +3063,6 @@ void Menus::MaintenanceManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3073,6 +3073,7 @@ void Menus::MaintenanceManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
@@ -3106,7 +3107,6 @@ void Menus::MaintenanceManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3116,6 +3116,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
@@ -3149,7 +3150,6 @@ void Menus::MaintenanceManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3160,6 +3160,7 @@ void Menus::MaintenanceManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
@@ -3193,7 +3194,6 @@ void Menus::MaintenanceManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -3204,6 +3204,7 @@ void Menus::MaintenanceManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
@@ -3237,7 +3238,6 @@ void Menus::MaintenanceManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3256,7 +3256,6 @@ void Menus::MaintenanceManagerReport()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -3264,6 +3263,7 @@ void Menus::WaterManagerReport()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
@@ -3284,6 +3284,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
@@ -3317,7 +3318,6 @@ void Menus::WaterManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -3328,6 +3328,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
@@ -3361,7 +3362,6 @@ void Menus::WaterManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3372,6 +3372,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
@@ -3405,7 +3406,6 @@ void Menus::WaterManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3416,6 +3416,7 @@ void Menus::WaterManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
@@ -3449,7 +3450,6 @@ void Menus::WaterManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3459,6 +3459,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
@@ -3492,7 +3493,6 @@ void Menus::WaterManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3503,6 +3503,7 @@ void Menus::WaterManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
@@ -3536,7 +3537,6 @@ void Menus::WaterManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -3547,6 +3547,7 @@ void Menus::WaterManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
@@ -3580,7 +3581,6 @@ void Menus::WaterManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3599,7 +3599,6 @@ void Menus::WaterManagerReport()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -3607,6 +3606,7 @@ void Menus::ParkingManagerReport()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Parking Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
@@ -3628,6 +3628,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
@@ -3661,7 +3662,6 @@ void Menus::ParkingManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -3672,6 +3672,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
@@ -3705,7 +3706,6 @@ void Menus::ParkingManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3716,6 +3716,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
@@ -3749,7 +3750,6 @@ void Menus::ParkingManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3760,6 +3760,7 @@ void Menus::ParkingManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
@@ -3793,7 +3794,6 @@ void Menus::ParkingManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3803,6 +3803,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
@@ -3836,7 +3837,6 @@ void Menus::ParkingManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -3847,6 +3847,7 @@ void Menus::ParkingManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
@@ -3880,7 +3881,6 @@ void Menus::ParkingManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -3891,6 +3891,7 @@ void Menus::ParkingManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
@@ -3924,11 +3925,9 @@ void Menus::ParkingManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
-            // write a code for reading the head or account manager response
         }
         case 0:
         {
@@ -3942,7 +3941,6 @@ void Menus::ParkingManagerReport()
         }
         }
         cout << "\nPress Enter To Continue......";
-        cin.ignore();
         cin.ignore();
     }
     ch = 0;
@@ -3971,6 +3969,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
                 cout << "Write Report :\n"
@@ -4004,7 +4003,6 @@ void Menus::ShopManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -4015,6 +4013,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
                 cout << "Edit Report :\n"
@@ -4048,7 +4047,6 @@ void Menus::ShopManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -4059,6 +4057,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
                 cout << "Read Report :\n"
@@ -4092,7 +4091,6 @@ void Menus::ShopManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -4103,6 +4101,7 @@ void Menus::ShopManagerReport()
             // write a code for replacing the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
                 cout << "Add Report :\n"
@@ -4136,7 +4135,6 @@ void Menus::ShopManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -4146,6 +4144,7 @@ void Menus::ShopManagerReport()
 
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
                 cout << "Delete Report :\n"
@@ -4179,7 +4178,6 @@ void Menus::ShopManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
             break;
@@ -4190,6 +4188,7 @@ void Menus::ShopManagerReport()
             // write a code for giving approval or rejection to the report
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Resport Status Repository..........\n\n";
                 cout << "Check Report Status :\n"
@@ -4223,7 +4222,6 @@ void Menus::ShopManagerReport()
                 }
                 cout << "\nPress Enter To Continue......";
                 cin.ignore();
-                cin.ignore();
             }
             ch = 0;
 
@@ -4231,7 +4229,7 @@ void Menus::ShopManagerReport()
         }
         case 7:
         {
-
+            cin.ignore();
             while (ch == 0)
             {
                 system("clear");
@@ -4271,7 +4269,6 @@ void Menus::ShopManagerReport()
             }
             ch = 0;
             break;
-            // write a code for reading the head or account manager response
         }
         case 0:
         {
@@ -4286,7 +4283,6 @@ void Menus::ShopManagerReport()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -4295,6 +4291,7 @@ void Menus::AccountManagerReport()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Account Manager Reports Repository.........\n\n";
         cout << "1)Write Report\n"
@@ -4364,7 +4361,6 @@ void Menus::AccountManagerReport()
         }
         cout << "\nPress Enter To Continue......";
         cin.ignore();
-        cin.ignore();
     }
     ch = 0;
 }
@@ -4373,6 +4369,7 @@ void Menus::calculator()
     Calculator<long double> *calculator;
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.........Welcome To Calculator........\n\n";
         cout << "Select Your Choice :\n"
@@ -4432,7 +4429,6 @@ void Menus::calculator()
         delete calculator;
         cout << "\nPress Enter To Continue......";
 
-        cin.ignore();
         cin.ignore();
     }
     ch = 0;

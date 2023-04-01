@@ -1,0 +1,5 @@
+Shop No :R5426
+Shop Ower Name :Kifayat Khan
+Enter Rent Of Shop :300000
+Shop Type :jelury
+Shop Floor Location :4th Floor

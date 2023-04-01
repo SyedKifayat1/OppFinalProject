@@ -21,11 +21,27 @@ public:
     {
         totalIncome += income;
     }
+    void AddShopTotalIncome(long double income)
+    {
+        ShopTotalIncome+=income;
+    }
+    void AddParkingTotalIncome(long double income)
+    {
+        ParkingTotalIncome+=income;
+    }
 
     // getting the total income
     long double getTotalIncome() const
     {
         return totalIncome;
+    }
+    long double getParkingIncome()
+    {
+        return ParkingTotalIncome;
+    }
+    long double getShopIncome()
+    {
+        return ShopTotalIncome;
     }
 
     // subtracting employee salary from total income
@@ -39,6 +55,9 @@ private:
     TotalIncome() {}
 
     static long double totalIncome; // declare totalIncome as a static member variable
+    static long double ShopTotalIncome,ParkingTotalIncome;
 };
 
 long double TotalIncome::totalIncome = 0; // initialize totalIncome to 0
+long double TotalIncome::ShopTotalIncome = 0;
+long double TotalIncome::ParkingTotalIncome = 0;

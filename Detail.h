@@ -42,7 +42,7 @@ public:
             {
                 if (k != 1)
                 {
-                    outfile << endl;
+                    
                     outfile << "EMPLOYEE ID IS :";
                     outfile << user_id;
                     outfile << endl;
@@ -119,9 +119,7 @@ public:
                 }
             }
         }
-        cout << "\nPress Enter To Continue........\n";
-        cin.ignore();
-        cin.ignore();
+        
     }
     void Remove_Employee(string fileName)
     {
@@ -196,9 +194,7 @@ public:
             return;
         }
         cout << "Employee with ID " << ID << " removed successfully.\n";
-        cout << "\nPress Enter To Continue........\n";
-        cin.ignore();
-        cin.ignore();
+        
     }
     void Replace_employ(string fileName)
     {
@@ -252,9 +248,7 @@ public:
         {
             cerr << "Error renaming file: " << e.what() << endl;
         }
-        cout << "\nPress Enter To Continue........\n";
-        cin.ignore();
-        cin.ignore();
+        
     }
 
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype

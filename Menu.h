@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include "Manager.h"
 #include "Accounts.h"
 #include "Maintenance.h"
@@ -13,7 +14,7 @@ class Menus
 {
 public:
     int choice;
-    float choice1;
+    string choice1;
     int ch;
     int check;
     Menus()
@@ -74,14 +75,28 @@ public:
 };
 int Menus::InvaidChoice()
 {
-    if (choice1 == 0 || choice1 == 1 || choice1 == 2 || choice1 == 3 || choice1 == 4 || choice1 == 5 || choice1 == 6 || choice1 == 7 || choice1 == 8 || choice1 == 9)
+
+    int num;
+
+    try
     {
-        return 1;
+
+        // Try to convert input to integer
+        num = stoi(choice1);
+
+        // Check if input is an integer
+        if (to_string(num) != choice1)
+        {
+            throw invalid_argument("");
+        }
     }
-    else
+    catch (invalid_argument const &e)
     {
-        return 0;
+        cerr << "\nError: Please Enter An Integer Number\n";
+        return -19;
     }
+
+    return num;
 }
 
 void Menus::Menu()
@@ -97,10 +112,10 @@ void Menus::Menu()
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice1;
-        check = InvaidChoice();
-        if (check == 1)
+        choice = InvaidChoice();
+
         {
-            choice = choice1;
+
             switch (choice)
             {
             case 1:
@@ -123,17 +138,17 @@ void Menus::Menu()
 
             default:
             {
-                cout << "\nInvalid Choice!\n";
+                if (choice != -19)
+                    cout << "\nInvalid Choice!\n";
                 break;
             }
             }
         }
-        else
+        if (ch != 1)
         {
-            cout << "\nInvalid Choice Is Enter!\n";
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
         cin.ignore();
     }
 }
@@ -141,13 +156,15 @@ void Menus::HeadMenu()
 {
     while (ch == 0)
     {
+        cin.ignore();
         system("clear");
         cout << "\n.......Welcome To Head Repository.......\n\n"
                 "1)Manage Sub-Managers\n"
                 "2)Mall Details\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -169,12 +186,16 @@ void Menus::HeadMenu()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -193,7 +214,8 @@ void Menus::SubManagerMenu()
                 "5)Water Manager\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -228,12 +250,16 @@ void Menus::SubManagerMenu()
 
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -251,7 +277,8 @@ void Menus::ManageSubManager()
                 "5)Control Water Manager\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -286,12 +313,16 @@ void Menus::ManageSubManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -311,7 +342,8 @@ void Menus::MallDetails()
                 "6)Water Details\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -351,12 +383,16 @@ void Menus::MallDetails()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -374,7 +410,8 @@ void Menus::AccountManager()
                 "5)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -409,12 +446,16 @@ void Menus::AccountManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -430,7 +471,8 @@ void Menus::AddAccountsData()
                 "2)Calculate Total Income\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -451,12 +493,16 @@ void Menus::AddAccountsData()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -467,13 +513,14 @@ void Menus::CalculateTotalIncome()
         cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Calculate Total Income Repositiry.........\n\n";
-        cout << "1)Shops Rent\n"
+        cout << "1)Shops \n"
                 "2)Parking Income\n"
                 "3)Total Income\n" // this is a calculation after calculating total in come
                 "4)Calculator\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -484,7 +531,7 @@ void Menus::CalculateTotalIncome()
         case 2:
         {
             // ParkingIncome();
-            cout << "\nTotal Parking Income Is :" << obj.ParkingManager.getParkingIncome() << endl;
+            cout << "\nTotal Parking Income Is :" << obj.AccountManager.totalIncome.getParkingIncome() << endl;
             break;
         }
         case 3:
@@ -505,12 +552,16 @@ void Menus::CalculateTotalIncome()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -527,7 +578,8 @@ void Menus::ShopsRent()
                 "3)Total Shops Income\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -544,7 +596,8 @@ void Menus::ShopsRent()
         }
         case 3:
         {
-            cout << "\nShops Total Income Is :" << obj.ShopsManager.getShopsIncome() << endl;
+            long double shop = obj.AccountManager.totalIncome.getShopIncome();
+            cout << "\nShops Total Income Is :" << shop << endl;
         }
         case 0:
         {
@@ -553,12 +606,16 @@ void Menus::ShopsRent()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -576,7 +633,8 @@ void Menus::MaintenanceManager()
                 "5)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -610,12 +668,16 @@ void Menus::MaintenanceManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -632,7 +694,7 @@ void Menus::AddMaintenanceData() // write a code for this repository just remind
                 "2)Building Repears\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
         switch (choice)
         {
         case 1:
@@ -650,12 +712,16 @@ void Menus::AddMaintenanceData() // write a code for this repository just remind
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -672,7 +738,8 @@ void Menus::MaintenanceEmployee()
                 "4)Employee Details\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -706,12 +773,16 @@ void Menus::MaintenanceEmployee()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -729,7 +800,8 @@ void Menus::ParkingManager()
                 // hopefully here will be one more option for the report of the parking manager
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -750,7 +822,8 @@ void Menus::ParkingManager()
                         "3)Vehicle Disentry\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -778,12 +851,16 @@ void Menus::ParkingManager()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -801,7 +878,8 @@ void Menus::ParkingManager()
                         "4)Total Employee Details\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -835,12 +913,16 @@ void Menus::ParkingManager()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -857,12 +939,16 @@ void Menus::ParkingManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -881,7 +967,8 @@ void Menus::ShopsManager()
                 "6)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -925,12 +1012,16 @@ void Menus::ShopsManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -949,7 +1040,8 @@ void Menus::WaterManager()
                 "5)Report\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -971,7 +1063,8 @@ void Menus::WaterManager()
                         "3)Water Providing authority\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -993,8 +1086,11 @@ void Menus::WaterManager()
                 default:
                     break;
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -1012,7 +1108,8 @@ void Menus::WaterManager()
                         "4)Total Employee Details\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -1046,12 +1143,16 @@ void Menus::WaterManager()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
         case 4:
@@ -1072,12 +1173,16 @@ void Menus::WaterManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1099,7 +1204,8 @@ void Menus::ControlAccountManager()
                 "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1166,10 +1272,11 @@ void Menus::ControlAccountManager()
                 break;
             }
             default:
+            {
                 cout << "\nInvalid Choice!\n";
                 break;
             }
-            break;
+            }
         }
         case 8:
         {
@@ -1183,12 +1290,16 @@ void Menus::ControlAccountManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1210,7 +1321,8 @@ void Menus::ControlWaterManager()
                 "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1293,12 +1405,16 @@ void Menus::ControlWaterManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1319,7 +1435,8 @@ void Menus::ControlMaintenanceManager()
                 "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1402,12 +1519,16 @@ void Menus::ControlMaintenanceManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1428,7 +1549,8 @@ void Menus::ControlParkingManager()
                 "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1511,12 +1633,16 @@ void Menus::ControlParkingManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1537,7 +1663,8 @@ void Menus::ControlShopsManager()
                 "8)Check Status\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1620,12 +1747,16 @@ void Menus::ControlShopsManager()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1643,7 +1774,8 @@ void Menus::EmployeeDetails()
                 "5)Water Employee Details\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1657,7 +1789,8 @@ void Menus::EmployeeDetails()
                         "2)Getting Data As A Whole\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -1679,12 +1812,16 @@ void Menus::EmployeeDetails()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -1701,7 +1838,8 @@ void Menus::EmployeeDetails()
                         "2)Getting Data As A Whole\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -1724,12 +1862,16 @@ void Menus::EmployeeDetails()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -1745,7 +1887,8 @@ void Menus::EmployeeDetails()
                         "2)Getting Data As A Whole\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -1767,12 +1910,16 @@ void Menus::EmployeeDetails()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -1788,7 +1935,8 @@ void Menus::EmployeeDetails()
                         "2)Getting Data As A Whole\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -1811,12 +1959,16 @@ void Menus::EmployeeDetails()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -1832,7 +1984,8 @@ void Menus::EmployeeDetails()
                         "2)Getting Data As A Whole\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -1855,12 +2008,16 @@ void Menus::EmployeeDetails()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -1872,12 +2029,16 @@ void Menus::EmployeeDetails()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1892,7 +2053,8 @@ void Menus::ShopDetails()
                 "2)Getting Details Of Whole Shops\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1915,12 +2077,16 @@ void Menus::ShopDetails()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1933,10 +2099,10 @@ void Menus::AccountDetails()
         cout << "\n.......Welcome To Checking Accounts Details Repository.......\n\n"
                 "1)Checking Employee Payment Information \n"
                 "2)Reviewing your total earnings\n"
-                "3)Reviewing your Complete Income Details\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -1947,18 +2113,16 @@ void Menus::AccountDetails()
         }
         case 2:
         {
+            long double shop = obj.AccountManager.totalIncome.getShopIncome();
+            long double parking = obj.AccountManager.totalIncome.getParkingIncome();
+            long double current = obj.AccountManager.totalIncome.getTotalIncome();
             // write a code for total income sources
             cout << "\nTotal Income Sources :\n";
-            cout << "\nShops Income :" << obj.ShopsManager.getShopsIncome();
-            cout << "\nParking Income :" << obj.ParkingManager.getParkingIncome();
-            cout << "\nTotal Income :" << obj.ShopsManager.getShopsIncome() + obj.ParkingManager.getParkingIncome();
-            cout << "\nCurrent Balance :" << obj.AccountManager.totalIncome.getTotalIncome();
-            cout << "\nProfit :" << (obj.AccountManager.totalIncome.getTotalIncome() / obj.ShopsManager.getShopsIncome() + obj.ParkingManager.getParkingIncome()) * 100 << "%" << endl;
-            break;
-        }
-        case 3:
-        {
-            // write a code for current amount
+            cout << "\nShops Income :" << shop;
+            cout << "\nParking Income :" << parking;
+            cout << "\nTotal Income :" << shop + parking;
+            cout << "\nCurrent Balance :" << current;
+            cout << "\nProfit :" << (current / (shop + parking)) * 100 << "%" << endl;
             break;
         }
         case 0:
@@ -1968,12 +2132,16 @@ void Menus::AccountDetails()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -1989,12 +2157,15 @@ void Menus::ParkingDetails()
                 "3)Vehicle Details \n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
         {
-            cout << parking->get_Earnings();
+
+            long double parking = obj.AccountManager.totalIncome.getParkingIncome();
+            cout << "Parking Total Income Is :" << parking << endl;
             break;
         }
         case 2:
@@ -2015,12 +2186,16 @@ void Menus::ParkingDetails()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2039,7 +2214,8 @@ void Menus::WaterDetails()
 
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2064,12 +2240,16 @@ void Menus::WaterDetails()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2085,7 +2265,8 @@ void Menus::MaintenanceDetails()
                 "3)Maintenance Report\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2112,12 +2293,16 @@ void Menus::MaintenanceDetails()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2135,7 +2320,8 @@ void Menus::PaymentProcessing()
                 "4)Parking Employee Salary\n"
                 "5)Water Employee Salary\n"
                 "Your Chocie :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2146,9 +2332,17 @@ void Menus::PaymentProcessing()
             {
                 cout << "\nEnter Salary :";
                 cin >> Salary;
-                file << "Emloyee Id :" << obj.AccountManager.user_id << endl;
-                file << "Salary :" << Salary << endl;
-                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+                if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
+                {
+                    file << "Emloyee Id :" << obj.AccountManager.user_id << endl;
+                    file << "Salary :" << Salary << endl;
+                    obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+                    cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
+                }
+                else
+                {
+                    cout << "\nSorry Low Balance!\n";
+                }
             }
             file.close();
             break;
@@ -2159,10 +2353,20 @@ void Menus::PaymentProcessing()
             obj.AccountManager.accountEmployee.Display_Data("AccountEmployee");
             if (obj.AccountManager.accountEmployee.check == 1)
             {
-                obj.AccountManager.accountEmployee.give_employee_salary();
-                file << "Emloyee Id :" << obj.AccountManager.accountEmployee.user_id << endl;
-                file << "Salary :" << obj.AccountManager.accountEmployee.EmployeeSalary << endl;
-                obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+                cout << "\nEnter Salary :";
+                cin >> Salary;
+                if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
+                {
+
+                    file << "Emloyee Id :" << obj.AccountManager.accountEmployee.user_id << endl;
+                    file << "Salary :" << Salary << endl;
+                    obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
+                    cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
+                }
+                else
+                {
+                    cout << "\nSorry Low Balance!\n";
+                }
             }
             file.close();
             break;
@@ -2173,10 +2377,20 @@ void Menus::PaymentProcessing()
             obj.MaintenanceManager.maintaineanceEmployee->Display_Data("MaintenanceEmployee");
             if (obj.MaintenanceManager.maintaineanceEmployee->check == 1)
             {
-                obj.MaintenanceManager.maintaineanceEmployee->give_employee_salary();
-                file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->user_id << endl;
-                file << "Salary :" << obj.MaintenanceManager.maintaineanceEmployee->EmployeeSalary << endl;
-                obj.MaintenanceManager.totalIncome.subtractEmployeeSalary(Salary);
+                cout << "\nEnter Salary :";
+                cin >> Salary;
+                if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
+                {
+
+                    file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->user_id << endl;
+                    file << "Salary :" << Salary << endl;
+                    obj.MaintenanceManager.totalIncome.subtractEmployeeSalary(Salary);
+                    cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
+                }
+                else
+                {
+                    cout << "\nSorry Low Balance!\n";
+                }
             }
             file.close();
             break;
@@ -2187,10 +2401,20 @@ void Menus::PaymentProcessing()
             obj.ParkingManager.parkingEmployee->Display_Data("ParkingEmployee");
             if (obj.ParkingManager.parkingEmployee->check == 1)
             {
-                obj.ParkingManager.parkingEmployee->give_employee_salary();
-                file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->user_id << endl;
-                file << "Salary :" << obj.ParkingManager.parkingEmployee->EmployeeSalary << endl;
-                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+                cout << "\nEnter Salary :";
+                cin >> Salary;
+                if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
+                {
+
+                    file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->user_id << endl;
+                    file << "Salary :" << Salary << endl;
+                    obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+                    cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
+                }
+                else
+                {
+                    cout << "\nSorry Low Balance!\n";
+                }
             }
             file.close();
             break;
@@ -2201,10 +2425,20 @@ void Menus::PaymentProcessing()
             obj.WaterManager.waterEmployee.Display_Data("waterEmployee");
             if (obj.WaterManager.waterEmployee.check == 1)
             {
-                obj.WaterManager.waterEmployee.give_employee_salary();
-                file << "Emloyee Id :" << obj.WaterManager.waterEmployee.user_id << endl;
-                file << "Salary :" << obj.WaterManager.waterEmployee.EmployeeSalary << endl;
-                obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+                cout << "\nEnter Salary :";
+                cin >> Salary;
+                if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
+                {
+
+                    file << "Emloyee Id :" << obj.WaterManager.waterEmployee.user_id << endl;
+                    file << "Salary :" << Salary << endl;
+                    obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+                    cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
+                }
+                else
+                {
+                    cout << "\nSorry Low Balance!\n";
+                }
             }
             file.close();
             break;
@@ -2216,12 +2450,16 @@ void Menus::PaymentProcessing()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2239,7 +2477,8 @@ void Menus::PaymentHistory()
                 "4)Parking Employee Salary\n"
                 "6)Water Employee Salary\n"
                 "Your Chocie :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2355,12 +2594,16 @@ void Menus::PaymentHistory()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2376,7 +2619,8 @@ void Menus::IssuingEmployeePayments()
                 "2)Payment History\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2400,13 +2644,15 @@ void Menus::IssuingEmployeePayments()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
         cout << "\nPress Enter To Continue.....\n";
         cin.ignore();
     }
+    ch = 0;
 }
 
 void Menus::MaintenanceBudget()
@@ -2420,7 +2666,8 @@ void Menus::MaintenanceBudget()
                 "2)Required Budget\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
 
@@ -2441,12 +2688,16 @@ void Menus::MaintenanceBudget()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2461,7 +2712,8 @@ void Menus::WaterBudget()
                 "2)Required Budget\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
 
@@ -2483,12 +2735,16 @@ void Menus::WaterBudget()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2505,7 +2761,8 @@ void Menus::SubManagersReports()
                 "4)Shops Manager\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2521,7 +2778,8 @@ void Menus::SubManagersReports()
                         "4)Check Approval\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -2537,12 +2795,14 @@ void Menus::SubManagersReports()
                 }
                 case 3:
                 {
+
                     cout << "\nGive Your Responce :\n";
                     obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
                     cout << endl;
                     cout << "Select Your Choice :\n"
                             "1)Approved\n"
                             "2)Reject\n"
+                            "0)Eixt\n"
                             "Your Option :";
                     cin >> choice;
                     switch (choice)
@@ -2565,8 +2825,17 @@ void Menus::SubManagersReports()
                         }
                         break;
                     }
-                    default:
+                    case 0:
+                    {
+                        ch = 1;
                         break;
+                    }
+                    default:
+                    {
+                        if (choice != -19)
+                            cout << "\nInvalid Choice!\n";
+                        break;
+                    }
                     }
                     break;
                 }
@@ -2582,13 +2851,16 @@ void Menus::SubManagersReports()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -2606,7 +2878,8 @@ void Menus::SubManagersReports()
                         "4)Check Approval\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -2628,6 +2901,7 @@ void Menus::SubManagersReports()
                     cout << "Select Your Choice :\n"
                             "1)Approved\n"
                             "2)Reject\n"
+                            "0)Exit\n"
                             "Your Option :";
                     cin >> choice;
                     switch (choice)
@@ -2651,9 +2925,12 @@ void Menus::SubManagersReports()
                         break;
                     }
                     default:
+                    {
+                        if (choice != -19)
+                            cout << "\nIncalid Choice!\n";
                         break;
                     }
-                    break;
+                    }
                 }
                 case 4:
                 {
@@ -2667,13 +2944,16 @@ void Menus::SubManagersReports()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -2691,7 +2971,8 @@ void Menus::SubManagersReports()
                         "4)Check Approval\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -2713,6 +2994,7 @@ void Menus::SubManagersReports()
                     cout << "Select Your Choice :\n"
                             "1)Approved\n"
                             "2)Reject\n"
+                            "0)Exit\n"
                             "Your Option :";
                     cin >> choice;
                     switch (choice)
@@ -2735,10 +3017,19 @@ void Menus::SubManagersReports()
                         }
                         break;
                     }
+                    case 0:
+                    {
+                        ch = 1;
+                        break;
+                    }
                     default:
+                    {
+                        if (choice != -19)
+                            cout << "\nInvalid Choice!\n";
                         break;
                     }
                     break;
+                    }
                 }
                 case 4:
                 {
@@ -2752,12 +3043,16 @@ void Menus::SubManagersReports()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -2775,7 +3070,8 @@ void Menus::SubManagersReports()
                         "4)Check Approval\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -2798,6 +3094,7 @@ void Menus::SubManagersReports()
                     cout << "Select Your Choice :\n"
                             "1)Approved\n"
                             "2)Reject\n"
+                            "0)Exit\n"
                             "Your Option :";
                     cin >> choice;
                     switch (choice)
@@ -2820,8 +3117,17 @@ void Menus::SubManagersReports()
                         }
                         break;
                     }
-                    default:
+                    case 0:
+                    {
+                        ch = 1;
                         break;
+                    }
+                    default:
+                    {
+                        if (choice != -19)
+                            cout << "\nInvalid Choice!\n";
+                        break;
+                    }
                     }
                     break;
                 }
@@ -2837,12 +3143,17 @@ void Menus::SubManagersReports()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -2853,16 +3164,21 @@ void Menus::SubManagersReports()
             break;
         }
         default:
-        {
-            cout << "\nInvalid Choice!\n";
+
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
+
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
     }
     ch = 0;
 }
+
 void Menus::AccountEmployees()
 {
     while (ch == 0)
@@ -2876,7 +3192,8 @@ void Menus::AccountEmployees()
                 "4)Total Employee Details\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2906,12 +3223,16 @@ void Menus::AccountEmployees()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2932,7 +3253,8 @@ void Menus::MaintenanceManagerReport()
                 "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -2949,7 +3271,8 @@ void Menus::MaintenanceManagerReport()
                         "2)To Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -2969,12 +3292,16 @@ void Menus::MaintenanceManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -2993,7 +3320,8 @@ void Menus::MaintenanceManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3013,12 +3341,16 @@ void Menus::MaintenanceManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3037,7 +3369,8 @@ void Menus::MaintenanceManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3057,12 +3390,16 @@ void Menus::MaintenanceManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3081,7 +3418,8 @@ void Menus::MaintenanceManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3101,12 +3439,16 @@ void Menus::MaintenanceManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3124,7 +3466,8 @@ void Menus::MaintenanceManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3144,12 +3487,16 @@ void Menus::MaintenanceManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3168,7 +3515,8 @@ void Menus::MaintenanceManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3188,12 +3536,16 @@ void Menus::MaintenanceManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -3212,7 +3564,8 @@ void Menus::MaintenanceManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3232,12 +3585,16 @@ void Menus::MaintenanceManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3250,12 +3607,16 @@ void Menus::MaintenanceManagerReport()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -3275,7 +3636,8 @@ void Menus::WaterManagerReport()
                 "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -3292,7 +3654,8 @@ void Menus::WaterManagerReport()
                         "2)To Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3312,12 +3675,16 @@ void Menus::WaterManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -3336,7 +3703,8 @@ void Menus::WaterManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3356,12 +3724,16 @@ void Menus::WaterManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3380,7 +3752,8 @@ void Menus::WaterManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3400,12 +3773,16 @@ void Menus::WaterManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3424,7 +3801,8 @@ void Menus::WaterManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3444,12 +3822,16 @@ void Menus::WaterManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3467,7 +3849,8 @@ void Menus::WaterManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3487,12 +3870,16 @@ void Menus::WaterManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3511,7 +3898,8 @@ void Menus::WaterManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3531,12 +3919,16 @@ void Menus::WaterManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -3555,7 +3947,8 @@ void Menus::WaterManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3575,12 +3968,16 @@ void Menus::WaterManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3593,12 +3990,16 @@ void Menus::WaterManagerReport()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -3618,7 +4019,8 @@ void Menus::ParkingManagerReport()
                 "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
             // hopfully we will write this code for both, head and accountant ,these are included in further choices
@@ -3636,7 +4038,8 @@ void Menus::ParkingManagerReport()
                         "2)To Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3656,12 +4059,16 @@ void Menus::ParkingManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -3680,7 +4087,8 @@ void Menus::ParkingManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3700,12 +4108,16 @@ void Menus::ParkingManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3724,7 +4136,8 @@ void Menus::ParkingManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3744,12 +4157,16 @@ void Menus::ParkingManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3768,7 +4185,8 @@ void Menus::ParkingManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3788,12 +4206,16 @@ void Menus::ParkingManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3811,7 +4233,8 @@ void Menus::ParkingManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3831,12 +4254,16 @@ void Menus::ParkingManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3855,7 +4282,8 @@ void Menus::ParkingManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3875,12 +4303,16 @@ void Menus::ParkingManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -3899,7 +4331,8 @@ void Menus::ParkingManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3919,12 +4352,16 @@ void Menus::ParkingManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -3936,12 +4373,16 @@ void Menus::ParkingManagerReport()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -3960,7 +4401,8 @@ void Menus::ShopManagerReport()
                 "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -3977,7 +4419,8 @@ void Menus::ShopManagerReport()
                         "2)To Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -3997,12 +4440,16 @@ void Menus::ShopManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -4021,7 +4468,8 @@ void Menus::ShopManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -4041,12 +4489,16 @@ void Menus::ShopManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -4065,7 +4517,8 @@ void Menus::ShopManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -4085,12 +4538,16 @@ void Menus::ShopManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -4109,7 +4566,8 @@ void Menus::ShopManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -4129,12 +4587,16 @@ void Menus::ShopManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -4152,7 +4614,8 @@ void Menus::ShopManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -4172,12 +4635,16 @@ void Menus::ShopManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -4196,7 +4663,8 @@ void Menus::ShopManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -4216,12 +4684,16 @@ void Menus::ShopManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
 
@@ -4229,9 +4701,10 @@ void Menus::ShopManagerReport()
         }
         case 7:
         {
-            cin.ignore();
+
             while (ch == 0)
             {
+                cin.ignore();
                 system("clear");
                 cout << "\n.........Welcome To Read Response Repository..........\n\n";
                 cout << "Read Responce :\n"
@@ -4239,7 +4712,8 @@ void Menus::ShopManagerReport()
                         "2)Account Manager\n"
                         "0)Exit\n"
                         "Your Choice :";
-                cin >> choice;
+                cin >> choice1;
+                choice = InvaidChoice();
                 switch (choice)
                 {
                 case 1:
@@ -4259,13 +4733,16 @@ void Menus::ShopManagerReport()
                 }
                 default:
                 {
-                    cout << "\nInvalid Choice!\n";
+                    if (choice != -19)
+                        cout << "\nInvalid Choice!\n";
                     break;
                 }
                 }
-                cout << "\nPress Enter To Continue......";
-                cin.ignore();
-                cin.ignore();
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
             }
             ch = 0;
             break;
@@ -4277,12 +4754,16 @@ void Menus::ShopManagerReport()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -4303,7 +4784,8 @@ void Menus::AccountManagerReport()
                 "7)Check Response\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
             // hopfully we will write this code for both, head and accountant ,these are included in further choices
@@ -4355,12 +4837,16 @@ void Menus::AccountManagerReport()
         }
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }
-        cout << "\nPress Enter To Continue......";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -4380,7 +4866,8 @@ void Menus::calculator()
                 "5)Percentage\n"
                 "0)Exit\n"
                 "Your Choice :";
-        cin >> choice;
+        cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
@@ -4422,7 +4909,8 @@ void Menus::calculator()
 
         default:
         {
-            cout << "\nInvalid Choice!\n";
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
             break;
         }
         }

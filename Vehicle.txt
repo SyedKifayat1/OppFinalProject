@@ -1,1 +1,5 @@
-
+Car Registeration Number Is :
+Car Owner Name :kifayat123
+Car Owner Cnic :wer
+Car Type Is :wer
+Car Color Is :erf

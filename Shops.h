@@ -7,9 +7,6 @@
 using namespace std;
 class Shops : public Detail, public Report
 {
-private:
-    long double ShopstotalIncome;
-
 protected:
     string Shop_Id_No;
     string Shop_Owner_Name;
@@ -23,15 +20,6 @@ protected:
 
 public:
     TotalIncome &totalIncome = TotalIncome::getInstance();
-    long double getShopsIncome()
-    {
-        return ShopstotalIncome;
-    }
-
-    void addShopsIncome(long double income)
-    {
-        ShopstotalIncome += income;
-    }
     Report ForAccount;
     Employ *shopsEmployee;
     Shops(Employ *shopsEmployee)
@@ -44,87 +32,79 @@ public:
     }
     void add_shop_Data()
     {
-        cout << "ENTER NUMBER OF SHOPS: ";
-        int a;
-        cin >> a;
-        Shops *Shops_number = new Shops[a];
+        system("clear");
+        cout << "........Welcome To Adding Shops Data........\n";
         ofstream outfile("SHOPS_DETAILS.txt", ios::app);
-        for (int i = 0; i < a; i++)
-        {
+        function_Taking_shops();
+        outfile << "Shop No :";
+        outfile << Shop_Id_No;
+        outfile << endl;
+        outfile << "Shop Ower Name :";
+        outfile << Shop_Owner_Name;
+        outfile << endl;
+        outfile << "Enter Rent Of Shop :";
+        outfile << Shop_Rent;
+        outfile << endl;
+        outfile << "Shop Type :";
+        outfile << Shop_Type;
+        outfile << endl;
+        outfile << "Shop Floor Location :";
+        outfile << Shop_Location;
+        outfile << endl;
 
-            Shops_number[i].function_Taking_shops();
-            outfile << "SHOP ID NO: ";
-            outfile << Shops_number[i].Shop_Id_No;
-            outfile << endl;
-            outfile << "SHOP OWNER NAME: ";
-            outfile << Shops_number[i].Shop_Owner_Name;
-            outfile << endl;
-            outfile << "ENTER RENT OF SHOPE: ";
-            outfile << Shops_number[i].Shop_Rent;
-            outfile << endl;
-            outfile << "SHOP TYPE: ";
-            outfile << Shops_number[i].Shop_Type;
-            outfile << endl;
-            outfile << "SHOP LOCATION: ";
-            outfile << Shops_number[i].Shop_Location;
-            outfile << endl;
-        }
         outfile.close();
     }
     void function_Taking_shops()
     {
-        ofstream file("ShopRentDetails.txt", ios::app);
-        cout << "ENTER SHOP ID NO: ";
-        cin >> Shop_Id_No;
-        file << "Shop With Id No:" << Shop_Id_No << endl;
-        cout << "ENTER SHOP OWNER NAME: ";
-        cin >> Shop_Owner_Name;
-        cout << "ENTER RENT OF SHOP: ";
+
+        cin.ignore();
+        cout << "Enter Shop No: ";
+        getline(cin, Shop_Id_No);
+        cout << "Enter Shop Owner Name :";
+        getline(cin, Shop_Owner_Name);
+        cout << "Enter Rent Of Shop :";
         cin >> Shop_Rent;
-        file << "Rent Is :" << Shop_Rent << endl;
-        ShopstotalIncome += Shop_Rent;
+        totalIncome.AddShopTotalIncome(Shop_Rent);
         totalIncome.addShopIncome(Shop_Rent);
-        cout << "ENTER SHOP TYPE: ";
-        cin >> Shop_Type;
-        cout << "ENTER SHOP LOCATION: ";
-        cin >> Shop_Location;
-        file.close();
+        cin.ignore();
+        cout << "Enter Shop Type :";
+        getline(cin, Shop_Type);
+        cout << "Enter Shop Floor Location :";
+        getline(cin, Shop_Location);
     }
     void add_shop_owner_data()
     {
-        cout << "HOW MANY SHOP OWNERS DATA ARE YOU ENTERING: ";
-        int t;
-        cin >> t;
-        Shops *Shop_owner = new Shops[t];
+        system("clear");
+        cout << ".......Welcome To Adding Shop Owner Data.......\n";
         ofstream outfile("Shop_Owner_Data.txt", ios::app); // openeing file for shop owner data
-        {
-            for (int i = 0; i < t; i++)
-            {
-                /* code */
-                outfile << endl;
-                cout << "ENTER SHOP OWNER FIRST NAME: ";
-                cin >> Shop_owner[i].Shop_Owner_First_name;
-                outfile << "SHOP OWNER FIRST NAME IS: " << Shop_owner[i].Shop_Owner_First_name << endl;
-                cout << "ENTER SHOP OWNER SECOND NAME: ";
-                cin >> Shop_owner[i].Shop_Owner_Last_name;
-                outfile << "SHOP OWNER LAST NAME IS: " << Shop_owner[i].Shop_Owner_Last_name << endl;
-                cout << "ENTER SHOP OWNER CNIC: ";
-                cin >> Shop_owner[i].Shop_Owner_CNIC;
-                outfile << "SHOP OWNER CNIC: " << Shop_owner[i].Shop_Owner_CNIC << endl;
-                cout << "ENTER SHOP TYPE: ";
-                cin >> Shop_owner[i].Shop_Type;
-                outfile << "SHOP TYPE IS: " << Shop_owner[i].Shop_Type << endl;
-                cout << "ENTER SHOP LOCATION: ";
-                cin >> Shop_owner->Shop_Location;
-                outfile << "SHOP LOCATION: " << Shop_owner[i].Shop_Location << endl;
-                outfile << endl;
-            }
-        }
+
+        cout << "Enter Shop No :";
+        cin >> Shop_Id_No;
+        outfile << "Shop Location :" << Shop_Id_No << endl;
+        cout << "Enter Shop Owner First Name :";
+        cin >> Shop_Owner_First_name;
+        outfile << "Shop Owner First Name :" << Shop_Owner_First_name << endl;
+        cout << "Enter Shop Owner Last Name :";
+        cin >> Shop_Owner_Last_name;
+        outfile << "Shop Owner Last Name :" << Shop_Owner_Last_name << endl;
+        cout << "Enter Shop Owner Cnic :";
+        cin >> Shop_Owner_CNIC;
+        outfile << "Shop Owner Cnic :" << Shop_Owner_CNIC << endl;
+        cout << "Enter Shop Type :";
+        cin >> Shop_Type;
+        outfile << "Shop Type :" << Shop_Type << endl;
+        cout << "Enter Shop Floor Location :";
+        cin >> Shop_Location;
+        outfile << "Shop Floor Location :" << Shop_Location << endl;
+        outfile << endl;
+        outfile.close();
     }
 
     void getting_shop_details()
     {
-        cout << "ENTER SHOP ID: ";
+        system("clear");
+        cout << "......Welcome To Finding Shop Details.......\n";
+        cout << "Enter Shop No :";
         string shop_id;
         cin >> shop_id;
         ifstream infile("SHOPS_DETAILS.txt");
@@ -132,7 +112,7 @@ public:
         bool printlines = false;
         if (!infile.is_open())
         {
-            cout << "FAILED TO OPEN THE FILE!" << endl;
+            cout << "Failed To Open File!" << endl;
         }
         while (getline(infile, detail))
         {
@@ -149,13 +129,12 @@ public:
                 }
             }
         }
-        cout << "\nPress Enter To Continue........\n";
-        cin.ignore();
-        cin.ignore();
     }
 
     void getting_whole_shops_details()
     {
+        system("clear");
+        cout << ".........Find Whole Shops Details Below.........\n";
         ifstream infile("SHOPS_DETAILS.txt");
         string stor;
         while (getline(infile, stor))
@@ -166,21 +145,23 @@ public:
 
     void check_owner_Date()
     {
-        cout << "ENTER OWNER NAME: ";
-        string owner_name;
-        cin >> owner_name;
+        system("clear");
+        cout << "........Welcome To Finding Owner Details........\n";
+        cout << "Enter Shop No :";
+        string owner_id;
+        cin >> owner_id;
         ifstream infile("Shop_Owner_Data.txt");
         string own;
         if (!infile.is_open())
         {
             cout << "FILE CAN'T BE OPENED";
         }
-        while (getline(infile, owner_name))
+        while (getline(infile, own))
         {
-            if (own.find(owner_name) != string::npos)
+            if (own.find(owner_id) != string::npos)
             {
                 cout << own << endl;
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     if (getline(infile, own))
                     {
@@ -193,15 +174,17 @@ public:
 
     void replace_shop_owner()
     {
+        system("clear");
         Shops s;
         string ID;
-        cout << "ENTER SHOP OWNER NAME: ";
+        cout << ".......Welcome To Replacing Shop Owner Repository......\n";
+        cout << "Enter Shop Owner Id :";
         cin >> ID;
         ifstream infile("Shop_Owner_Data.txt");
         ofstream outfile("temporary.txt");
         if (!infile.is_open())
         {
-            cout << "FAILED TO OPEN THE FILE!" << endl;
+            cout << "Failed To Open File!" << endl;
             return;
         }
         int i = 0;
@@ -243,12 +226,11 @@ public:
         {
             cerr << "Error renaming file: " << e.what() << endl;
         }
-        cout << "\nPress Enter To Continue........\n";
-        cin.ignore();
-        cin.ignore();
     }
     void gettingShopRentDetails()
     {
+        system("clear");
+        cout << "........Welcome To Finding Shop Details.......\n";
         string shopId;
         cout << "\nEnter A Shop Id :";
         cin >> shopId;
@@ -268,6 +250,8 @@ public:
     }
     void gettingAllshopsRentsDetails()
     {
+        system("clear");
+        cout << "........Welcome To Find Whole Shops Details Below.......\n";
         ifstream file("ShopRentDetails.txt");
         if (!file.is_open())
         {

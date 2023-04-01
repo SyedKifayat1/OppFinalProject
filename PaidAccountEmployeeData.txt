@@ -1,0 +1,2 @@
+Emloyee Id :BSCE22025
+Salary :50

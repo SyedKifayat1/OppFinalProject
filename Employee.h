@@ -12,8 +12,6 @@ class Employ : public Detail
 {
 
 public:
-    TotalIncome &totalIncome = TotalIncome::getInstance();
-    long double EmployeeSalary;
     Employ *Employee;
     // Employ() : Detail()
     // {
@@ -31,12 +29,7 @@ public:
             Employee[i].input_Date(filename);
         }
     }
-    void give_employee_salary()
-    {
-        cout << "\nEnter a Salary :";
-        cin>>EmployeeSalary;
-        totalIncome.subtractEmployeeSalary(EmployeeSalary);
-    }
+    
     void Total_employee_Details(string filename)
     {
         ifstream file(filename + ".txt");

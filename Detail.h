@@ -10,7 +10,7 @@ using namespace std;
 class Detail
 {
 public:
-    string fname, lname, EmailADdress, JobTitle, Status, gender, user_id, hiringDate; // attributes
+    string fname, lname, EmailADdress, JobTitle, gender, user_id, hiringDate; // attributes
     unsigned long int salary, PhoneNum;
     int check;
     Detail() {}
@@ -43,32 +43,29 @@ public:
                 if (k != 1)
                 {
                     
-                    outfile << "EMPLOYEE ID IS :";
+                    outfile << "Employee Id :";
                     outfile << user_id;
                     outfile << endl;
-                    outfile << "NAME IS :"; // name for emply entering to file
+                    outfile << "Name :"; // name for emply entering to file
                     outfile << fname;       // first name of employ
-                    outfile << lname;       // last name of employ
+                    outfile <<" "<< lname;       // last name of employ
                     outfile << endl;
-                    outfile << "EMAIL ADDRESS IS :"; // email address of employ
+                    outfile << "Email Address :"; // email address of employ
                     outfile << EmailADdress;
                     outfile << endl;
-                    outfile << "JOB TITLE :"; // job title
+                    outfile << "Job Title :"; // job title
                     outfile << JobTitle;      // getting job title into file
                     outfile << endl;
-                    outfile << "STATUS :";
-                    outfile << Status; // status of person
-                    outfile << endl;
-                    outfile << "GENDER :"; // gender of person
+                    outfile << "Gender :"; // gender of person
                     outfile << gender;
                     outfile << endl;
-                    outfile << "PHONENUM IS :"; // phone number of person
+                    outfile << "Phone Number :"; // phone number of person
                     outfile << PhoneNum;
                     outfile << endl;
-                    outfile << "SALARY IS :"; // salary of person
+                    outfile << "Salary :"; // salary of person
                     outfile << salary;
                     outfile << endl;
-                    outfile << "HIRING DATE IS :"; // hiring date of person
+                    outfile << "Hiring Date :"; // hiring date of person
                     outfile << hiringDate;
                     outfile << endl;
                     cout << "\nYour Data Is Stored Successfully..........\n";
@@ -79,9 +76,6 @@ public:
                 }
             }
         }
-        cout << "\nPress Enter To Continue........\n";
-        cin.ignore();
-        cin.ignore();
     }
     void Display_Data(string fileName) // display particular employee details
     {
@@ -92,7 +86,7 @@ public:
         ifstream infile(fileName + ".txt");
         if (!infile.is_open())
         {
-            cout << "FAILED TO OPEN THE FILE!" << endl;
+            cout << "Failed To Open File!" << endl;
             check=0;
         }
         else
@@ -103,12 +97,12 @@ public:
             int linestoprint = 3;
             while (getline(infile, storing))
             {
-                if (storing.find(ID) != string::npos)
+                if (storing.find(ID) != string::npos) //!= -1
                 {
                     check=1;
                     printlines = true;
                     cout << storing << endl;
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 7; i++)
 
                     {
                         if (getline(infile, storing))
@@ -124,20 +118,20 @@ public:
     void Remove_Employee(string fileName)
     {
         string ID; // name of employee variable
-        cout << "ENTER ID OF EMPLOYEE: ";
+        cout << "Enter Employee Id :";
         cin >> ID;
         // Open input file for reading
         ifstream infile(fileName + ".txt");
         if (!infile.is_open())
         {
-            cout << "FAILED TO OPEN THE FILE!" << endl;
+            cout << "Failed To Open File!" << endl;
             return;
         }
         // Open output file for writing
         ofstream outfile("temporary.txt");
         if (!outfile.is_open())
         {
-            cout << "FAILED TO CREATE TEMPORARY FILE!" << endl;
+            cout << "Filed To Creat Temporary File!" << endl;
             infile.close();
             return;
         }
@@ -151,7 +145,7 @@ public:
                 employeeFound = true;
                 cout << "Employee found and removed.\n";
                 cout << storing << endl;
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     if (getline(infile, storing))
                     {

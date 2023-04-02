@@ -13,8 +13,6 @@ istream &operator>>(istream &in, Detail &x)
     in >> x.lname;
     cout << "\nENTER YOUR EMAIL ID :";
     in >> x.EmailADdress;
-    cout << "\nENTER YOUR STATUS :";
-    in >> x.Status;
     cout << "\nENTER YOUR JOB TITLE :";
     in >> x.JobTitle;
     cout << "\nENTER YOUR GENDER :";
@@ -33,7 +31,7 @@ ostream &operator<<(ostream &out, const Detail &y)
     out << "FIRST NAME :" << y.fname << endl;
     out << "LAST NAME :" << y.lname << endl;
     out << "EMAIL ID :" << y.EmailADdress << endl;
-    out << "STATUS :" << y.Status << endl;
+    out << "Job Title :" << y.JobTitle; 
     out << "GENDER :" << y.gender << endl;
     out << "PHONE NUMBER :" << y.PhoneNum << endl;
     out << "SALARY :" << y.salary << endl;

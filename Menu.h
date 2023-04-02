@@ -1,12 +1,6 @@
 #include <iostream>
 #include <stdexcept>
 #include "Manager.h"
-#include "Accounts.h"
-#include "Maintenance.h"
-#include "Parking.h"
-#include "Shops.h"
-#include "Security.h"
-#include "water.h"
 #include "calculator.h"
 #include "Employee.h"
 using namespace std;
@@ -22,13 +16,13 @@ public:
         check = 0;
         ch = 0;
     }
+    TotalIncome &totalIncome = TotalIncome::getInstance();
     Manager obj;
     Accounts<long double> account;
     Employ *employee = new Employ();
     Maintaineance *maintaineance = new Maintaineance(employee);
     Parking *parking = new Parking(employee);
     Shops *shop = new Shops(employee);
-    water Water;
 
     void Menu();
     void HeadMenu();
@@ -40,31 +34,24 @@ public:
     void AddMaintenanceData();
     void ParkingManager();
     void ShopsManager();
-    void WaterManager();
     void ControlAccountManager();
     void ControlMaintenanceManager();
     void ControlParkingManager();
     void ControlShopsManager();
-    void ControlWaterManager();
     void EmployeeDetails();
     void ShopDetails();
     void AccountDetails();
     void ParkingDetails();
-    // void ParkingIncome();
     void ShopsRent();
     void MaintenanceDetails();
     void MaintenanceEmployee();
-    void WaterDetails();
     void IssuingEmployeePayments();
-    // void CalculateDepartmentsBudget();
     void CalculateTotalIncome();
     void MaintenanceBudget();
-    void WaterBudget();
     void AddAccountsData();
     void AccountEmployees();
     void SubManagersReports();
     void MaintenanceManagerReport();
-    void WaterManagerReport();
     void ParkingManagerReport();
     void ShopManagerReport();
     void AccountManagerReport();
@@ -72,6 +59,8 @@ public:
     int InvaidChoice();
     void PaymentProcessing();
     void PaymentHistory();
+    void add_Electicity_Details();
+    void BuildingRequirements();
 };
 int Menus::InvaidChoice()
 {
@@ -102,9 +91,12 @@ int Menus::InvaidChoice()
 void Menus::Menu()
 {
 
+        totalIncome.restoreAccountsData();
     while (ch == 0)
     {
+
         system("clear");
+        // cin.get();
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
         cout << "Select Your Status :\n"
                 "1)Head\n"
@@ -211,7 +203,6 @@ void Menus::SubManagerMenu()
                 "2)Maintenance Manager\n"
                 "3)Parking Manager\n"
                 "4)Shops Manager\n"
-                "5)Water Manager\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice1;
@@ -238,10 +229,7 @@ void Menus::SubManagerMenu()
             ShopsManager();
             break;
         }
-        case 5:
-        {
-            WaterManager();
-        }
+
         case 0:
         {
             ch = 1;
@@ -274,7 +262,7 @@ void Menus::ManageSubManager()
                 "2)Control Maintenance Manager\n"
                 "3)Control Parking Manager\n"
                 "4)Control Shops Manager\n"
-                "5)Control Water Manager\n"
+
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice1;
@@ -301,11 +289,7 @@ void Menus::ManageSubManager()
             ControlShopsManager();
             break;
         }
-        case 5:
-        {
-            ControlWaterManager();
-            break;
-        }
+
         case 0:
         {
             ch = 1;
@@ -339,7 +323,6 @@ void Menus::MallDetails()
                 "3)Account Details\n"
                 "4)Parking Details\n"
                 "5)Maintenance Details\n"
-                "6)Water Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice1;
@@ -371,11 +354,7 @@ void Menus::MallDetails()
             MaintenanceDetails();
             break;
         }
-        case 6:
-        {
-            WaterDetails();
-            break;
-        }
+
         case 0:
         {
             ch = 1;
@@ -626,40 +605,30 @@ void Menus::MaintenanceManager()
         cin.ignore();
         system("clear");
         cout << "\n..........Welcome To Maintenance Manager Repository..........\n\n";
-        cout << "1)Maintenance Data\n"
-                "2)Add Maintenance Data\n"
-                "3)Maintenance Employees\n"
-                "4)Budget\n"
-                "5)Report\n"
+        cout << "1)Add And Read Maintenance Data\n"
+                "2)Maintenance Employees\n"
+                "3)Budget\n"
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice1;
         choice = InvaidChoice();
         switch (choice)
         {
+        
         case 1:
-        {
-            MaintenanceDetails();
-            break;
-        }
-        case 2:
         {
             AddMaintenanceData();
             break;
         }
-        case 3:
+        case 2:
         {
             MaintenanceEmployee();
             break;
         }
-        case 4:
+        case 3:
         {
             MaintenanceBudget();
             break;
-        }
-        case 5:
-        {
-            MaintenanceManagerReport();
         }
         case 0:
         {
@@ -682,29 +651,85 @@ void Menus::MaintenanceManager()
     ch = 0;
 }
 
-void Menus::AddMaintenanceData() // write a code for this repository just reminder for you kifayat Don't for get this
+void Menus::AddMaintenanceData()
 {
     while (ch == 0)
     {
         cin.ignore();
         system("clear");
-        cout << "\n.......Welcome To Add Maintenance Data Repository.......\n\n"
-                "Enter Details :\n"
+        cout << "\n.......Welcome To Adding And Reading Maintenance Data Repository.......\n\n"
+                "Add And Read Details :\n"
                 "1)Electricity Resources\n"
-                "2)Building Repears\n"
+                "2)Building Requirements \n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice1;
+        choice = InvaidChoice();
         switch (choice)
         {
         case 1:
         {
+            add_Electicity_Details();
             break;
         }
         case 2:
         {
+            BuildingRequirements();
             break;
         }
+        case 0:
+            ch = 1;
+            break;
+        default:
+            if (choice != -19)
+                cout << "\nInvalid Choice!\n";
+            break;
+        }
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue......";
+            cin.ignore();
+        }
+    }
+    ch = 0;
+}
+void Menus::BuildingRequirements()
+{
+
+}
+void Menus::add_Electicity_Details()
+{
+
+    obj.MaintenanceManager.read_all_records_file();
+    while (ch == 0)
+    {
+        cin.ignore();
+        system("clear");
+        cout << "\n........Welcome To Adding Electicity Details........\n\n";
+        cout << "1)Add A Record\n2)Modify Record\n3)Print Records\n"
+                "0)Exit\n"
+                "Your Choice :";
+        cin >> choice1;
+        choice = InvaidChoice();
+        switch (choice)
+        {
+        case 1:
+        {
+            obj.MaintenanceManager.add_single_electricity_record(obj.MaintenanceManager.get_current_Records());
+
+            break;
+        }
+        case 2:
+        {
+            obj.MaintenanceManager.modify_record_file();
+            break;
+        }
+        case 3:
+        {
+            obj.MaintenanceManager.print_all_records();
+            break;
+        }
+
         case 0:
         {
             ch = 1;
@@ -713,7 +738,7 @@ void Menus::AddMaintenanceData() // write a code for this repository just remind
         default:
         {
             if (choice != -19)
-                cout << "\nInvalid Choice!\n";
+                cout << "\nInvalid Chocie!\n";
             break;
         }
         }
@@ -1025,167 +1050,7 @@ void Menus::ShopsManager()
     }
     ch = 0;
 }
-void Menus::WaterManager()
-{
-    while (ch == 0)
-    {
-        cin.ignore();
 
-        system("clear");
-        cout << "\n..........Welcome To Water Manager Repository..........\n\n";
-        cout << "1)Check Water Details\n"
-                "2)Add Water Details\n"
-                "3)Water Employees\n"
-                "4)Budget\n"
-                "5)Report\n"
-                "0)Exit\n"
-                "Enter Your Choice :";
-        cin >> choice1;
-        choice = InvaidChoice();
-        switch (choice)
-        {
-        case 1:
-        {
-            WaterDetails();
-            break;
-        }
-        case 2:
-        {
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-
-                cout << "\n.......Welcome To Add Water Details Repository.......\n\n";
-                cout << "Enter the Details :\n"
-                        "1)Pluming Issues\n"
-                        "2)Water Resources\n"
-                        "3)Water Providing authority\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    // write a code for writting the plumbing issues details
-                    break;
-                }
-                case 2:
-                {
-                    // write a code for writting water resources details
-                    break;
-                }
-                case 3:
-                {
-                    // write a code for writting water providing authority details
-                    break;
-                }
-
-                default:
-                    break;
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 3:
-        {
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.......Welcome To Water Employee Repository.......\n\n"
-                        "1)Add Employee\n"
-                        "2)Remove Employee\n"
-                        "3)Replace Employee\n"
-                        "4)Total Employee Details\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    Water.waterEmployee.input_Data("waterEmployee");
-                    // write a code for adding employee
-                    break;
-                }
-                case 2:
-                {
-                    Water.Remove_Employee("waterEmployee");
-                    // write a code for removing employee
-                    break;
-                }
-                case 3:
-                {
-                    Water.Replace_employ("waterEmployee");
-                    // write a code for replacing employee
-                    break;
-                }
-                case 4:
-                {
-                    Water.waterEmployee.Total_employee_Details("waterEmployee");
-                    // write a code for total employee details
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-        case 4:
-        {
-            WaterBudget();
-            break;
-        }
-        case 5:
-        {
-            WaterManagerReport();
-            break;
-        }
-        }
-        case 0:
-        {
-            ch = 1;
-            break;
-        }
-        default:
-        {
-            if (choice != -19)
-                cout << "\nInvalid Choice!\n";
-            break;
-        }
-        }
-        if (ch != 1)
-        {
-            cout << "\nPress Enter To Continue......";
-            cin.ignore();
-        }
-    }
-    ch = 0;
-}
 void Menus::ControlAccountManager()
 {
     while (ch == 0)
@@ -1303,121 +1168,7 @@ void Menus::ControlAccountManager()
     }
     ch = 0;
 }
-void Menus::ControlWaterManager()
-{
-    while (ch == 0)
-    {
-        cin.ignore();
 
-        system("clear");
-        cout << "\n.......Welcome To Control Water Manager Repository.......\n\n"
-                "1)Add Manager\n"
-                "2)Remove Manager\n"
-                "3)Replace Manager\n"
-                "4)Show Manager\n"
-                "5)Report\n"
-                "6)Responce\n"
-                "7)Report Approval\n"
-                "8)Check Status\n"
-                "0)Exit\n"
-                "Your Choice :";
-        cin >> choice1;
-        choice = InvaidChoice();
-        switch (choice)
-        {
-        case 1:
-        {
-            cin >> obj.WaterManager;
-            obj.WaterManager.input_Date("Manager");
-            break;
-        }
-        case 2:
-        {
-            obj.WaterManager.Remove_Employee("Manager");
-            break;
-        }
-        case 3:
-        {
-            obj.WaterManager.Replace_employ("Manager");
-            break;
-        }
-        case 4:
-        {
-            obj.WaterManager.Display_Data("Manager");
-            break;
-        }
-        case 5:
-        {
-            obj.WaterManager.ReadReport("WaterReportForHead");
-            break;
-        }
-        case 6:
-
-        {
-            obj.WaterManager.WriteResponse("HeadResponceToWaterReport");
-            break;
-        }
-        case 7:
-        {
-            cout << "\nGive Your Responce :\n";
-            obj.WaterManager.ReadReport("WaterReportForHead");
-            cout << endl;
-            cout << "Select Your Choice :\n"
-                    "1)Approved\n"
-                    "2)Reject\n"
-                    "Your Option :";
-            cin >> choice;
-            switch (choice)
-            {
-            case 1:
-            {
-                obj.WaterManager.ReportStatus = true;
-                if (obj.WaterManager.ReportStatus == true)
-                {
-                    cout << "\nYou Can Approved The Report.....\n";
-                }
-                break;
-            }
-            case 2:
-            {
-                obj.WaterManager.ReportStatus = false;
-                if (obj.WaterManager.ReportStatus == false)
-                {
-                    cout << "\nYou Can Reject The Report!\n";
-                }
-                break;
-            }
-            default:
-                cout << "\nInvalid Choice!\n";
-                break;
-            }
-            break;
-        }
-        case 8:
-        {
-            obj.WaterManager.ReportsStatus();
-            break;
-        }
-        case 0:
-        {
-            ch = 1;
-            break;
-        }
-        default:
-        {
-            if (choice != -19)
-                cout << "\nInvalid Choice!\n";
-            break;
-        }
-        }
-        if (ch != 1)
-        {
-            cout << "\nPress Enter To Continue......";
-            cin.ignore();
-        }
-    }
-    ch = 0;
-}
 void Menus::ControlMaintenanceManager()
 {
     while (ch == 0)
@@ -1771,7 +1522,6 @@ void Menus::EmployeeDetails()
                 "2)Shop Employee Details\n"
                 "3)Maintenance Employee Details\n"
                 "4)Parking Employee Details\n"
-                "5)Water Employee Details\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice1;
@@ -1948,55 +1698,6 @@ void Menus::EmployeeDetails()
                 case 2:
                 {
                     parking->parkingEmployee->Total_employee_Details("ParkingEmployee");
-                    // write a code for getting data as a whole
-                    break;
-                }
-
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 5:
-        {
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.......Welcome To Water Employee Details Repository.......\n\n"
-                        "1)Getting Data By ID No \n"
-                        "2)Getting Data As A Whole\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    Water.Display_Data("waterEmployee");
-                    // wirte a code for getting data with ID No
-                    break;
-                }
-                case 2:
-                {
-                    Water.waterEmployee.Total_employee_Details("waterEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -2200,59 +1901,6 @@ void Menus::ParkingDetails()
     ch = 0;
 }
 
-void Menus::WaterDetails()
-{
-    while (ch == 0)
-    {
-        cin.ignore();
-        system("clear");
-        cout << "\n.......Welcome To Checking Water Details Repository.......\n\n"
-                "Checking Details :\n"
-                "1)Pluming Issues\n"
-                "2)Water Resources\n"
-                "3)Water Providing authority Details\n"
-
-                "0)Exit\n"
-                "Your Choice :";
-        cin >> choice1;
-        choice = InvaidChoice();
-        switch (choice)
-        {
-        case 1:
-        {
-            // write a code here
-            break;
-        }
-        case 2:
-        {
-            // write a code here
-            break;
-        }
-        case 3:
-        {
-            // write a code here
-            break;
-        }
-        case 0:
-        {
-            ch = 1;
-            break;
-        }
-        default:
-        {
-            if (choice != -19)
-                cout << "\nInvalid Choice!\n";
-            break;
-        }
-        }
-        if (ch != 1)
-        {
-            cout << "\nPress Enter To Continue......";
-            cin.ignore();
-        }
-    }
-    ch = 0;
-}
 void Menus::MaintenanceDetails()
 { // if any other details is required then we will write at that time
     while (ch == 0)
@@ -2262,7 +1910,6 @@ void Menus::MaintenanceDetails()
         cout << "\n.......Welcome To Checking Maintenance Details Repository.......\n\n"
                 "1)Details of Electricity Resources\n"
                 "2)Details of Building Repears\n"
-                "3)Maintenance Report\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice1;
@@ -2273,6 +1920,8 @@ void Menus::MaintenanceDetails()
         {
 
             // write a electricity class code for the head whom can only read the details
+            obj.MaintenanceManager.print_all_records();
+
             break;
         }
         case 2:
@@ -2280,12 +1929,7 @@ void Menus::MaintenanceDetails()
             // write a code for details of the building
             break;
         }
-        case 3:
-        {
-            // write a code sfor the report of the maintenance
 
-            break;
-        }
         case 0:
         {
             ch = 1;
@@ -2319,6 +1963,7 @@ void Menus::PaymentProcessing()
                 "3)Maintenance Employee Salary\n"
                 "4)Parking Employee Salary\n"
                 "5)Water Employee Salary\n"
+                "0)Exit\n"
                 "Your Chocie :";
         cin >> choice1;
         choice = InvaidChoice();
@@ -2649,8 +2294,11 @@ void Menus::IssuingEmployeePayments()
             break;
         }
         }
-        cout << "\nPress Enter To Continue.....\n";
-        cin.ignore();
+        if (ch != 1)
+        {
+            cout << "\nPress Enter To Continue.....\n";
+            cin.ignore();
+        }
     }
     ch = 0;
 }
@@ -2679,6 +2327,53 @@ void Menus::MaintenanceBudget()
         case 2:
         {
             // write a code for required budget
+            while (ch == 0)
+            {
+                cout << ".......Welcome To Budget Repository........\n\n";
+                cout << "1)Required Budget\n"
+                        "2)Check Budget\n"
+                        "3)Add Budget\n"
+                        "0)Exit\n"
+                        "Your Choice :";
+                cin >> choice;
+                switch (choice)
+                {
+                case 1:
+                {
+                    long double budget;
+                    cout << "\nEnter Your Required Budget :";
+                    cin >> budget;
+                    obj.MaintenanceManager.totalIncome.setMaintenanceBudget(budget);
+                    break;
+                }
+                case 2:
+                {
+                    cout << "\nYour Required Budget Is :" << obj.MaintenanceManager.totalIncome.getMaintenanceBudget() << endl;
+                }
+                case 3:
+                {
+                    long double budget;
+                    cout << "\nWho Much Budget You Want To Increase :";
+                    cin >> budget;
+                    obj.MaintenanceManager.totalIncome.setMaintenanceBudget(budget);
+                }
+                case 0:
+                {
+                    ch = 1;
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+                }
+                if (ch != 1)
+                {
+                    cout << "\nPress Enter To Continue......";
+                    cin.ignore();
+                }
+            }
+            ch = 0;
             break;
         }
         case 0:
@@ -2701,53 +2396,7 @@ void Menus::MaintenanceBudget()
     }
     ch = 0;
 }
-void Menus::WaterBudget()
-{
-    while (ch == 0)
-    {
-        cin.ignore();
-        system("clear");
-        cout << "\n..........Welcome To Water Budget Repository.........\n\n";
-        cout << "1)Generate Water Budget Reports\n"
-                "2)Required Budget\n"
-                "0)Exit\n"
-                "Your Choice :";
-        cin >> choice1;
-        choice = InvaidChoice();
-        switch (choice)
-        {
 
-        case 1:
-        {
-            WaterManagerReport();
-            break;
-        }
-        case 2:
-        {
-            cout << "Enter a Required Budget :";
-            cin >> obj.WaterManager.WaterBudget;
-            break;
-        }
-        case 0:
-        {
-            ch = 1;
-            break;
-        }
-        default:
-        {
-            if (choice != -19)
-                cout << "\nInvalid Choice!\n";
-            break;
-        }
-        }
-        if (ch != 1)
-        {
-            cout << "\nPress Enter To Continue......";
-            cin.ignore();
-        }
-    }
-    ch = 0;
-}
 void Menus::SubManagersReports()
 {
     while (ch == 0)
@@ -2756,9 +2405,8 @@ void Menus::SubManagersReports()
         system("clear");
         cout << "\n..........Welcome To Sub-Manager Reports Repository.........\n\n";
         cout << "1)Maintenance Manager\n"
-                "2)Water Manager\n"
-                "3)Parking Manager\n"
-                "4)Shops Manager\n"
+                "2)Parking Manager\n"
+                "3)Shops Manager\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice1;
@@ -2865,100 +2513,8 @@ void Menus::SubManagersReports()
             ch = 0;
             break;
         }
-        case 3:
-        {
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
-                cout << "1)Read Report Or Message\n"
-                        "2)Giving Response Or Message\n"
-                        "3)Report Approval\n"
-                        "4)Check Approval\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.ForAccount.ReadReport("WaterReportForAccount");
 
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.WriteResponse("AccountResponceToWaterReport");
-                    break;
-                }
-                case 3:
-                {
-                    cout << "\nGive Your Responce :\n";
-                    obj.WaterManager.ForAccount.ReadReport("WaterReportForAccount");
-                    cout << endl;
-                    cout << "Select Your Choice :\n"
-                            "1)Approved\n"
-                            "2)Reject\n"
-                            "0)Exit\n"
-                            "Your Option :";
-                    cin >> choice;
-                    switch (choice)
-                    {
-                    case 1:
-                    {
-                        obj.WaterManager.ForAccount.ReportStatus = true;
-                        if (obj.WaterManager.ForAccount.ReportStatus == true)
-                        {
-                            cout << "\nYou Can Approved The Report.....\n";
-                        }
-                        break;
-                    }
-                    case 2:
-                    {
-                        obj.WaterManager.ForAccount.ReportStatus = false;
-                        if (obj.WaterManager.ForAccount.ReportStatus == false)
-                        {
-                            cout << "\nYou Can Reject The Report!\n";
-                        }
-                        break;
-                    }
-                    default:
-                    {
-                        if (choice != -19)
-                            cout << "\nIncalid Choice!\n";
-                        break;
-                    }
-                    }
-                }
-                case 4:
-                {
-                    obj.WaterManager.ForAccount.ReportsStatus();
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 4:
+        case 2:
         {
             while (ch == 0)
             {
@@ -3057,7 +2613,7 @@ void Menus::SubManagersReports()
             ch = 0;
             break;
         }
-        case 5:
+        case 3:
         {
             while (ch == 0)
             {
@@ -3620,389 +3176,7 @@ void Menus::MaintenanceManagerReport()
     }
     ch = 0;
 }
-void Menus::WaterManagerReport()
-{
-    while (ch == 0)
-    {
-        cin.ignore();
-        system("clear");
-        cout << "\n..........Welcome To Water Manager Reports Repository.........\n\n";
-        cout << "1)Write Report\n"
-                "2)Edit Report\n"
-                "3)Read Report Or Message\n"
-                "4)Replace Report\n"
-                "5)Delete Report\n"
-                "6)Report Approval Status\n"
-                "7)Check Response\n"
-                "0)Exit\n"
-                "Your Choice :";
-        cin >> choice1;
-        choice = InvaidChoice();
-        switch (choice)
-        {
-        case 1:
-        {
-            // write a code for writing a report or message which send from the side of maintenance manager to head
 
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.........Welcome To Writting Resport Repository..........\n\n";
-                cout << "Write Report :\n"
-                        "1)To Head\n"
-                        "2)To Account Manager\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.Add_report("WaterReportForHead");
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.Add_report("WaterReportForAccount");
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-
-            break;
-        }
-        case 2:
-        {
-
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.........Welcome To Editing Resport Repository..........\n\n";
-                cout << "Edit Report :\n"
-                        "1)Head\n"
-                        "2)Account Manager\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.Edit_report("WaterReportForHead");
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.Edit_report("WaterReportForAccount");
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 3:
-        {
-            // write a code for reading report  which has written by himself
-
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.........Welcome To Reading Resport Repository..........\n\n";
-                cout << "Read Report :\n"
-                        "1)Head\n"
-                        "2)Account Manager\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.ReadReport("WaterReportForHead");
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.ReadReport("WaterReportForAccount");
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 4:
-        {
-
-            // write a code for replacing the report
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.........Welcome To Adding Resport Repository..........\n\n";
-                cout << "Add Report :\n"
-                        "1)Head\n"
-                        "2)Account Manager\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.Add_report("WaterReportForHead");
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.Add_report("WaterReportForAccount");
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 5:
-        {
-
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.........Welcome To Delete Resport Repository..........\n\n";
-                cout << "Delete Report :\n"
-                        "1)Head\n"
-                        "2)Account Manager\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.Delete_report("WaterReportForHead");
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.Delete_report("WaterReportForAccount");
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-        }
-        case 6:
-        {
-
-            // write a code for giving approval or rejection to the report
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.........Welcome To Resport Status Repository..........\n\n";
-                cout << "Check Report Status :\n"
-                        "1)Head\n"
-                        "2)Account Manager\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.ReportsStatus();
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.ReportsStatus();
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-
-            break;
-        }
-        case 7:
-        {
-
-            while (ch == 0)
-            {
-                cin.ignore();
-                system("clear");
-                cout << "\n.........Welcome To Read Response Repository..........\n\n";
-                cout << "Read Responce :\n"
-                        "1)Head\n"
-                        "2)Account Manager\n"
-                        "0)Exit\n"
-                        "Your Choice :";
-                cin >> choice1;
-                choice = InvaidChoice();
-                switch (choice)
-                {
-                case 1:
-                {
-                    obj.WaterManager.ReadResponse("HeadResponceToWaterReport");
-                    break;
-                }
-                case 2:
-                {
-                    obj.WaterManager.ForAccount.ReadResponse("AccountResponceToWaterReport");
-                    break;
-                }
-                case 0:
-                {
-                    ch = 1;
-                    break;
-                }
-                default:
-                {
-                    if (choice != -19)
-                        cout << "\nInvalid Choice!\n";
-                    break;
-                }
-                }
-                if (ch != 1)
-                {
-                    cout << "\nPress Enter To Continue......";
-                    cin.ignore();
-                }
-            }
-            ch = 0;
-            break;
-            // write a code for reading the head or account manager response
-        }
-        case 0:
-        {
-            ch = 1;
-            break;
-        }
-        default:
-        {
-            if (choice != -19)
-                cout << "\nInvalid Choice!\n";
-            break;
-        }
-        }
-        if (ch != 1)
-        {
-            cout << "\nPress Enter To Continue......";
-            cin.ignore();
-        }
-    }
-    ch = 0;
-}
 void Menus::ParkingManagerReport()
 {
     while (ch == 0)

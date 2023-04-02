@@ -1,0 +1,54 @@
+Electricity Type :Light Bulb Replacement
+Quantity :1
+Equipments :Ladder and Light Bulb
+Cost :25.00
+Location :Food Court
+
+Electricity Type :Lift Maintenance
+Quantity :1
+Equipments :Lift Maintenance Kit
+Cost :500.00
+Location :First Floor Lift
+
+Electricity Type :Equipment Replacement
+Quantity :1
+Equipments :Circuit Breaker
+Cost :1500.00
+Location :Food Court
+
+Electricity Type :Light Fixture Repair
+Quantity :1
+Equipments :Ladder and Replacement Parts
+Cost :300.00
+Location :Parking Lot
+
+Electricity Type :Light Bulb Replacement
+Quantity :1
+Equipents :Ladder and Light Bulb
+Cost :25
+Location :Food Court
+
+Electricity Type :kifayat
+Quantity :1
+Equipents :coder
+Cost :123464
+Location :lohore
+
+Electricity Type :Equipment Replacement
+Quantity :1
+Equipents :Circuit Breaker
+Cost :1500
+Location :Food Court
+
+Electricity Type :Light Fixture Repair
+Quantity :1
+Equipents :Ladder and Replacement Parts
+Cost :300
+Location :Parking Lot
+
+Electricity Type :button 
+Quantity :3
+Equipents :switch
+Cost :234
+Location :room
+

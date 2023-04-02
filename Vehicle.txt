@@ -1,5 +1,5 @@
-Car Registeration Number Is :
-Car Owner Name :kifayat123
-Car Owner Cnic :wer
-Car Type Is :wer
-Car Color Is :erf
+Car Registeration Number Is :BWM4433
+Car Owner Name :khan
+Car Owner Cnic :234
+Car Type Is :234
+Car Color Is :234

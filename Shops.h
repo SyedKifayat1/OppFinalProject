@@ -80,7 +80,7 @@ public:
 
         cout << "Enter Shop No :";
         cin >> Shop_Id_No;
-        outfile << "Shop Location :" << Shop_Id_No << endl;
+        outfile << "Shop No :" << Shop_Id_No << endl;
         cout << "Enter Shop Owner First Name :";
         cin >> Shop_Owner_First_name;
         outfile << "Shop Owner First Name :" << Shop_Owner_First_name << endl;

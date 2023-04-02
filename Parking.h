@@ -2,6 +2,8 @@
 #define __PARKING__H__
 
 #include <iostream>
+#include <string>
+#include <fstream>
 #include "Detail.h"
 #include "Employee.h"
 using namespace std;
@@ -18,6 +20,10 @@ protected:
     int *ptr;
 
 public:
+    ~Parking()
+    {
+        delete ptr;
+    }
     TotalIncome &totalIncome = TotalIncome::getInstance();
     Report ForAccount;
     Employ *parkingEmployee;
@@ -25,6 +31,7 @@ public:
     {
         this->parkingEmployee = parkingEmployee;
     }
+    int check;
 
     Parking()
     {
@@ -43,9 +50,21 @@ public:
     }
     void set_available_parking()
     {
-        cout << "Enter Parking Space: ";
-        cin >> available_parking_Space;
-        cout << "\nNow Parking Space Is :" << available_parking_Space << endl;
+        while (true)
+        {
+            cout << "Enter Parking Space: ";
+            cin >> available_parking_Space;
+            if (check >= available_parking_Space)
+            {
+                cout << "\nSorry This Space Is Already Filed!\n\nPlease Increase The Space.....\n";
+            }
+            else
+            {
+                cout << "\nNow Parking Space Is :" << available_parking_Space << endl;
+                storeParkingSpace();
+                break;
+            }
+        }
     }
 
     int get_available_parking()
@@ -101,139 +120,169 @@ public:
             outfile << entry.carColor;
             outfile << endl;
             available_parking_Space--;
-        
-    }
-    else
+            storeParkingSpace();
+        }
+        else
 
-    {
-        cout << "Sorry Parking Space Has Reached It's Limit!\n";
-    }
-} void Vehicle_Disentry()
-{
-    string ID; // name of employee variable
-    cout << "\nEnter Car Registeration No :";
-    cin >> ID;
-    // Open input file for reading
-    ifstream infile("Vehicle.txt");
-    if (!infile.is_open())
-    {
-        cout << "\nFailed To Open File!\n" << endl;
-        return;
-    }
-    // Open output file for writing
-    ofstream outfile("temporary.txt");
-    if (!outfile.is_open())
-    {
-        cout << "Failed To Creat Temporary File!" << endl;
-        infile.close();
-        return;
-    }
-    // Copy data from input file to output file
-    string storing;
-    bool CarFound = false;
-    while (getline(infile, storing))
-    {
-        if (storing.find(ID) != string::npos)
         {
-            CarFound = true;
-            cout << "Car With Regesteration No "<<ID<<" Found And Removed.\n";
-            available_parking_Space++;
-            cout << storing << endl;
-            for (int i = 0; i < 5; i++)
-            {
-                if (getline(infile, storing))
-                {
-                }
-            }
+            cout << "Sorry Parking Space Has Reached It's Limit!\n";
+        }
+    }
+    void RestoreParkingSpace()
+    {
+        ifstream file("CurrentParkingSpace.txt");
+        if (!file.is_open())
+        {
         }
         else
         {
-            outfile << storing << endl;
+            int num;
+            string line;
+            getline(file, line, ':');
+            getline(file, line,'\n');
+            num = stoi(line);
+            available_parking_Space = num;
         }
     }
-    // Close files
-    infile.close();
-    outfile.close();
-    if (!CarFound)
+    void storeParkingSpace()
     {
-        cout << "Car with Regesteration No " << ID << " Is Not Found.\n";
-        filesystem::remove("temporary.txt");
-        return;
+        ofstream file("CurrentParkingSpace.txt");
+        if (!file.is_open())
+        {
+            cout << "\nError :Failed To Open File For Writing!\n";
+        }
+        else
+        {
+            file << "Current Parking Space :" << available_parking_Space;
+            check = available_parking_Space;
+        }
+        file.close();
     }
-    // Remove original file
-    try
+    void Vehicle_Disentry()
     {
-        filesystem::remove("Vehicle.txt");
-    }
-    catch (const filesystem::filesystem_error &e)
-    {
-        cerr << "Error Removing File: " << e.what() << endl;
-        filesystem::remove("temporary.txt");
-        return;
-    }
-    // Rename temporary file to original name
-    try
-    {
-        filesystem::rename("temporary.txt", "Vehicle.txt");
-    }
-    catch (const filesystem::filesystem_error &e)
-    {
-        cerr << "Error Renaming File: " << e.what() << endl;
-        return;
-    }
-    cout << "CAR With Regesteration No" << ID << " Removed Successfully.\n";
-    
-}
-friend istream &operator>>(istream &inp, Parking &par)
-{
-    cin.ignore();
-    cout << "Enter Car Registeration No :";
-    getline(inp , par.carNumber);
-    cout << "Enter Car Owner Name :";
-    getline(inp , par.carOwner);
-    cout << "Enter Car Owner Cnic :";
-    getline(inp , par.carOwnerCnic);
-    cout << "Enter Car Type :";
-    getline(inp ,par.carType);
-    cout << "Enter Car Color :";
-    getline(inp , par.carColor);
-    return inp;
-}
-
-void vehicle_details()
-{
-    string ID; // name of employee variable
-    cout << "Enter Car Registeration No :";
-    cin >> ID;
-    ifstream infile("Vehicle.txt");
-    if (!infile.is_open())
-    {
-        cout << "Failed To Open File!" << endl;
-    }
-    else
-    {
-        string storing; // storing data in this string
-        bool printlines = false;
-        int linestoprint = 3;
+        string ID; // name of employee variable
+        cout << "\nEnter Car Registeration No :";
+        cin >> ID;
+        // Open input file for reading
+        ifstream infile("Vehicle.txt");
+        if (!infile.is_open())
+        {
+            cout << "\nFailed To Open File!\n"
+                 << endl;
+            return;
+        }
+        // Open output file for writing
+        ofstream outfile("temporary.txt");
+        if (!outfile.is_open())
+        {
+            cout << "Failed To Creat Temporary File!" << endl;
+            infile.close();
+            return;
+        }
+        // Copy data from input file to output file
+        string storing;
+        bool CarFound = false;
         while (getline(infile, storing))
         {
             if (storing.find(ID) != string::npos)
             {
-                printlines = true;
+                CarFound = true;
+                cout << "Car With Regesteration No " << ID << " Found And Removed.\n";
+                available_parking_Space++;
                 cout << storing << endl;
                 for (int i = 0; i < 5; i++)
-
                 {
                     if (getline(infile, storing))
                     {
-                        cout << storing << endl;
+                    }
+                }
+            }
+            else
+            {
+                outfile << storing << endl;
+            }
+        }
+
+        // Close files
+        infile.close();
+        outfile.close();
+        if (!CarFound)
+        {
+            cout << "Car with Regesteration No " << ID << " Is Not Found.\n";
+            filesystem::remove("temporary.txt");
+            return;
+        }
+        // Remove original file
+        try
+        {
+            filesystem::remove("Vehicle.txt");
+        }
+        catch (const filesystem::filesystem_error &e)
+        {
+            cerr << "Error Removing File: " << e.what() << endl;
+            filesystem::remove("temporary.txt");
+            return;
+        }
+        // Rename temporary file to original name
+        try
+        {
+            filesystem::rename("temporary.txt", "Vehicle.txt");
+        }
+        catch (const filesystem::filesystem_error &e)
+        {
+            cerr << "Error Renaming File: " << e.what() << endl;
+            return;
+        }
+        cout << "CAR With Regesteration No" << ID << " Removed Successfully.\n";
+    }
+    friend istream &operator>>(istream &inp, Parking &par)
+    {
+        cin.ignore();
+        cout << "Enter Car Registeration No :";
+        getline(inp, par.carNumber);
+        cout << "Enter Car Owner Name :";
+        getline(inp, par.carOwner);
+        cout << "Enter Car Owner Cnic :";
+        getline(inp, par.carOwnerCnic);
+        cout << "Enter Car Type :";
+        getline(inp, par.carType);
+        cout << "Enter Car Color :";
+        getline(inp, par.carColor);
+        return inp;
+    }
+
+    void vehicle_details()
+    {
+        string ID; // name of employee variable
+        cout << "Enter Car Registeration No :";
+        cin >> ID;
+        ifstream infile("Vehicle.txt");
+        if (!infile.is_open())
+        {
+            cout << "Failed To Open File!" << endl;
+        }
+        else
+        {
+            string storing; // storing data in this string
+            bool printlines = false;
+            int linestoprint = 3;
+            while (getline(infile, storing))
+            {
+                if (storing.find(ID) != string::npos)
+                {
+                    printlines = true;
+                    cout << storing << endl;
+                    for (int i = 0; i < 5; i++)
+
+                    {
+                        if (getline(infile, storing))
+                        {
+                            cout << storing << endl;
+                        }
                     }
                 }
             }
         }
     }
-    
-}
-}
-;
+};
 #endif //!__PARKING__H__

@@ -184,23 +184,23 @@ public:
         }
         catch (const filesystem::filesystem_error &e)
         {
-            cerr << "Error renaming file: " << e.what() << endl;
+            cerr << "Error Renaming File: " << e.what() << endl;
             return;
         }
-        cout << "Employee with ID " << ID << " removed successfully.\n";
+        cout << "Employee with ID " << ID << " Removed Successfully.\n";
         
     }
     void Replace_employ(string fileName)
     {
         Detail d;
         string ID;
-        cout << "ENTER ID OF EMPLOYEE: ";
+        cout << "Enter Id Of Employee: ";
         cin >> ID;
         ifstream infile(fileName + ".txt");
         ofstream outfile("temporary.txt");
         if (!infile.is_open())
         {
-            cout << "FAILED TO OPEN THE FILE!" << endl;
+            cout << "Failed To Open File!" << endl;
             return;
         }
         int i = 0;
@@ -210,7 +210,7 @@ public:
             if (line.find(ID) != string::npos)
             {
                 i = 8;
-                cout << "FOUND\n";
+                cout << "Found\n";
                 cin >> d;
                 d.input_Date(fileName);
             }
@@ -240,7 +240,7 @@ public:
         }
         catch (const filesystem::filesystem_error &e)
         {
-            cerr << "Error renaming file: " << e.what() << endl;
+            cerr << "Error Renaming File: " << e.what() << endl;
         }
         
     }

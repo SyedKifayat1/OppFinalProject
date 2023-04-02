@@ -18,6 +18,8 @@ class Manager
     Shops ShopsManager;
     Maintaineance MaintenanceManager;
     Parking ParkingManager;
-    water WaterManager;
-   // Security SecurityManager;
+    ~Manager()
+    {
+        delete ptr;
+    }
 };

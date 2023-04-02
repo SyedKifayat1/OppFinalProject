@@ -23,6 +23,14 @@ public:
     Maintaineance *maintaineance = new Maintaineance(employee);
     Parking *parking = new Parking(employee);
     Shops *shop = new Shops(employee);
+    ~Menus()
+    {
+        delete shop;
+        delete parking;
+        delete maintaineance;
+        delete employee;
+
+    }
 
     void Menu();
     void HeadMenu();
@@ -91,7 +99,8 @@ int Menus::InvaidChoice()
 void Menus::Menu()
 {
 
-        totalIncome.restoreAccountsData();
+    totalIncome.restoreAccountsData();
+    obj.ParkingManager.RestoreParkingSpace();
     while (ch == 0)
     {
 
@@ -614,7 +623,7 @@ void Menus::MaintenanceManager()
         choice = InvaidChoice();
         switch (choice)
         {
-        
+
         case 1:
         {
             AddMaintenanceData();
@@ -695,7 +704,6 @@ void Menus::AddMaintenanceData()
 }
 void Menus::BuildingRequirements()
 {
-
 }
 void Menus::add_Electicity_Details()
 {
@@ -1962,7 +1970,6 @@ void Menus::PaymentProcessing()
                 "2)Account Employee Salary\n"
                 "3)Maintenance Employee Salary\n"
                 "4)Parking Employee Salary\n"
-                "5)Water Employee Salary\n"
                 "0)Exit\n"
                 "Your Chocie :";
         cin >> choice1;
@@ -2064,30 +2071,7 @@ void Menus::PaymentProcessing()
             file.close();
             break;
         }
-        case 5:
-        {
-            ofstream file("PaidWaterEmployeeData.txt", ios::app);
-            obj.WaterManager.waterEmployee.Display_Data("waterEmployee");
-            if (obj.WaterManager.waterEmployee.check == 1)
-            {
-                cout << "\nEnter Salary :";
-                cin >> Salary;
-                if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
-                {
-
-                    file << "Emloyee Id :" << obj.WaterManager.waterEmployee.user_id << endl;
-                    file << "Salary :" << Salary << endl;
-                    obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
-                    cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
-                }
-                else
-                {
-                    cout << "\nSorry Low Balance!\n";
-                }
-            }
-            file.close();
-            break;
-        }
+       
         case 0:
         {
             ch = 1;

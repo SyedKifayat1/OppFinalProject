@@ -22,6 +22,11 @@ public:
       current_records = 0;
       Electricity_Records =new Electricity[RECORDS];
    }
+   ~Maintaineance()
+   {
+      delete maintaineanceEmployee;
+      delete Electricity_Records;
+   }
    Maintaineance(Employ *maintaineanceEmployee)
    {
       this->maintaineanceEmployee = maintaineanceEmployee;
@@ -51,19 +56,7 @@ public:
       file << "Location :" << Electricity_Records[i].getLocation() << endl
            << endl;
    }
-   // void Add_Record_Details_file()
-   // {
-   //    ofstream file("electricity_record.txt", ios::app);
-   //    if (!outfile.is_open())
-   //    {
-   //       cout << "Error Failed To Open File For Writing";
-   //    }
-   //    else
-   //    {
-   //       append_single_record_file(file);
-   //    }
-   //    file.close();
-   // }
+   
    void append_all_records_file()
    {
       ofstream file("electricity_record.txt", ios::app);

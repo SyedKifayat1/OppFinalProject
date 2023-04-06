@@ -1,3 +1,3 @@
-Current Income :900
+Current Income :200
 Shops Income :0
-Parking Income :900
+Parking Income :200

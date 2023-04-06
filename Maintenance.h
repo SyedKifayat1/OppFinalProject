@@ -5,9 +5,8 @@
 #include "Electricity.h"
 #include <iostream>
 using namespace std;
-<<<<<<< Updated upstream
 //#define 
-class Maintaineance : public Detail, public Report  // multilevel inheritance 
+class Maintaineance : public Detail, public Report  // multiple inheritance 
 {
 
 public:
@@ -18,20 +17,7 @@ public:
    Electricity *Electricity_Records; // 1 2 3 4 2
   int current_records;
    Maintaineance()  // default constructor of Maintaineance 
-=======
-// #define
-class Maintaineance : public Detail, public Report
-{
 
-public:
-   int RECORDS;
-   TotalIncome &totalIncome = TotalIncome::getInstance();
-   Report ForAccount;
-   Employ *maintaineanceEmployee;
-   Electricity *Electricity_Records; // 1 2 3 4 2
-   int current_records;
-   Maintaineance()
->>>>>>> Stashed changes
    {
       RECORDS = 100;
       current_records = 0;

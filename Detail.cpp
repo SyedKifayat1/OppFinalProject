@@ -6,21 +6,21 @@ istream &operator>>(istream &in, Detail &x)
 { 
 
     
-    cout << "\nENTER YOUR FIRST NAME :";
+    cout << "\nEnter Your First Name :";
     in >> x.fname;
-    cout << "\nENTER YOUR LAST NAME :";
+    cout << "\nEnter Your Last Name :";
     in >> x.lname;
-    cout << "\nENTER YOUR EMAIL ID :";
+    cout << "\nEnter Your Email Id :";
     in >> x.EmailADdress;
-    cout << "\nENTER YOUR JOB TITLE :";
+    cout << "\nEnter Your Job Title :";
     in >> x.JobTitle;
-    cout << "\nENTER YOUR GENDER :";
+    cout << "\nEnter Your Gender :";
     in >> x.gender;
-    cout << "\nENTER YOUR PHONE NUMBER :";
+    cout << "\nEnter Your Phone Number :";
     in>>x.PhoneNum;
-    cout << "\nENTER YOUR SALARY :";
+    cout << "\nEnter Your Salary :";
     in >> x.salary;
-    cout << "\nENTER YOUR HIRING DATE :";
+    cout << "\nEnter Your Hiring Date :";
     in >> x.hiringDate;
     return in;
 }

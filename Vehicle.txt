@@ -1,0 +1,6 @@
+Car Registeration Number Is :KM123
+Car Owner Name :wedfg
+Car Owner Cnic :werft
+Car Type Is :wer
+Car Color Is :wert
+

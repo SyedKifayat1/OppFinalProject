@@ -7,7 +7,7 @@
 #include "Detail.h"
 #include "Employee.h"
 using namespace std;
-class Parking : public Detail, public Report  // multilevel inheritance of parking wiht detail class and report class 
+class Parking : public Detail, public Report  // multiple inheritance of parking wiht detail class and report class 
 {
 protected:
     string carOwner;
@@ -99,7 +99,8 @@ public:
         totalIncome.AddParkingTotalIncome(Earnings);
         totalIncome.addParkingIncome(Earnings);
         Parking entry;
-        cin >> entry;
+        cout << "Enter Car Registeration No :";
+        getline(cin, entry.carNumber);
         string storing;
         int k = 0;
         ifstream infile("Vehicle.txt");
@@ -115,6 +116,7 @@ public:
         }
         if (k != 1)
         {
+            cin >> entry;
             outfile << "Car Registeration Number Is :";
             outfile << entry.carNumber;
             outfile << endl;
@@ -267,8 +269,7 @@ public:
     friend istream &operator>>(istream &inp, Parking &par)
     {
         inp.ignore();
-        cout << "Enter Car Registeration No :";
-        getline(inp, par.carNumber);
+        
         cout << "Enter Car Owner Name :";
         getline(inp, par.carOwner);
         cout << "Enter Car Owner Cnic :";

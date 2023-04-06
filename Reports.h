@@ -4,14 +4,22 @@
 using namespace std;
 class Report
 {
+protected:
+    bool ReportStatus;
 
 public:
     Report() // report default constructor
     {
         ReportStatus = false;
     }
-    bool ReportStatus;
-
+    bool getReportStatus()
+    {
+        return ReportStatus;
+    }
+    void setReportStatus(bool status)
+    {
+        ReportStatus=status;
+    }
     // Add_ report
     void Add_report(string filename) // file name is input from main program
     {
@@ -44,8 +52,7 @@ public:
         }
     }
 
-
-    //Edit report function 
+    // Edit report function
 
     void Edit_report(string filename)
     {
@@ -80,7 +87,7 @@ public:
         outfile.close();
     }
 
-    // readreport 
+    // readreport
     void ReadReport(string filename)
     {
         ifstream file(filename + ".txt");
@@ -99,7 +106,7 @@ public:
         file.close();
     }
 
-    // reposrt status 
+    // reposrt status
     void ReportsStatus()
     {
         if (ReportStatus == true)

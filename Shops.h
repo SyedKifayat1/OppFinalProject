@@ -42,10 +42,13 @@ public:
     ~Shops() {}
     void add_shop_Data()
     {
+        cin.ignore();
         system("clear");
         cout << "........Welcome To Adding Shops Data........\n";
         ofstream outfile("SHOPS_DETAILS.txt", ios::app);
-        function_Taking_shops();
+        
+        cout << "Enter Shop No: ";
+        getline(cin, Shop_Id_No); // input from user till next line in shop id_no 
         string storing;
         int k = 0;
         ifstream infile("SHOPS_DETAILS.txt");
@@ -61,6 +64,7 @@ public:
         }
         if (k != 1)
         {
+            function_Taking_shops();
             outfile << "Shop No :";
             outfile << Shop_Id_No;
             outfile << endl;
@@ -89,8 +93,7 @@ public:
     {
 
         cin.ignore();
-        cout << "Enter Shop No: ";
-        getline(cin, Shop_Id_No); // input from user till next line in shop id_no 
+        
         cout << "Enter Shop Owner Name :";
         getline(cin, Shop_Owner_Name);  // input shop owner name 
         cout << "Enter Rent Of Shop :";

@@ -18,5 +18,6 @@ public:
     TotalIncome &totalIncome = TotalIncome::getInstance();
     Accounts() {}
     Employ accountEmployee;
+    ~Accounts(){}
 };
 #endif //!__ACCOUNTS__H__

@@ -104,6 +104,7 @@ public:
     {
         return equipment;
     }
+    ~Electricity(){}
 };
 #endif //!__ELECTRICITY__H__
 

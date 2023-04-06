@@ -24,7 +24,6 @@ public:
         Employ *Employee = new Employ[p];
         for (int i = 0; i < p; i++)
         {
-            cin >> Employee[i];
             Employee[i].input_Date(filename);
         }
     }
@@ -47,5 +46,6 @@ public:
             // return 1;
         }
     }
+    ~Employ(){}
 };
 #endif //!__EMPLOYEE__H__

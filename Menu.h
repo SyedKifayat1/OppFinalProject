@@ -1097,7 +1097,7 @@ void Menus::ControlAccountManager()
         {
         case 1:
         {
-            cin >> obj.AccountManager;
+            
             obj.AccountManager.input_Date("Manager");
             break;
         }
@@ -1142,8 +1142,8 @@ void Menus::ControlAccountManager()
             {
             case 1:
             {
-                obj.AccountManager.ReportStatus = true;
-                if (obj.AccountManager.ReportStatus == true)
+                obj.AccountManager.setReportStatus(true);
+                if (obj.AccountManager.getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
                 }
@@ -1151,8 +1151,8 @@ void Menus::ControlAccountManager()
             }
             case 2:
             {
-                obj.AccountManager.ReportStatus = false;
-                if (obj.AccountManager.ReportStatus == false)
+                obj.AccountManager.setReportStatus(false);
+                if (obj.AccountManager.getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
                 }
@@ -1214,7 +1214,7 @@ void Menus::ControlMaintenanceManager()
         {
         case 1:
         {
-            cin >> obj.MaintenanceManager;
+            
             obj.MaintenanceManager.input_Date("Manager");
             break;
         }
@@ -1258,8 +1258,8 @@ void Menus::ControlMaintenanceManager()
             {
             case 1:
             {
-                obj.MaintenanceManager.ReportStatus = true;
-                if (obj.MaintenanceManager.ReportStatus == true)
+                obj.MaintenanceManager.setReportStatus(true) ;
+                if (obj.MaintenanceManager.getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
                 }
@@ -1267,8 +1267,8 @@ void Menus::ControlMaintenanceManager()
             }
             case 2:
             {
-                obj.MaintenanceManager.ReportStatus = false;
-                if (obj.MaintenanceManager.ReportStatus == false)
+                obj.MaintenanceManager.  setReportStatus(false);
+                if (obj.MaintenanceManager.getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
                 }
@@ -1328,7 +1328,7 @@ void Menus::ControlParkingManager()
         {
         case 1:
         {
-            cin >> obj.ParkingManager;
+            
             obj.ParkingManager.input_Date("Manager");
             break;
         }
@@ -1372,8 +1372,8 @@ void Menus::ControlParkingManager()
             {
             case 1:
             {
-                obj.ParkingManager.ReportStatus = true;
-                if (obj.ParkingManager.ReportStatus == true)
+                obj.ParkingManager. setReportStatus(true);
+                if (obj.ParkingManager.getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
                 }
@@ -1381,8 +1381,8 @@ void Menus::ControlParkingManager()
             }
             case 2:
             {
-                obj.ParkingManager.ReportStatus = false;
-                if (obj.ParkingManager.ReportStatus == false)
+                obj.ParkingManager.setReportStatus(false) ;
+                if (obj.ParkingManager.getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
                 }
@@ -1442,7 +1442,7 @@ void Menus::ControlShopsManager()
         {
         case 1:
         {
-            cin >> obj.ShopsManager;
+            
             obj.ShopsManager.input_Date("Manager");
             break;
         }
@@ -1486,8 +1486,8 @@ void Menus::ControlShopsManager()
             {
             case 1:
             {
-                obj.ShopsManager.ReportStatus = true;
-                if (obj.ShopsManager.ReportStatus == true)
+                obj.ShopsManager.setReportStatus(true) ;
+                if (obj.ShopsManager.getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
                 }
@@ -1495,8 +1495,8 @@ void Menus::ControlShopsManager()
             }
             case 2:
             {
-                obj.ShopsManager.ReportStatus = false;
-                if (obj.ShopsManager.ReportStatus == false)
+                obj.ShopsManager.setReportStatus(false) ;
+                if (obj.ShopsManager.getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
                 }
@@ -2447,8 +2447,8 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.MaintenanceManager.ForAccount.ReportStatus = true;
-                        if (obj.MaintenanceManager.ForAccount.ReportStatus == true)
+                        obj.MaintenanceManager.ForAccount.setReportStatus(true);
+                        if (obj.MaintenanceManager.ForAccount.getReportStatus() == true)
                         {
                             cout << "\nYou Can Approved The Report.....\n";
                         }
@@ -2456,8 +2456,8 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.MaintenanceManager.ForAccount.ReportStatus = false;
-                        if (obj.MaintenanceManager.ForAccount.ReportStatus == false)
+                        obj.MaintenanceManager.ForAccount.setReportStatus(false) ;
+                        if (obj.MaintenanceManager.ForAccount.getReportStatus() == false)
                         {
                             cout << "\nYou Can Reject The Report!\n";
                         }
@@ -2547,8 +2547,8 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.ParkingManager.ForAccount.ReportStatus = true;
-                        if (obj.ParkingManager.ForAccount.ReportStatus == true)
+                        obj.ParkingManager.ForAccount.setReportStatus(true) ;
+                        if (obj.ParkingManager.ForAccount.getReportStatus() == true)
                         {
                             cout << "\nYou Can Approved The Report.....\n";
                         }
@@ -2556,8 +2556,8 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.ParkingManager.ForAccount.ReportStatus = false;
-                        if (obj.ParkingManager.ForAccount.ReportStatus == false)
+                        obj.ParkingManager.ForAccount.setReportStatus(false) ;
+                        if (obj.ParkingManager.ForAccount.getReportStatus() == false)
                         {
                             cout << "\nYou Can Reject The Report!\n";
                         }
@@ -2647,8 +2647,8 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.ShopsManager.ForAccount.ReportStatus = true;
-                        if (obj.ShopsManager.ForAccount.ReportStatus == true)
+                        obj.ShopsManager.ForAccount.setReportStatus(true) ;
+                        if (obj.ShopsManager.ForAccount.getReportStatus() == true)
                         {
                             cout << "\nYou Can Approved The Report.....\n";
                         }
@@ -2656,8 +2656,8 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.ShopsManager.ForAccount.ReportStatus = false;
-                        if (obj.ShopsManager.ForAccount.ReportStatus == false)
+                        obj.ShopsManager.ForAccount.setReportStatus(false) ;
+                        if (obj.ShopsManager.ForAccount.getReportStatus() == false)
                         {
                             cout << "\nYou Can Reject The Report!\n";
                         }

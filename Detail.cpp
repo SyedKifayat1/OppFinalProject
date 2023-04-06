@@ -5,8 +5,7 @@ using namespace std;
 istream &operator>>(istream &in, Detail &x)
 { 
 
-    cout << "\nENTER USE ID: ";
-    in >> x.user_id;
+    
     cout << "\nENTER YOUR FIRST NAME :";
     in >> x.fname;
     cout << "\nENTER YOUR LAST NAME :";

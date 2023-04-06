@@ -6,12 +6,14 @@ class Report
 {
 
 public:
-    Report()
+    Report() // report default constructor
     {
         ReportStatus = false;
     }
     bool ReportStatus;
-    void Add_report(string filename)
+
+    // Add_ report
+    void Add_report(string filename) // file name is input from main program
     {
         ofstream outfile(filename + ".txt");
         if (!outfile.is_open())
@@ -29,9 +31,10 @@ public:
         outfile.close();
     }
 
+    // delete report function
     void Delete_report(string filename)
     {
-        if (remove((filename + ".txt").c_str()) != 0)
+        if (remove((filename + ".txt").c_str()) != 0) // The c_str() function converts the resulting string to a C-style string, which is required by the remove() function
         {
             cout << "\nError In Deleting File!\n";
         }
@@ -40,6 +43,9 @@ public:
             cout << "\nFile Is Successfully Deleted\n";
         }
     }
+
+
+    //Edit report function 
 
     void Edit_report(string filename)
     {
@@ -68,11 +74,13 @@ public:
             cout << "\nWRITE A MORE DETAILS IN REPORT :\n";
             cin.ignore();
             getline(cin, add_content);
-            outfile<< add_content << endl;
+            outfile << add_content << endl;
             cout << "\nREPORT SUCCESSFULLY UPDATED.......\n";
         }
         outfile.close();
     }
+
+    // readreport 
     void ReadReport(string filename)
     {
         ifstream file(filename + ".txt");
@@ -90,6 +98,8 @@ public:
         }
         file.close();
     }
+
+    // reposrt status 
     void ReportsStatus()
     {
         if (ReportStatus == true)
@@ -131,7 +141,7 @@ public:
             cout << "\nGive Your Response :\n";
             cin.ignore();
             getline(cin, input);
-            outfile << input<<endl;
+            outfile << input << endl;
         }
         outfile.close();
     }

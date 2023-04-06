@@ -9,7 +9,7 @@ using namespace std;
 class Detail
 {
 private:
-    string fname, lname, EmailADdress, JobTitle, gender, user_id, hiringDate; // attributes
+    string fname, lname, EmailADdress, JobTitle, gender, user_id, hiringDate; 
     unsigned long int salary, PhoneNum;
     int check;
 

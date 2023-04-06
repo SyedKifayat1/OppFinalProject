@@ -6,11 +6,13 @@
 #include <filesystem>
 #include "Reports.h"
 using namespace std;
+
+// This class contain Details of Employee of the Mall
 class Detail
 {
 private:
-    string fname, lname, EmailADdress, JobTitle, gender, user_id, hiringDate; // attributes
-    unsigned long int salary, PhoneNum;
+    string fname, lname, EmailADdress, JobTitle, gender, user_id, hiringDate; // attribute
+    unsigned long int salary, PhoneNum;                                       // unsigned long int store 32 bit
     int check;
 
 public:
@@ -18,12 +20,12 @@ public:
     {
         return check;
     }
-    string getUser_Id()
+    string getUser_Id() // this function return user id
     {
         return user_id;
     }
-    Detail() {}
-    void input_Date(string fileName)
+    Detail() {}                      // default constructor
+    void input_Date(string fileName) //  this function take file name to input data into file
     {
         string storing;
         int k = 0;
@@ -32,22 +34,23 @@ public:
         {
             while (getline(infile, storing))
             {
-                if (storing.find(user_id) != string::npos)
+                if (storing.find(user_id) != string::npos) // this lines  mean that particular employee has been found
                 {
-                    k = 1;
+                    k = 1; // this line of code purpose to have check on double entry of particular employee
                 }
             }
         }
 
-        ofstream outfile(fileName + ".txt", ios::app);
-        if (!outfile.is_open())
+        ofstream outfile(fileName + ".txt", ios::app); // opening file to which we input employee date
+        if (!outfile.is_open())                        // file is not opening
         {
             cout << "Error Failed To Open File For Writing";
         }
         else
         {
-            if (k != 1)
+            if (k != 1) // if user is not present in file which we output data of user
             {
+                // output user data to file
 
                 outfile << "Employee Id :";
                 outfile << user_id;
@@ -82,32 +85,38 @@ public:
             }
         }
     }
-    void Display_Data(string fileName) // display particular employee details
+
+    // display particular employee details
+    void Display_Data(string fileName)  // file name come in funciton 
     {
-        string ID; // name of employee variable
+        string ID; // ID of employee 
         cout << "Enter Id Of Employee :";
-        cin >> ID;
-        user_id = ID;
-        ifstream infile(fileName + ".txt");
-        if (!infile.is_open())
+        cin >> ID;  // Enter ID of employee 
+        user_id = ID;   
+        ifstream infile(fileName + ".txt");   // opening file in reading mode 
+
+
+        // if file is not opening 
+        if (!infile.is_open())  
         {
-            cout << "Failed To Open File!" << endl;
+            cout << "Failed To Open File!" << endl;   
             check = 0;
         }
+        // if file is opening 
         else
         {
-            check = 0;
+            check = 0;   // retain check to zero 
             string storing; // storing data in this string
-            bool printlines = false;
-            int linestoprint = 3;
-            while (getline(infile, storing))
+            bool printlines = false;    //printing lines is yet not started so that variable is false 
+            int linestoprint = 3;    
+            while (getline(infile, storing))   // fetching data from file which have object infile and storing that data to storing line by line
             {
-                if (storing.find(ID) != string::npos) //!= -1
+                if (storing.find(ID) != string::npos) //   person is found 
                 {
-                    check = 1;
-                    printlines = true;
-                    cout << storing << endl;
-                    for (int i = 0; i < 7; i++)
+                    check = 1;   // make check variable 1 
+                    printlines = true;  // printlines is now true 
+                    cout << storing << endl;  
+                    for (int i = 0; i < 7; i++)  // this loop would print consecutive 7 lines 
 
                     {
                         if (getline(infile, storing))
@@ -119,19 +128,23 @@ public:
             }
         }
     }
-    void Remove_Employee(string fileName)
+
+    // this function remove employee 
+    void Remove_Employee(string fileName)  // the emplyee file name come from main 
     {
-        string ID; // name of employee variable
-        cout << "Enter Employee Id :";
-        cin >> ID;
-        // Open input file for reading
+        string ID; // variable to store employ ID being entered by user 
+        cout << "Enter Employee Id :"; // Display line to user for entering ID 
+        cin >> ID;   // User input ID
+          
+
+        // opening Employ file input mode 
         ifstream infile(fileName + ".txt");
         if (!infile.is_open())
         {
             cout << "Failed To Open File!" << endl;
             return;
         }
-        // Open output file for writing
+       // opening temporary file for writing  output mode 
         ofstream outfile("temporary.txt");
         if (!outfile.is_open())
         {
@@ -140,67 +153,72 @@ public:
             return;
         }
         // Copy data from input file to output file
-        string storing;
-        bool employeeFound = false;
-        while (getline(infile, storing))
+        string storing;   // variable that store data from file 
+        bool employeeFound = false;  // variable to define current status of employee found 
+        while (getline(infile, storing))    // looping to employee file for searching 
         {
-            if (storing.find(ID) != string::npos)
+            if (storing.find(ID) != string::npos)  // employee found 
             {
                 employeeFound = true;
                 cout << "Employee found and removed.\n";
-                cout << storing << endl;
-                for (int i = 0; i < 7; i++)
+                cout << storing << endl;  // print employee that has been found 
+                for (int i = 0; i < 7; i++) // the loop ignore that employee and not output employee to temporary 
                 {
                     if (getline(infile, storing))
                     {
                     }
                 }
             }
-            else
+            else   
             {
-                outfile << storing << endl;
+                outfile << storing << endl; // copying data of employee to temporary file 
             }
         }
         // Close files
-        infile.close();
-        outfile.close();
-        if (!employeeFound)
+        infile.close();  // closing employee file 
+        outfile.close();   // closing temporary file 
+        if (!employeeFound)  // employee not found 
         {
             cout << "Employee with ID " << ID << " not found.\n";
-            filesystem::remove("temporary.txt");
-            return;
+            filesystem::remove("temporary.txt");  // if employee not found then there is not need for temporary file then delete temporary file
+            return;   // here program stop and return 
         }
         // Remove original file
         try
         {
-            filesystem::remove(fileName + ".txt");
+            filesystem::remove(fileName + ".txt");  // remove original employee file 
         }
-        catch (const filesystem::filesystem_error &e)
+
+        // if some error occured in try block std::filesystem::filesystem_error exception is thrown. The code catches this exception and handles it in the following block of code
+        catch (const filesystem::filesystem_error &e) //  In this code block, &e is a reference to an object of the std::filesystem::filesystem_error class that is thrown when an error occurs during the file deletion process
         {
-            cerr << "Error removing file: " << e.what() << endl;
+            cerr << "Error removing file: " << e.what() << endl;    // cerr is used for error output to distinguish from cout 
             filesystem::remove("temporary.txt");
             return;
         }
         // Rename temporary file to original name
         try
         {
-            filesystem::rename("temporary.txt", fileName + ".txt");
+        
+            filesystem::rename("temporary.txt", fileName + ".txt");    
         }
         catch (const filesystem::filesystem_error &e)
         {
-            cerr << "Error Renaming File: " << e.what() << endl;
+            cerr << "Error Renaming File: " << e.what() << endl;  // what function contain description of problem 
             return;
         }
         cout << "Employee with ID " << ID << " Removed Successfully.\n";
     }
+
+    // Replace employ function to replace employ 
     void Replace_employ(string fileName)
     {
-        Detail d;
+        Detail d;   // object of detail d 
         string ID;
         cout << "Enter Id Of Employee: ";
         cin >> ID;
-        ifstream infile(fileName + ".txt");
-        ofstream outfile("temporary.txt");
+        ifstream infile(fileName + ".txt");  // opening employee file 
+        ofstream outfile("temporary.txt");  // opening temporary file 
         if (!infile.is_open())
         {
             cout << "Failed To Open File!" << endl;
@@ -215,7 +233,7 @@ public:
                 i = 8;
                 cout << "Found\n";
                 cin >> d;
-                d.input_Date(fileName);
+                d.input_Date(fileName);   // input data for new employee 
             }
             else
             {
@@ -230,8 +248,8 @@ public:
             }
         }
 
-        infile.close();
-        outfile.close();
+        infile.close();  // closing employee file 
+        outfile.close();  // closing temporary file 
 
         // Remove the original file
         filesystem::remove(fileName + ".txt");

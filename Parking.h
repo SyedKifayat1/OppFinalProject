@@ -7,7 +7,7 @@
 #include "Detail.h"
 #include "Employee.h"
 using namespace std;
-class Parking : public Detail, public Report
+class Parking : public Detail, public Report  // multilevel inheritance of parking wiht detail class and report class 
 {
 protected:
     string carOwner;
@@ -20,23 +20,23 @@ protected:
     int *ptr;
 
 public:
-    ~Parking()
+    ~Parking()  // destructor to deallocate memory dynamic 
     {
         if( ptr != NULL)
             delete ptr;
         
     }
-    TotalIncome &totalIncome = TotalIncome::getInstance();
-    Report ForAccount;
-    Employ *parkingEmployee;
-    Parking(Employ *parkingEmployee)
+    TotalIncome &totalIncome = TotalIncome::getInstance();  // singleton class instance creation one
+    Report ForAccount;  // composition of report class object in parking class 
+    Employ *parkingEmployee; // creating pointer of employ class for aggregation implementaion 
+    Parking(Employ *parkingEmployee)  // employ class pointer has been passed through constructor 
     {
         this->parkingEmployee = parkingEmployee;
         ptr = NULL;
     }
     int check;
 
-    Parking()
+    Parking()  // default constructor 
     {
         carOwner = "Murtaza khalid";
         carOwnerCnic = "1550119";
@@ -48,16 +48,18 @@ public:
         ptr = NULL;
     }
 
-    void set_available_parking()
+    void set_available_parking()  // setting available parking space 
     {
         while (true)
         {
             cout << "Enter Parking Space: ";
             cin >> available_parking_Space;
-            if (check >= available_parking_Space)
+            if (check >= available_parking_Space)  // if parking space is already full 
             {
                 cout << "\nSorry This Space Is Already Filed!\nPlease Increase The Space.....\n";
             }
+
+            // if parking space is not full 
             else
             {
                 cout << "\nNow Parking Space Is :" << available_parking_Space << endl;
@@ -66,73 +68,82 @@ public:
             }
         }
     }
-
+  
+    // return available parking space to user 
     int get_available_parking()
     {
         return available_parking_Space;
     }
 
+     
     void Vehicle_entry()
     {
-        ofstream outfile("Vehicle.txt", ios::app);
+        ofstream outfile("Vehicle.txt", ios::app);  // opening vehicle file 
+
+        // file is not opening 
         if (!outfile.is_open())
         {
             cout << "File Does Not Exist\n";
             return;
         }
-
+       
+     // parking space is full 
         if (0 == available_parking_Space)
         {
             cout << "Sorry Parking Space Has Reached It's Limit!\n";
             outfile.close();
             return;
         }
+
+    
         
         cout << "Per Car Parking Fee Is :100\n";
         Earnings = 100;
-        totalIncome.AddParkingTotalIncome(Earnings);
-        totalIncome.addParkingIncome(Earnings);
-        Parking entry;
-        cin >> entry;
-        outfile << "Car Registeration Number Is :";
+        totalIncome.AddParkingTotalIncome(Earnings);  // adding parking income to total income singleton class 
+        totalIncome.addParkingIncome(Earnings);   // adding parking income to parkingincome in singleton class 
+        Parking entry;  // object of parking 
+        cin >> entry;  // cin is overloaded that is why we are using it 
+        outfile << "Car Registeration Number Is :";   // car registration number output to file 
         outfile << entry.carNumber;
         outfile << endl;
-        outfile << "Car Owner Name :";
+        outfile << "Car Owner Name :";  // car owner name output to file 
         outfile << entry.carOwner;
         outfile << endl;
-        outfile << "Car Owner Cnic :";
+        outfile << "Car Owner Cnic :";  // car CNIC output to file 
         outfile << entry.carOwnerCnic;
         outfile << endl;
-        outfile << "Car Type Is :";
+        outfile << "Car Type Is :";   // car type output to file 
         outfile << entry.carType;
         outfile << endl;
-        outfile << "Car Color Is :";
+        outfile << "Car Color Is :";   // car color to fiel 
         outfile << entry.carColor;
         outfile << endl
                 << endl;
-        available_parking_Space--;
-        storeParkingSpace();
+        available_parking_Space--;  // added one car data would reduce parking space by 1 
+        storeParkingSpace();   // calling storing parking space function to store parking data
         outfile.close();
     }
 
     void RestoreParkingSpace()
     {
-        ifstream file("CurrentParkingSpace.txt");
+        ifstream file("CurrentParkingSpace.txt"); // openingCurrentparkingSpace file 
         if (!file.is_open())
         {
-            cout << "Error File Not Found"<<endl;
+            cout << "Error File Not Found"<<endl;  
         }
         else
         {
-            int num;
+            int num;   
             string line;
-            getline(file, line, ':');
-            getline(file, line, '\n');
-            num = stoi(line);
-            available_parking_Space = num;
+            getline(file, line, ':');  // reading data from file till colon
+            getline(file, line, '\n');  // reading data from file till end of line
+            num = stoi(line);   // inbuilt function to convert string to integer 
+            available_parking_Space = num;   // assigning available parking space to num 
             check = available_parking_Space;
         }
-    }
+    } 
+
+    // store parking space function 
     void storeParkingSpace()
     {
         try{
@@ -153,13 +164,17 @@ public:
             cout << e.what ();
         }
     }
+
+    // vehicle disentry function 
     void Vehicle_Disentry()
     {
         string ID;
-        cout << "\nEnter Car Registeration No :";
+        cout << "\nEnter Car Registeration No :";  // car registration id no 
         cin >> ID;
-        // Open input file for reading
-        ifstream infile("Vehicle.txt");
+        // Open input file for reading 
+        ifstream infile("Vehicle.txt");  // openign vehicle file 
+
+        // if file is not openign then error is displayed to user of the program 
         if (!infile.is_open())
         {
             cout << "\nFailed To Open File!\n"
@@ -167,7 +182,7 @@ public:
             return;
         }
         // Open output file for writing
-        ofstream outfile("temporary.txt");
+        ofstream outfile("temporary.txt");   // opening temporary file for copying data from vehicle fiel to temporary file 
         if (!outfile.is_open())
         {
             cout << "Failed To Creat Temporary File!" << endl;

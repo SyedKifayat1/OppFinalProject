@@ -1,43 +1,53 @@
 #include <iostream>
 using namespace std;
-template <class T>
+template <class T>  // template class 
 class Calculator
 {
 private:
     T first, second;
 
 public:
-    virtual void calculation() = 0;
-    void firstSet()
-    {
-        cout << "\nEnter First Number :";
+    virtual void calculation() = 0;  // pure virtual function 
+    void firstSet()  // input first name from user 
+    { 
+        cout << "\nEnter First Number :";  
         cin >> first;
     }
-    T firstGet()
+
+    // getting to return first number 
+    T firstGet()  
     {
         return first;
     }
-    void secondSet()
+
+    // input second number from user 
+    void secondSet() 
     {
-        cout << "\nEnter Second Number :";
+        cout << "\nEnter Second Number :";   // 
         cin >> second;
     }
+
+      // return second number to user 
     T secondGet()
     {
         return second;
     }
 };
-class addition : public Calculator<long double>
+
+// addition clas 
+class addition : public Calculator<long double> // addition class inheritance with template class calculator so that user can enter any data type
 {
 public:
-    void calculation() override
+    void calculation() override  // using calculation virtual function of calculator 
     {
-        firstSet();
-        secondSet();
-        cout << "\nResult Of Addition Is :" << firstGet() + secondGet() << endl;
+        firstSet();   // input first name from user 
+        secondSet();  // input second number from user 
+        cout << "\nResult Of Addition Is :" << firstGet() + secondGet() << endl;   // adding two number
     }
 };
-class subtraction : public Calculator<long double>
+
+// class subtraction 
+class subtraction : public Calculator<long double> // inheritance of subtraction with calculator 
 {
 public:
     void calculation() override
@@ -47,7 +57,9 @@ public:
         cout << "\nResult Of Subtraction Is :" << firstGet() - secondGet() << endl;
     }
 };
-class multiplication : public Calculator<long double>
+
+// class multiplication class 
+class multiplication : public Calculator<long double> // inheritance of multiplication wiht calcualtor class 
 {
 public:
     void calculation() override
@@ -57,14 +69,16 @@ public:
         cout << "\nResult Of Multiplication Is :" << firstGet() * secondGet() << endl;
     }
 };
-class divition : public Calculator<long double>
+
+// class division 
+class divition : public Calculator<long double>  // inheritance of division class with calculator class 
 {
 public:
     void calculation() override
     {
         firstSet();
         secondSet();
-        if (secondGet() == 0)
+        if (secondGet() == 0)  // division by zero is not possible 
         {
             cout << "\nSorry Math Error!\n";
         }
@@ -74,6 +88,8 @@ public:
         }
     }
 };
+
+// class percentage to find percentage 
 class percentage : public Calculator<long double>
 {
 public:
@@ -81,7 +97,7 @@ public:
     {
         firstSet();
         secondSet();
-        if (secondGet() < firstGet())
+        if (secondGet() < firstGet())  
         {
             cout << "\nSorry Math Error!\n";
         }

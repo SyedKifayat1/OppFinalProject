@@ -2,6 +2,8 @@
 #include<string>
 #include<fstream>
 using namespace std;
+
+// singleton class 
 class TotalIncome
 {
 public:

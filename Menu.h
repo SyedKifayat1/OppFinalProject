@@ -6,16 +6,11 @@
 using namespace std;
 class Menus
 {
-public:
+private:
     int choice;
     string choice1;
     int ch;
     int check;
-    Menus()
-    {
-        check = 0;
-        ch = 0;
-    }
     TotalIncome &totalIncome = TotalIncome::getInstance();
     Manager obj;
     Accounts<long double> account;
@@ -23,13 +18,20 @@ public:
     Maintaineance *maintaineance = new Maintaineance(employee);
     Parking *parking = new Parking(employee);
     Shops *shop = new Shops(employee);
+
+public:
+    Menus()
+    {
+        check = 0;
+        ch = 0;
+    }
+    
     ~Menus()
     {
         delete shop;
         delete parking;
         delete maintaineance;
         delete employee;
-
     }
 
     void Menu();
@@ -105,6 +107,7 @@ void Menus::Menu()
     {
 
         system("clear");
+
         // cin.get();
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
         cout << "Select Your Status :\n"
@@ -830,7 +833,6 @@ void Menus::ParkingManager()
                 "2)Add Parking Data\n"
                 "3)Parking Employees\n"
                 "4)Report\n"
-                // hopefully here will be one more option for the report of the parking manager
                 "0)Exit\n"
                 "Enter Your Choice :";
         cin >> choice1;
@@ -861,18 +863,29 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    parking->set_available_parking(); // vehicle entry
+                    obj.ParkingManager.set_available_parking(); // vehicle entry
                     break;
                 }
                 case 2:
                 {
-                    parking->Vehicle_entry(); // vehicle disentry
-                    // write a code for car disentry
+                    try
+                    {
+                        obj.ParkingManager.Vehicle_entry(); // vehicle disentry
+                    }
+                    catch (exception e)
+                    {
+                        cout << "Exception Occurred" << endl;
+                        cout << e.what();
+                    }
+                    catch (...)
+                    {
+                        cout << "Some uncaught Exception " << endl;
+                    }
                     break;
                 }
                 case 3:
                 {
-                    parking->Vehicle_Disentry();
+                    obj.ParkingManager.Vehicle_Disentry();
                     // write a code )for available space
                     break;
                 }
@@ -895,6 +908,7 @@ void Menus::ParkingManager()
                     cin.ignore();
                 }
             }
+            cin.ignore();
             ch = 0;
             break;
         }
@@ -1816,8 +1830,7 @@ void Menus::AccountDetails()
         {
         case 1:
         {
-            // write a code for employee salary
-
+            PaymentHistory();
             break;
         }
         case 2:
@@ -1879,13 +1892,13 @@ void Menus::ParkingDetails()
         }
         case 2:
         {
-            cout << parking->getavailable_parking_space();
+            cout << obj.ParkingManager.get_available_parking();
             // write a code for parking cars and other details
             break;
         }
         case 3:
         {
-            parking->vehicle_details();
+            obj.ParkingManager.vehicle_details();
             // write a code for vehicle details by number plate number
         }
         case 0:
@@ -1917,7 +1930,6 @@ void Menus::MaintenanceDetails()
         system("clear");
         cout << "\n.......Welcome To Checking Maintenance Details Repository.......\n\n"
                 "1)Details of Electricity Resources\n"
-                "2)Details of Building Repears\n"
                 "0)Exit\n"
                 "Your Choice :";
         cin >> choice1;
@@ -1932,12 +1944,6 @@ void Menus::MaintenanceDetails()
 
             break;
         }
-        case 2:
-        {
-            // write a code for details of the building
-            break;
-        }
-
         case 0:
         {
             ch = 1;
@@ -1980,13 +1986,13 @@ void Menus::PaymentProcessing()
         {
             ofstream file("PaidManagersData.txt", ios::app);
             obj.AccountManager.Display_Data("Manager");
-            if (obj.AccountManager.check == 1)
+            if (obj.AccountManager.getCheck() == 1)
             {
                 cout << "\nEnter Salary :";
                 cin >> Salary;
                 if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
                 {
-                    file << "Emloyee Id :" << obj.AccountManager.user_id << endl;
+                    file << "Emloyee Id :" << obj.AccountManager.getUser_Id() << endl;
                     file << "Salary :" << Salary << endl;
                     obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
                     cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
@@ -2003,14 +2009,14 @@ void Menus::PaymentProcessing()
         {
             ofstream file("PaidAccountEmployeeData.txt", ios::app);
             obj.AccountManager.accountEmployee.Display_Data("AccountEmployee");
-            if (obj.AccountManager.accountEmployee.check == 1)
+            if (obj.AccountManager.accountEmployee.getCheck() == 1)
             {
                 cout << "\nEnter Salary :";
                 cin >> Salary;
                 if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
                 {
 
-                    file << "Emloyee Id :" << obj.AccountManager.accountEmployee.user_id << endl;
+                    file << "Emloyee Id :" << obj.AccountManager.accountEmployee.getUser_Id() << endl;
                     file << "Salary :" << Salary << endl;
                     obj.AccountManager.totalIncome.subtractEmployeeSalary(Salary);
                     cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
@@ -2027,14 +2033,14 @@ void Menus::PaymentProcessing()
         {
             ofstream file("PaidMaintenanceEmployeeData.txt", ios::app);
             obj.MaintenanceManager.maintaineanceEmployee->Display_Data("MaintenanceEmployee");
-            if (obj.MaintenanceManager.maintaineanceEmployee->check == 1)
+            if (obj.MaintenanceManager.maintaineanceEmployee->getCheck() == 1)
             {
                 cout << "\nEnter Salary :";
                 cin >> Salary;
                 if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
                 {
 
-                    file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->user_id << endl;
+                    file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->getUser_Id() << endl;
                     file << "Salary :" << Salary << endl;
                     obj.MaintenanceManager.totalIncome.subtractEmployeeSalary(Salary);
                     cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
@@ -2051,14 +2057,14 @@ void Menus::PaymentProcessing()
         {
             ofstream file("PaidParkingEmployeeData.txt", ios::app);
             obj.ParkingManager.parkingEmployee->Display_Data("ParkingEmployee");
-            if (obj.ParkingManager.parkingEmployee->check == 1)
+            if (obj.ParkingManager.parkingEmployee->getCheck() == 1)
             {
                 cout << "\nEnter Salary :";
                 cin >> Salary;
                 if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
                 {
 
-                    file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->user_id << endl;
+                    file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->getUser_Id() << endl;
                     file << "Salary :" << Salary << endl;
                     obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
                     cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
@@ -2071,7 +2077,7 @@ void Menus::PaymentProcessing()
             file.close();
             break;
         }
-       
+
         case 0:
         {
             ch = 1;

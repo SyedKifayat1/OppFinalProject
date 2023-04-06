@@ -1,4 +1,3 @@
-
 #ifndef OPPFINALPROJECT_DETAIL_H
 #define OPPFINALPROJECT_DETAIL_H
 #include <iostream>
@@ -9,21 +8,27 @@
 using namespace std;
 class Detail
 {
-public:
+private:
     string fname, lname, EmailADdress, JobTitle, gender, user_id, hiringDate; // attributes
     unsigned long int salary, PhoneNum;
     int check;
+
+public:
+    int getCheck()
+    {
+        return check;
+    }
+    string getUser_Id()
+    {
+        return user_id;
+    }
     Detail() {}
     void input_Date(string fileName)
     {
         string storing;
         int k = 0;
         ifstream infile(fileName + ".txt");
-        if (!infile.is_open())
-        {
-            cout << "Sorry File is not exist !" << endl;
-        }
-        else
+        if (infile.is_open())
         {
             while (getline(infile, storing))
             {
@@ -32,48 +37,48 @@ public:
                     k = 1;
                 }
             }
+        }
 
-            ofstream outfile(fileName + ".txt", ios::app);
-            if (!outfile.is_open())
+        ofstream outfile(fileName + ".txt", ios::app);
+        if (!outfile.is_open())
+        {
+            cout << "Error Failed To Open File For Writing";
+        }
+        else
+        {
+            if (k != 1)
             {
-                cout << "Error Failed To Open File For Writing";
+
+                outfile << "Employee Id :";
+                outfile << user_id;
+                outfile << endl;
+                outfile << "Name :";     // name for emply entering to file
+                outfile << fname;        // first name of employ
+                outfile << " " << lname; // last name of employ
+                outfile << endl;
+                outfile << "Email Address :"; // email address of employ
+                outfile << EmailADdress;
+                outfile << endl;
+                outfile << "Job Title :"; // job title
+                outfile << JobTitle;      // getting job title into file
+                outfile << endl;
+                outfile << "Gender :"; // gender of person
+                outfile << gender;
+                outfile << endl;
+                outfile << "Phone Number :"; // phone number of person
+                outfile << PhoneNum;
+                outfile << endl;
+                outfile << "Salary :"; // salary of person
+                outfile << salary;
+                outfile << endl;
+                outfile << "Hiring Date :"; // hiring date of person
+                outfile << hiringDate;
+                outfile << endl;
+                cout << "\nYour Data Is Stored Successfully..........\n";
             }
             else
             {
-                if (k != 1)
-                {
-                    
-                    outfile << "Employee Id :";
-                    outfile << user_id;
-                    outfile << endl;
-                    outfile << "Name :"; // name for emply entering to file
-                    outfile << fname;       // first name of employ
-                    outfile <<" "<< lname;       // last name of employ
-                    outfile << endl;
-                    outfile << "Email Address :"; // email address of employ
-                    outfile << EmailADdress;
-                    outfile << endl;
-                    outfile << "Job Title :"; // job title
-                    outfile << JobTitle;      // getting job title into file
-                    outfile << endl;
-                    outfile << "Gender :"; // gender of person
-                    outfile << gender;
-                    outfile << endl;
-                    outfile << "Phone Number :"; // phone number of person
-                    outfile << PhoneNum;
-                    outfile << endl;
-                    outfile << "Salary :"; // salary of person
-                    outfile << salary;
-                    outfile << endl;
-                    outfile << "Hiring Date :"; // hiring date of person
-                    outfile << hiringDate;
-                    outfile << endl;
-                    cout << "\nYour Data Is Stored Successfully..........\n";
-                }
-                else
-                {
-                    cout << "\nSorry this User Id Is Already Exist.......\n";
-                }
+                cout << "\nSorry this User Id Is Already Exist.......\n";
             }
         }
     }
@@ -82,16 +87,16 @@ public:
         string ID; // name of employee variable
         cout << "Enter Id Of Employee :";
         cin >> ID;
-        user_id=ID;
+        user_id = ID;
         ifstream infile(fileName + ".txt");
         if (!infile.is_open())
         {
             cout << "Failed To Open File!" << endl;
-            check=0;
+            check = 0;
         }
         else
         {
-            check=0;
+            check = 0;
             string storing; // storing data in this string
             bool printlines = false;
             int linestoprint = 3;
@@ -99,7 +104,7 @@ public:
             {
                 if (storing.find(ID) != string::npos) //!= -1
                 {
-                    check=1;
+                    check = 1;
                     printlines = true;
                     cout << storing << endl;
                     for (int i = 0; i < 7; i++)
@@ -113,7 +118,6 @@ public:
                 }
             }
         }
-        
     }
     void Remove_Employee(string fileName)
     {
@@ -188,7 +192,6 @@ public:
             return;
         }
         cout << "Employee with ID " << ID << " Removed Successfully.\n";
-        
     }
     void Replace_employ(string fileName)
     {
@@ -242,7 +245,6 @@ public:
         {
             cerr << "Error Renaming File: " << e.what() << endl;
         }
-        
     }
 
     friend istream &operator>>(istream &in, Detail &x);        // friend function prototype

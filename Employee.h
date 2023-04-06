@@ -13,8 +13,7 @@ class Employ : public Detail
 
 public:
     Employ *Employee;
-    // Employ() : Detail()
-    // {
+    
     void input_Data(string filename)
     {
 

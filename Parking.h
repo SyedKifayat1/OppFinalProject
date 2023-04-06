@@ -22,7 +22,9 @@ protected:
 public:
     ~Parking()
     {
-        delete ptr;
+        if( ptr != NULL)
+            delete ptr;
+        
     }
     TotalIncome &totalIncome = TotalIncome::getInstance();
     Report ForAccount;
@@ -30,6 +32,7 @@ public:
     Parking(Employ *parkingEmployee)
     {
         this->parkingEmployee = parkingEmployee;
+        ptr = NULL;
     }
     int check;
 
@@ -42,12 +45,9 @@ public:
         carColor = "black";
         Earnings = 0;
         available_parking_Space = 0;
+        ptr = NULL;
     }
 
-    int getavailable_parking_space()
-    {
-        return available_parking_Space;
-    }
     void set_available_parking()
     {
         while (true)
@@ -56,7 +56,7 @@ public:
             cin >> available_parking_Space;
             if (check >= available_parking_Space)
             {
-                cout << "\nSorry This Space Is Already Filed!\n\nPlease Increase The Space.....\n";
+                cout << "\nSorry This Space Is Already Filed!\nPlease Increase The Space.....\n";
             }
             else
             {
@@ -72,80 +72,70 @@ public:
         return available_parking_Space;
     }
 
-    // string get_Earnings()
-    // {
-    //     ifstream iffile("Earnings.txt");
-    //     string tor;
-    //     if (!iffile.is_open())
-    //     {
-    //         cout << "File Can't Opening\n";
-    //     }
-    //     while (getline(iffile, tor))
-    //     {
-    //     }
-    //     return tor;
-    // }
-
     void Vehicle_entry()
     {
-        ofstream outfile("Vehicle.txt");
+        ofstream outfile("Vehicle.txt", ios::app);
         if (!outfile.is_open())
         {
             cout << "File Does Not Exist\n";
+            return;
         }
 
-        if (1 <= available_parking_Space)
-        {
-            cout << "Per Car Parking Fee Is :100\n";
-            Earnings = 100;
-            totalIncome.AddParkingTotalIncome(Earnings);
-            totalIncome.addParkingIncome(Earnings);
-            Parking entry;
-
-            cin >> entry;
-
-            outfile << "Car Registeration Number Is :";
-            outfile << entry.carNumber;
-            outfile << endl;
-            outfile << "Car Owner Name :";
-            outfile << entry.carOwner;
-            outfile << endl;
-            outfile << "Car Owner Cnic :";
-            outfile << entry.carOwnerCnic;
-            outfile << endl;
-            outfile << "Car Type Is :";
-            outfile << entry.carType;
-            outfile << endl;
-            outfile << "Car Color Is :";
-            outfile << entry.carColor;
-            outfile << endl;
-            available_parking_Space--;
-            storeParkingSpace();
-        }
-        else
-
+        if (0 == available_parking_Space)
         {
             cout << "Sorry Parking Space Has Reached It's Limit!\n";
+            outfile.close();
+            return;
         }
+        
+        cout << "Per Car Parking Fee Is :100\n";
+        Earnings = 100;
+        totalIncome.AddParkingTotalIncome(Earnings);
+        totalIncome.addParkingIncome(Earnings);
+        Parking entry;
+        cin >> entry;
+        outfile << "Car Registeration Number Is :";
+        outfile << entry.carNumber;
+        outfile << endl;
+        outfile << "Car Owner Name :";
+        outfile << entry.carOwner;
+        outfile << endl;
+        outfile << "Car Owner Cnic :";
+        outfile << entry.carOwnerCnic;
+        outfile << endl;
+        outfile << "Car Type Is :";
+        outfile << entry.carType;
+        outfile << endl;
+        outfile << "Car Color Is :";
+        outfile << entry.carColor;
+        outfile << endl
+                << endl;
+        available_parking_Space--;
+        storeParkingSpace();
+        outfile.close();
     }
+
     void RestoreParkingSpace()
     {
         ifstream file("CurrentParkingSpace.txt");
         if (!file.is_open())
         {
+            cout << "Error File Not Found"<<endl;
         }
         else
         {
             int num;
             string line;
             getline(file, line, ':');
-            getline(file, line,'\n');
+            getline(file, line, '\n');
             num = stoi(line);
             available_parking_Space = num;
+            check = available_parking_Space;
         }
     }
     void storeParkingSpace()
     {
+        try{
         ofstream file("CurrentParkingSpace.txt");
         if (!file.is_open())
         {
@@ -157,10 +147,15 @@ public:
             check = available_parking_Space;
         }
         file.close();
+        }
+        catch ( exception e)
+        {
+            cout << e.what ();
+        }
     }
     void Vehicle_Disentry()
     {
-        string ID; // name of employee variable
+        string ID;
         cout << "\nEnter Car Registeration No :";
         cin >> ID;
         // Open input file for reading
@@ -189,6 +184,7 @@ public:
                 CarFound = true;
                 cout << "Car With Regesteration No " << ID << " Found And Removed.\n";
                 available_parking_Space++;
+                storeParkingSpace();
                 cout << storing << endl;
                 for (int i = 0; i < 5; i++)
                 {
@@ -237,7 +233,7 @@ public:
     }
     friend istream &operator>>(istream &inp, Parking &par)
     {
-        cin.ignore();
+        inp.ignore();
         cout << "Enter Car Registeration No :";
         getline(inp, par.carNumber);
         cout << "Enter Car Owner Name :";

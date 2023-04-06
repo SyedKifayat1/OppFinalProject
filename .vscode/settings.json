@@ -5,7 +5,8 @@
     "fstream": "cpp",
     "filesystem": "cpp",
     "xstring": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "system_error": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

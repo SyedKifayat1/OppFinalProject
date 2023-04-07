@@ -78,11 +78,11 @@ public:
         else
         {
             string add_content;
-            cout << "\nWRITE A MORE DETAILS IN REPORT :\n";
+            cout << "\nWrite A More Details In Report :\n";
             cin.ignore();
             getline(cin, add_content);
             outfile << add_content << endl;
-            cout << "\nREPORT SUCCESSFULLY UPDATED.......\n";
+            cout << "\nReport Successfully Updated.......\n";
         }
         outfile.close();
     }

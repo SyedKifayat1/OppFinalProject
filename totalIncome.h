@@ -108,6 +108,7 @@ public:
             file << "Current Income :" << totalIncome << endl;
             file << "Shops Income :" << ShopTotalIncome << endl;
             file << "Parking Income :" << ParkingTotalIncome << endl;
+            
         }
         file.close();
     }

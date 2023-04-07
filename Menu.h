@@ -2414,6 +2414,7 @@ void Menus::SubManagersReports()
                         "2)Giving Response Or Message\n"
                         "3)Report Approval\n"
                         "4)Check Approval\n"
+    
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice1;
@@ -2422,6 +2423,8 @@ void Menus::SubManagersReports()
                 {
                 case 1:
                 {
+                    cout<<"\nRequired Budget :"<<totalIncome.getMaintenanceBudget();
+                    cout<<"\nReport :";
                     obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
 
                     break;
@@ -2450,7 +2453,8 @@ void Menus::SubManagersReports()
                         obj.MaintenanceManager.ForAccount.setReportStatus(true);
                         if (obj.MaintenanceManager.ForAccount.getReportStatus() == true)
                         {
-                            cout << "\nYou Can Approved The Report.....\n";
+                            totalIncome.subtractEmployeeSalary(totalIncome.getMaintenanceBudget());
+                            cout << "\nYou Can Approved The Report Or Budget.....\n";
                         }
                         break;
                     }
@@ -2459,7 +2463,8 @@ void Menus::SubManagersReports()
                         obj.MaintenanceManager.ForAccount.setReportStatus(false) ;
                         if (obj.MaintenanceManager.ForAccount.getReportStatus() == false)
                         {
-                            cout << "\nYou Can Reject The Report!\n";
+
+                            cout << "\nYou Can Reject The Report Or Budget!\n";
                         }
                         break;
                     }

@@ -1,1 +1,1 @@
-Current Parking Space :1
+Current Parking Space :0

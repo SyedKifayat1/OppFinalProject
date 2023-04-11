@@ -1,0 +1,8 @@
+Employee Id :KING237
+Name :234 234
+Email Address :234
+Job Title :234
+Gender :234
+Phone Number :234
+Salary :234
+Hiring Date :234

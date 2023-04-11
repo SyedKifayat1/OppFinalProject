@@ -5,30 +5,30 @@
 #include "Electricity.h"
 #include <iostream>
 using namespace std;
-//#define 
-class Maintaineance : public Detail, public Report  // multiple inheritance 
+// #define
+class Maintaineance : public Detail, public Report // multiple inheritance
 {
 
 public:
-    int RECORDS;
-   TotalIncome &totalIncome = TotalIncome::getInstance();    // assigneing reprence totalincome to object return by total income 
-   Report ForAccount;   // composition of Report 
-   Employ *maintaineanceEmployee;   // pointer of employ for aggregation 
-   Electricity *Electricity_Records; // 1 2 3 4 2
-  int current_records;
-   Maintaineance()  // default constructor of Maintaineance 
+   int RECORDS;
+   TotalIncome &totalIncome = TotalIncome::getInstance(); // assigneing reprence totalincome to object return by total income
+   Report ForAccount;                                     // composition of Report
+   Employ *maintaineanceEmployee;                         // pointer of employ for aggregation
+   Electricity *Electricity_Records;                      // 1 2 3 4 2
+   int current_records;
+   Maintaineance() // default constructor of Maintaineance
 
    {
       RECORDS = 100;
       current_records = 0;
       Electricity_Records = new Electricity[RECORDS];
    }
-   ~Maintaineance()   // destructor of Maintaineance 
+   ~Maintaineance() // destructor of Maintaineance
    {
       delete maintaineanceEmployee;
       delete Electricity_Records;
    }
-   Maintaineance(Employ *maintaineanceEmployee)   // paramterized constructor of Maintaineance 
+   Maintaineance(Employ *maintaineanceEmployee) // paramterized constructor of Maintaineance
    {
       this->maintaineanceEmployee = maintaineanceEmployee;
       current_records = 0;

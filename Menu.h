@@ -2414,7 +2414,6 @@ void Menus::SubManagersReports()
                         "2)Giving Response Or Message\n"
                         "3)Report Approval\n"
                         "4)Check Approval\n"
-    
                         "0)Exit\n"
                         "Your Choice :";
                 cin >> choice1;

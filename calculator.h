@@ -30,7 +30,7 @@ public:
 class addition : public Calculator<long double>
 {
 public:
-    void calculation() override
+    void calculation() 
     {
         firstSet();
         secondSet();
@@ -40,7 +40,7 @@ public:
 class subtraction : public Calculator<long double>
 {
 public:
-    void calculation() override
+    void calculation() 
     {
         firstSet();
         secondSet();
@@ -50,7 +50,7 @@ public:
 class multiplication : public Calculator<long double>
 {
 public:
-    void calculation() override
+    void calculation()
     {
         firstSet();
         secondSet();
@@ -60,7 +60,7 @@ public:
 class divition : public Calculator<long double>
 {
 public:
-    void calculation() override
+    void calculation()
     {
         firstSet();
         secondSet();
@@ -77,7 +77,7 @@ public:
 class percentage : public Calculator<long double>
 {
 public:
-    void calculation() override
+    void calculation() 
     {
         firstSet();
         secondSet();

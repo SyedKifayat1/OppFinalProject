@@ -26,6 +26,7 @@ public:
         {
             Employee[i].input_Date(filename);
         }
+        delete [] Employee;
     }
     
     void Total_employee_Details(string filename)

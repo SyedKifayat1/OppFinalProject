@@ -12,7 +12,6 @@ class Employ : public Detail
 {
 
 public:
-    Employ *Employee;
     
     void input_Data(string filename)
     {
@@ -24,7 +23,7 @@ public:
         Employ *Employee = new Employ[p];
         for (int i = 0; i < p; i++)
         {
-            Employee[i].input_Date(filename);
+            Employee[i].input_Data(filename);
         }
         delete [] Employee;
     }

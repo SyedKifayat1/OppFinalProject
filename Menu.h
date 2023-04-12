@@ -11,29 +11,17 @@ private:
     string choice1;
     int ch;
     int check;
+    
     TotalIncome &totalIncome = TotalIncome::getInstance();
     Manager obj;
-    Accounts<long double> account;
-    Employ *employee = new Employ();
-    Maintaineance *maintaineance = new Maintaineance(employee);
-    Parking *parking = new Parking(employee);
-    Shops *shop = new Shops(employee);
-
+   
 public:
     Menus()
     {
         check = 0;
         ch = 0;
-    }
-    
-    ~Menus()
-    {
-        delete shop;
-        delete parking;
-        delete maintaineance;
-        delete employee;
-    }
-
+    } 
+    ~Menus(){}
     void Menu();
     void HeadMenu();
     void SubManagerMenu();
@@ -102,13 +90,11 @@ void Menus::Menu()
 {
 
     totalIncome.restoreAccountsData();
-    obj.ParkingManager.RestoreParkingSpace();
+    obj.ParkingManager->RestoreParkingSpace();
     while (ch == 0)
     {
 
         system("clear");
-
-        // cin.get();
         cout << "\n.........Welcome To Mall Mangement System.........\n\n";
         cout << "Select Your Status :\n"
                 "1)Head\n"
@@ -119,16 +105,13 @@ void Menus::Menu()
         choice = InvaidChoice();
 
         {
-
             switch (choice)
             {
             case 1:
             {
-
                 HeadMenu();
                 break;
             }
-
             case 2:
             {
                 SubManagerMenu();
@@ -172,8 +155,7 @@ void Menus::HeadMenu()
         switch (choice)
         {
         case 1:
-        {
-
+        { 
             ManageSubManager();
             break;
         }
@@ -576,13 +558,13 @@ void Menus::ShopsRent()
         case 1:
         {
             // write a code for checking the rent of shop by its id
-            obj.ShopsManager.gettingShopRentDetails();
+            obj.ShopsManager->gettingShopRentDetails();
             break;
         }
         case 2:
         {
             // write a code for showing the whole shops rent and also show those shop those dose not give the rent
-            obj.ShopsManager.gettingAllshopsRentsDetails();
+            obj.ShopsManager->gettingAllshopsRentsDetails();
             break;
         }
         case 3:
@@ -711,7 +693,7 @@ void Menus::BuildingRequirements()
 void Menus::add_Electicity_Details()
 {
 
-    obj.MaintenanceManager.read_all_records_file();
+    obj.MaintenanceManager->read_all_records_file();
     while (ch == 0)
     {
         cin.ignore();
@@ -726,18 +708,18 @@ void Menus::add_Electicity_Details()
         {
         case 1:
         {
-            obj.MaintenanceManager.add_single_electricity_record(obj.MaintenanceManager.get_current_Records());
+            obj.MaintenanceManager->add_single_electricity_record(obj.MaintenanceManager->get_current_Records());
 
             break;
         }
         case 2:
         {
-            obj.MaintenanceManager.modify_record_file();
+            obj.MaintenanceManager->modify_record_file();
             break;
         }
         case 3:
         {
-            obj.MaintenanceManager.print_all_records();
+            obj.MaintenanceManager->print_all_records();
             break;
         }
 
@@ -780,25 +762,25 @@ void Menus::MaintenanceEmployee()
         {
         case 1:
         {
-            maintaineance->maintaineanceEmployee->input_Data("MaintenanceEmployee");
+            obj.MaintenanceManager->maintaineanceEmployee->input_Data("MaintenanceEmployee");
 
             break;
         }
         case 2:
         {
-            maintaineance->Remove_Employee("MaintenanceEmployee");
+            obj.MaintenanceManager->Remove_Employee("MaintenanceEmployee");
             // write a code for removing employee
             break;
         }
         case 3:
         {
-            maintaineance->Replace_employ("MaintenanceEmployee");
+            obj.MaintenanceManager->Replace_employ("MaintenanceEmployee");
             // write a code for replacing employee
             break;
         }
         case 4:
         {
-            maintaineance->maintaineanceEmployee->Total_employee_Details("MaintenanceEmployee");
+            obj.MaintenanceManager->maintaineanceEmployee->Total_employee_Details("MaintenanceEmployee");
             // write a code for total employee details
             break;
         }
@@ -863,14 +845,14 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.set_available_parking(); // vehicle entry
+                    obj.ParkingManager->set_available_parking(); // vehicle entry
                     break;
                 }
                 case 2:
                 {
                     try
                     {
-                        obj.ParkingManager.Vehicle_entry(); // vehicle disentry
+                        obj.ParkingManager->Vehicle_entry(); // vehicle disentry
                     }
                     catch (exception e)
                     {
@@ -885,7 +867,7 @@ void Menus::ParkingManager()
                 }
                 case 3:
                 {
-                    obj.ParkingManager.Vehicle_Disentry();
+                    obj.ParkingManager->Vehicle_Disentry();
                     // write a code )for available space
                     break;
                 }
@@ -931,25 +913,25 @@ void Menus::ParkingManager()
                 {
                 case 1:
                 {
-                    parking->parkingEmployee->input_Data("ParkingEmployee");
+                    obj.ParkingManager->parkingEmployee->input_Data("ParkingEmployee");
                     // write a code for adding employee
                     break;
                 }
                 case 2:
                 {
-                    parking->Remove_Employee("ParkingEmployee");
+                    obj.ParkingManager->Remove_Employee("ParkingEmployee");
                     // write a code for removing employee
                     break;
                 }
                 case 3:
                 {
-                    parking->Replace_employ("ParkingEmployee");
+                    obj.ParkingManager->Replace_employ("ParkingEmployee");
                     // write a code for replacing employee
                     break;
                 }
                 case 4:
                 {
-                    parking->parkingEmployee->Total_employee_Details("ParkingEmployee");
+                    obj.ParkingManager->parkingEmployee->Total_employee_Details("ParkingEmployee");
                     // write a code for total employee details
                     break;
                 }
@@ -1025,25 +1007,25 @@ void Menus::ShopsManager()
         }
         case 2:
         {
-            shop->check_owner_Date();
+            obj.ShopsManager->check_owner_Date();
             break;
         }
         case 3:
         {
             // shop->function_Taking_shops();
-            shop->add_shop_Data();
+            obj.ShopsManager->add_shop_Data();
             // write a code for regestring shop
             break;
         }
         case 4:
         {
-            shop->add_shop_owner_data();
+            obj.ShopsManager->add_shop_owner_data();
             // write a code for adding a chop honour
             break;
         }
         case 5:
         {
-            shop->replace_shop_owner();
+            obj.ShopsManager->replace_shop_owner();
             // write a code for replacing shop honour
             break;
         }
@@ -1098,7 +1080,7 @@ void Menus::ControlAccountManager()
         case 1:
         {
             
-            obj.AccountManager.input_Date("Manager");
+            obj.AccountManager.input_Data("Manager");
             break;
         }
         case 2:
@@ -1215,39 +1197,39 @@ void Menus::ControlMaintenanceManager()
         case 1:
         {
             
-            obj.MaintenanceManager.input_Date("Manager");
+            obj.MaintenanceManager->input_Data("Manager");
             break;
         }
         case 2:
         {
-            obj.MaintenanceManager.Remove_Employee("Manager");
+            obj.MaintenanceManager->Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            obj.MaintenanceManager.Replace_employ("Manager");
+            obj.MaintenanceManager->Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            obj.MaintenanceManager.Display_Data("Manager");
+            obj.MaintenanceManager->Display_Data("Manager");
             break;
         }
         case 5:
         {
-            obj.MaintenanceManager.ReadReport("MaintenanceReportForHead");
+            obj.MaintenanceManager->ReadReport("MaintenanceReportForHead");
             break;
         }
         case 6:
 
         {
-            obj.MaintenanceManager.WriteResponse("HeadResponceToMaintenanceReport");
+            obj.MaintenanceManager->WriteResponse("HeadResponceToMaintenanceReport");
             break;
         }
         case 7:
         {
             cout << "\nGive Your Responce :\n";
-            obj.MaintenanceManager.ReadReport("MaintenanceReportForHead");
+            obj.MaintenanceManager->ReadReport("MaintenanceReportForHead");
             cout << endl;
             cout << "Select Your Choice :\n"
                     "1)Approved\n"
@@ -1258,8 +1240,8 @@ void Menus::ControlMaintenanceManager()
             {
             case 1:
             {
-                obj.MaintenanceManager.setReportStatus(true) ;
-                if (obj.MaintenanceManager.getReportStatus() == true)
+                obj.MaintenanceManager->setReportStatus(true) ;
+                if (obj.MaintenanceManager->getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
                 }
@@ -1267,8 +1249,8 @@ void Menus::ControlMaintenanceManager()
             }
             case 2:
             {
-                obj.MaintenanceManager.  setReportStatus(false);
-                if (obj.MaintenanceManager.getReportStatus() == false)
+                obj.MaintenanceManager->  setReportStatus(false);
+                if (obj.MaintenanceManager->getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
                 }
@@ -1282,7 +1264,7 @@ void Menus::ControlMaintenanceManager()
         }
         case 8:
         {
-            obj.MaintenanceManager.ReportsStatus();
+            obj.MaintenanceManager->ReportsStatus();
             break;
         }
         case 0:
@@ -1329,39 +1311,39 @@ void Menus::ControlParkingManager()
         case 1:
         {
             
-            obj.ParkingManager.input_Date("Manager");
+            obj.ParkingManager->input_Data("Manager");
             break;
         }
         case 2:
         {
-            obj.ParkingManager.Remove_Employee("Manager");
+            obj.ParkingManager->Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            obj.ParkingManager.Replace_employ("Manager");
+            obj.ParkingManager->Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            obj.ParkingManager.Display_Data("Manager");
+            obj.ParkingManager->Display_Data("Manager");
             break;
         }
         case 5:
         {
-            obj.ParkingManager.ReadReport("ParkingReportForHead");
+            obj.ParkingManager->ReadReport("ParkingReportForHead");
             break;
         }
         case 6:
 
         {
-            obj.ParkingManager.WriteResponse("HeadResponceToParkingReport");
+            obj.ParkingManager->WriteResponse("HeadResponceToParkingReport");
             break;
         }
         case 7:
         {
             cout << "\nGive Your Responce :\n";
-            obj.ParkingManager.ReadReport("ParkingReportForHead");
+            obj.ParkingManager->ReadReport("ParkingReportForHead");
             cout << endl;
             cout << "Select Your Choice :\n"
                     "1)Approved\n"
@@ -1372,8 +1354,8 @@ void Menus::ControlParkingManager()
             {
             case 1:
             {
-                obj.ParkingManager. setReportStatus(true);
-                if (obj.ParkingManager.getReportStatus() == true)
+                obj.ParkingManager-> setReportStatus(true);
+                if (obj.ParkingManager->getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
                 }
@@ -1381,8 +1363,8 @@ void Menus::ControlParkingManager()
             }
             case 2:
             {
-                obj.ParkingManager.setReportStatus(false) ;
-                if (obj.ParkingManager.getReportStatus() == false)
+                obj.ParkingManager->setReportStatus(false) ;
+                if (obj.ParkingManager->getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
                 }
@@ -1396,7 +1378,7 @@ void Menus::ControlParkingManager()
         }
         case 8:
         {
-            obj.ParkingManager.ReportsStatus();
+            obj.ParkingManager->ReportsStatus();
             break;
         }
         case 0:
@@ -1443,39 +1425,39 @@ void Menus::ControlShopsManager()
         case 1:
         {
             
-            obj.ShopsManager.input_Date("Manager");
+            obj.ShopsManager->input_Data("Manager");
             break;
         }
         case 2:
         {
-            obj.ShopsManager.Remove_Employee("Manager");
+            obj.ShopsManager->Remove_Employee("Manager");
             break;
         }
         case 3:
         {
-            obj.ShopsManager.Replace_employ("Manager");
+            obj.ShopsManager->Replace_employ("Manager");
             break;
         }
         case 4:
         {
-            obj.ShopsManager.Display_Data("Manager");
+            obj.ShopsManager->Display_Data("Manager");
             break;
         }
         case 5:
         {
-            obj.ShopsManager.ReadReport("ShopReportForHead");
+            obj.ShopsManager->ReadReport("ShopReportForHead");
             break;
         }
         case 6:
 
         {
-            obj.ShopsManager.WriteResponse("HeadResponceToShopReport");
+            obj.ShopsManager->WriteResponse("HeadResponceToShopReport");
             break;
         }
         case 7:
         {
             cout << "\nGive Your Responce :\n";
-            obj.ShopsManager.ReadReport("ShopReportForHead");
+            obj.ShopsManager->ReadReport("ShopReportForHead");
             cout << endl;
             cout << "Select Your Choice :\n"
                     "1)Approved\n"
@@ -1486,8 +1468,8 @@ void Menus::ControlShopsManager()
             {
             case 1:
             {
-                obj.ShopsManager.setReportStatus(true) ;
-                if (obj.ShopsManager.getReportStatus() == true)
+                obj.ShopsManager->setReportStatus(true) ;
+                if (obj.ShopsManager->getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
                 }
@@ -1495,8 +1477,8 @@ void Menus::ControlShopsManager()
             }
             case 2:
             {
-                obj.ShopsManager.setReportStatus(false) ;
-                if (obj.ShopsManager.getReportStatus() == false)
+                obj.ShopsManager->setReportStatus(false) ;
+                if (obj.ShopsManager->getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
                 }
@@ -1510,7 +1492,7 @@ void Menus::ControlShopsManager()
         }
         case 8:
         {
-            obj.ShopsManager.ReportsStatus();
+            obj.ShopsManager->ReportsStatus();
             break;
         }
         case 0:
@@ -1567,12 +1549,12 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    account.Display_Data("AccountEmployee");
+                    obj.AccountManager.Display_Data("AccountEmployee");
                     break;
                 }
                 case 2:
                 {
-                    account.accountEmployee.Total_employee_Details("AccountEmployee");
+                    obj.AccountManager.accountEmployee.Total_employee_Details("AccountEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1616,13 +1598,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    shop->Display_Data("ShopsEmployee");
+                    obj.ShopsManager->Display_Data("ShopsEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    shop->shopsEmployee->Total_employee_Details("ShopsEmployee");
+                    obj.ShopsManager->shopsEmployee->Total_employee_Details("ShopsEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1665,13 +1647,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    maintaineance->Display_Data("MaintenanceEmployee");
+                    obj.MaintenanceManager->Display_Data("MaintenanceEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    maintaineance->maintaineanceEmployee->Total_employee_Details("MaintenanceEmployee");
+                    obj.MaintenanceManager->maintaineanceEmployee->Total_employee_Details("MaintenanceEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1713,13 +1695,13 @@ void Menus::EmployeeDetails()
                 {
                 case 1:
                 {
-                    parking->Display_Data("ParkingEmployee");
+                    obj.ParkingManager->Display_Data("ParkingEmployee");
                     // wirte a code for getting data with ID No
                     break;
                 }
                 case 2:
                 {
-                    parking->parkingEmployee->Total_employee_Details("ParkingEmployee");
+                    obj.ParkingManager->parkingEmployee->Total_employee_Details("ParkingEmployee");
                     // write a code for getting data as a whole
                     break;
                 }
@@ -1782,13 +1764,13 @@ void Menus::ShopDetails()
         {
         case 1:
         {
-            shop->getting_shop_details();
+            obj.ShopsManager->getting_shop_details();
             // wirte a code for getting details with shop ID No
             break;
         }
         case 2:
         {
-            shop->getting_whole_shops_details();
+            obj.ShopsManager->getting_whole_shops_details();
             // write a code for getting details of whole shops
             break;
         }
@@ -1892,13 +1874,13 @@ void Menus::ParkingDetails()
         }
         case 2:
         {
-            cout << obj.ParkingManager.get_available_parking();
+            cout << obj.ParkingManager->get_available_parking();
             // write a code for parking cars and other details
             break;
         }
         case 3:
         {
-            obj.ParkingManager.vehicle_details();
+            obj.ParkingManager->vehicle_details();
             // write a code for vehicle details by number plate number
         }
         case 0:
@@ -1940,7 +1922,7 @@ void Menus::MaintenanceDetails()
         {
 
             // write a electricity class code for the head whom can only read the details
-            obj.MaintenanceManager.print_all_records();
+            obj.MaintenanceManager->print_all_records();
 
             break;
         }
@@ -2032,17 +2014,17 @@ void Menus::PaymentProcessing()
         case 3:
         {
             ofstream file("PaidMaintenanceEmployeeData.txt", ios::app);
-            obj.MaintenanceManager.maintaineanceEmployee->Display_Data("MaintenanceEmployee");
-            if (obj.MaintenanceManager.maintaineanceEmployee->getCheck() == 1)
+            obj.MaintenanceManager->maintaineanceEmployee->Display_Data("MaintenanceEmployee");
+            if (obj.MaintenanceManager->maintaineanceEmployee->getCheck() == 1)
             {
                 cout << "\nEnter Salary :";
                 cin >> Salary;
                 if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
                 {
 
-                    file << "Emloyee Id :" << obj.MaintenanceManager.maintaineanceEmployee->getUser_Id() << endl;
+                    file << "Emloyee Id :" << obj.MaintenanceManager->maintaineanceEmployee->getUser_Id() << endl;
                     file << "Salary :" << Salary << endl;
-                    obj.MaintenanceManager.totalIncome.subtractEmployeeSalary(Salary);
+                    obj.MaintenanceManager->totalIncome.subtractEmployeeSalary(Salary);
                     cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
                 }
                 else
@@ -2056,17 +2038,17 @@ void Menus::PaymentProcessing()
         case 4:
         {
             ofstream file("PaidParkingEmployeeData.txt", ios::app);
-            obj.ParkingManager.parkingEmployee->Display_Data("ParkingEmployee");
-            if (obj.ParkingManager.parkingEmployee->getCheck() == 1)
+            obj.ParkingManager->parkingEmployee->Display_Data("ParkingEmployee");
+            if (obj.ParkingManager->parkingEmployee->getCheck() == 1)
             {
                 cout << "\nEnter Salary :";
                 cin >> Salary;
                 if (Salary < obj.AccountManager.totalIncome.getTotalIncome())
                 {
 
-                    file << "Emloyee Id :" << obj.ParkingManager.parkingEmployee->getUser_Id() << endl;
+                    file << "Emloyee Id :" << obj.ParkingManager->parkingEmployee->getUser_Id() << endl;
                     file << "Salary :" << Salary << endl;
-                    obj.ParkingManager.totalIncome.subtractEmployeeSalary(Salary);
+                    obj.ParkingManager->totalIncome.subtractEmployeeSalary(Salary);
                     cout << "\nNow Current Balance Is :" << obj.AccountManager.totalIncome.getTotalIncome();
                 }
                 else
@@ -2337,19 +2319,19 @@ void Menus::MaintenanceBudget()
                     long double budget;
                     cout << "\nEnter Your Required Budget :";
                     cin >> budget;
-                    obj.MaintenanceManager.totalIncome.setMaintenanceBudget(budget);
+                    obj.MaintenanceManager->totalIncome.setMaintenanceBudget(budget);
                     break;
                 }
                 case 2:
                 {
-                    cout << "\nYour Required Budget Is :" << obj.MaintenanceManager.totalIncome.getMaintenanceBudget() << endl;
+                    cout << "\nYour Required Budget Is :" << obj.MaintenanceManager->totalIncome.getMaintenanceBudget() << endl;
                 }
                 case 3:
                 {
                     long double budget;
                     cout << "\nWho Much Budget You Want To Increase :";
                     cin >> budget;
-                    obj.MaintenanceManager.totalIncome.setMaintenanceBudget(budget);
+                    obj.MaintenanceManager->totalIncome.setMaintenanceBudget(budget);
                 }
                 case 0:
                 {
@@ -2428,20 +2410,20 @@ void Menus::SubManagersReports()
                 {
                     cout<<"\nRequired Budget :"<<totalIncome.getMaintenanceBudget();
                     cout<<"\nReport :";
-                    obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
+                    obj.MaintenanceManager->ForAccount.ReadReport("MaintenanceReportForAccount");
 
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.WriteResponse("AccountResponceToMaintenanceReport");
+                    obj.MaintenanceManager->ForAccount.WriteResponse("AccountResponceToMaintenanceReport");
                     break;
                 }
                 case 3:
                 {
 
                     cout << "\nGive Your Responce :\n";
-                    obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
+                    obj.MaintenanceManager->ForAccount.ReadReport("MaintenanceReportForAccount");
                     cout << endl;
                     cout << "Select Your Choice :\n"
                             "1)Approved\n"
@@ -2453,8 +2435,8 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.MaintenanceManager.ForAccount.setReportStatus(true);
-                        if (obj.MaintenanceManager.ForAccount.getReportStatus() == true)
+                        obj.MaintenanceManager->ForAccount.setReportStatus(true);
+                        if (obj.MaintenanceManager->ForAccount.getReportStatus() == true)
                         {
                             totalIncome.subtractEmployeeSalary(totalIncome.getMaintenanceBudget());
                             cout << "\nYou Can Approved The Report Or Budget.....\n";
@@ -2463,8 +2445,8 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.MaintenanceManager.ForAccount.setReportStatus(false) ;
-                        if (obj.MaintenanceManager.ForAccount.getReportStatus() == false)
+                        obj.MaintenanceManager->ForAccount.setReportStatus(false) ;
+                        if (obj.MaintenanceManager->ForAccount.getReportStatus() == false)
                         {
 
                             cout << "\nYou Can Reject The Report Or Budget!\n";
@@ -2487,7 +2469,7 @@ void Menus::SubManagersReports()
                 }
                 case 4:
                 {
-                    obj.MaintenanceManager.ForAccount.ReportsStatus();
+                    obj.MaintenanceManager->ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -2531,19 +2513,19 @@ void Menus::SubManagersReports()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.ForAccount.ReadReport("ParkingReportForAccount");
+                    obj.ParkingManager->ForAccount.ReadReport("ParkingReportForAccount");
 
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.WriteResponse("AccountResponceToParkingReport");
+                    obj.ParkingManager->ForAccount.WriteResponse("AccountResponceToParkingReport");
                     break;
                 }
                 case 3:
                 {
                     cout << "\nGive Your Responce :\n";
-                    obj.ParkingManager.ForAccount.ReadReport("ParkingReportForAccount");
+                    obj.ParkingManager->ForAccount.ReadReport("ParkingReportForAccount");
                     cout << endl;
                     cout << "Select Your Choice :\n"
                             "1)Approved\n"
@@ -2555,8 +2537,8 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.ParkingManager.ForAccount.setReportStatus(true) ;
-                        if (obj.ParkingManager.ForAccount.getReportStatus() == true)
+                        obj.ParkingManager->ForAccount.setReportStatus(true) ;
+                        if (obj.ParkingManager->ForAccount.getReportStatus() == true)
                         {
                             cout << "\nYou Can Approved The Report.....\n";
                         }
@@ -2564,8 +2546,8 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.ParkingManager.ForAccount.setReportStatus(false) ;
-                        if (obj.ParkingManager.ForAccount.getReportStatus() == false)
+                        obj.ParkingManager->ForAccount.setReportStatus(false) ;
+                        if (obj.ParkingManager->ForAccount.getReportStatus() == false)
                         {
                             cout << "\nYou Can Reject The Report!\n";
                         }
@@ -2587,7 +2569,7 @@ void Menus::SubManagersReports()
                 }
                 case 4:
                 {
-                    obj.ParkingManager.ForAccount.ReportsStatus();
+                    obj.ParkingManager->ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -2630,20 +2612,20 @@ void Menus::SubManagersReports()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.ForAccount.ReadReport("ShopReportForAccount");
+                    obj.ShopsManager->ForAccount.ReadReport("ShopReportForAccount");
 
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.WriteResponse("AccountResponceToShopReport");
+                    obj.ShopsManager->ForAccount.WriteResponse("AccountResponceToShopReport");
                     break;
                 }
                 case 3:
                 {
 
                     cout << "\nGive Your Responce :\n";
-                    obj.ShopsManager.ForAccount.ReadReport("ShopReportForAccount");
+                    obj.ShopsManager->ForAccount.ReadReport("ShopReportForAccount");
                     cout << endl;
                     cout << "Select Your Choice :\n"
                             "1)Approved\n"
@@ -2655,8 +2637,8 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.ShopsManager.ForAccount.setReportStatus(true) ;
-                        if (obj.ShopsManager.ForAccount.getReportStatus() == true)
+                        obj.ShopsManager->ForAccount.setReportStatus(true) ;
+                        if (obj.ShopsManager->ForAccount.getReportStatus() == true)
                         {
                             cout << "\nYou Can Approved The Report.....\n";
                         }
@@ -2664,8 +2646,8 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.ShopsManager.ForAccount.setReportStatus(false) ;
-                        if (obj.ShopsManager.ForAccount.getReportStatus() == false)
+                        obj.ShopsManager->ForAccount.setReportStatus(false) ;
+                        if (obj.ShopsManager->ForAccount.getReportStatus() == false)
                         {
                             cout << "\nYou Can Reject The Report!\n";
                         }
@@ -2687,7 +2669,7 @@ void Menus::SubManagersReports()
                 }
                 case 4:
                 {
-                    obj.ShopsManager.ForAccount.ReportsStatus();
+                    obj.ShopsManager->ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -2752,22 +2734,22 @@ void Menus::AccountEmployees()
         {
         case 1:
         {
-            account.accountEmployee.input_Data("AccountEmployee");
+            obj.AccountManager.accountEmployee.input_Data("AccountEmployee");
             break;
         }
         case 2:
         {
-            account.Remove_Employee("AccountEmployee");
+            obj.AccountManager.Remove_Employee("AccountEmployee");
             break;
         }
         case 3:
         {
-            account.Replace_employ("AccountEmployee");
+            obj.AccountManager.Replace_employ("AccountEmployee");
             break;
         }
         case 4:
         {
-            account.accountEmployee.Total_employee_Details("AccountEmployee");
+            obj.AccountManager.accountEmployee.Total_employee_Details("AccountEmployee");
             break;
         }
         case 0:
@@ -2831,12 +2813,12 @@ void Menus::MaintenanceManagerReport()
                 {
                 case 1:
                 {
-                    obj.MaintenanceManager.Add_report("MaintenanceReportForHead");
+                    obj.MaintenanceManager->Add_report("MaintenanceReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.Add_report("MaintenanceReportForAccount");
+                    obj.MaintenanceManager->ForAccount.Add_report("MaintenanceReportForAccount");
                     break;
                 }
                 case 0:
@@ -2880,12 +2862,12 @@ void Menus::MaintenanceManagerReport()
                 {
                 case 1:
                 {
-                    obj.MaintenanceManager.Edit_report("MaintenanceReportForHead");
+                    obj.MaintenanceManager->Edit_report("MaintenanceReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.Edit_report("MaintenanceReportForAccount");
+                    obj.MaintenanceManager->ForAccount.Edit_report("MaintenanceReportForAccount");
                     break;
                 }
                 case 0:
@@ -2929,12 +2911,12 @@ void Menus::MaintenanceManagerReport()
                 {
                 case 1:
                 {
-                    obj.MaintenanceManager.ReadReport("MaintenanceReportForHead");
+                    obj.MaintenanceManager->ReadReport("MaintenanceReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.ReadReport("MaintenanceReportForAccount");
+                    obj.MaintenanceManager->ForAccount.ReadReport("MaintenanceReportForAccount");
                     break;
                 }
                 case 0:
@@ -2978,12 +2960,12 @@ void Menus::MaintenanceManagerReport()
                 {
                 case 1:
                 {
-                    obj.MaintenanceManager.Add_report("MaintenanceReportForHead");
+                    obj.MaintenanceManager->Add_report("MaintenanceReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.Add_report("MaintenanceReportForAccount");
+                    obj.MaintenanceManager->ForAccount.Add_report("MaintenanceReportForAccount");
                     break;
                 }
                 case 0:
@@ -3026,12 +3008,12 @@ void Menus::MaintenanceManagerReport()
                 {
                 case 1:
                 {
-                    obj.MaintenanceManager.Delete_report("MaintenanceReportForHead");
+                    obj.MaintenanceManager->Delete_report("MaintenanceReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.Delete_report("MaintenanceReportForAccount");
+                    obj.MaintenanceManager->ForAccount.Delete_report("MaintenanceReportForAccount");
                     break;
                 }
                 case 0:
@@ -3075,12 +3057,12 @@ void Menus::MaintenanceManagerReport()
                 {
                 case 1:
                 {
-                    obj.MaintenanceManager.ReportsStatus();
+                    obj.MaintenanceManager->ReportsStatus();
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.ReportsStatus();
+                    obj.MaintenanceManager->ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -3124,12 +3106,12 @@ void Menus::MaintenanceManagerReport()
                 {
                 case 1:
                 {
-                    obj.MaintenanceManager.ReadResponse("HeadResponceToMaintenanceReport");
+                    obj.MaintenanceManager->ReadResponse("HeadResponceToMaintenanceReport");
                     break;
                 }
                 case 2:
                 {
-                    obj.MaintenanceManager.ForAccount.ReadResponse("AccountResponceToMaintenanceReport");
+                    obj.MaintenanceManager->ForAccount.ReadResponse("AccountResponceToMaintenanceReport");
                     break;
                 }
                 case 0:
@@ -3216,12 +3198,12 @@ void Menus::ParkingManagerReport()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.Add_report("ParkingReportForHead");
+                    obj.ParkingManager->Add_report("ParkingReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.Add_report("ParkingReportForAccount");
+                    obj.ParkingManager->ForAccount.Add_report("ParkingReportForAccount");
                     break;
                 }
                 case 0:
@@ -3265,12 +3247,12 @@ void Menus::ParkingManagerReport()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.Edit_report("ParkingReportForHead");
+                    obj.ParkingManager->Edit_report("ParkingReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.Edit_report("ParkingReportForAccount");
+                    obj.ParkingManager->ForAccount.Edit_report("ParkingReportForAccount");
                     break;
                 }
                 case 0:
@@ -3314,12 +3296,12 @@ void Menus::ParkingManagerReport()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.ReadReport("ParkingReportForHead");
+                    obj.ParkingManager->ReadReport("ParkingReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.ReadReport("ParkingReportForAccount");
+                    obj.ParkingManager->ForAccount.ReadReport("ParkingReportForAccount");
                     break;
                 }
                 case 0:
@@ -3363,12 +3345,12 @@ void Menus::ParkingManagerReport()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.Add_report("ParkingReportForHead");
+                    obj.ParkingManager->Add_report("ParkingReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.Add_report("ParkingReportForAccount");
+                    obj.ParkingManager->ForAccount.Add_report("ParkingReportForAccount");
                     break;
                 }
                 case 0:
@@ -3411,12 +3393,12 @@ void Menus::ParkingManagerReport()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.Delete_report("ParkingReportForHead");
+                    obj.ParkingManager->Delete_report("ParkingReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.Delete_report("ParkingReportForAccount");
+                    obj.ParkingManager->ForAccount.Delete_report("ParkingReportForAccount");
                     break;
                 }
                 case 0:
@@ -3460,12 +3442,12 @@ void Menus::ParkingManagerReport()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.ReportsStatus();
+                    obj.ParkingManager->ReportsStatus();
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.ReportsStatus();
+                    obj.ParkingManager->ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -3509,12 +3491,12 @@ void Menus::ParkingManagerReport()
                 {
                 case 1:
                 {
-                    obj.ParkingManager.ReadResponse("HeadResponceToParkingReport");
+                    obj.ParkingManager->ReadResponse("HeadResponceToParkingReport");
                     break;
                 }
                 case 2:
                 {
-                    obj.ParkingManager.ForAccount.ReadResponse("AccountResponceToParkingReport");
+                    obj.ParkingManager->ForAccount.ReadResponse("AccountResponceToParkingReport");
                     break;
                 }
                 case 0:
@@ -3597,12 +3579,12 @@ void Menus::ShopManagerReport()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.Add_report("ShopReportForHead");
+                    obj.ShopsManager->Add_report("ShopReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.Add_report("ShopReportForAccount");
+                    obj.ShopsManager->ForAccount.Add_report("ShopReportForAccount");
                     break;
                 }
                 case 0:
@@ -3646,12 +3628,12 @@ void Menus::ShopManagerReport()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.Edit_report("ShopReportForHead");
+                    obj.ShopsManager->Edit_report("ShopReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.Edit_report("ShopReportForAccount");
+                    obj.ShopsManager->ForAccount.Edit_report("ShopReportForAccount");
                     break;
                 }
                 case 0:
@@ -3695,12 +3677,12 @@ void Menus::ShopManagerReport()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.ReadReport("ShopReportForHead");
+                    obj.ShopsManager->ReadReport("ShopReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.ReadReport("ShopReportForAccount");
+                    obj.ShopsManager->ForAccount.ReadReport("ShopReportForAccount");
                     break;
                 }
                 case 0:
@@ -3744,12 +3726,12 @@ void Menus::ShopManagerReport()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.Add_report("ShopReportForHead");
+                    obj.ShopsManager->Add_report("ShopReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.Add_report("ShopReportForAccount");
+                    obj.ShopsManager->ForAccount.Add_report("ShopReportForAccount");
                     break;
                 }
                 case 0:
@@ -3792,12 +3774,12 @@ void Menus::ShopManagerReport()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.Delete_report("ShopReportForHead");
+                    obj.ShopsManager->Delete_report("ShopReportForHead");
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.Delete_report("ShopReportForAccount");
+                    obj.ShopsManager->ForAccount.Delete_report("ShopReportForAccount");
                     break;
                 }
                 case 0:
@@ -3841,12 +3823,12 @@ void Menus::ShopManagerReport()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.ReportsStatus();
+                    obj.ShopsManager->ReportsStatus();
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.ReportsStatus();
+                    obj.ShopsManager->ForAccount.ReportsStatus();
                     break;
                 }
                 case 0:
@@ -3890,12 +3872,12 @@ void Menus::ShopManagerReport()
                 {
                 case 1:
                 {
-                    obj.ShopsManager.ReadResponse("HeadResponceToShopReport");
+                    obj.ShopsManager->ReadResponse("HeadResponceToShopReport");
                     break;
                 }
                 case 2:
                 {
-                    obj.ShopsManager.ForAccount.ReadResponse("AccountResponceToShopReport");
+                    obj.ShopsManager->ForAccount.ReadResponse("AccountResponceToShopReport");
                     break;
                 }
                 case 0:

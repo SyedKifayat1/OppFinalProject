@@ -7,11 +7,11 @@ istream &operator>>(istream &in, Detail &x)
 
     
     cout << "\nEnter Your First Name :";
-    in >> x.fname;
+    in >> x.FirstName;
     cout << "\nEnter Your Last Name :";
-    in >> x.lname;
+    in >> x.LastName;
     cout << "\nEnter Your Email Id :";
-    in >> x.EmailADdress;
+    in >> x.EmailAddress;
     cout << "\nEnter Your Job Title :";
     in >> x.JobTitle;
     cout << "\nEnter Your Gender :";
@@ -27,9 +27,9 @@ istream &operator>>(istream &in, Detail &x)
 
 ostream &operator<<(ostream &out, const Detail &y)
 { // non-member function for displaying
-    out << "FIRST NAME :" << y.fname << endl;
-    out << "LAST NAME :" << y.lname << endl;
-    out << "EMAIL ID :" << y.EmailADdress << endl;
+    out << "FIRST NAME :" << y.FirstName << endl;
+    out << "LAST NAME :" << y.LastName << endl;
+    out << "EMAIL ID :" << y.EmailAddress << endl;
     out << "Job Title :" << y.JobTitle; 
     out << "GENDER :" << y.gender << endl;
     out << "PHONE NUMBER :" << y.PhoneNum << endl;

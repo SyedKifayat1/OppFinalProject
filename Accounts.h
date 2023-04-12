@@ -6,14 +6,8 @@
 #include "Employee.h"
 class Report;
 using namespace std;
-template <class T>
 class Accounts : public Detail, public Report
 {
-
-private:
-    T parkingIncome;
-    T shopsIncome;
-
 public:
     TotalIncome &totalIncome = TotalIncome::getInstance();
     Accounts() {}

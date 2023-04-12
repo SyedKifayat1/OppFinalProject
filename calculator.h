@@ -4,27 +4,27 @@ template <class T>
 class Calculator
 {
 private:
-    T first, second;
+    T firstNum, secondNum;
 
 public:
     virtual void calculation() = 0;
     void firstSet()
     {
         cout << "\nEnter First Number :";
-        cin >> first;
+        cin >> firstNum;
     }
     T firstGet()
     {
-        return first;
+        return firstNum;
     }
     void secondSet()
     {
         cout << "\nEnter Second Number :";
-        cin >> second;
+        cin >> secondNum;
     }
     T secondGet()
     {
-        return second;
+        return secondNum;
     }
 };
 class addition : public Calculator<long double>

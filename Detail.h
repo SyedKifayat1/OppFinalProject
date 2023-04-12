@@ -11,7 +11,7 @@ using namespace std;
 class Detail
 {
 private:
-    string fname, lname, EmailADdress, JobTitle, gender, user_id, hiringDate; // attribute
+    string FirstName, LastName, EmailAddress, JobTitle, gender, user_id, hiringDate; // attribute
     unsigned long int salary, PhoneNum;                                       // unsigned long int store 32 bit
     int check;
 
@@ -25,7 +25,7 @@ public:
         return user_id;
     }
     Detail() {}                      // default constructor
-    void input_Date(string fileName) //  this function take file name to input data into file
+    void input_Data(string fileName) //  this function take file name to input data into file
     {
         Detail get;
         string storing;
@@ -59,11 +59,11 @@ public:
                 outfile <<get. user_id;
                 outfile << endl;
                 outfile << "Name :";     // name for emply entering to file
-                outfile << get.fname;        // first name of employ
-                outfile << " " << get.lname; // last name of employ
+                outfile << get.FirstName;        // first name of employ
+                outfile << " " << get.LastName; // last name of employ
                 outfile << endl;
                 outfile << "Email Address :"; // email address of employ
-                outfile <<get. EmailADdress;
+                outfile <<get. EmailAddress;
                 outfile << endl;
                 outfile << "Job Title :"; // job title
                 outfile << get.JobTitle;      // getting job title into file
@@ -92,9 +92,10 @@ public:
     // display particular employee details
     void Display_Data(string fileName)  // file name come in funciton 
     {
+        cin.ignore();
         string ID; // ID of employee 
         cout << "Enter Id Of Employee :";
-        cin >> ID;  // Enter ID of employee 
+        getline(cin , ID);  // Enter ID of employee 
         user_id = ID;   
         ifstream infile(fileName + ".txt");   // opening file in reading mode 
 
@@ -235,7 +236,7 @@ public:
             {
                 i = 8;
                 cout << "Found\n";
-                input_Date(fileName);
+                input_Data(fileName);
             }
             else
             {

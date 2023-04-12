@@ -1,0 +1,9 @@
+Employee Id :KIFAYAT KHAN
+Name :dfg sdfg
+Email Address :sdfg
+Job Title :34
+Gender :234
+Phone Number :234
+Salary :234
+Hiring Date :234
+

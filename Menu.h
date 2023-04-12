@@ -2110,7 +2110,6 @@ void Menus::PaymentHistory()
                 "2)Account Employee Salary\n"
                 "3)Maintenance Employee Salary\n"
                 "4)Parking Employee Salary\n"
-                "6)Water Employee Salary\n"
                 "Your Chocie :";
         cin >> choice1;
         choice = InvaidChoice();
@@ -2122,6 +2121,7 @@ void Menus::PaymentHistory()
             ifstream file("PaidManagersData.txt");
             cout << "Enter Manager Id :";
             cin >> id;
+            int k=0;
             string storing;
             while (getline(file, storing))
             {
@@ -2132,7 +2132,12 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
+                    k=1;
                 }
+            }
+            if(k==0)
+            {
+                cout<<"\nSorry No Manager Is Found With That Id!\n";
             }
             file.close();
             break;
@@ -2143,6 +2148,7 @@ void Menus::PaymentHistory()
             ifstream file("PaidAccountEmployeeData.txt");
             cout << "Enter Manager Id :";
             cin >> id;
+            int k=0;
             string storing;
             while (getline(file, storing))
             {
@@ -2153,7 +2159,12 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
+                    k=1;
                 }
+            }
+            if(k==0)
+            {
+                cout<<"\nSorry No Employee Is Found With That Id!\n";
             }
             file.close();
             break;
@@ -2164,6 +2175,7 @@ void Menus::PaymentHistory()
             ifstream file("PaidMaintenanceEmployeeData.txt");
             cout << "Enter Manager Id :";
             cin >> id;
+            int k=0;
             string storing;
             while (getline(file, storing))
             {
@@ -2174,7 +2186,12 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
+                    k=1;
                 }
+            }
+            if(k==0)
+            {
+                cout<<"\nSorry No Employee Is Found With That Id!\n";
             }
             file.close();
             break;
@@ -2184,7 +2201,9 @@ void Menus::PaymentHistory()
             string id;
             ifstream file("PaidParkingEmployeeData.txt");
             cout << "Enter Manager Id :";
-            cin >> id;
+            cin >> 
+            id;
+            int k=0;
             string storing;
             while (getline(file, storing))
             {
@@ -2195,33 +2214,18 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
+                    k=1;
                 }
+            }
+            if(k==0)
+            {
+                cout<<"\nSorry No Employee Is Found With That Id!\n";
             }
             file.close();
             break;
         }
 
-        case 5:
-        {
-            string id;
-            ifstream file("PaidWaterEmployeeData.txt");
-            cout << "Enter Manager Id :";
-            cin >> id;
-            string storing;
-            while (getline(file, storing))
-            {
-                if (storing.find(id) != string::npos)
-                {
-                    cout << storing << endl;
-                    if (getline(file, storing))
-                    {
-                        cout << storing << endl;
-                    }
-                }
-            }
-            file.close();
-            break;
-        }
+        
         case 0:
         {
             ch = 1;

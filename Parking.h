@@ -37,11 +37,11 @@ public:
 
     Parking()  // default constructor 
     {
-        carOwner = "Murtaza khalid";
-        carOwnerCnic = "1550119";
-        carNumber = "1444";
-        carType = "Vehicle";
-        carColor = "black";
+        carOwner = " ";
+        carOwnerCnic = "";
+        carNumber = "";
+        carType = "";
+        carColor = "";
         Earnings = 0;
         available_parking_Space = 0;
         ptr = NULL;

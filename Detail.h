@@ -45,7 +45,7 @@ public:
             {
                 while (getline(infile, storing))
                 {
-                    if (storing.find(user_id) != string::npos)
+                    if (storing.find(get.user_id) != string::npos)
                     {
                         k = 1;
                     }
@@ -56,30 +56,30 @@ public:
             {
                 cin>>get;
                 outfile << "Employee Id :";
-                outfile << user_id;
+                outfile <<get. user_id;
                 outfile << endl;
                 outfile << "Name :";     // name for emply entering to file
-                outfile << fname;        // first name of employ
-                outfile << " " << lname; // last name of employ
+                outfile << get.fname;        // first name of employ
+                outfile << " " << get.lname; // last name of employ
                 outfile << endl;
                 outfile << "Email Address :"; // email address of employ
-                outfile << EmailADdress;
+                outfile <<get. EmailADdress;
                 outfile << endl;
                 outfile << "Job Title :"; // job title
-                outfile << JobTitle;      // getting job title into file
+                outfile << get.JobTitle;      // getting job title into file
                 outfile << endl;
                 outfile << "Gender :"; // gender of person
-                outfile << gender;
+                outfile << get.gender;
                 outfile << endl;
                 outfile << "Phone Number :"; // phone number of person
-                outfile << PhoneNum;
+                outfile << get.PhoneNum;
                 outfile << endl;
                 outfile << "Salary :"; // salary of person
-                outfile << salary;
+                outfile << get.salary;
                 outfile << endl;
                 outfile << "Hiring Date :"; // hiring date of person
-                outfile << hiringDate;
-                outfile << endl;
+                outfile << get.hiringDate;
+                outfile << endl<<endl;
                 cout << "\nYour Data Is Stored Successfully..........\n";
             }
             else

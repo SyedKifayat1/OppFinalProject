@@ -1,6 +1,0 @@
-Emloyee Id :BSCE22025
-Salary :50
-Emloyee Id :BSCE22026
-Salary :20000
-Emloyee Id :BSCE22025
-Salary :80000

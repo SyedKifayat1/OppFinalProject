@@ -1,8 +1,0 @@
-Employee Id :
-Name : 
-Email Address :
-Job Title :
-Gender :
-Phone Number :25895946969874491
-Salary :30681206259581015
-Hiring Date :

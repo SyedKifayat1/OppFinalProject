@@ -17,21 +17,16 @@ protected:
     string carColor;
     int available_parking_Space;
     long double Earnings;
-   // int *ptr;
+   
 
 public:
-    ~Parking()  // destructor to deallocate memory dynamic 
-    {
-        //if (ptr != NULL)
-        //    delete ptr;
-    }
+    ~Parking(){}
     TotalIncome &totalIncome = TotalIncome::getInstance();  // singleton class instance creation one
     Report ForAccount;  // composition of report class object in parking class 
     Employ *parkingEmployee; // creating pointer of employ class for aggregation implementaion 
     Parking(Employ *parkingEmployee)  // employ class pointer has been passed through constructor 
     {
         this->parkingEmployee = parkingEmployee;
-       // ptr = NULL;
     }
     int check;
 

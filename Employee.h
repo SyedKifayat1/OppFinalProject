@@ -20,12 +20,12 @@ public:
         cout << "ENTER SIZE OF EMPLOY: ";
         cin >> p;
 
-        Employ *Employee = new Employ[p];
+        
         for (int i = 0; i < p; i++)
         {
-            Employee[i].input_Data(filename);
+            input_Data(filename);
         }
-        delete [] Employee;
+        
     }
     
     void Total_employee_Details(string filename)

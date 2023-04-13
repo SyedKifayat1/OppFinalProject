@@ -7,7 +7,7 @@
 #include "Detail.h"
 #include "Employee.h"
 using namespace std;
-class Parking : public Detail, public Report  // multiple inheritance of parking wiht detail class and report class 
+class Parking  
 {
 protected:
     string carOwner;
@@ -17,13 +17,13 @@ protected:
     string carColor;
     int available_parking_Space;
     long double Earnings;
-    int *ptr;
+   // int *ptr;
 
 public:
     ~Parking()  // destructor to deallocate memory dynamic 
     {
-        if (ptr != NULL)
-            delete ptr;
+        //if (ptr != NULL)
+        //    delete ptr;
     }
     TotalIncome &totalIncome = TotalIncome::getInstance();  // singleton class instance creation one
     Report ForAccount;  // composition of report class object in parking class 
@@ -31,7 +31,7 @@ public:
     Parking(Employ *parkingEmployee)  // employ class pointer has been passed through constructor 
     {
         this->parkingEmployee = parkingEmployee;
-        ptr = NULL;
+       // ptr = NULL;
     }
     int check;
 
@@ -44,7 +44,7 @@ public:
         carColor = "";
         Earnings = 0;
         available_parking_Space = 0;
-        ptr = NULL;
+        // ptr = NULL;
     }
 
     void set_available_parking()  // setting available parking space 

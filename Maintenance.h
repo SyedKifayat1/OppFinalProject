@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 // #define
-class Maintaineance : public Detail, public Report // multiple inheritance
+class Maintaineance 
 {
 
 public:
@@ -17,7 +17,6 @@ public:
    Electricity *Electricity_Records;                      // 1 2 3 4 2
    int current_records;
    Maintaineance() // default constructor of Maintaineance
-
    {
       RECORDS = 100;
       current_records = 0;

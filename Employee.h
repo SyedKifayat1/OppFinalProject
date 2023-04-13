@@ -13,7 +13,7 @@ class Employ : public Detail
 
 public:
     
-    void input_Data(string filename)
+    void input_Emplyee_Data(string filename)
     {
 
         int p;

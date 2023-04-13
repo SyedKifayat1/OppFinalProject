@@ -13,6 +13,7 @@ protected:
     long double cost; // Cost of the maintenance
     string equipment; // Equipment used for the maintenance
 public:
+
     Electricity()
     {
         voltage = 0;

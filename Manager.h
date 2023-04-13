@@ -11,9 +11,11 @@ class Manager
     public:
     Manager()
     {
-     ptr=new Report[6];
+     ReportForHead=new Report[4];
+     AllManagers=new Employ[4];
     }
-    Report *ptr;
+    Report *ReportForHead;
+    Employ *AllManagers;
     Employ *employee = new Employ();
     Accounts AccountManager;
     Shops *ShopsManager= new Shops(employee);
@@ -25,6 +27,7 @@ class Manager
         delete ParkingManager;
         delete MaintenanceManager;
         delete employee;
-        delete ptr;
+        delete [] ReportForHead;
+        delete [] AllManagers;
     }
 };

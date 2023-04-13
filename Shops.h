@@ -5,7 +5,7 @@
 #include "Detail.h"
 #include "Employee.h"
 using namespace std;
-class Shops : public Detail, public Report   // multiple inheritence of shops with Detail and Report 
+class Shops 
 {
 protected:
     string Shop_Id_No;     

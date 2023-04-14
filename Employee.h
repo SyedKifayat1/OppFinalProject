@@ -12,7 +12,6 @@ class Employ : public Detail
 {
 
 public:
-    
     void input_Emplyee_Data(string filename)
     {
 
@@ -20,14 +19,12 @@ public:
         cout << "ENTER SIZE OF EMPLOY: ";
         cin >> p;
 
-        
         for (int i = 0; i < p; i++)
         {
             input_Data(filename);
         }
-        
     }
-    
+
     void Total_employee_Details(string filename)
     {
         ifstream file(filename + ".txt");
@@ -46,6 +43,6 @@ public:
             // return 1;
         }
     }
-    ~Employ(){}
+    ~Employ() {}
 };
 #endif //!__EMPLOYEE__H__

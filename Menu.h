@@ -14,13 +14,13 @@ private:
     Calculator<long double> *calculat;
     TotalIncome &totalIncome = TotalIncome::getInstance();
     Manager obj;
-   
+
 public:
     Menus()
     {
         check = 0;
         ch = 0;
-    } 
+    }
     ~Menus()
     {
         delete calculat;
@@ -60,8 +60,8 @@ public:
     int InvaidChoice();
     void PaymentProcessing();
     void PaymentHistory();
-    void add_Electicity_Details();
-    void BuildingRequirements();
+    
+    
 };
 int Menus::InvaidChoice()
 {
@@ -91,7 +91,7 @@ int Menus::InvaidChoice()
 
 void Menus::Menu()
 {
-
+    
     totalIncome.restoreAccountsData();
     obj.ParkingManager->RestoreParkingSpace();
     while (ch == 0)
@@ -158,7 +158,7 @@ void Menus::HeadMenu()
         switch (choice)
         {
         case 1:
-        { 
+        {
             ManageSubManager();
             break;
         }
@@ -650,58 +650,13 @@ void Menus::MaintenanceManager()
 
 void Menus::AddMaintenanceData()
 {
-    while (ch == 0)
-    {
-        cin.ignore();
-        system("clear");
-        cout << "\n.......Welcome To Adding And Reading Maintenance Data Repository.......\n\n"
-                "Add And Read Details :\n"
-                "1)Electricity Resources\n"
-                "2)Building Requirements \n"
-                "0)Exit\n"
-                "Your Choice :";
-        cin >> choice1;
-        choice = InvaidChoice();
-        switch (choice)
-        {
-        case 1:
-        {
-            add_Electicity_Details();
-            break;
-        }
-        case 2:
-        {
-            BuildingRequirements();
-            break;
-        }
-        case 0:
-            ch = 1;
-            break;
-        default:
-            if (choice != -19)
-                cout << "\nInvalid Choice!\n";
-            break;
-        }
-        if (ch != 1)
-        {
-            cout << "\nPress Enter To Continue......";
-            cin.ignore();
-        }
-    }
-    ch = 0;
-}
-void Menus::BuildingRequirements()
-{
-}
-void Menus::add_Electicity_Details()
-{
 
-    obj.MaintenanceManager->read_all_records_file();
+    
     while (ch == 0)
     {
         cin.ignore();
         system("clear");
-        cout << "\n........Welcome To Adding Electicity Details........\n\n";
+        cout << "\n........Welcome To Adding And Reading Maintenance Data Repository........\n\n";
         cout << "1)Add A Record\n2)Modify Record\n3)Print Records\n"
                 "0)Exit\n"
                 "Your Choice :";
@@ -746,6 +701,7 @@ void Menus::add_Electicity_Details()
     }
     ch = 0;
 }
+
 void Menus::MaintenanceEmployee()
 {
     while (ch == 0)
@@ -1082,7 +1038,7 @@ void Menus::ControlAccountManager()
         {
         case 1:
         {
-            
+
             obj.AllManagers[0].input_Emplyee_Data("Manager");
             break;
         }
@@ -1199,7 +1155,7 @@ void Menus::ControlMaintenanceManager()
         {
         case 1:
         {
-            
+
             obj.AllManagers[1].input_Emplyee_Data("Manager");
             break;
         }
@@ -1243,7 +1199,7 @@ void Menus::ControlMaintenanceManager()
             {
             case 1:
             {
-                obj.ReportForHead[1].setReportStatus(true) ;
+                obj.ReportForHead[1].setReportStatus(true);
                 if (obj.ReportForHead[1].getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
@@ -1313,7 +1269,7 @@ void Menus::ControlParkingManager()
         {
         case 1:
         {
-            
+
             obj.AllManagers[2].input_Emplyee_Data("Manager");
             break;
         }
@@ -1366,7 +1322,7 @@ void Menus::ControlParkingManager()
             }
             case 2:
             {
-                obj.ReportForHead[2].setReportStatus(false) ;
+                obj.ReportForHead[2].setReportStatus(false);
                 if (obj.ReportForHead[2].getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
@@ -1427,7 +1383,7 @@ void Menus::ControlShopsManager()
         {
         case 1:
         {
-            
+
             obj.AllManagers[3].input_Emplyee_Data("Manager");
             break;
         }
@@ -1471,7 +1427,7 @@ void Menus::ControlShopsManager()
             {
             case 1:
             {
-                obj.ReportForHead[3].setReportStatus(true) ;
+                obj.ReportForHead[3].setReportStatus(true);
                 if (obj.ReportForHead[3].getReportStatus() == true)
                 {
                     cout << "\nYou Can Approved The Report.....\n";
@@ -1480,7 +1436,7 @@ void Menus::ControlShopsManager()
             }
             case 2:
             {
-                obj.ReportForHead[3].setReportStatus(false) ;
+                obj.ReportForHead[3].setReportStatus(false);
                 if (obj.ReportForHead[3].getReportStatus() == false)
                 {
                     cout << "\nYou Can Reject The Report!\n";
@@ -2106,7 +2062,7 @@ void Menus::PaymentHistory()
             ifstream file("PaidManagersData.txt");
             cout << "Enter Manager Id :";
             cin >> id;
-            int k=0;
+            int k = 0;
             string storing;
             while (getline(file, storing))
             {
@@ -2117,12 +2073,12 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
-                    k=1;
+                    k = 1;
                 }
             }
-            if(k==0)
+            if (k == 0)
             {
-                cout<<"\nSorry No Manager Is Found With That Id!\n";
+                cout << "\nSorry No Manager Is Found With That Id!\n";
             }
             file.close();
             break;
@@ -2133,7 +2089,7 @@ void Menus::PaymentHistory()
             ifstream file("PaidAccountEmployeeData.txt");
             cout << "Enter Manager Id :";
             cin >> id;
-            int k=0;
+            int k = 0;
             string storing;
             while (getline(file, storing))
             {
@@ -2144,12 +2100,12 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
-                    k=1;
+                    k = 1;
                 }
             }
-            if(k==0)
+            if (k == 0)
             {
-                cout<<"\nSorry No Employee Is Found With That Id!\n";
+                cout << "\nSorry No Employee Is Found With That Id!\n";
             }
             file.close();
             break;
@@ -2160,7 +2116,7 @@ void Menus::PaymentHistory()
             ifstream file("PaidMaintenanceEmployeeData.txt");
             cout << "Enter Manager Id :";
             cin >> id;
-            int k=0;
+            int k = 0;
             string storing;
             while (getline(file, storing))
             {
@@ -2171,12 +2127,12 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
-                    k=1;
+                    k = 1;
                 }
             }
-            if(k==0)
+            if (k == 0)
             {
-                cout<<"\nSorry No Employee Is Found With That Id!\n";
+                cout << "\nSorry No Employee Is Found With That Id!\n";
             }
             file.close();
             break;
@@ -2186,9 +2142,9 @@ void Menus::PaymentHistory()
             string id;
             ifstream file("PaidParkingEmployeeData.txt");
             cout << "Enter Manager Id :";
-            cin >> 
-            id;
-            int k=0;
+            cin >>
+                id;
+            int k = 0;
             string storing;
             while (getline(file, storing))
             {
@@ -2199,18 +2155,17 @@ void Menus::PaymentHistory()
                     {
                         cout << storing << endl;
                     }
-                    k=1;
+                    k = 1;
                 }
             }
-            if(k==0)
+            if (k == 0)
             {
-                cout<<"\nSorry No Employee Is Found With That Id!\n";
+                cout << "\nSorry No Employee Is Found With That Id!\n";
             }
             file.close();
             break;
         }
 
-        
         case 0:
         {
             ch = 1;
@@ -2411,8 +2366,8 @@ void Menus::SubManagersReports()
                 {
                 case 1:
                 {
-                    cout<<"\nRequired Budget :"<<totalIncome.getMaintenanceBudget();
-                    cout<<"\nReport :";
+                    cout << "\nRequired Budget :" << totalIncome.getMaintenanceBudget();
+                    cout << "\nReport :";
                     obj.MaintenanceManager->ForAccount.ReadReport("MaintenanceReportForAccount");
 
                     break;
@@ -2448,7 +2403,7 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.MaintenanceManager->ForAccount.setReportStatus(false) ;
+                        obj.MaintenanceManager->ForAccount.setReportStatus(false);
                         if (obj.MaintenanceManager->ForAccount.getReportStatus() == false)
                         {
 
@@ -2540,7 +2495,7 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.ParkingManager->ForAccount.setReportStatus(true) ;
+                        obj.ParkingManager->ForAccount.setReportStatus(true);
                         if (obj.ParkingManager->ForAccount.getReportStatus() == true)
                         {
                             cout << "\nYou Can Approved The Report.....\n";
@@ -2549,7 +2504,7 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.ParkingManager->ForAccount.setReportStatus(false) ;
+                        obj.ParkingManager->ForAccount.setReportStatus(false);
                         if (obj.ParkingManager->ForAccount.getReportStatus() == false)
                         {
                             cout << "\nYou Can Reject The Report!\n";
@@ -2640,7 +2595,7 @@ void Menus::SubManagersReports()
                     {
                     case 1:
                     {
-                        obj.ShopsManager->ForAccount.setReportStatus(true) ;
+                        obj.ShopsManager->ForAccount.setReportStatus(true);
                         if (obj.ShopsManager->ForAccount.getReportStatus() == true)
                         {
                             cout << "\nYou Can Approved The Report.....\n";
@@ -2649,7 +2604,7 @@ void Menus::SubManagersReports()
                     }
                     case 2:
                     {
-                        obj.ShopsManager->ForAccount.setReportStatus(false) ;
+                        obj.ShopsManager->ForAccount.setReportStatus(false);
                         if (obj.ShopsManager->ForAccount.getReportStatus() == false)
                         {
                             cout << "\nYou Can Reject The Report!\n";
@@ -4009,7 +3964,7 @@ void Menus::AccountManagerReport()
 }
 void Menus::calculator()
 {
-    
+
     while (ch == 0)
     {
         cin.ignore();
@@ -4071,7 +4026,7 @@ void Menus::calculator()
             break;
         }
         }
-        
+
         cout << "\nPress Enter To Continue......";
 
         cin.ignore();

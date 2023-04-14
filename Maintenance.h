@@ -5,32 +5,34 @@
 #include "Electricity.h"
 #include <iostream>
 using namespace std;
-// #define
-class Maintaineance 
+//#define 
+class Maintaineance : public Detail, public Report
 {
 
 public:
-   int RECORDS;
-   TotalIncome &totalIncome = TotalIncome::getInstance(); // assigneing reprence totalincome to object return by total income
-   Report ForAccount;                                     // composition of Report
-   Employ *maintaineanceEmployee;                         // pointer of employ for aggregation
-   Electricity *Electricity_Records;                      // 1 2 3 4 2
-   int current_records;
-   Maintaineance() // default constructor of Maintaineance
+    int RECORDS;
+   TotalIncome &totalIncome = TotalIncome::getInstance();
+   Report ForAccount;
+   Employ *maintaineanceEmployee;
+   Electricity *Electricity_Records; // 1 2 3 4 2
+  int current_records;
+   Maintaineance()
    {
-      RECORDS = 100;
-      current_records = 0;
-      Electricity_Records = new Electricity[RECORDS];
+      RECORDS =100;
+      current_records = 30;
+      Electricity_Records =new Electricity[RECORDS];
    }
-   ~Maintaineance() // destructor of Maintaineance
+   ~Maintaineance()
    {
-      delete maintaineanceEmployee;
-      delete Electricity_Records;
+      //delete maintaineanceEmployee;
+      //delete Electricity_Records;
    }
-   Maintaineance(Employ *maintaineanceEmployee) // paramterized constructor of Maintaineance
+   Maintaineance(Employ *maintaineanceEmployee)
    {
       this->maintaineanceEmployee = maintaineanceEmployee;
-      current_records = 0;
+      RECORDS =100;
+      current_records = 3zxz0;
+      Electricity_Records =new Electricity[RECORDS];
    }
    int get_current_Records()
    {
@@ -56,7 +58,7 @@ public:
       file << "Location :" << Electricity_Records[i].getLocation() << endl
            << endl;
    }
-
+   
    void append_all_records_file()
    {
       ofstream file("electricity_record.txt", ios::app);
@@ -120,7 +122,7 @@ public:
       }
       else
       {
-         current_records = 0;
+         //current_records = 0;
          while (!file.eof())
          {
             read_single_record_file(file);
@@ -140,5 +142,6 @@ public:
          cout << "Location :" << Electricity_Records[i].getLocation() << "\n\n";
       }
    }
+
 };
 #endif //!__MAINTENANCE__H__

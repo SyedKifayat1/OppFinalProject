@@ -31,7 +31,7 @@ public:
    {
       this->maintaineanceEmployee = maintaineanceEmployee;
       RECORDS =100;
-      current_records = 3zxz0;
+      current_records = 30;
       Electricity_Records =new Electricity[RECORDS];
    }
    int get_current_Records()
